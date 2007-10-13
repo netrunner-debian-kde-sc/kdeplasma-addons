@@ -1,0 +1,19 @@
+Source: extragear-plasma
+Section: utils
+Priority: optional
+Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+Uploaders: Armin Berres <trigger+debian@space-based.de>
+Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.94.0-1),
+Standards-Version: 3.7.2
+
+Package: extragear-plasma
+Architecture: any
+Section: utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, extragear-plasma-data (>= ${source:Version})
+Description: Some crashing plasma applets ;)
+ To be written.
+
+Package: extragear-plasma-data
+Architecture: all
+Section: utils
+Description: Something nice
