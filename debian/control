@@ -17,3 +17,13 @@ Package: extragear-plasma-data
 Architecture: all
 Section: utils
 Description: Something nice
+
+Package: extrager-plasma-dbg
+Section: devel
+Architecture: any
+Priority: extra
+Depends: extrager-plasma (= ${binary:Version}), kdebase-workspace-dbg
+Description: debugging symbols for extrager-plasma
+ This package contains the debugging symbols associated with extrager-plasma.
+ They will automatically be used by gdb for debugging extrager-plasma related
+ issues.
