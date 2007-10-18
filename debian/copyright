@@ -5,9 +5,57 @@ It was downloaded from ftp://ftp.kde.org
 
 Upstream Authors: 
 
+Dataengine ebn:
+    Copyright (C) 2007 Aaron Seigo <aseigo@kde.org>
+    Copyright (C) 2007 Alex Merry <huntedhacker@tiscali.co.uk>
+    License: GPLv2
+
+Dataengine twitter:
+    Copyright (C) 2007 Trever Fischer <wm161@wm161.net>
+    Copyright (C) 2007 André Duffeck <andre@duffeck.de>
+    License: GPLv2
+
+Applet bluemarble:
+    Copyright (C) 2007 Rivo Laks <rivolaks@hot.ee>
+    License: GPLv2
+    
+Applet dict:
+    Copyright (C) 2007 by Thomas Georgiou <TAGeorgiou@gmail.com>
+    Copyright (C) 2007 by Jeff Cooper <weirdsox11@gmail.com>
+    License: GPLv2 or (at your option) any later version.
+
+Applet ebn:
+    Copyright (C) 2007 by Alex Merry <alex.merry@kdemail.net>
+    License: GPLv2 or (at your option) any later version.
+
+Applet frame:
+    Copyright  2007 by Anne-Marie Mahfouf <annma@kde.org>
+    Copyright  2007 by Antonio Vinci <mercurio@personellarete.it>
+    The current (temporary) picture is a modified version of a Pedro Carbajal's artwork, used with permission by the author.
+    License: GPLv2 or (at your option) any later version.
+
+Applet filewatcher:
+    Copyright (C) 2007 by Jesper Thomschutz <jesperht@yahoo.com>
+    Copyright (C) 2007 by Simon Hausmann <hausmann@kde.org>
+    License: GPLv2 or (at your option) any later version.
+
+Applet kolourpicker:
+    Copyright (C) 2007 by Pino Toscano <pino@kde.org>
+    License: GPLv2
+
+Applet lancelot:
+    Copyright (C) 2007 Ivan Cukic <ivan.cukic+kde@gmail.com>
+    License: GPLv2
+
+Applet notes:
+    Copyright (C) 2007 Lukas Kropatschek <lukas.krop@kdemail.net>
+    License: GPLv2 or (at your option) any later version.
+
+Applet twitter:
+    Copyright (C) 2007 by André Duffeck <andre@duffeck.de>
+    License: GPLv2 or (at your option) any later version.
 
 License:
-
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
