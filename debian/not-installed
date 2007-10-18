@@ -1,0 +1,4 @@
+# Also contained in kdebase-workspace
+./usr/lib/kde4/plasma_applet_frame.so
+./usr/share/kde4/apps/desktoptheme/default/widgets/picture-frame-default.svg
+./usr/share/kde4/services/plasma-frame-default.desktop
