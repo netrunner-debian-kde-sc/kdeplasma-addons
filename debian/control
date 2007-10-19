@@ -26,12 +26,12 @@ Description: extras for the desktop and panel user interface tool for KDE4 - dat
  This package contains the architecture-independent shared data files needed
  for extragear-plasma.
  
-Package: extrager-plasma-dbg
+Package: extragear-plasma-dbg
 Section: devel
 Architecture: any
 Priority: extra
-Depends: extrager-plasma (= ${binary:Version}), kdebase-workspace-dbg
-Description: debugging symbols for extrager-plasma
- This package contains the debugging symbols associated with extrager-plasma.
- They will automatically be used by gdb for debugging extrager-plasma related
+Depends: extragear-plasma (= ${binary:Version}), kdebase-workspace-dbg
+Description: debugging symbols for extragear-plasma
+ This package contains the debugging symbols associated with extragear-plasma.
+ They will automatically be used by gdb for debugging extragear-plasma related
  issues.
