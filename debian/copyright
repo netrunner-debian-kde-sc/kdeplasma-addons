@@ -3,7 +3,7 @@ Thu, 11 Oct 2007 22:41:12 +0200.
 
 It was downloaded from ftp://ftp.kde.org
 
-Upstream Authors: 
+Upstream Authors, Copyright and Licenses:
 
 Dataengine ebn:
     Copyright (C) 2007 Aaron Seigo <aseigo@kde.org>
@@ -31,7 +31,8 @@ Applet ebn:
 Applet frame:
     Copyright  2007 by Anne-Marie Mahfouf <annma@kde.org>
     Copyright  2007 by Antonio Vinci <mercurio@personellarete.it>
-    The current (temporary) picture is a modified version of a Pedro Carbajal's artwork, used with permission by the author.
+    The current (temporary) picture is a modified version of a Pedro Carbajal's
+    artwork, used with permission by the author.
     License: GPLv2 or (at your option) any later version.
 
 Applet filewatcher:
@@ -55,10 +56,10 @@ Applet twitter:
     Copyright (C) 2007 by André Duffeck <andre@duffeck.de>
     License: GPLv2 or (at your option) any later version.
 
-Some images don't have an explicit license yet, but it is KDE policy that
-all images are under the GPL if not stated othwerwise.
-
 License:
+
+On Debian systems, the complete text of the GNU General
+Public License version 2 can be found in `/usr/share/common-licenses/GPL-2
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
