@@ -1,30 +1,31 @@
 Source: extragear-plasma
 Section: utils
 Priority: optional
-Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
-Uploaders: Armin Berres <trigger+debian@space-based.de>
-Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.94.0-1),
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fboudra@free.fr>, Armin Berres <trigger+debian@space-based.de>
+Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.94.0-1)
 Standards-Version: 3.7.2
 
 Package: extragear-plasma
 Architecture: any
 Section: utils
 Depends: ${shlibs:Depends}, extragear-plasma-data (>= ${source:Version})
-Description: Some crashing plasma applets ;)
- This package provides additional plasma components like widgets or data engines
- which are not shipped with kdebase.
+Description: extras for the desktop and panel user interface tool for KDE4
+ extragear-plasma provides additional plasma components like widgets or data 
+ engines which are not shipped with kdebase.
  .
- This package is part of KDE.
+  Homepage: http://plasma.kde.org/
 
 Package: extragear-plasma-data
 Architecture: all
 Section: utils
-Description: additional plasma components
+Description: extras for the desktop and panel user interface tool for KDE4 - data
+ extragear-plasma provides additional plasma components like widgets or data 
+ engines which are not shipped with kdebase.
+ .
  This package contains the architecture-independent shared data files needed
  for extragear-plasma.
- .
- See the extragear-plasma package for more information.
-
+ 
 Package: extrager-plasma-dbg
 Section: devel
 Architecture: any
