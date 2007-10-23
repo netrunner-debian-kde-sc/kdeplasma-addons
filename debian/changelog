@@ -1,5 +1,5 @@
-extragear-plasma (3.94.0-1) unstable; urgency=low
+extragear-plasma (3.94.0-1) experimental; urgency=low
 
   * Initial release.
 
- -- Armin Berres <trigger+debian@space-based.de>  Thu, 11 Oct 2007 22:46:39 +0200
+ -- Armin Berres <trigger+debian@space-based.de>  Wed, 24 Oct 2007 01:14:25 +0200
