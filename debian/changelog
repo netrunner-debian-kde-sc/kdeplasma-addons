@@ -1,6 +1,6 @@
 extragear-plasma (3.95.0-1) experimental; urgency=low
 
-  * New upstream release: KDE beta4.
+  * New upstream release: KDE4 beta4. First upload to the Debian archive.
   * Build depend on kdebase-workspace-dev >= 4:3.95.0.
   * Readd picture frame applet which isn't anymore a part of kdebase-workspace
     and add replaces kdebase-workspace-bin << 4:3.95.0.
