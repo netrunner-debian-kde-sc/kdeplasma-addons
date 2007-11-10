@@ -7,6 +7,7 @@ usr/lib/kde4/plasma_applet_fileWatcher.so
 usr/lib/kde4/plasma_applet_frame.so
 usr/lib/kde4/plasma_applet_kolourpicker.so
 usr/lib/kde4/plasma_applet_lancelot.so
+usr/lib/kde4/plasma_applet_lancelot_part.so
 usr/lib/kde4/plasma_applet_notes.so
 usr/lib/kde4/plasma_applet_twitter.so
 usr/lib/kde4/plasma_engine_ebn.so
