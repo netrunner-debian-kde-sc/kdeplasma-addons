@@ -1,6 +1,7 @@
 extragear-plasma (4:3.96.0-1) experimental; urgency=low
 
   * New upstream release. 
+  * Update *.install files.
   * Move Homepage into control field.
   * Build depend on kdebase-workspace-dev >= 4:3.96.0.
 
