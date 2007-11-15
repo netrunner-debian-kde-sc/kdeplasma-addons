@@ -3,8 +3,9 @@ Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fboudra@free.fr>, Armin Berres <trigger+debian@space-based.de>
-Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.95.2)
+Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.96.0)
 Standards-Version: 3.7.2
+Homepage: http://plasma.kde.org/
 
 Package: extragear-plasma
 Architecture: any
@@ -14,8 +15,6 @@ Replaces: kdebase-workspace-bin (<< 4:3.95.0)
 Description: extras for the desktop and panel user interface tool for KDE4
  extragear-plasma provides additional plasma components like widgets or data
  engines which are not shipped with kdebase.
- .
-  Homepage: http://plasma.kde.org/
 
 Package: extragear-plasma-data
 Architecture: all

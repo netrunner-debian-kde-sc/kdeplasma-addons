@@ -1,3 +1,11 @@
+extragear-plasma (4:3.96.0-1) experimental; urgency=low
+
+  * New upstream release. 
+  * Move Homepage into control field.
+  * Build depend on kdebase-workspace-dev >= 4:3.96.0.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 15 Nov 2007 18:46:33 +0100
+
 extragear-plasma (3.95.2-1) experimental; urgency=low
 
   * New upstream release.
