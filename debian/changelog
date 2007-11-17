@@ -1,17 +1,11 @@
 extragear-plasma (4:3.96.0-1) experimental; urgency=low
 
-  * New upstream release.
-
-  +++ Changes by Ana Beatriz Guerrero Lopez: 
-  
+  * New upstream release. 
   * Update *.install files.
   * Move Homepage into control field.
-  
-  +++ Changes by Armin Berres:
+  * Build depend on kdebase-workspace-dev >= 4:3.96.0.
 
-  * Depend on kdelibs-dev and libplasma-dev instead kdebase-workspace-dev.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 16 Nov 2007 18:30:21 +0100
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 15 Nov 2007 18:46:33 +0100
 
 extragear-plasma (3.95.2-1) experimental; urgency=low
 
