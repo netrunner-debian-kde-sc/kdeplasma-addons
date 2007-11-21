@@ -1,0 +1,3704 @@
+Index: dataengines/twitter/plasma-engine-twitter.desktop
+===================================================================
+--- dataengines/twitter/plasma-engine-twitter.desktop	(revision 736572)
++++ dataengines/twitter/plasma-engine-twitter.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Twitter Data Engine
+ Name[bg]=Ядро за Twitter
+ Name[es]=Motor de datos Twitter
+@@ -8,7 +7,7 @@
+ Name[pt]=Motor de Dados do Twitter
+ Name[pt_BR]=Motor de Dados do Twitter
+ Name[sv]=Datagränssnitt för Twitter
+-ServiceTypes=Plasma/DataEngine
++X-KDE-ServiceTypes=Plasma/DataEngine
+ Type=Service
+ Icon=im
+ X-KDE-Library=plasma_engine_twitter
+Index: dataengines/ebn/plasma-engine-ebn.desktop
+===================================================================
+--- dataengines/ebn/plasma-engine-ebn.desktop	(revision 736572)
++++ dataengines/ebn/plasma-engine-ebn.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=EBN Data Engine
+ Name[bg]=EBN ядро
+ Name[es]=Motor de datos EBN
+@@ -17,7 +16,7 @@
+ Comment[pt]=Motor de dados dos testes automáticos de qualidade do KDE
+ Comment[pt_BR]=Motor de dados dos testes automáticos de qualidade do KDE
+ Comment[sv]=KDE:s datagränssnitt för automatiserad kvalitetstest
+-ServiceTypes=Plasma/DataEngine
++X-KDE-ServiceTypes=Plasma/DataEngine
+ Type=Service
+ Icon=kteatime
+ X-KDE-Library=plasma_engine_ebn
+Index: dataengines/comic/plasma-engine-comic.desktop
+===================================================================
+--- dataengines/comic/plasma-engine-comic.desktop	(revision 0)
++++ dataengines/comic/plasma-engine-comic.desktop	(revision 739687)
+@@ -0,0 +1,17 @@
++[Desktop Entry]
++Encoding=UTF-8
++Name=Comic Data Engine
++Name[et]=Koomiksi andmete mootor
++Name[pt]=Motor de Dados de Banda Desenhada
++Name[pt_BR]=Motor de Dados de Banda Desenhada
++Name[sv]=Datagränssnitt för serier
++Comment=Data Engine for comic strips
++Comment[et]=Koomiksi andmemootor
++Comment[pt]=Motor de Dados para bandas desenhadas
++Comment[pt_BR]=Motor de Dados para bandas desenhadas
++Comment[sv]=Datagränssnitt för tecknade serier
++ServiceTypes=Plasma/DataEngine
++Type=Service
++Icon=face-smile-big
++X-KDE-Library=plasma_engine_comic
++X-EngineName=comic
+Index: dataengines/comic/comic.h
+===================================================================
+--- dataengines/comic/comic.h	(revision 0)
++++ dataengines/comic/comic.h	(revision 739687)
+@@ -0,0 +1,59 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef COMIC_DATAENGINE_H
++#define COMIC_DATAENGINE_H
++
++#include "plasma/dataengine.h"
++
++class ComicProvider;
++
++/**
++ * This class provides the comic strip.
++ *
++ * The query keys have the following structure:
++ *   <comic_identifier>:<date>
++ * e.g.
++ *   userfriendly:2007-07-19
++ *
++ */
++class ComicEngine : public Plasma::DataEngine
++{
++    Q_OBJECT
++
++    public:
++        ComicEngine( QObject* parent, const QVariantList& args );
++        ~ComicEngine();
++
++    protected:
++        void init();
++        bool sourceRequested( const QString &identifier );
++
++    protected Q_SLOTS:
++        bool updateSource( const QString &identifier );
++
++    private Q_SLOTS:
++        void finished( ComicProvider* );
++        void error( ComicProvider* );
++
++    private:
++};
++
++K_EXPORT_PLASMA_DATAENGINE(comic, ComicEngine)
++
++#endif
+Index: dataengines/comic/dilbertprovider.cpp
+===================================================================
+--- dataengines/comic/dilbertprovider.cpp	(revision 0)
++++ dataengines/comic/dilbertprovider.cpp	(revision 739687)
+@@ -0,0 +1,121 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++#include <QtCore/QRegExp>
++#include <QtCore/QUrl>
++#include <QtGui/QImage>
++#include <QtNetwork/QHttp>
++#include <QtNetwork/QHttpRequestHeader>
++
++#include "dilbertprovider.h"
++
++class DilbertProvider::Private
++{
++  public:
++    Private( DilbertProvider *parent, const QDate &date )
++      : mParent( parent ), mDate( date )
++    {
++      mHttp = new QHttp( "dilbert.com", 80, mParent );
++      connect( mHttp, SIGNAL( done( bool ) ), mParent, SLOT( pageRequestFinished( bool ) ) );
++    }
++
++    void pageRequestFinished( bool );
++    void imageRequestFinished( bool );
++    void parsePage();
++
++    DilbertProvider *mParent;
++    QByteArray mPage;
++    QDate mDate;
++    QImage mImage;
++
++    QHttp *mHttp;
++    QHttp *mImageHttp;
++};
++
++void DilbertProvider::Private::pageRequestFinished( bool err )
++{
++  if ( err ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  const QString pattern( "<IMG SRC=\"/comics/dilbert/archive/images/dilbert" );
++  const QRegExp exp( pattern );
++
++  const QString data = QString::fromUtf8( mHttp->readAll() );
++
++  int pos = exp.indexIn( data ) + pattern.length();
++
++  const QString sub = data.mid( pos, data.indexOf( '"', pos ) - pos );
++
++  QUrl url( QString( "http://dilbert.com/comics/dilbert/archive/images/dilbert%1" ).arg( sub ) );
++
++  mImageHttp = new QHttp( "dilbert.com", 80, mParent );
++  mImageHttp->setHost( url.host() );
++  mImageHttp->get( url.path() );
++
++  mParent->connect( mImageHttp, SIGNAL( done( bool ) ), mParent, SLOT( imageRequestFinished( bool ) ) );
++}
++
++void DilbertProvider::Private::imageRequestFinished( bool error )
++{
++  if ( error ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  QByteArray data = mImageHttp->readAll();
++  mImage = QImage::fromData( data );
++  emit mParent->finished( mParent );
++}
++
++DilbertProvider::DilbertProvider( const QDate &date, QObject *parent )
++    : ComicProvider( parent ), d( new Private( this, date ) )
++{
++    QUrl url( QString( "http://dilbert.com/comics/dilbert/archive/dilbert-%1.html" ).arg( date.toString( "yyyyMMdd" ) ) );
++
++    QHttpRequestHeader header( "GET", url.path() );
++    header.setValue( "User-Agent", "Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.6 (like Gecko)" );
++    header.setValue( "Accept", "text/html, image/jpeg, image/png, text/*, image/*, */*" );
++    header.setValue( "Accept-Encoding", "deflate" );
++    header.setValue( "Accept-Charset", "iso-8859-15, utf-8;q=0.5, *;q=0.5" );
++    header.setValue( "Accept-Language", "en" );
++    header.setValue( "Host", "dilbert.com" );
++    header.setValue( "Connection", "Keep-Alive" );
++
++    d->mHttp->setHost( url.host() );
++    d->mHttp->request( header );
++}
++
++DilbertProvider::~DilbertProvider()
++{
++    delete d;
++}
++
++QImage DilbertProvider::image() const
++{
++    return d->mImage;
++}
++
++QString DilbertProvider::identifier() const
++{
++    return QString( "dilbert:%1" ).arg( d->mDate.toString( Qt::ISODate ) );
++}
++
++#include "dilbertprovider.moc"
+Index: dataengines/comic/snoopyprovider.cpp
+===================================================================
+--- dataengines/comic/snoopyprovider.cpp	(revision 0)
++++ dataengines/comic/snoopyprovider.cpp	(revision 739687)
+@@ -0,0 +1,121 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++#include <QtCore/QRegExp>
++#include <QtCore/QUrl>
++#include <QtGui/QImage>
++#include <QtNetwork/QHttp>
++#include <QtNetwork/QHttpRequestHeader>
++
++#include "snoopyprovider.h"
++
++class SnoopyProvider::Private
++{
++  public:
++    Private( SnoopyProvider *parent, const QDate &date )
++      : mParent( parent ), mDate( date )
++    {
++      mHttp = new QHttp( "snoopy.com", 80, mParent );
++      connect( mHttp, SIGNAL( done( bool ) ), mParent, SLOT( pageRequestFinished( bool ) ) );
++    }
++
++    void pageRequestFinished( bool );
++    void imageRequestFinished( bool );
++    void parsePage();
++
++    SnoopyProvider *mParent;
++    QByteArray mPage;
++    QDate mDate;
++    QImage mImage;
++
++    QHttp *mHttp;
++    QHttp *mImageHttp;
++};
++
++void SnoopyProvider::Private::pageRequestFinished( bool err )
++{
++  if ( err ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  const QString pattern( "<IMG SRC=\"/comics/peanuts/archive/images/peanuts" );
++  const QRegExp exp( pattern );
++
++  const QString data = QString::fromUtf8( mHttp->readAll() );
++
++  int pos = exp.indexIn( data ) + pattern.length();
++
++  const QString sub = data.mid( pos, data.indexOf( '.', pos ) - pos );
++
++  QUrl url( QString( "http://snoopy.com/comics/peanuts/archive/images/peanuts%1.gif" ).arg( sub ) );
++
++  mImageHttp = new QHttp( "snoopy.com", 80, mParent );
++  mImageHttp->setHost( url.host() );
++  mImageHttp->get( url.path() );
++
++  mParent->connect( mImageHttp, SIGNAL( done( bool ) ), mParent, SLOT( imageRequestFinished( bool ) ) );
++}
++
++void SnoopyProvider::Private::imageRequestFinished( bool error )
++{
++  if ( error ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  QByteArray data = mImageHttp->readAll();
++  mImage = QImage::fromData( data );
++  emit mParent->finished( mParent );
++}
++
++SnoopyProvider::SnoopyProvider( const QDate &date, QObject *parent )
++    : ComicProvider( parent ), d( new Private( this, date ) )
++{
++    QUrl url( QString( "http://snoopy.com/comics/peanuts/archive/peanuts-%1.html" ).arg( date.toString( "yyyyMMdd" ) ) );
++
++    QHttpRequestHeader header( "GET", url.path() );
++    header.setValue( "User-Agent", "Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.6 (like Gecko)" );
++    header.setValue( "Accept", "text/html, image/jpeg, image/png, text/*, image/*, */*" );
++    header.setValue( "Accept-Encoding", "deflate" );
++    header.setValue( "Accept-Charset", "iso-8859-15, utf-8;q=0.5, *;q=0.5" );
++    header.setValue( "Accept-Language", "en" );
++    header.setValue( "Host", "snoopy.com" );
++    header.setValue( "Connection", "Keep-Alive" );
++
++    d->mHttp->setHost( url.host() );
++    d->mHttp->request( header );
++}
++
++SnoopyProvider::~SnoopyProvider()
++{
++    delete d;
++}
++
++QImage SnoopyProvider::image() const
++{
++    return d->mImage;
++}
++
++QString SnoopyProvider::identifier() const
++{
++    return QString( "snoopy:%1" ).arg( d->mDate.toString( Qt::ISODate ) );
++}
++
++#include "snoopyprovider.moc"
+Index: dataengines/comic/xkcdprovider.cpp
+===================================================================
+--- dataengines/comic/xkcdprovider.cpp	(revision 0)
++++ dataengines/comic/xkcdprovider.cpp	(revision 739687)
+@@ -0,0 +1,124 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++#include <QtCore/QRegExp>
++#include <QtCore/QUrl>
++#include <QtGui/QImage>
++#include <QtNetwork/QHttp>
++#include <QtNetwork/QHttpRequestHeader>
++
++#include "xkcdprovider.h"
++
++class XkcdProvider::Private
++{
++  public:
++    Private( XkcdProvider *parent, const QDate &date )
++      : mParent( parent ), mDate( date )
++    {
++      mHttp = new QHttp( "xkcd.com", 80, mParent );
++      connect( mHttp, SIGNAL( done( bool ) ), mParent, SLOT( pageRequestFinished( bool ) ) );
++    }
++
++    void pageRequestFinished( bool );
++    void imageRequestFinished( bool );
++    void parsePage();
++
++    XkcdProvider *mParent;
++    QByteArray mPage;
++    QDate mDate;
++    QImage mImage;
++
++    QHttp *mHttp;
++    QHttp *mImageHttp;
++};
++
++static QString dateToId( const QDate &date )
++{
++    static QDate initialDate = QDate( 2006, 12, 6 ); // when everything started...
++
++    if ( date < initialDate )
++        return QString();
++
++    int days = initialDate.daysTo( date );
++
++    return QString::number( days );
++}
++
++void XkcdProvider::Private::pageRequestFinished( bool err )
++{
++  if ( err ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  const QString pattern( "<img src=\"http://imgs.xkcd.com/comics/" );
++  const QRegExp exp( pattern );
++
++  const QString data = QString::fromUtf8( mHttp->readAll() );
++
++  int pos = exp.indexIn( data ) + pattern.length();
++
++  const QString sub = data.mid( pos, data.indexOf( '.', pos ) - pos );
++
++  QUrl url( QString( "http://imgs.xkcd.com/comics/%1.png" ).arg( sub ) );
++
++  mImageHttp = new QHttp( "imgs.xkcd.com", 80, mParent );
++  mImageHttp->setHost( url.host() );
++  mImageHttp->get( url.path() );
++
++  mParent->connect( mImageHttp, SIGNAL( done( bool ) ), mParent, SLOT( imageRequestFinished( bool ) ) );
++}
++
++void XkcdProvider::Private::imageRequestFinished( bool error )
++{
++  if ( error ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  QByteArray data = mImageHttp->readAll();
++  mImage = QImage::fromData( data );
++  emit mParent->finished( mParent );
++}
++
++XkcdProvider::XkcdProvider( const QDate &date, QObject *parent )
++    : ComicProvider( parent ), d( new Private( this, date ) )
++{
++    QUrl url( QString( "http://xkcd.com/%1/" ).arg( dateToId( date ) ) );
++
++    d->mHttp->setHost( url.host() );
++    d->mHttp->get( url.path() );
++}
++
++XkcdProvider::~XkcdProvider()
++{
++    delete d;
++}
++
++QImage XkcdProvider::image() const
++{
++    return d->mImage;
++}
++
++QString XkcdProvider::identifier() const
++{
++    return QString( "xkcd:%1" ).arg( d->mDate.toString( Qt::ISODate ) );
++}
++
++#include "xkcdprovider.moc"
+Index: dataengines/comic/dilbertprovider.h
+===================================================================
+--- dataengines/comic/dilbertprovider.h	(revision 0)
++++ dataengines/comic/dilbertprovider.h	(revision 739687)
+@@ -0,0 +1,66 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef DILBERTPROVIDER_H
++#define DILBERTPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides the comic strip image for dilbert.com.
++ */
++class DilbertProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new dilbert provider.
++         *
++         * @param date The date for which the image shall be fetched.
++         * @param parent The parent object.
++         */
++        DilbertProvider( const QDate &date, QObject *parent = 0 );
++
++        /**
++         * Destroys the dilbert provider.
++         */
++        ~DilbertProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++    private:
++      class Private;
++      Private* const d;
++
++      Q_PRIVATE_SLOT( d, void pageRequestFinished( bool ) )
++      Q_PRIVATE_SLOT( d, void imageRequestFinished( bool ) )
++};
++
++#endif
+Index: dataengines/comic/comicprovider.cpp
+===================================================================
+--- dataengines/comic/comicprovider.cpp	(revision 0)
++++ dataengines/comic/comicprovider.cpp	(revision 739687)
+@@ -0,0 +1,30 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include "comicprovider.h"
++
++ComicProvider::ComicProvider( QObject *parent )
++    : QObject( parent )
++{
++}
++
++ComicProvider::~ComicProvider()
++{
++}
++
++#include "comicprovider.moc"
+Index: dataengines/comic/snoopyprovider.h
+===================================================================
+--- dataengines/comic/snoopyprovider.h	(revision 0)
++++ dataengines/comic/snoopyprovider.h	(revision 739687)
+@@ -0,0 +1,66 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef SNOOPYPROVIDER_H
++#define SNOOPYPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides the comic strip image for snoopy.com.
++ */
++class SnoopyProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new snoopy provider.
++         *
++         * @param date The date for which the image shall be fetched.
++         * @param parent The parent object.
++         */
++        SnoopyProvider( const QDate &date, QObject *parent = 0 );
++
++        /**
++         * Destroys the snoopy provider.
++         */
++        ~SnoopyProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++    private:
++      class Private;
++      Private* const d;
++
++      Q_PRIVATE_SLOT( d, void pageRequestFinished( bool ) )
++      Q_PRIVATE_SLOT( d, void imageRequestFinished( bool ) )
++};
++
++#endif
+Index: dataengines/comic/xkcdprovider.h
+===================================================================
+--- dataengines/comic/xkcdprovider.h	(revision 0)
++++ dataengines/comic/xkcdprovider.h	(revision 739687)
+@@ -0,0 +1,66 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef XKCDPROVIDER_H
++#define XKCDPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides the comic strip image for xkcd.com.
++ */
++class XkcdProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new xkcd provider.
++         *
++         * @param date The date for which the image shall be fetched.
++         * @param parent The parent object.
++         */
++        XkcdProvider( const QDate &date, QObject *parent = 0 );
++
++        /**
++         * Destroys the xkcd provider.
++         */
++        ~XkcdProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++    private:
++      class Private;
++      Private* const d;
++
++      Q_PRIVATE_SLOT( d, void pageRequestFinished( bool ) )
++      Q_PRIVATE_SLOT( d, void imageRequestFinished( bool ) )
++};
++
++#endif
+Index: dataengines/comic/comicprovider.h
+===================================================================
+--- dataengines/comic/comicprovider.h	(revision 0)
++++ dataengines/comic/comicprovider.h	(revision 739687)
+@@ -0,0 +1,77 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef COMICPROVIDER_H
++#define COMICPROVIDER_H
++
++#include <QtCore/QObject>
++
++class QDate;
++class QImage;
++
++/**
++ * This class is an interface for comic providers.
++ */
++class ComicProvider : public QObject
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new comic provider.
++         *
++         * @param parent The parent object.
++         */
++        ComicProvider( QObject *parent = 0 );
++
++        /**
++         * Destroys the comic provider.
++         */
++        virtual ~ComicProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const = 0;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const = 0;
++
++    Q_SIGNALS:
++        /**
++         * This signal is emitted whenever a request has been finished
++         * successfully.
++         *
++         * @param provider The provider which emitted the signal.
++         */
++        void finished( ComicProvider *provider );
++
++        /**
++         * This signal is emitted whenever an error has occured.
++         *
++         * @param provider The provider which emitted the signal.
++         */
++        void error( ComicProvider *provider );
++};
++
++#endif
+Index: dataengines/comic/cachedprovider.cpp
+===================================================================
+--- dataengines/comic/cachedprovider.cpp	(revision 0)
++++ dataengines/comic/cachedprovider.cpp	(revision 739687)
+@@ -0,0 +1,74 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QFile>
++#include <QtCore/QTimer>
++#include <QtGui/QImage>
++
++#include <kstandarddirs.h>
++
++#include "cachedprovider.h"
++
++static QString identifierToPath( const QString &identifier )
++{
++    const QString dataDir = KStandardDirs::locateLocal( "data", "plasma_engine_comic/" );
++
++    return QString( dataDir + identifier );
++}
++
++
++CachedProvider::CachedProvider( const QString &identifier, QObject *parent )
++    : ComicProvider( parent ), mIdentifier( identifier )
++{
++    QTimer::singleShot( 0, this, SLOT( triggerFinished() ) );
++}
++
++CachedProvider::~CachedProvider()
++{
++}
++
++QImage CachedProvider::image() const
++{
++    if ( !QFile::exists( identifierToPath( mIdentifier ) ) )
++        return QImage();
++
++    QImage img;
++    img.load( identifierToPath( mIdentifier ), "PNG" );
++
++    return img;
++}
++
++QString CachedProvider::identifier() const
++{
++    return mIdentifier;
++}
++
++void CachedProvider::triggerFinished()
++{
++    emit finished( this );
++}
++
++bool CachedProvider::isCached( const QString &identifier )
++{
++    return QFile::exists( identifierToPath( identifier ) );
++}
++
++bool CachedProvider::storeInCache( const QString &identifier, const QImage &comic )
++{
++    return comic.save( identifierToPath( identifier ), "PNG" );
++}
+Index: dataengines/comic/userfriendlyprovider.cpp
+===================================================================
+--- dataengines/comic/userfriendlyprovider.cpp	(revision 0)
++++ dataengines/comic/userfriendlyprovider.cpp	(revision 739687)
+@@ -0,0 +1,122 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++#include <QtCore/QRegExp>
++#include <QtCore/QUrl>
++#include <QtGui/QImage>
++#include <QtNetwork/QHttp>
++#include <QtNetwork/QHttpRequestHeader>
++
++#include "userfriendlyprovider.h"
++
++class UserFriendlyProvider::Private
++{
++  public:
++    Private( UserFriendlyProvider *parent, const QDate &date )
++      : mParent( parent ), mDate( date )
++    {
++      mHttp = new QHttp( "ars.userfriendly.org", 80, mParent );
++      connect( mHttp, SIGNAL( done( bool ) ), mParent, SLOT( pageRequestFinished( bool ) ) );
++    }
++
++    void pageRequestFinished( bool );
++    void imageRequestFinished( bool );
++    void parsePage();
++
++    UserFriendlyProvider *mParent;
++    QByteArray mPage;
++    QDate mDate;
++    QImage mImage;
++
++    QHttp *mHttp;
++    QHttp *mImageHttp;
++};
++
++void UserFriendlyProvider::Private::pageRequestFinished( bool err )
++{
++  if ( err ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  const QString pattern( "<img border=\"0\" src=\"http://www.userfriendly.org/cartoons/archives/" );
++  const QRegExp exp( pattern );
++
++  const QString data = QString::fromUtf8( mHttp->readAll() );
++
++  int pos = exp.indexIn( data ) + pattern.length();
++
++  const QString sub = data.mid( pos, data.indexOf( ' ', pos ) - pos - 1 );
++
++  QUrl url( QString( "http://www.userfriendly.org/cartoons/archives/%1" ).arg( sub ) );
++
++  mImageHttp = new QHttp( "ars.userfriendly.org", 80, mParent );
++  mImageHttp->setHost( url.host() );
++  mImageHttp->get( url.path() );
++
++  mParent->connect( mImageHttp, SIGNAL( done( bool ) ), mParent, SLOT( imageRequestFinished( bool ) ) );
++}
++
++void UserFriendlyProvider::Private::imageRequestFinished( bool error )
++{
++  if ( error ) {
++    emit mParent->error( mParent );
++    return;
++  }
++
++  mImage = QImage::fromData( mImageHttp->readAll() );
++  emit mParent->finished( mParent );
++}
++
++UserFriendlyProvider::UserFriendlyProvider( const QDate &date, QObject *parent )
++    : ComicProvider( parent ), d( new Private( this, date ) )
++{
++    QString path( QString( "/cartoons/?id=" ) + date.toString( "yyyyMMdd" ) );
++
++    QHttpRequestHeader header( "GET", path );
++    header.setValue( "User-Agent", "Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.6 (like Gecko)" );
++    header.setValue( "Accept", "text/html, image/jpeg, image/png, text/*, image/*, */*" );
++    header.setValue( "Accept-Encoding", "deflate" );
++    header.setValue( "Accept-Charset", "iso-8859-15, utf-8;q=0.5, *;q=0.5" );
++    header.setValue( "Accept-Language", "en" );
++    header.setValue( "Host", "ars.userfriendly.org" );
++    header.setValue( "Referer", QString( "http://ars.userfriendly.org/cartoons/?id=%1" )
++                                   .arg( date.addDays( -1 ).toString( "yyyyMMdd" ) ) );
++    header.setValue( "Connection", "Keep-Alive" );
++
++    d->mHttp->setHost( "ars.userfriendly.org" );
++    d->mHttp->request( header );
++}
++
++UserFriendlyProvider::~UserFriendlyProvider()
++{
++    delete d;
++}
++
++QImage UserFriendlyProvider::image() const
++{
++    return d->mImage;
++}
++
++QString UserFriendlyProvider::identifier() const
++{
++    return QString( "userfriendly:%1" ).arg( d->mDate.toString( Qt::ISODate ) );
++}
++
++#include "userfriendlyprovider.moc"
+Index: dataengines/comic/cachedprovider.h
+===================================================================
+--- dataengines/comic/cachedprovider.h	(revision 0)
++++ dataengines/comic/cachedprovider.h	(revision 739687)
+@@ -0,0 +1,75 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef CACHEDPROVIDER_H
++#define CACHEDPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides comics from the local cache.
++ */
++class CachedProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new cached provider.
++         *
++         * @param identifier The identifier of the cached comic.
++         * @param parent The parent object.
++         */
++        CachedProvider( const QString &identifier, QObject *parent = 0 );
++
++        /**
++         * Destroys the cached provider.
++         */
++        ~CachedProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++        /**
++         * Returns whether a comic with the given @p identifier is cached.
++         */
++        static bool isCached( const QString &identifier );
++
++        /**
++         * Stores the given @p comic with the given @p identifier in the cache.
++         */
++        static bool storeInCache( const QString &identifier, const QImage &comic );
++
++    private Q_SLOTS:
++        void triggerFinished();
++
++    private:
++        QString mIdentifier;
++};
++
++#endif
+Index: dataengines/comic/garfieldprovider.cpp
+===================================================================
+--- dataengines/comic/garfieldprovider.cpp	(revision 0)
++++ dataengines/comic/garfieldprovider.cpp	(revision 739687)
+@@ -0,0 +1,84 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++#include <QtCore/QRegExp>
++#include <QtCore/QUrl>
++#include <QtGui/QImage>
++#include <QtNetwork/QHttp>
++#include <QtNetwork/QHttpRequestHeader>
++
++#include "garfieldprovider.h"
++
++class GarfieldProvider::Private
++{
++  public:
++    Private( GarfieldProvider *parent, const QDate &date )
++      : mParent( parent ), mDate( date )
++    {
++      mHttp = new QHttp( "images.ucomics.com", 80, mParent );
++      connect( mHttp, SIGNAL( done( bool ) ), mParent, SLOT( imageRequestFinished( bool ) ) );
++    }
++
++    void imageRequestFinished( bool );
++
++    GarfieldProvider *mParent;
++    QByteArray mPage;
++    QDate mDate;
++    QImage mImage;
++
++    QHttp *mHttp;
++};
++
++void GarfieldProvider::Private::imageRequestFinished( bool error )
++{
++    if ( error ) {
++        emit mParent->error( mParent );
++        return;
++    }
++
++    QByteArray data = mHttp->readAll();
++    mImage = QImage::fromData( data );
++    emit mParent->finished( mParent );
++}
++
++GarfieldProvider::GarfieldProvider( const QDate &date, QObject *parent )
++    : ComicProvider( parent ), d( new Private( this, date ) )
++{
++    QUrl url( QString( "http://images.ucomics.com/comics/ga/2007/ga%1.gif" ).arg( date.toString( "yyMMdd" ) ) );
++
++    d->mHttp->setHost( url.host() );
++    d->mHttp->get( url.path() );
++}
++
++GarfieldProvider::~GarfieldProvider()
++{
++    delete d;
++}
++
++QImage GarfieldProvider::image() const
++{
++    return d->mImage;
++}
++
++QString GarfieldProvider::identifier() const
++{
++    return QString( "garfield:%1" ).arg( d->mDate.toString( Qt::ISODate ) );
++}
++
++#include "garfieldprovider.moc"
+Index: dataengines/comic/comic.cpp
+===================================================================
+--- dataengines/comic/comic.cpp	(revision 0)
++++ dataengines/comic/comic.cpp	(revision 739687)
+@@ -0,0 +1,107 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#include <QtCore/QDate>
++
++#include "comic.h"
++
++// comic providers
++#include "cachedprovider.h"
++#include "dilbertprovider.h"
++#include "garfieldprovider.h"
++#include "snoopyprovider.h"
++#include "userfriendlyprovider.h"
++#include "xkcdprovider.h"
++
++ComicEngine::ComicEngine( QObject* parent, const QVariantList& args )
++    : Plasma::DataEngine( parent )
++{
++    Q_UNUSED(args)
++}
++
++ComicEngine::~ComicEngine()
++{
++}
++
++void ComicEngine::init()
++{
++}
++
++bool ComicEngine::updateSource( const QString &identifier )
++{
++    // check whether it is cached already...
++    if ( CachedProvider::isCached( identifier ) ) {
++        ComicProvider *provider = new CachedProvider( identifier, this );
++        connect( provider, SIGNAL( finished( ComicProvider* ) ), this, SLOT( finished( ComicProvider* ) ) );
++        connect( provider, SIGNAL( error( ComicProvider* ) ), this, SLOT( error( ComicProvider* ) ) );
++        return true;
++    }
++
++    // ... start a new query otherwise
++    const QStringList parts = identifier.split( ':', QString::SkipEmptyParts );
++
++    const QDate date = QDate::fromString( parts[ 1 ], Qt::ISODate );
++    if ( !date.isValid() ) {
++        return false;
++    }
++
++    ComicProvider *provider = 0;
++    if ( parts[ 0 ] == "userfriendly" )
++      provider = new UserFriendlyProvider( date, this );
++    else if ( parts[ 0 ] == "dilbert" )
++      provider = new DilbertProvider( date, this );
++    else if ( parts[ 0 ] == "garfield" )
++      provider = new GarfieldProvider( date, this );
++    else if ( parts[ 0 ] == "snoopy" )
++      provider = new SnoopyProvider( date, this );
++    else if ( parts[ 0 ] == "xkcd" )
++      provider = new XkcdProvider( date, this );
++
++    connect( provider, SIGNAL( finished( ComicProvider* ) ), this, SLOT( finished( ComicProvider* ) ) );
++    connect( provider, SIGNAL( error( ComicProvider* ) ), this, SLOT( error( ComicProvider* ) ) );
++
++    return true;
++}
++
++bool ComicEngine::sourceRequested( const QString &identifier )
++{
++    setData( identifier, QImage() );
++
++    return updateSource( identifier );
++}
++
++void ComicEngine::finished( ComicProvider *provider )
++{
++    setData( provider->identifier(), provider->image() );
++
++    // store in cache if it's not the response of a CachedProvider
++    if ( dynamic_cast<CachedProvider*>( provider ) == 0 && !provider->image().isNull() ) {
++        CachedProvider::storeInCache( provider->identifier(), provider->image() );
++    }
++
++    provider->deleteLater();
++}
++
++void ComicEngine::error( ComicProvider *provider )
++{
++    setData( provider->identifier(), QImage() );
++
++    provider->deleteLater();
++}
++
++#include "comic.moc"
+Index: dataengines/comic/userfriendlyprovider.h
+===================================================================
+--- dataengines/comic/userfriendlyprovider.h	(revision 0)
++++ dataengines/comic/userfriendlyprovider.h	(revision 739687)
+@@ -0,0 +1,66 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef USERFRIENDLYPROVIDER_H
++#define USERFRIENDLYPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides the comic strip image for userfriendly.org.
++ */
++class UserFriendlyProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new userfriendly provider.
++         *
++         * @param date The date for which the image shall be fetched.
++         * @param parent The parent object.
++         */
++        UserFriendlyProvider( const QDate &date, QObject *parent = 0 );
++
++        /**
++         * Destroys the userfriendly provider.
++         */
++        ~UserFriendlyProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++    private:
++      class Private;
++      Private* const d;
++
++      Q_PRIVATE_SLOT( d, void pageRequestFinished( bool ) )
++      Q_PRIVATE_SLOT( d, void imageRequestFinished( bool ) )
++};
++
++#endif
+Index: dataengines/comic/CMakeLists.txt
+===================================================================
+--- dataengines/comic/CMakeLists.txt	(revision 0)
++++ dataengines/comic/CMakeLists.txt	(revision 739687)
+@@ -0,0 +1,16 @@
++set(comic_engine_SRCS
++    cachedprovider.cpp
++    comic.cpp
++    comicprovider.cpp
++    dilbertprovider.cpp
++    garfieldprovider.cpp
++    snoopyprovider.cpp
++    userfriendlyprovider.cpp
++    xkcdprovider.cpp
++)
++
++kde4_add_plugin(plasma_engine_comic ${comic_engine_SRCS})
++target_link_libraries(plasma_engine_comic ${KDE4_KDEUI_LIBS} ${PLASMA_LIBS})
++
++install(TARGETS plasma_engine_comic DESTINATION ${PLUGIN_INSTALL_DIR})
++install(FILES plasma-engine-comic.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+Index: dataengines/comic/garfieldprovider.h
+===================================================================
+--- dataengines/comic/garfieldprovider.h	(revision 0)
++++ dataengines/comic/garfieldprovider.h	(revision 739687)
+@@ -0,0 +1,65 @@
++/*
++ *   Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
++ *
++ *   This program is free software; you can redistribute it and/or modify
++ *   it under the terms of the GNU Library General Public License version 2 as
++ *   published by the Free Software Foundation
++ *
++ *   This program is distributed in the hope that it will be useful,
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *   GNU General Public License for more details
++ *
++ *   You should have received a copy of the GNU Library General Public
++ *   License along with this program; if not, write to the
++ *   Free Software Foundation, Inc.,
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
++ */
++
++#ifndef GARFIELDPROVIDER_H
++#define GARFIELDPROVIDER_H
++
++#include "comicprovider.h"
++
++/**
++ * This class provides the comic strip image for garfield.com.
++ */
++class GarfieldProvider : public ComicProvider
++{
++    Q_OBJECT
++
++    public:
++        /**
++         * Creates a new garfield provider.
++         *
++         * @param date The date for which the image shall be fetched.
++         * @param parent The parent object.
++         */
++        GarfieldProvider( const QDate &date, QObject *parent = 0 );
++
++        /**
++         * Destroys the garfield provider.
++         */
++        ~GarfieldProvider();
++
++        /**
++         * Returns the requested image.
++         *
++         * Note: This method returns only a valid image after the
++         *       finished() signal has been emitted.
++         */
++        virtual QImage image() const;
++
++        /**
++         * Returns the identifier of the comic request (name + date).
++         */
++        virtual QString identifier() const;
++
++    private:
++      class Private;
++      Private* const d;
++
++      Q_PRIVATE_SLOT( d, void imageRequestFinished( bool ) )
++};
++
++#endif
+Index: applets/lancelot/app/themes/blue/theme.desktop
+===================================================================
+--- applets/lancelot/app/themes/blue/theme.desktop	(revision 736572)
++++ applets/lancelot/app/themes/blue/theme.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Lancelot Blue
+ Comment=Default theme for Lancelot
+ Author=Ivan Čukić
+Index: applets/lancelot/app/themes/black/main-panel.svg
+===================================================================
+--- applets/lancelot/app/themes/black/main-panel.svg	(revision 0)
++++ applets/lancelot/app/themes/black/main-panel.svg	(revision 739687)
+@@ -0,0 +1,380 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<!-- Created with Inkscape (http://www.inkscape.org/) -->
++<svg
++   xmlns:dc="http://purl.org/dc/elements/1.1/"
++   xmlns:cc="http://web.resource.org/cc/"
++   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
++   xmlns:svg="http://www.w3.org/2000/svg"
++   xmlns="http://www.w3.org/2000/svg"
++   xmlns:xlink="http://www.w3.org/1999/xlink"
++   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
++   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
++   width="744.09448819"
++   height="1052.3622047"
++   id="svg8985"
++   sodipodi:version="0.32"
++   inkscape:version="0.45.1"
++   sodipodi:docbase="/home/kde-devel/src/plasma/extragear/applets/lancelot/app/themes/black"
++   sodipodi:docname="main-panel.svg"
++   inkscape:output_extension="org.inkscape.output.svg.inkscape">
++  <defs
++     id="defs8987">
++    <linearGradient
++       id="linearGradient4217">
++      <stop
++         style="stop-color:#383838;stop-opacity:1;"
++         offset="0"
++         id="stop4219" />
++      <stop
++         style="stop-color:#222222;stop-opacity:1;"
++         offset="1"
++         id="stop4221" />
++    </linearGradient>
++    <linearGradient
++       inkscape:collect="always"
++       id="linearGradient4622">
++      <stop
++         style="stop-color:#000000;stop-opacity:1;"
++         offset="0"
++         id="stop4624" />
++      <stop
++         style="stop-color:#000000;stop-opacity:0;"
++         offset="1"
++         id="stop4626" />
++    </linearGradient>
++    <linearGradient
++       id="linearGradient3222">
++      <stop
++         style="stop-color:#9cacce;stop-opacity:1;"
++         offset="0"
++         id="stop3224" />
++      <stop
++         style="stop-color:#496194;stop-opacity:1;"
++         offset="1"
++         id="stop3226" />
++    </linearGradient>
++    <linearGradient
++       id="linearGradient9007">
++      <stop
++         style="stop-color:#cccccc;stop-opacity:1;"
++         offset="0"
++         id="stop9009" />
++      <stop
++         style="stop-color:#e0e0e0;stop-opacity:1;"
++         offset="1"
++         id="stop9011" />
++    </linearGradient>
++    <linearGradient
++       id="linearGradient8995">
++      <stop
++         style="stop-color:#f2f2f2;stop-opacity:1;"
++         offset="0"
++         id="stop8997" />
++      <stop
++         style="stop-color:#ffffff;stop-opacity:1;"
++         offset="1"
++         id="stop8999" />
++    </linearGradient>
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4630"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(10.011074,0,0,1.0570488,-714.13639,463.3171)" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4632"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343"
++       gradientUnits="userSpaceOnUse" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4642"
++       gradientUnits="userSpaceOnUse"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4646"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4650"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4654"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4660"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(9.3954322,0,0,1.0570488,-1049.3689,-223.24714)"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4664"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4685"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(10.011074,0,0,1.0570488,-714.13639,463.3171)"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4687"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4691"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(9.3954322,0,0,1.0570488,-1049.3689,-223.24714)"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient4693"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4699"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(9.4899162,0,0,1.0570488,-1056.6262,340.02823)"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="linearGradient4704"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(10.076183,0,0,1.0570488,-156.02048,468.08467)"
++       x1="59.304985"
++       y1="286.08841"
++       x2="59.304985"
++       y2="298.75751" />
++    <radialGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4622"
++       id="radialGradient3214"
++       gradientUnits="userSpaceOnUse"
++       gradientTransform="matrix(-1.7549212e-6,-1.0000008,1.000001,-1.7712606e-6,-219.51369,378.0021)"
++       cx="79.243988"
++       cy="298.75754"
++       fx="79.243988"
++       fy="298.75754"
++       r="12.651343" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4217"
++       id="linearGradient4223"
++       x1="388.8877"
++       y1="777.24744"
++       x2="388.8877"
++       y2="736.78137"
++       gradientUnits="userSpaceOnUse" />
++    <linearGradient
++       inkscape:collect="always"
++       xlink:href="#linearGradient4217"
++       id="linearGradient4231"
++       x1="388.89868"
++       y1="287.49463"
++       x2="388.89868"
++       y2="317.46738"
++       gradientUnits="userSpaceOnUse" />
++  </defs>
++  <sodipodi:namedview
++     id="base"
++     pagecolor="#ffffff"
++     bordercolor="#666666"
++     borderopacity="1.0"
++     gridtolerance="10000"
++     guidetolerance="10"
++     objecttolerance="10"
++     inkscape:pageopacity="0.0"
++     inkscape:pageshadow="2"
++     inkscape:zoom="1.1659935"
++     inkscape:cx="388.88612"
++     inkscape:cy="519.9866"
++     inkscape:document-units="px"
++     inkscape:current-layer="background"
++     inkscape:window-width="1440"
++     inkscape:window-height="806"
++     inkscape:window-x="0"
++     inkscape:window-y="24"
++     showguides="true"
++     inkscape:guide-bbox="true">
++    <sodipodi:guide
++       orientation="vertical"
++       position="118.59055"
++       id="guide3184" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="774.89379"
++       id="guide3186" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="764.86756"
++       id="guide3190" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="128.61679"
++       id="guide3192" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="659.177"
++       id="guide3194" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="649.15077"
++       id="guide3198" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="265.15238"
++       id="guide3200" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="275.11476"
++       id="guide3204" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="784.89129"
++       id="guide3222" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="108.56392"
++       id="guide3224" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="669.08977"
++       id="guide3226" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="255.12521"
++       id="guide3230" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="664.17855"
++       id="guide3234" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="779.85082"
++       id="guide3236" />
++    <sodipodi:guide
++       orientation="vertical"
++       position="113.59367"
++       id="guide3240" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="260.12235"
++       id="guide3242" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="734.87947"
++       id="guide3246" />
++    <sodipodi:guide
++       orientation="horizontal"
++       position="315.61068"
++       id="guide3199" />
++  </sodipodi:namedview>
++  <metadata
++     id="metadata8990">
++    <rdf:RDF>
++      <cc:Work
++         rdf:about="">
++        <dc:format>image/svg+xml</dc:format>
++        <dc:type
++           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
++      </cc:Work>
++    </rdf:RDF>
++  </metadata>
++  <g
++     inkscape:label="Layer 1"
++     inkscape:groupmode="layer"
++     id="layer1">
++    <g
++       id="background"
++       inkscape:label="#g9062">
++      <rect
++         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
++         id="disabled"
++         width="391.05399"
++         height="419.26874"
++         x="-649.20294"
++         y="317.48273"
++         transform="scale(-1,1)"
++         rx="9.4340153"
++         ry="9.4340153"
++         inkscape:label="#rect3195" />
++    </g>
++  </g>
++</svg>
+Index: applets/lancelot/app/themes/black/theme.svg
+===================================================================
+--- applets/lancelot/app/themes/black/theme.svg	(revision 736572)
++++ applets/lancelot/app/themes/black/theme.svg	(revision 739687)
+@@ -403,16 +403,6 @@
+          rx="6.2632709"
+          ry="6.2632709" />
+       <rect
+-         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+-         id="rect3195"
+-         width="391.05399"
+-         height="419.26874"
+-         x="-649.20294"
+-         y="317.48273"
+-         transform="scale(-1,1)"
+-         rx="9.4340153"
+-         ry="9.4340153" />
+-      <rect
+          style="fill:url(#linearGradient4704);fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:4, 4;stroke-dashoffset:0;stroke-opacity:1"
+          id="rect3639"
+          width="494.68781"
+Index: applets/lancelot/app/themes/black/theme.config
+===================================================================
+--- applets/lancelot/app/themes/black/theme.config	(revision 736572)
++++ applets/lancelot/app/themes/black/theme.config	(revision 739687)
+@@ -85,3 +85,7 @@
+ background.type=svg
+ background.svg=lancelot/launch-applet-button
+ 
++[Group-MainPanel]
++background.type=svg
++background.svg=lancelot/main-panel
++
+Index: applets/lancelot/app/themes/black/theme.desktop
+===================================================================
+--- applets/lancelot/app/themes/black/theme.desktop	(revision 736572)
++++ applets/lancelot/app/themes/black/theme.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Black night
+ Comment=Dark theme for Lancelot
+ Author=Ivan Čukić
+Index: applets/lancelot/app/themes/black/CMakeLists.txt
+===================================================================
+--- applets/lancelot/app/themes/black/CMakeLists.txt	(revision 736572)
++++ applets/lancelot/app/themes/black/CMakeLists.txt	(revision 739687)
+@@ -19,6 +19,7 @@
+ 
+     extender-button-icon.svg
+     launch-applet-button.svg
++    main-panel.svg
+     
+     DESTINATION ${DATA_INSTALL_DIR}/desktoptheme/default/lancelot/
+ )
+\ No newline at end of file
+Index: applets/lancelot/app/src/LancelotWindow.h
+===================================================================
+--- applets/lancelot/app/src/LancelotWindow.h	(revision 736572)
++++ applets/lancelot/app/src/LancelotWindow.h	(revision 739687)
+@@ -76,6 +76,7 @@
+ 
+ private:
+     void createModels();
++    bool showWindow();
+ 
+     // Computer models
+     Lancelot::MergedActionListViewModel * m_systemLeftModel;
+Index: applets/lancelot/app/src/Panel.h
+===================================================================
+--- applets/lancelot/app/src/Panel.h	(revision 736572)
++++ applets/lancelot/app/src/Panel.h	(revision 739687)
+@@ -21,7 +21,7 @@
+ #define LANCELOT_PANEL_H_
+ 
+ #include "Widget.h"
+-#include <plasma/widgets/layout.h>
++#include <plasma/layouts/layout.h>
+ #include "BaseActionWidget.h"
+ 
+ #include <QIcon>
+@@ -55,10 +55,6 @@
+     void setWidget(Widget * widget);
+     Widget * widget();
+ 
+-    void setVisible(bool visible);
+-    void show();
+-    void hide();
+-
+     void setGroup(WidgetGroup * group = NULL);
+ 
+ private:
+Index: applets/lancelot/app/src/applet/plasma-applet-lancelot.desktop
+===================================================================
+--- applets/lancelot/app/src/applet/plasma-applet-lancelot.desktop	(revision 736572)
++++ applets/lancelot/app/src/applet/plasma-applet-lancelot.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=lancelot
+ 
+ Name=Lancelot Launcher
+@@ -19,8 +18,8 @@
+ Comment[zh_CN]=启动应用程序的启动器
+ Comment[zh_TW]=應用程式啟動器
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_lancelot
+ X-KDE-PluginInfo-Author=Ivan Cukic
+ X-KDE-PluginInfo-Email=ivan.cukic+kde@gmail.com
+Index: applets/lancelot/app/src/applet/LancelotApplet.h
+===================================================================
+--- applets/lancelot/app/src/applet/LancelotApplet.h	(revision 736572)
++++ applets/lancelot/app/src/applet/LancelotApplet.h	(revision 739687)
+@@ -21,7 +21,7 @@
+ #define LANCELOT_PARTS_H
+ 
+ #include <plasma/applet.h>
+-#include <plasma/widgets/nodelayout.h>
++#include <plasma/layouts/nodelayout.h>
+ 
+ #include "../src/Global.h"
+ #include "../src/ExtenderButton.h"
+Index: applets/lancelot/app/src/CardLayout.cpp
+===================================================================
+--- applets/lancelot/app/src/CardLayout.cpp	(revision 736572)
++++ applets/lancelot/app/src/CardLayout.cpp	(revision 739687)
+@@ -37,20 +37,12 @@
+     return Qt::Horizontal | Qt::Vertical;
+ }
+ 
+-QRectF CardLayout::geometry() const {
+-    return m_geometry;
+-}
+-
+-void CardLayout::setGeometry(const QRectF& geometry)
++void CardLayout::relayout()
+ {
+-    if (!geometry.isValid() || geometry.isEmpty()) {
+-        return;
+-    }
++    QRectF g = geometry();
++    g.setTopLeft(g.topLeft() + QPointF(margin(TopMargin), margin(LeftMargin)));
++    g.setBottomRight(g.bottomRight() - QPointF(margin(RightMargin), margin(BottomMargin)));
+ 
+-    QRectF g = geometry;
+-    g.setTopLeft(g.topLeft() + QPointF(margin(), margin()));
+-    g.setBottomRight(g.bottomRight() - QPointF(margin(), margin()));
+-
+     foreach (Plasma::LayoutItem * l, m_items) {
+         l->setGeometry(g);
+     }
+@@ -60,8 +52,6 @@
+         l->setGeometry(g);
+         if (m_shown != l) l->hide();
+     }
+-
+-    m_geometry = geometry;
+ }
+ 
+ QSizeF CardLayout::sizeHint() const
+Index: applets/lancelot/app/src/parts/plasma-applet-lancelot-part.desktop
+===================================================================
+--- applets/lancelot/app/src/parts/plasma-applet-lancelot-part.desktop	(revision 736572)
++++ applets/lancelot/app/src/parts/plasma-applet-lancelot-part.desktop	(revision 739687)
+@@ -1,13 +1,12 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=lancelot
+ 
+ Name=Lancelot Part
+ 
+ Comment=Parts of Lancelot menu on the desktop
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_lancelot_part
+ X-KDE-PluginInfo-Author=Ivan Cukic
+ X-KDE-PluginInfo-Email=ivan.cukic+kde@gmail.com
+Index: applets/lancelot/app/src/LancelotWindow.cpp
+===================================================================
+--- applets/lancelot/app/src/LancelotWindow.cpp	(revision 736572)
++++ applets/lancelot/app/src/LancelotWindow.cpp	(revision 739687)
+@@ -164,11 +164,35 @@
+ }
+ 
+ bool LancelotWindow::lancelotShow() {
++    panelSections->show();
++    layoutMain->setSize(sectionsWidth, Plasma::LeftPositioned);
++    layoutMain->updateGeometry();
++    resizeWindow(this, QSize(mainWidth + sectionsWidth, 500));
++    
++    return showWindow();    
++}
++
++bool LancelotWindow::lancelotShowItem(QString name) {
++    sectionActivated(name);
++    
++    panelSections->hide();
++    layoutMain->setSize(0, Plasma::LeftPositioned);
++    layoutMain->setGeometry(layoutMain->geometry());
++    resizeWindow(this, QSize(mainWidth, 500));
++    
++    if (!isVisible()) {
++        return showWindow();
++    }
++    return true;
++}
++
++bool LancelotWindow::showWindow() {
+     show();
+     KWindowSystem::setState( winId(), NET::SkipTaskbar | NET::SkipPager | NET::KeepAbove );
+     m_hideTimer.stop();
+     setFocus();
+     editSearch->setFocus();
++    
+     return true;
+ }
+ 
+@@ -183,16 +207,6 @@
+     return true;
+ }
+ 
+-bool LancelotWindow::lancelotShowItem(QString name) {
+-    //Q_UNUSED(name);
+-    //return false;
+-    sectionActivated(name);
+-    if (!isVisible()) {
+-        lancelotShow();
+-    }
+-    return true;
+-}
+-
+ void LancelotWindow::createModels() {
+     // Computer models
+ 
+Index: applets/lancelot/app/src/ui_LancelotWindow.h
+===================================================================
+--- applets/lancelot/app/src/ui_LancelotWindow.h	(revision 736572)
++++ applets/lancelot/app/src/ui_LancelotWindow.h	(revision 739687)
+@@ -35,8 +35,8 @@
+ #include <plasma/widgets/pushbutton.h>
+ #include <plasma/widgets/label.h>
+ 
+-#include <plasma/widgets/borderlayout.h>
+-#include <plasma/widgets/nodelayout.h>
++#include <plasma/layouts/borderlayout.h>
++#include <plasma/layouts/nodelayout.h>
+ //#include <plasma/widgets/boxlayout.h>
+ 
+ #include <plasma/containment.h>
+@@ -61,6 +61,9 @@
+ #define sectDocuments    "Documents"
+ #define sectSearch       "Search"
+ 
++#define sectionsWidth 128
++#define mainWidth 422
++
+ #define AddSectionData(Name, Icon, Caption) \
+     sectionsOrder << Name; \
+     sectionsData[Name] = QPair < QString, QString > (Icon, Caption);
+@@ -72,6 +75,7 @@
+ 
+ protected:
+     // Plasma shell
++
+     class CustomGraphicsView : public QGraphicsView {
+     public:
+         CustomGraphicsView  ( QWidget * parent = 0 )
+@@ -81,10 +85,12 @@
+         void drawBackground (QPainter * painter, const QRectF & rect)
+         {
+             Q_UNUSED(rect); // Q_UNUSED(painter);
++            painter->setCompositionMode(QPainter::CompositionMode_Clear);
++            painter->fillRect(QRectF(rect.x()-2,rect.y()-2,rect.width()+2,rect.height()+2).toRect(), Qt::transparent);
+             painter->setCompositionMode(QPainter::CompositionMode_Source);
+-            painter->fillRect(QRectF(rect.x()-2,rect.y()-2,rect.width()+2,rect.height()+2).toRect(), Qt::transparent);
+             if (m_background) {
+-                m_background->resize(QSizeF(550, 500));
++                //m_background->resize(QSizeF(mainWidth + sectionsWidth, 500));
++                m_background->resize(size());
+                 m_background->paint(painter, 0, 0, "background");
+             }
+         }
+@@ -104,7 +110,7 @@
+     Plasma::Corona     * m_corona;
+     QVBoxLayout        * m_layout;
+ 
+-    Plasma::Containment * testContainment;
++    //Plasma::Containment * testContainment;
+ 
+     // Components
+     Lancelot::FlipLayout < Plasma::BorderLayout > * layoutMain;
+@@ -140,6 +146,7 @@
+ 
+     // Center area
+ 
++    Lancelot::Widget * centerBackground;
+     Lancelot::CardLayout * layoutCenter;
+     Lancelot::PassagewayView * panelSectionApplications;
+ 
+@@ -153,16 +160,13 @@
+         // First of all we MUST create a Lancelot::Instance
+         instance = new Lancelot::Instance();
+         
+-        Lancelot::FlipLayoutGlobal::setFlip(Lancelot::FlipLayoutGlobal::Both);
++        //Lancelot::FlipLayoutGlobal::setFlip(Lancelot::FlipLayoutGlobal::Both);
+         
+         AddSectionData(sectApplications, "applications-other",  i18n("Applications"));
+         AddSectionData(sectComputer,     "computer-laptop",     i18n("Computer"));
+         AddSectionData(sectContacts,     "kontact",             i18n("Contacts"));
+         AddSectionData(sectDocuments,    "applications-office", i18n("Documents"));
+         AddSectionData(sectSearch,       "edit-find",           i18n("Search"));
+-        
+-        kDebug() << "Sections: " << sectionsOrder;
+-        kDebug() << "Sections: " << sectionsData;
+       
+         setupShell(object);
+         createObjects(object);
+@@ -170,20 +174,35 @@
+         setupGroups(object);
+         setupTests(object);
+ 
+-        object->resize(550, 500);
+-
+         instance->activateAll();
+ 
+-        layoutMain->setGeometry(QRectF(0, 0, 550, 500));
++        m_view->setAlignment(Qt::AlignLeft | Qt::AlignTop);
++        
++        resizeWindow(object, QSize(mainWidth + sectionsWidth, 500));
++    }
++    
++    void resizeWindow(QFrame * object, QSize newSize)
++    {
++        m_view->resetCachedContent();
++        
++        object->resize(newSize.width(), newSize.height());
++        m_view->resize(newSize.width(), newSize.height());
++        
++        m_corona->setSceneRect(QRectF(0, 0, newSize.width(), newSize.height()));
++        layoutMain->setGeometry(QRectF(0, 0, newSize.width(), newSize.height()));
++        layoutMain->updateGeometry();
+ 
+-        m_corona->setSceneRect(QRectF(0, 0, 550, 500));
++        m_view->invalidateScene();
++        m_view->update();
++        
++        object->update();
+     }
+ 
+     void createObjects(QFrame * object)
+     {
+         Q_UNUSED(object);
+ 
+-        testContainment = new Plasma::Containment();
++        //testContainment = new Plasma::Containment();
+ 
+         // Components
+         layoutMain = new Lancelot::FlipLayout < Plasma::BorderLayout > ();
+@@ -204,6 +223,7 @@
+         panelSections = new Lancelot::Panel("panelSections");
+ 
+         layoutCenter = new Lancelot::CardLayout();
++        centerBackground = new Lancelot::Widget("centerBackground");
+ 
+         foreach (QString section, sectionsOrder) {
+             sectionLayouts[section] = new Plasma::NodeLayout();
+@@ -264,7 +284,7 @@
+         layoutMain->addItem(layoutSystem, Plasma::BottomPositioned);
+         layoutMain->setSize(40.0, Plasma::BottomPositioned);
+         layoutMain->setSize(30.0, Plasma::TopPositioned);
+-        layoutMain->setSize(128.0, Plasma::LeftPositioned);
++        layoutMain->setSize(sectionsWidth, Plasma::LeftPositioned);
+ 
+         layoutSystem->setSpacing(0);
+         layoutSystem->setMargin(6);
+@@ -298,7 +318,7 @@
+         layoutSections->setSpacing(0);
+         layoutSections->setMargin(0);
+ 
+-        qreal top = 0;
++        qreal top = 1.0;
+         qreal increase = 1.0 / sectionButtons.size();
+ 
+         foreach (Lancelot::ToggleExtenderButton * button, sectionButtons) {
+@@ -308,10 +328,10 @@
+             button->setInnerOrientation(Lancelot::BaseActionWidget::Vertical);
+ 
+             layoutSections->addItem(button,
+-                Plasma::NodeLayout::NodeCoordinate(0, top),
+-                Plasma::NodeLayout::NodeCoordinate(1.0, top + increase)
++                Plasma::NodeLayout::NodeCoordinate(0, top - increase),
++                Plasma::NodeLayout::NodeCoordinate(1.0, top)
+             );
+-            top += increase;
++            top -= increase;
+         }
+         panelSections->setLayout(layoutSections);
+         m_corona->addItem(panelSections);
+@@ -342,10 +362,10 @@
+ 
+         //layoutCenter->addItem(testContainment);
+         //m_corona->addItem(testContainment);
+-        testContainment->setFormFactor(Plasma::Planar);
+-        testContainment->setLocation(Plasma::Desktop);
+-        testContainment->addApplet("digital-clock");
+-        testContainment->setGeometry(QRectF(0, 0, 500, 500));
++        //testContainment->setFormFactor(Plasma::Planar);
++        //testContainment->setLocation(Plasma::Desktop);
++        //testContainment->addApplet("digital-clock");
++        //testContainment->setGeometry(QRectF(0, 0, 500, 500));
+ 
+         /*Plasma::Applet * applet = Plasma::Applet::loadApplet("digital-clock");
+         //m_corona->addItem(applet);
+@@ -365,6 +385,11 @@
+         applet->setDrawStandardBackground(false);
+         applet->setGeometry(QRectF(300, 100, 120, 70));*/
+ 
++        layoutCenter->addItem(centerBackground);
++        m_corona->addItem(centerBackground);
++        centerBackground->setGroupByName("MainPanel");
++        centerBackground->disable();
++        
+         QMapIterator<QString, Lancelot::Panel *> i(sectionPanels);
+         while (i.hasNext()) {
+             i.next();
+Index: applets/lancelot/app/src/models/Devices.cpp
+===================================================================
+--- applets/lancelot/app/src/models/Devices.cpp	(revision 736572)
++++ applets/lancelot/app/src/models/Devices.cpp	(revision 739687)
+@@ -19,6 +19,8 @@
+  */
+ 
+ #include "Devices.h"
++
++#include <QMessageBox>
+ #include <KRun>
+ #include <KLocalizedString>
+ 
+@@ -94,10 +96,10 @@
+     }
+ 
+     connect (
+-        access, SIGNAL(accessibilityChanged(bool)),
+-        this, SLOT(udiAccessibilityChanged(bool))
++        access, SIGNAL(accessibilityChanged(bool, const QString &)),
++        this, SLOT(udiAccessibilityChanged(bool, const QString &))
+     );
+-    m_udis[access] = device.udi();
++    //m_udis[access] = device.udi();
+ 
+     add(
+         device.product(),
+@@ -107,15 +109,15 @@
+     );
+ }
+ 
+-void Devices::udiAccessibilityChanged(bool accessible)
++void Devices::udiAccessibilityChanged(bool accessible, const QString & udi)
+ {
+     Q_UNUSED(accessible);
+ 
+-    Solid::StorageAccess * access = (Solid::StorageAccess *) sender();
+-    if (!m_udis.contains(access)) {
+-        return;
+-    }
+-    QString udi = m_udis[access];
++    Solid::StorageAccess * access = Solid::Device(udi).as<Solid::StorageAccess>();
++    //if (!m_udis.contains(access)) {
++    //    return;
++    //}
++    
+     QMutableListIterator<Item> i(m_items);
+     int index = 0;
+ 
+@@ -154,17 +156,39 @@
+ void Devices::activate(int index)
+ {
+     if (index > m_items.size() - 1) return;
+-    Solid::StorageAccess * access = Solid::Device(m_items.at(index).data.toString()).as<Solid::StorageAccess>();
++    QString udi = m_items.at(index).data.toString();
++    Solid::StorageAccess * access = Solid::Device(udi).as<Solid::StorageAccess>();
+ 
+     if (!access) return;
+ 
+     if (!access->isAccessible()) {
++        //m_devicesMounting << udi;
++        connect(access, SIGNAL(setupDone(Solid::ErrorType, QVariant, const QString &)),
++            this, SLOT(deviceSetupDone(Solid::ErrorType, QVariant, const QString &)));
+         access->setup();
++        return;
+     }
+ 
+     new KRun(KUrl(access->filePath()), 0);
+     hideLancelotWindow();
+ }
+ 
++void Devices::deviceSetupDone(Solid::ErrorType error, QVariant errorData, const QString & udi)
++{
++    //m_devicesMounting.removeAll(udi);
++    
++    Solid::StorageAccess * access = Solid::Device(udi).as<Solid::StorageAccess>();
++    access->disconnect(this, SLOT(deviceSetupDone(Solid::ErrorType, QVariant, const QString &)));
++
++    if (!access || !access->isAccessible()) {
++        QMessageBox::critical(NULL, i18n("Failed to open"), i18n("The requested device can not be accessed."));
++        return;
++    }
++
++    new KRun(KUrl(access->filePath()), 0);
++    hideLancelotWindow();
+ }
++
++
+ }
++}
+Index: applets/lancelot/app/src/models/Devices.h
+===================================================================
+--- applets/lancelot/app/src/models/Devices.h	(revision 736572)
++++ applets/lancelot/app/src/models/Devices.h	(revision 739687)
+@@ -44,7 +44,9 @@
+     void deviceRemoved(const QString & udi);
+     void deviceAdded(const QString & udi);
+     void freeSpaceInfoAvailable(const QString & mountPoint, quint64 kbSize, quint64 kbUsed, quint64 kbAvailable);
+-    void udiAccessibilityChanged(bool accessible);
++    void udiAccessibilityChanged(bool accessible, const QString & udi);
++    
++    void deviceSetupDone(Solid::ErrorType error, QVariant errorData, const QString & udi);
+ 
+ protected:
+     void activate(int index);
+@@ -54,7 +56,8 @@
+     void addDevice(const Solid::Device & device);
+ 
+     Type m_filter;
+-    QMap < const Solid::StorageAccess *, QString> m_udis;
++    //QMap < const Solid::StorageAccess *, QString> m_udis;
++    //QStringList m_devicesMounting;
+ };
+ 
+ }
+Index: applets/lancelot/app/src/PassagewayView.h
+===================================================================
+--- applets/lancelot/app/src/PassagewayView.h	(revision 736572)
++++ applets/lancelot/app/src/PassagewayView.h	(revision 739687)
+@@ -28,7 +28,7 @@
+ #include "ActionListViewModels.h"
+ #include "PassagewayView.h"
+ #include "PassagewayViewModels.h"
+-#include <plasma/widgets/nodelayout.h>
++#include <plasma/layouts/nodelayout.h>
+ 
+ namespace Lancelot
+ {
+Index: applets/lancelot/app/src/CardLayout.h
+===================================================================
+--- applets/lancelot/app/src/CardLayout.h	(revision 736572)
++++ applets/lancelot/app/src/CardLayout.h	(revision 739687)
+@@ -20,7 +20,7 @@
+ #ifndef LANCELOT_CARDLAYOUT_H_
+ #define LANCELOT_CARDLAYOUT_H_
+ 
+-#include <plasma/widgets/layout.h>
++#include <plasma/layouts/layout.h>
+ #include <plasma/widgets/widget.h>
+ #include <cmath>
+ #include <QMap>
+@@ -38,9 +38,6 @@
+     explicit CardLayout(LayoutItem * parent = 0);
+     virtual ~CardLayout();
+ 
+-    virtual QRectF geometry() const;
+-    void setGeometry(const QRectF& geometry);
+-
+     QSizeF sizeHint() const;
+ 
+     void addItem (Plasma::LayoutItem * item);
+@@ -57,11 +54,13 @@
+     void show(const QString & id);
+     void hideAll();
+ 
++protected:
++    void relayout();
++
+ private:
+     QList < Plasma::LayoutItem * > m_items;
+     QMap < QString, Plasma::Widget * > m_widgets;
+     Plasma::Widget * m_shown;
+-    QRectF m_geometry;
+ };
+ 
+ }
+Index: applets/lancelot/app/src/BaseActionWidget.h
+===================================================================
+--- applets/lancelot/app/src/BaseActionWidget.h	(revision 736572)
++++ applets/lancelot/app/src/BaseActionWidget.h	(revision 739687)
+@@ -67,9 +67,6 @@
+     Qt::Alignment alignment() const;
+ 
+ protected:
+-    //void resizeSvg();
+-    //Plasma::Svg * m_svg;
+-    //QString m_svgElementPrefix, m_svgElementSufix;
+ 
+     void paintForeground (QPainter * painter);
+ 
+Index: applets/lancelot/app/src/LancelotApplication.h
+===================================================================
+--- applets/lancelot/app/src/LancelotApplication.h	(revision 736572)
++++ applets/lancelot/app/src/LancelotApplication.h	(revision 739687)
+@@ -25,6 +25,7 @@
+ #include <kuniqueapplication.h>
+ #include <QTimer>
+ #include <QSet>
++#include <QStringList>
+ 
+ class LancelotWindow;
+ 
+Index: applets/lancelot/app/src/FlipLayout.h
+===================================================================
+--- applets/lancelot/app/src/FlipLayout.h	(revision 736572)
++++ applets/lancelot/app/src/FlipLayout.h	(revision 739687)
+@@ -20,7 +20,7 @@
+ #ifndef LANCELOT_FLIPLAYOUT_H_
+ #define LANCELOT_FLIPLAYOUT_H_
+ 
+-#include <plasma/widgets/layout.h>
++#include <plasma/layouts/layout.h>
+ #include <plasma/widgets/widget.h>
+ #include <cmath>
+ #include <QMap>
+@@ -56,17 +56,11 @@
+ 
+ template <typename SuperLayout>
+ class FlipLayout : public SuperLayout { //Plasma::Layout
+-public:
+-    
+-    void setGeometry(const QRectF & geometry)
++protected:
++    void relayout()
+     {
+-        if (
+-            !geometry.isValid() ||
+-            this->geometry() == geometry
+-        ) return;
+-
+-        kDebug() << "Master" << geometry;
+-        SuperLayout::setGeometry(geometry);
++        QRectF rect = SuperLayout::geometry();
++        kDebug() << "Master" << rect;
+         
+         if (FlipLayoutGlobal::flip() == FlipLayoutGlobal::No) return;
+         
+@@ -80,17 +74,17 @@
+             childGeometry = item->geometry();
+             kDebug() << "Pre flip" << childGeometry;
+             if (FlipLayoutGlobal::flip() & FlipLayoutGlobal::Horizontal) {
+-                // 2 * geometry.left() - twice because we already have one
+-                // value of geometry.left() inside the childGeometry.left()
++                // 2 * rect.left() - twice because we already have one
++                // value of rect.left() inside the childGeometry.left()
+                 childGeometry.moveLeft(
+-                    2 * geometry.left()       + geometry.width()
++                    2 * rect.left()       + rect.width()
+                       - childGeometry.left()  - childGeometry.width()
+                 );
+             }
+             if (FlipLayoutGlobal::flip() & FlipLayoutGlobal::Vertical) {
+-                // 2 * geometry.top() - same reason as aforemontioned
++                // 2 * rect.top() - same reason as aforemontioned
+                 childGeometry.moveTop(
+-                    2 * geometry.top()      + geometry.height()
++                    2 * rect.top()      + rect.height()
+                       - childGeometry.top() - childGeometry.height()
+                 );
+             }
+Index: applets/lancelot/plasma-applet-lancelot.desktop
+===================================================================
+--- applets/lancelot/plasma-applet-lancelot.desktop	(revision 736572)
++++ applets/lancelot/plasma-applet-lancelot.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=lancelot
+ 
+ Name=Lancelot Launcher
+@@ -19,8 +18,8 @@
+ Comment[zh_CN]=启动应用程序的启动器
+ Comment[zh_TW]=應用程式啟動器
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_lancelot
+ X-KDE-PluginInfo-Author=Ivan Cukic
+ X-KDE-PluginInfo-Email=ivan.cukic+kde@gmail.com
+Index: applets/twitter/twitter.cpp
+===================================================================
+--- applets/twitter/twitter.cpp	(revision 736572)
++++ applets/twitter/twitter.cpp	(revision 739687)
+@@ -25,10 +25,10 @@
+ #include <QPushButton>
+ #include <QSpinBox>
+ #include <QTextDocument>
+-#include <QTcpSocket>
+ #include <QCheckBox>
+ #include <QTimer>
+ #include <QGradient>
++#include <QFontMetrics>
+ 
+ #include <KDebug>
+ #include <KIcon>
+@@ -43,7 +43,7 @@
+ #include <plasma/dataengine.h>
+ #include <plasma/widgets/lineedit.h>
+ #include <plasma/widgets/flash.h>
+-#include <plasma/widgets/boxlayout.h>
++#include <plasma/layouts/boxlayout.h>
+ #include <plasma/widgets/icon.h>
+ 
+ Twitter::Twitter(QObject *parent, const QVariantList &args)
+@@ -75,15 +75,18 @@
+ 
+     m_flash = new Plasma::Flash( this );
+     m_flash->setColor( Qt::gray );
+-    m_flash->setSize( QSize(145, 20) );
+     QFont fnt = qApp->font();
+     fnt.setBold( true );
++    QFontMetrics fm( fnt );
++    m_flash->resize( QSize(200, fm.height()) );
++    m_flash->setMaximumSize( QSizeF(200, fm.height()+10 ) );
+     m_flash->setFont( fnt );
+     m_layout->addItem( m_flash );
+ 
+ 
+     m_headerLayout = new Plasma::HBoxLayout( m_layout );
+-    m_headerLayout->setMargin( 0 );
++    m_headerLayout->setMargin( 5 );
++    m_headerLayout->setSpacing( 5 );
+     m_layout->addItem( m_headerLayout );
+ 
+ 
+@@ -99,7 +102,7 @@
+         m_statusEdit->hide();
+     }
+     m_statusEdit->setStyled( true );
+-    m_statusEdit->setTextWidth( 200 );
++    m_statusEdit->setTextWidth( 250 );
+     connect( m_statusEdit->document(), SIGNAL(contentsChanged()), SLOT(geometryChanged()) );
+     connect( m_statusEdit, SIGNAL(editingFinished()), SLOT(updateStatus()) );
+     m_headerLayout->addItem( m_statusEdit );
+@@ -143,6 +146,8 @@
+         if( !pm.isNull() ) {
+             if( user == m_username ) {
+                 m_icon->setIcon( QIcon( pm ) );
++                m_icon->resize( 55, 55 );
++                m_icon->setMaximumSize( QSizeF( 55, 55 ) );
+             }
+             m_pictureMap[user] = pm;
+         }
+@@ -187,8 +192,8 @@
+         QString user = tweetData.value( "User" ).toString();
+ 
+         Plasma::HBoxLayout *tweetLayout = new Plasma::HBoxLayout( 0 );
+-        tweetLayout->setMargin( 0 );
+-        tweetLayout->setSpacing( 0 );
++        tweetLayout->setMargin( 5 );
++        tweetLayout->setSpacing( 5 );
+         m_layout->addItem( tweetLayout );
+ 
+         Plasma::LineEdit *e = new Plasma::LineEdit( this );
+@@ -201,9 +206,12 @@
+         Plasma::Icon *icon = new Plasma::Icon( this );
+         icon->setIcon( QIcon(m_pictureMap[user]) );
+         icon->setText( user );
++        icon->resize( 60, 60 );
++        icon->setMaximumSize( QSizeF( 60, 60 ) );
++        icon->setMinimumSize( QSizeF( 60, 60 ) );
+         tweetLayout->addItem( icon );
+         tweetLayout->addItem( e );
+-        tweetLayout->update();
++        tweetLayout->updateGeometry();
+ 
+         Tweet t;
+         t.layout = tweetLayout;
+@@ -223,6 +231,8 @@
+         ++i;
+         --pos;
+     }
++
++    m_layout->invalidate();
+     updateGeometry();
+ }
+ 
+Index: applets/dict/dict.cpp
+===================================================================
+--- applets/dict/dict.cpp	(revision 736572)
++++ applets/dict/dict.cpp	(revision 739687)
+@@ -124,7 +124,7 @@
+     fnt.setBold( true );
+     m_flash->setFont( fnt );
+     m_flash->setPos(25,-10);
+-    m_flash->setSize(QSize(200,20));
++    m_flash->resize(QSize(200,20));
+ }
+ 
+ void Dict::pageRight()
+Index: applets/dict/plasma-dict-default.desktop
+===================================================================
+--- applets/dict/plasma-dict-default.desktop	(revision 736572)
++++ applets/dict/plasma-dict-default.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Dictionary
+ Name[bg]=Речник
+ Name[de]=Wörterbuch
+@@ -19,8 +18,8 @@
+ Comment[sv]=Slå upp ords betydelse
+ Type=Service
+ Icon=accessories-dictionary
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_dict
+ X-KDE-PluginInfo-Author=The Plasma Team
+ X-KDE-PluginInfo-Email=panel-devel@kde.org
+Index: applets/dict/dict.h
+===================================================================
+--- applets/dict/dict.h	(revision 736572)
++++ applets/dict/dict.h	(revision 739687)
+@@ -36,7 +36,7 @@
+ 
+ #include <plasma/applet.h>
+ #include <plasma/dataengine.h>
+-#include <plasma/widgets/vboxlayout.h>
++#include <plasma/layouts/vboxlayout.h>
+ #include <plasma/widgets/lineedit.h>
+ #include <plasma/widgets/flash.h>
+ #include <plasma/widgets/pushbutton.h>
+Index: applets/ebn/ebnapplet.h
+===================================================================
+--- applets/ebn/ebnapplet.h	(revision 736572)
++++ applets/ebn/ebnapplet.h	(revision 739687)
+@@ -22,7 +22,7 @@
+ 
+ #include <plasma/applet.h>
+ #include <plasma/dataengine.h>
+-#include <plasma/widgets/vboxlayout.h>
++#include <plasma/layouts/vboxlayout.h>
+ #include <plasma/widgets/lineedit.h>
+ #include <plasma/widgets/pushbutton.h>
+ 
+Index: applets/ebn/plasma-applet-ebn.desktop
+===================================================================
+--- applets/ebn/plasma-applet-ebn.desktop	(revision 736572)
++++ applets/ebn/plasma-applet-ebn.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=English Breakfast Network
+ Name[bg]=Мрежа English Breakfast
+ Name[es]=Red de desayuno inglés
+@@ -13,8 +12,8 @@
+ Comment[sv]=Hämta information från KDE:s automatiska kvalitetskontroll
+ Type=Service
+ Icon=kteatime
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_ebn
+ X-KDE-PluginInfo-Author=Alex Merry
+ X-KDE-PluginInfo-Email=alex.merry@kdemail.net
+Index: applets/notes/plasma-notes-default.desktop
+===================================================================
+--- applets/notes/plasma-notes-default.desktop	(revision 736572)
++++ applets/notes/plasma-notes-default.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Notes
+ Name[bg]=Бележки
+ Name[de]=Notizen
+@@ -19,8 +18,8 @@
+ Comment[sv]=Postit-liknande anteckningar
+ Icon=knotes
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_notes
+ X-KDE-PluginInfo-Author=Lukas Kropatschek
+ X-KDE-PluginInfo-Email=lukas.krop@gmail.com
+Index: applets/kolourpicker/kolourpicker.cpp
+===================================================================
+--- applets/kolourpicker/kolourpicker.cpp	(revision 736572)
++++ applets/kolourpicker/kolourpicker.cpp	(revision 739687)
+@@ -27,7 +27,7 @@
+ #include <klocale.h>
+ #include <kmenu.h>
+ 
+-#include <plasma/widgets/boxlayout.h>
++#include <plasma/layouts/boxlayout.h>
+ #include <plasma/widgets/pushbutton.h>
+ 
+ static KMenu* buildMenuForColor(const QColor &color)
+Index: applets/bluemarble/plasma-applet-bluemarble.desktop
+===================================================================
+--- applets/bluemarble/plasma-applet-bluemarble.desktop	(revision 736572)
++++ applets/bluemarble/plasma-applet-bluemarble.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=3D Earth Model
+ Name[bg]=3D модел на земята
+ Name[es]=Modelo 3D de la Tierra
+@@ -18,8 +17,8 @@
+ Comment[sv]=Visar jorden på skrivbordet
+ Icon=world
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_bluemarble
+ X-KDE-PluginInfo-Author=Rivo Laks
+ X-KDE-PluginInfo-Email=rivolaks@hot.ee
+Index: applets/comic/plasma-comic-default.desktop
+===================================================================
+--- applets/comic/plasma-comic-default.desktop	(revision 0)
++++ applets/comic/plasma-comic-default.desktop	(revision 739687)
+@@ -0,0 +1,25 @@
++[Desktop Entry]
++Name=Comic Strip
++Name[et]=Koomiks
++Name[pt]=Banda Desenhada
++Name[pt_BR]=Banda Desenhada
++Name[sv]=Tecknad serie
++Comment=Shows a comic strip from the internet.
++Comment[et]=Internetist hangitud koomiksi näitamine
++Comment[pt]=Mostra uma banda desenhada da Internet.
++Comment[pt_BR]=Mostra uma banda desenhada da Internet.
++Comment[sv]=Visar en tecknad serie från Internet.
++Icon=face-smile-big
++Type=Service
++ServiceTypes=Plasma/Applet
++
++X-KDE-Library=plasma_applet_comic
++X-KDE-PluginInfo-Author=Tobias Koenig
++X-KDE-PluginInfo-Email=tokoe@kde.org
++X-KDE-PluginInfo-Name=comic
++X-KDE-PluginInfo-Version=0.1
++X-KDE-PluginInfo-Website=http://plasma.kde.org/
++X-KDE-PluginInfo-Category=Graphics
++X-KDE-PluginInfo-Depends=
++X-KDE-PluginInfo-License=GPL
++X-KDE-PluginInfo-EnabledByDefault=true
+Index: applets/comic/Messages.sh
+===================================================================
+--- applets/comic/Messages.sh	(revision 0)
++++ applets/comic/Messages.sh	(revision 739687)
+@@ -0,0 +1,2 @@
++#! /usr/bin/env bash
++$XGETTEXT *.cpp -o $podir/plasma_applet_comic.pot
+
+Property changes on: applets/comic/Messages.sh
+___________________________________________________________________
+Name: svn:executable
+   + *
+
+Index: applets/comic/comic.h
+===================================================================
+--- applets/comic/comic.h	(revision 0)
++++ applets/comic/comic.h	(revision 739687)
+@@ -0,0 +1,71 @@
++/***************************************************************************
++ *   Copyright (C) 2007 by Tobias Koenig <tokoe@kde.org>                   *
++ *                                                                         *
++ *   This program is free software; you can redistribute it and/or modify  *
++ *   it under the terms of the GNU General Public License as published by  *
++ *   the Free Software Foundation; either version 2 of the License, or     *
++ *   (at your option) any later version.                                   *
++ *                                                                         *
++ *   This program is distributed in the hope that it will be useful,       *
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
++ *   GNU General Public License for more details.                          *
++ *                                                                         *
++ *   You should have received a copy of the GNU General Public License     *
++ *   along with this program; if not, write to the                         *
++ *   Free Software Foundation, Inc.,                                       *
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
++ ***************************************************************************/
++
++#ifndef COMIC_H
++#define COMIC_H
++
++#include <QtCore/QDate>
++#include <QtCore/QStringList>
++#include <QtGui/QImage>
++
++#include <plasma/applet.h>
++#include <plasma/dataengine.h>
++
++class ConfigDialog;
++
++class ComicApplet : public Plasma::Applet
++{
++    Q_OBJECT
++
++    public:
++        ComicApplet( QObject *parent, const QVariantList &args );
++        ~ComicApplet();
++
++        QSizeF contentSizeHint() const;
++        void paintInterface( QPainter *painter, const QStyleOptionGraphicsItem *option, const QRect &contentsRect );
++
++    public Q_SLOTS:
++        void dataUpdated( const QString &name, const Plasma::DataEngine::Data &data );
++        void showConfigurationInterface();
++
++    private Q_SLOTS:
++        void slotNextDay();
++        void slotPreviousDay();
++        void applyConfig();
++
++    protected:
++        void mousePressEvent( QGraphicsSceneMouseEvent* );
++
++    private:
++        void updateComic();
++        void updateButtons();
++        void loadConfig();
++        void saveConfig();
++
++        QImage mImage;
++        QDate mCurrentDate;
++        QString mComicIdentifier;
++        ConfigDialog *mConfigDialog;
++        bool mShowPreviousButton;
++        bool mShowNextButton;
++};
++
++K_EXPORT_PLASMA_APPLET(comic, ComicApplet)
++
++#endif
+Index: applets/comic/configdialog.cpp
+===================================================================
+--- applets/comic/configdialog.cpp	(revision 0)
++++ applets/comic/configdialog.cpp	(revision 739687)
+@@ -0,0 +1,123 @@
++/***************************************************************************
++ *   Copyright (C) 2007 by Tobias Koenig <tokoe@kde.org>                   *
++ *                                                                         *
++ *   This program is free software; you can redistribute it and/or modify  *
++ *   it under the terms of the GNU General Public License as published by  *
++ *   the Free Software Foundation; either version 2 of the License, or     *
++ *   (at your option) any later version.                                   *
++ *                                                                         *
++ *   This program is distributed in the hope that it will be useful,       *
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
++ *   GNU General Public License for more details.                          *
++ *                                                                         *
++ *   You should have received a copy of the GNU General Public License     *
++ *   along with this program; if not, write to the                         *
++ *   Free Software Foundation, Inc.,                                       *
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
++ ***************************************************************************/
++
++#include <QtCore/QAbstractListModel>
++#include <QtGui/QComboBox>
++#include <QtGui/QGridLayout>
++#include <QtGui/QLabel>
++
++#include <klocale.h>
++
++#include "configdialog.h"
++
++class ComicModel : public QAbstractListModel
++{
++    public:
++        ComicModel( QObject *parent = 0 )
++            : QAbstractListModel( parent )
++        {
++          mComics << ComicEntry( "userfriendly", i18n( "Userfriendly" ), QPixmap( ":userfriendly" ) );
++          mComics << ComicEntry( "dilbert", i18n( "Dilbert" ), QPixmap( ":dilbert" ) );
++          mComics << ComicEntry( "garfield", i18n( "Garfield" ), QPixmap( ":garfield" ) );
++          mComics << ComicEntry( "snoopy", i18n( "Snoopy" ), QPixmap( ":snoopy" ) );
++          mComics << ComicEntry( "xkcd", i18n( "XKCD" ), QPixmap( ":xkcd" ) );
++        }
++
++        virtual int rowCount( const QModelIndex &index = QModelIndex() ) const
++        {
++            if ( !index.isValid() )
++                return mComics.count();
++            else
++                return 0;
++        }
++
++        virtual QVariant data( const QModelIndex &index, int role = Qt::DisplayRole ) const
++        {
++            if ( !index.isValid() || index.row() >= mComics.count() )
++                return QVariant();
++
++            if ( role == Qt::DisplayRole )
++                return mComics[ index.row() ].title;
++            else if ( role == Qt::DecorationRole )
++                return mComics[ index.row() ].icon;
++            else if ( role == Qt::UserRole )
++                return mComics[ index.row() ].identifier;
++            else
++                return QVariant();
++        }
++
++    private:
++        class ComicEntry
++        {
++            public:
++                ComicEntry( const QString &_identifier, const QString &_title, const QPixmap &_icon )
++                    : identifier( _identifier ), title( _title ), icon( _icon )
++                {
++                }
++
++                QString identifier;
++                QString title;
++                QPixmap icon;
++        };
++
++        QList<ComicEntry> mComics;
++};
++
++
++ConfigDialog::ConfigDialog( QWidget *parent )
++    : KDialog( parent )
++{
++    setCaption( i18n( "Comic Configuration" ) );
++
++    setButtons( Ok | Apply | Cancel );
++    setDefaultButton( Ok );
++    showButtonSeparator( true );
++
++    QGridLayout *layout = new QGridLayout( mainWidget() );
++    mComicIdentifier = new QComboBox( mainWidget() );
++
++    QLabel *label = new QLabel( i18n( "Comic:" ), mainWidget() );
++    label->setBuddy( mComicIdentifier );
++    layout->addWidget( label, 0, 0 );
++    layout->addWidget( mComicIdentifier, 0, 1 );
++
++    mModel = new ComicModel( this );
++    mComicIdentifier->setModel( mModel );
++}
++
++ConfigDialog::~ConfigDialog()
++{
++}
++
++void ConfigDialog::setComicIdentifier( const QString &comic )
++{
++    for ( int i = 0; i < mModel->rowCount(); ++i ) {
++        const QModelIndex index = mModel->index( i, 0 );
++        if ( index.data( Qt::UserRole ).toString() == comic ) {
++            mComicIdentifier->setCurrentIndex( i );
++            break;
++        }
++    }
++}
++
++QString ConfigDialog::comicIdentifier() const
++{
++    const QModelIndex index = mModel->index( mComicIdentifier->currentIndex(), 0 );
++    return index.data( Qt::UserRole ).toString();
++}
+Index: applets/comic/configimg.qrc
+===================================================================
+--- applets/comic/configimg.qrc	(revision 0)
++++ applets/comic/configimg.qrc	(revision 739687)
+@@ -0,0 +1,9 @@
++<!DOCTYPE RCC><RCC version="1.0">
++<qresource>
++ <file alias="dilbert.png">pics/dilbert.png</file>
++ <file alias="garfield.png">pics/garfield.png</file>
++ <file alias="snoopy.png">pics/snoopy.png</file>
++ <file alias="userfriendly.png">pics/userfriendly.png</file>
++ <file alias="xkcd.png">pics/xkcd.png</file>
++</qresource>
++</RCC>
+Index: applets/comic/comic.cpp
+===================================================================
+--- applets/comic/comic.cpp	(revision 0)
++++ applets/comic/comic.cpp	(revision 739687)
+@@ -0,0 +1,182 @@
++/***************************************************************************
++ *   Copyright (C) 2007 by Tobias Koenig <tokoe@kde.org>                   *
++ *                                                                         *
++ *   This program is free software; you can redistribute it and/or modify  *
++ *   it under the terms of the GNU General Public License as published by  *
++ *   the Free Software Foundation; either version 2 of the License, or     *
++ *   (at your option) any later version.                                   *
++ *                                                                         *
++ *   This program is distributed in the hope that it will be useful,       *
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
++ *   GNU General Public License for more details.                          *
++ *                                                                         *
++ *   You should have received a copy of the GNU General Public License     *
++ *   along with this program; if not, write to the                         *
++ *   Free Software Foundation, Inc.,                                       *
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
++ ***************************************************************************/
++
++#include <QtGui/QGraphicsSceneMouseEvent>
++#include <QtGui/QPainter>
++
++#include "comic.h"
++#include "configdialog.h"
++
++static const int s_arrowWidth = 30;
++
++ComicApplet::ComicApplet( QObject *parent, const QVariantList &args )
++    : Plasma::Applet( parent, args ),
++      mCurrentDate( QDate::currentDate() ),
++      mConfigDialog( 0 ),
++      mShowPreviousButton( true ),
++      mShowNextButton( false )
++{
++    setHasConfigurationInterface( true );
++
++    loadConfig();
++
++    updateComic();
++    updateButtons();
++}
++
++ComicApplet::~ComicApplet()
++{
++    delete mConfigDialog;
++}
++
++void ComicApplet::dataUpdated( const QString &name, const Plasma::DataEngine::Data &data )
++{
++    prepareGeometryChange();
++    mImage = data[ name ].value<QImage>();
++    updateGeometry();
++    update();
++}
++
++void ComicApplet::showConfigurationInterface()
++{
++    if ( !mConfigDialog ) {
++        mConfigDialog = new ConfigDialog( 0 );
++        connect( mConfigDialog, SIGNAL( applyClicked() ), this, SLOT( applyConfig() ) );
++        connect( mConfigDialog, SIGNAL( okClicked() ), this, SLOT( applyConfig() ) );
++    }
++
++    mConfigDialog->setComicIdentifier( mComicIdentifier );
++
++    mConfigDialog->show();
++    mConfigDialog->raise();
++}
++
++void ComicApplet::applyConfig()
++{
++    mComicIdentifier = mConfigDialog->comicIdentifier();
++
++    saveConfig();
++
++    updateComic();
++    updateButtons();
++}
++
++void ComicApplet::loadConfig()
++{
++    KConfigGroup cg = config();
++    mComicIdentifier = cg.readEntry( "comic", "userfriendly" );
++}
++
++void ComicApplet::saveConfig()
++{
++    KConfigGroup cg = config();
++    cg.writeEntry( "comic", mComicIdentifier );
++}
++
++void ComicApplet::slotNextDay()
++{
++    mCurrentDate = mCurrentDate.addDays( 1 );
++    updateComic();
++    updateButtons();
++}
++
++void ComicApplet::slotPreviousDay()
++{
++    mCurrentDate = mCurrentDate.addDays( -1 );
++    updateComic();
++    updateButtons();
++}
++
++void ComicApplet::mousePressEvent( QGraphicsSceneMouseEvent *event )
++{
++    if ( event->button() == Qt::LeftButton ) {
++        if ( event->pos().x() < s_arrowWidth ) {
++            slotPreviousDay();
++        } else if ( mShowNextButton && event->pos().x() > contentSizeHint().width() - s_arrowWidth ) {
++            slotNextDay();
++        }
++    }
++}
++
++QSizeF ComicApplet::contentSizeHint() const
++{
++    if ( !mImage.isNull() ) {
++        const QSizeF size = mImage.size();
++        return QSizeF( size.width() + 2*s_arrowWidth, size.height() );
++    } else
++        return QSizeF( 300, 100 );
++}
++
++void ComicApplet::paintInterface( QPainter *p, const QStyleOptionGraphicsItem*, const QRect& )
++{
++    int imageWidth = ( mImage.isNull() ? 300 - 2*s_arrowWidth : mImage.width() );
++    int height = ( mImage.isNull() ? 100 : mImage.height() );
++
++    p->save();
++    p->setRenderHint( QPainter::Antialiasing );
++    if ( mShowPreviousButton ) {
++        QPolygon arrow( 3 );
++        arrow.setPoint( 0, QPoint( 3, height / 2 ) );
++        arrow.setPoint( 1, QPoint( s_arrowWidth - 5, height / 2 - 15 ) );
++        arrow.setPoint( 2, QPoint( s_arrowWidth - 5, height / 2 + 15 ) );
++
++        p->setBrush( Qt::white );
++        p->drawPolygon( arrow );
++    }
++    if ( mShowNextButton ) {
++        QPolygon arrow( 3 );
++        arrow.setPoint( 0, QPoint( s_arrowWidth + imageWidth + s_arrowWidth - 3, height / 2 ) );
++        arrow.setPoint( 1, QPoint( s_arrowWidth + imageWidth + 5, height / 2 - 15 ) );
++        arrow.setPoint( 2, QPoint( s_arrowWidth + imageWidth + 5, height / 2 + 15 ) );
++
++        p->setBrush( Qt::white );
++        p->drawPolygon( arrow );
++    }
++    p->restore();
++
++    p->drawImage( s_arrowWidth, 0, mImage );
++}
++
++void ComicApplet::updateComic()
++{
++    Plasma::DataEngine *engine = dataEngine( "comic" );
++    if ( !engine )
++        return;
++
++    const QString identifier = mComicIdentifier + ":" + mCurrentDate.toString( Qt::ISODate );
++
++    engine->disconnectSource( identifier, this );
++    engine->connectSource( identifier, this );
++
++    const Plasma::DataEngine::Data data = engine->query( identifier );
++    mImage = data[ identifier ].value<QImage>();
++
++    if ( !mImage.isNull() )
++        update();
++}
++
++void ComicApplet::updateButtons()
++{
++    if ( mCurrentDate == QDate::currentDate() )
++        mShowNextButton = false;
++    else
++        mShowNextButton = true;
++}
++
++#include "comic.moc"
+Index: applets/comic/configdialog.h
+===================================================================
+--- applets/comic/configdialog.h	(revision 0)
++++ applets/comic/configdialog.h	(revision 739687)
+@@ -0,0 +1,42 @@
++/***************************************************************************
++ *   Copyright (C) 2007 by Tobias Koenig <tokoe@kde.org>                   *
++ *                                                                         *
++ *   This program is free software; you can redistribute it and/or modify  *
++ *   it under the terms of the GNU General Public License as published by  *
++ *   the Free Software Foundation; either version 2 of the License, or     *
++ *   (at your option) any later version.                                   *
++ *                                                                         *
++ *   This program is distributed in the hope that it will be useful,       *
++ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
++ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
++ *   GNU General Public License for more details.                          *
++ *                                                                         *
++ *   You should have received a copy of the GNU General Public License     *
++ *   along with this program; if not, write to the                         *
++ *   Free Software Foundation, Inc.,                                       *
++ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        *
++ ***************************************************************************/
++
++#ifndef CONFIGDIALOG_H
++#define CONFIGDIALOG_H
++
++#include <kdialog.h>
++
++class ComicModel;
++class QComboBox;
++
++class ConfigDialog : public KDialog
++{
++    public:
++        ConfigDialog( QWidget *parent );
++        ~ConfigDialog();
++
++        void setComicIdentifier( const QString &comic );
++        QString comicIdentifier() const;
++
++    private:
++        QComboBox *mComicIdentifier;
++        ComicModel *mModel;
++};
++
++#endif
+Index: applets/comic/CMakeLists.txt
+===================================================================
+--- applets/comic/CMakeLists.txt	(revision 0)
++++ applets/comic/CMakeLists.txt	(revision 739687)
+@@ -0,0 +1,13 @@
++project(plasma-comic)
++
++set(comic_SRCS
++    comic.cpp
++    configdialog.cpp)
++
++qt4_add_resources( comic_SRCS configimg.qrc )
++
++kde4_add_plugin(plasma_applet_comic ${comic_SRCS})
++target_link_libraries(plasma_applet_comic ${KDE4_KDEUI_LIBS} ${PLASMA_LIBS})
++
++install(TARGETS plasma_applet_comic DESTINATION ${PLUGIN_INSTALL_DIR})
++install(FILES plasma-comic-default.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+Index: applets/comic/pics/garfield.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: applets/comic/pics/garfield.png
+___________________________________________________________________
+Name: svn:mime-type
+   + application/octet-stream
+
+Index: applets/comic/pics/dilbert.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: applets/comic/pics/dilbert.png
+___________________________________________________________________
+Name: svn:mime-type
+   + application/octet-stream
+
+Index: applets/comic/pics/snoopy.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: applets/comic/pics/snoopy.png
+___________________________________________________________________
+Name: svn:mime-type
+   + application/octet-stream
+
+Index: applets/comic/pics/xkcd.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: applets/comic/pics/xkcd.png
+___________________________________________________________________
+Name: svn:mime-type
+   + application/octet-stream
+
+Index: applets/comic/pics/userfriendly.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: applets/comic/pics/userfriendly.png
+___________________________________________________________________
+Name: svn:mime-type
+   + application/octet-stream
+
+Index: applets/frame/plasma-frame-default.desktop
+===================================================================
+--- applets/frame/plasma-frame-default.desktop	(revision 736572)
++++ applets/frame/plasma-frame-default.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Picture Frame
+ Name[ja]=写真フレーム
+ Name[pt]=Moldura de Imagens
+@@ -14,8 +13,8 @@
+ Comment[zh_TW]=顯示您最愛的圖片
+ Icon=image-jpeg2000
+ Type=Service
+-ServiceTypes=Plasma/Applet
+ 
++X-KDE-ServiceTypes=Plasma/Applet
+ X-KDE-Library=plasma_applet_frame
+ X-KDE-PluginInfo-Author=Anne-Marie Mahfouf
+ X-KDE-PluginInfo-Email=panel-devel@kde.org
+Index: applets/frame/frame.h
+===================================================================
+--- applets/frame/frame.h	(revision 736572)
++++ applets/frame/frame.h	(revision 739687)
+@@ -63,12 +63,6 @@
+     protected Q_SLOTS:
+ 	void dropEvent(QGraphicsSceneDragDropEvent *event);
+         void dragEnterEvent(QGraphicsSceneDragDropEvent *event);
+-	//void dragMoveEvent(QGraphicsSceneDragDropEvent *event);
+-        void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+-        void mousePressEvent ( QGraphicsSceneMouseEvent * event );
+-        void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event );
+-        void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+-        void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+ 	void resizeEvent( QResizeEvent * );
+ 	void configAccepted();
+ 	void choosePicture(const KUrl& currentUrl);
+@@ -110,12 +104,6 @@
+ 	//Plasma::Layout *m_layout;
+ 	/// The size of the picture, it's max(width, height) that is set
+ 	int m_pixelSize;
+-	/// Rotation angle & transformation matrix
+-	int m_rotation;
+-        /// If true, the user is rotating/scaling the frame.
+-        bool m_liveTransform;
+-        int m_ltReferenceRotation;
+-        int m_ltReferencePixelSize;
+         /// Pixmap rect
+         QRect m_pixmapRect;
+         /// Pixmap rect + frame/shadow outline
+@@ -127,9 +115,6 @@
+         int m_swOutline;
+         /// Max Picture Dimension
+         static const int m_maxDimension=800;
+-        /// handles
+-        QPixmap m_handle1;
+-        Plasma::Phase::AnimId m_handle1AnimId;
+         /// Utility functions
+         double angleForPos(QPointF in);
+         double distanceForPos(QPointF in);
+Index: applets/frame/frame.cpp
+===================================================================
+--- applets/frame/frame.cpp	(revision 736572)
++++ applets/frame/frame.cpp	(revision 739687)
+@@ -51,7 +51,7 @@
+ #include <kurl.h>
+ #include <QPicture>
+ #include <plasma/dataenginemanager.h>
+-#include <plasma/widgets/vboxlayout.h>
++#include <plasma/layouts/vboxlayout.h>
+ #include <plasma/phase.h>
+ #include <plasma/theme.h>
+ #include "math.h"
+@@ -59,8 +59,7 @@
+ 
+ Frame::Frame(QObject *parent, const QVariantList &args)
+     : Plasma::Applet(parent, args), 
+-      m_dialog(0),
+-      m_liveTransform(false)
++      m_dialog(0)
+ {
+     setHasConfigurationInterface(true);
+     setAcceptDrops(true);
+@@ -70,7 +69,6 @@
+     m_dialog = 0;
+     m_slideNumber = 0;
+     m_skipPaint = 0;
+-    m_handle1AnimId = 0;
+     // Get config values
+     KConfigGroup cg = config();
+     m_frameColor = cg.readEntry("frameColor", QColor(70, 90, 130));
+@@ -79,23 +77,15 @@
+     m_squareCorners = cg.readEntry("squareCorners", true);
+     m_roundCorners = cg.readEntry("roundCorners", false);
+     m_pixelSize = cg.readEntry("size", 350);
+-    m_rotation = cg.readEntry("rotation",0);
+     m_slideShow = cg.readEntry("slideshow", false);
+     m_slideShowUrl = cg.readEntry("slideshow url");
+     m_slideshowTime = cg.readEntry("slideshow time", 10); // default to 10 seconds
+     m_currentUrl = cg.readEntry("url", "default");
+-    /*/ m_layout is unused for now.
+-    m_layout = new Plasma::VBoxLayout(0);
+-    m_layout->setGeometry(QRectF(0, 0, 400, 800));
+-    m_layout->setMargin(12);*/
+  
+     //Frame & Shadow dimensions
+     m_frameOutline = 8;
+     m_swOutline = 8;
+ 
+-    //Initialize handles
+-    m_handle1 = KIcon("transform-rotate").pixmap(32,32);
+-
+     //Initialize the slideshow timer
+     slideShowTimer = new QTimer(this);
+     connect(slideShowTimer, SIGNAL(timeout()), this, SLOT(setSlideShow()));
+@@ -244,7 +234,6 @@
+     m_shadow = ui.shadowCheckBox->isChecked();
+     cg.writeEntry("shadow", m_shadow);
+     cg.writeEntry("size", m_pixelSize);
+-    cg.writeEntry("rotation", m_rotation);
+     m_squareCorners = ui.squareButton->isChecked();
+     cg.writeEntry("squareCorners", m_squareCorners);
+     m_roundCorners = ui.roundButton->isChecked();
+@@ -275,16 +264,6 @@
+ 
+ QRectF Frame::boundingRect() const
+ {
+-    // return m_layout->geometry();
+-    if (m_liveTransform) {
+-        //If the user is transforming the picture, this set the bouding rect to the widest area
+-        //So we don't need to call prepareGeometryChange each mouse movement.
+-        QSize tmp = myPicture.size();
+-        tmp.scale(m_maxDimension,m_maxDimension,Qt::KeepAspectRatio);
+-        tmp+=QSize(2*(m_swOutline+m_frameOutline),2*(m_swOutline+m_frameOutline));
+-        qreal diagonal = sqrt(tmp.width()*tmp.width()+tmp.height()*tmp.height());
+-        return QRectF(-diagonal/2,-diagonal/2,diagonal,diagonal);
+-    }
+     return m_boundingRect;
+ }
+ 
+@@ -368,8 +347,8 @@
+     framePath.addRoundRect(frameRect, roundingFactor);
+ 
+     p->save();
+-    p->setRenderHint(QPainter::SmoothPixmapTransform, !m_liveTransform); 
+-    p->setRenderHint(QPainter::Antialiasing,!m_liveTransform); 
++    p->setRenderHint(QPainter::SmoothPixmapTransform, true); 
++    p->setRenderHint(QPainter::Antialiasing,true); 
+ 
+     //If we draw on the pixmap, we can't use negative coordinates, so ...
+     if (painter==NULL) {
+@@ -377,11 +356,11 @@
+ 	}
+     
+     //Rotation
+-    p->rotate(m_rotation);
++    p->rotate(0);
+ 
+     //Shadow 
+     //TODO faster. I'd like to use it on liveTransform.
+-    if (m_shadow && !m_liveTransform) {
++    if (m_shadow) {
+         p->setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::FlatCap,Qt::RoundJoin));
+         p->setBrush(Qt::NoBrush);
+         for (int i = 0; i <= m_swOutline; i+=1) {
+@@ -434,22 +413,8 @@
+ void Frame::paintInterface(QPainter *p, const QStyleOptionGraphicsItem *option, const QRect &contentsRect)
+ {
+     Q_UNUSED(option);
+- 
+-    if (m_liveTransform) {
+-        //if true draw directly  
+-        composePicture(p);
+-    }
+-    else {
+-        //draw the cached pixmap
+-        p->drawPixmap (m_boundingRect.x(),m_boundingRect.y(), *m_cmpPicture);
+-    }
+ 
+-    if (m_handle1AnimId) {
+-        p->setRenderHint(QPainter::SmoothPixmapTransform, !m_liveTransform); 
+-        p->rotate(m_rotation);
+-        QPoint pos = QPoint(m_pixmapRect.right()-32,m_pixmapRect.bottom()-32);
+-        p->drawPixmap(pos.x(), pos.y(), Plasma::Phase::self()->animationResult(m_handle1AnimId));
+-    }
++    p->drawPixmap (m_boundingRect.x(),m_boundingRect.y(), *m_cmpPicture);
+ }
+ 	
+ double Frame::angleForPos(QPointF in)
+@@ -487,100 +452,9 @@
+ QPolygon Frame::mapToPicture(const QPolygon in) const
+ {
+     QMatrix matrix;
+-    matrix.rotate(m_rotation);
++    matrix.rotate(0);
+     return matrix.map(in);
+ }
+ 
+-void Frame::mousePressEvent ( QGraphicsSceneMouseEvent * event ) 
+-{
+ 
+-
+-    //Start the live transformation mode if the user clicks on bottom right corner
+-    QPolygon activeArea = QPolygon(QRect(m_pixmapRect.right() - 32, m_pixmapRect.bottom() - 32, 32,32));
+-
+-    activeArea = mapToPicture(activeArea);
+-
+-    if ((event->button() ==  Qt::LeftButton) && (activeArea.containsPoint(event->pos().toPoint(),Qt::OddEvenFill)))
+-    {
+-        m_liveTransform = true;
+-        m_ltReferenceRotation = m_rotation;
+-        m_ltReferencePixelSize = m_pixelSize;
+-    }
+-
+-}
+-
+-void Frame::mouseReleaseEvent ( QGraphicsSceneMouseEvent * event )
+-{
+-    if (!m_liveTransform) {
+-        return QGraphicsItem::mouseReleaseEvent(event);
+-    }
+-    //Exit from live transformation mode and store the changes
+-    m_liveTransform = false;
+-    //If the rotation is small is set to zero
+-    m_rotation = m_rotation%360;
+-    if (m_rotation < 5 && m_rotation > -5) {
+-        m_rotation = 0;
+-    }
+-    KConfigGroup cg = config();
+-    cg.writeEntry("rotation", m_rotation);
+-    cg.writeEntry("size", m_pixelSize);
+-    cg.config()->sync();
+-    updateSizes();
+-    composePicture(); //Cache the composed & transformed pixmap.
+-    update();
+-}
+-
+-void Frame::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+-{
+-    Q_UNUSED(event);
+-    m_handle1AnimId = Plasma::Phase::self()->animateElement(this, Plasma::Phase::ElementAppear);
+-    Plasma::Phase::self()->setAnimationPixmap(m_handle1AnimId, m_handle1);
+-}
+-
+-void Frame::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+-{
+-    Q_UNUSED(event);
+-    
+-    if (m_handle1AnimId) {
+-        m_handle1AnimId = Plasma::Phase::self()->animateElement(this, Plasma::Phase::ElementDisappear);
+-        Plasma::Phase::self()->setAnimationPixmap(m_handle1AnimId, m_handle1);
+-    }
+-}
+-void Frame::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+-{
+-
+-    if (!m_liveTransform) {
+-        return QGraphicsItem::mouseMoveEvent(event);
+-    }
+-    //The hand is faster than the eye. So we skip some mouse movements ^^''
+-    if (m_skipPaint != 4){
+-        m_skipPaint++;
+-        return;
+-    } 
+-    else {
+-      m_skipPaint = 0;
+-    }
+-
+-    // Map the original button-down position back to local coordinates.
+-    // Since transformations aren't done by setTransform(), it is redundant now, 
+-    // But it works anyway and could be useful in the future.
+-    QPointF buttonDownPos = mapFromScene(event->buttonDownScenePos(Qt::LeftButton));
+-
+-    const double pi = 3.14159265;
+-    qreal oldAngle = (180 * angleForPos(buttonDownPos)) / pi;
+-    qreal newAngle = (180 * angleForPos(event->pos())) / pi;
+-    qreal scaleFactor = distanceForPos(event->pos()) /  distanceForPos(buttonDownPos);
+-
+-    // Determine the item's new rotation
+-    m_rotation = (int)(m_ltReferenceRotation - newAngle + oldAngle);
+-    m_pixelSize = (int) (m_ltReferencePixelSize * scaleFactor);
+-    // Don't allow to go over maxDimension
+-    if (m_pixelSize > m_maxDimension) {
+-      m_pixelSize = m_maxDimension;
+-    }
+-    // Update pixmap geometry & redraw. 
+-    updateSizes();
+-    update();
+-}
+-
+ #include "frame.moc"
+Index: applets/CMakeLists.txt
+===================================================================
+--- applets/CMakeLists.txt	(revision 736572)
++++ applets/CMakeLists.txt	(revision 739687)
+@@ -13,3 +13,4 @@
+ add_subdirectory(lancelot)
+ add_subdirectory(notes)
+ add_subdirectory(twitter)
++add_subdirectory(comic)
+Index: applets/fileWatcher/plasma-fileWatcher-default.desktop
+===================================================================
+--- applets/fileWatcher/plasma-fileWatcher-default.desktop	(revision 736572)
++++ applets/fileWatcher/plasma-fileWatcher-default.desktop	(revision 739687)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=File Watcher
+ Name[bg]=Наблюдение на файлове
+ Name[de]=Dateibetrachter
+@@ -10,7 +9,7 @@
+ Name[pt_BR]=Vigilante de Ficheiros
+ Name[sv]=Filövervakning
+ Type=Service
+-ServiceTypes=Plasma/Applet
++X-KDE-ServiceTypes=Plasma/Applet
+ Icon=application-octet-stream
+ 
+ X-KDE-Library=plasma_applet_fileWatcher
+Index: applets/fileWatcher/fileWatcher.h
+===================================================================
+--- applets/fileWatcher/fileWatcher.h	(revision 736572)
++++ applets/fileWatcher/fileWatcher.h	(revision 739687)
+@@ -29,7 +29,7 @@
+ 
+ #include <plasma/applet.h>
+ #include <plasma/widgets/pushbutton.h>
+-#include <plasma/widgets/boxlayout.h>
++#include <plasma/layouts/boxlayout.h>
+ 
+ #include "fileWatcherConfig.h"
+ 

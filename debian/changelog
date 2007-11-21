@@ -1,6 +1,14 @@
+extragear-plasma (4:3.96.0-2) experimental; urgency=low
+
+  * Update to r739712.
+  * Build depend on kdebase-workspace 4:3.96.0-2
+  * Build depend on sharutils for uudecoding the new images.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Wed, 21 Nov 2007 17:09:17 +0000
+
 extragear-plasma (4:3.96.0-1) experimental; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
   * Update *.install files.
   * Move Homepage into control field.
   * Build depend on kdebase-workspace-dev >= 4:3.96.0.
