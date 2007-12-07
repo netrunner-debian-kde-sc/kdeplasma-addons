@@ -1,14 +1,5 @@
 #!/usr/bin/make -f
 
+export LDFLAGS+="-Wl,--as-needed"
+
 include debian/cdbs/kde.mk
-
-makebuilddir::
-	mkdir -p applets/comic/pics/
-	uudecode -o applets/comic/pics/dilbert.png debian/img/dilbert.png.uu
-	uudecode -o applets/comic/pics/garfield.png debian/img/garfield.png.uu
-	uudecode -o applets/comic/pics/snoopy.png debian/img/snoopy.png.uu
-	uudecode -o applets/comic/pics/userfriendly.png debian/img/userfriendly.png.uu
-	uudecode -o applets/comic/pics/xkcd.png debian/img/xkcd.png.uu
-
-clean::
-	rm -rf applets/comic/pics/

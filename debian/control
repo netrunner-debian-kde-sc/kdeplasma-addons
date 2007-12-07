@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>, Armin Berres <trigger+debian@space-based.de>
-Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.96.0-2), sharutils
+Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.97.0)
 Standards-Version: 3.7.2
 Homepage: http://plasma.kde.org/
 
@@ -35,3 +35,10 @@ Description: debugging symbols for extragear-plasma
  This package contains the debugging symbols associated with extragear-plasma.
  They will automatically be used by gdb for debugging extragear-plasma related
  issues.
+
+Package: extragear-plasma-l10n
+Architecture: all
+Depends: extragear-plasma (= ${binary:Version})
+Section: utils
+Description: localization files for extragear-plasma
+ This package contains the localization files for extragear-plasma.
