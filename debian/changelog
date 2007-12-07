@@ -5,8 +5,10 @@ extragear-plasma (4:3.97.0-1) experimental; urgency=low
   * Update installed files.
   * Add new package extragear-plasma-l10n for localization files.
   * Remove dependency on sharutils. Not needed anymore.
+  * Add export LDFLAGS+="-Wl,--as-needed" in rules to make dpkg-shlibdeps
+    happier.
 
- -- Armin Berres <trigger+debian@space-based.de>  Fri, 07 Dec 2007 15:16:38 +0100
+ -- Armin Berres <trigger+debian@space-based.de>  Fri, 07 Dec 2007 17:24:14 +0100
 
 extragear-plasma (4:3.96.0-2) experimental; urgency=low
 
