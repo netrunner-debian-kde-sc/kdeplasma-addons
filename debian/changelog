@@ -1,3 +1,10 @@
+extragear-plasma (4:3.97.0-2) experimental; urgency=low
+
+  * Update Standards-Version to 3.7.3.
+  * Remove extra LDFLAGS. Included via CDBS now.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Mon, 17 Dec 2007 23:49:29 +0100
+
 extragear-plasma (4:3.97.0-1) experimental; urgency=low
 
   * New upstream release.
