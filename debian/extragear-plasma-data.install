@@ -4,6 +4,7 @@ usr/share/icons/hicolor/22x22/apps/lancelot.png
 usr/share/icons/hicolor/32x32/apps/lancelot.png
 usr/share/icons/hicolor/48x48/apps/lancelot.png
 usr/share/icons/hicolor/64x64/apps/lancelot.png
+usr/share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
 usr/share/kde4/apps/desktoptheme/blue/lancelot/action-list-view-items-extenders-left.svg
 usr/share/kde4/apps/desktoptheme/blue/lancelot/action-list-view-items-extenders-right.svg
 usr/share/kde4/apps/desktoptheme/blue/lancelot/action-list-view-items-extenders.svg
@@ -41,14 +42,15 @@ usr/share/kde4/apps/desktoptheme/default/widgets/picture-frame-default.svg
 usr/share/kde4/apps/desktoptheme/default/widgets/twitter.svg
 usr/share/kde4/apps/plasma-bluemarble/atmosphere.frag
 usr/share/kde4/apps/plasma-bluemarble/atmosphere.vert
-usr/share/kde4/apps/plasma-bluemarble/earth-night.png
 usr/share/kde4/apps/plasma-bluemarble/earth.frag
+usr/share/kde4/apps/plasma-bluemarble/earth-night.png
 usr/share/kde4/apps/plasma-bluemarble/earth.png
 usr/share/kde4/apps/plasma-bluemarble/earth.vert
 usr/share/kde4/services/plasma-applet-bluemarble.desktop
 usr/share/kde4/services/plasma-applet-ebn.desktop
-usr/share/kde4/services/plasma-applet-lancelot-part.desktop
+usr/share/kde4/services/plasma-applet-fifteenPuzzle.desktop
 usr/share/kde4/services/plasma-applet-lancelot.desktop
+usr/share/kde4/services/plasma-applet-lancelot-part.desktop
 usr/share/kde4/services/plasma-comic-default.desktop
 usr/share/kde4/services/plasma-dataengine-comic.desktop
 usr/share/kde4/services/plasma-dataengine-ebn.desktop
