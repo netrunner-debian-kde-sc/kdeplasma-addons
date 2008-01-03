@@ -1,3 +1,10 @@
+extragear-plasma (4:3.98.0~svn756095-1) experimental; urgency=low
+
+  * Svn snapshot of revision 756095.
+  * Update extragear-plasma-l10n.install.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 03 Jan 2008 07:49:11 +0100
+
 extragear-plasma (4:3.98~svn754166-1) experimental; urgency=low
 
   * Svn snapshot of revision 754166.

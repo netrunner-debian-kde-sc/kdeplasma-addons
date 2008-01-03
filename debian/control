@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>, Armin Berres <trigger+debian@space-based.de>
-Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.98.0~)
+Build-Depends: cdbs, debhelper (>= 5), cmake, quilt, kdebase-workspace-dev (>= 4:3.98.0~svn755919-1)
 Standards-Version: 3.7.3
 Homepage: http://plasma.kde.org/
 
