@@ -25,6 +25,7 @@ usr/share/locale/csb/LC_MESSAGES/plasma_applet_kolourpicker.mo
 usr/share/locale/csb/LC_MESSAGES/plasma_applet_notes.mo
 usr/share/locale/csb/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/de/LC_MESSAGES/desktop_extragear-plasma_applets.mo
+usr/share/locale/de/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
 usr/share/locale/de/LC_MESSAGES/lancelot.mo
 usr/share/locale/de/LC_MESSAGES/plasma_applet_comic.mo
 usr/share/locale/de/LC_MESSAGES/plasma_applet_dict.mo
@@ -33,6 +34,7 @@ usr/share/locale/de/LC_MESSAGES/plasma_applet_fileWatcher.mo
 usr/share/locale/de/LC_MESSAGES/plasma_applet_frame.mo
 usr/share/locale/de/LC_MESSAGES/plasma_applet_kolourpicker.mo
 usr/share/locale/de/LC_MESSAGES/plasma_applet_notes.mo
+usr/share/locale/de/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/el/LC_MESSAGES/desktop_extragear-plasma_applets.mo
 usr/share/locale/el/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
 usr/share/locale/el/LC_MESSAGES/lancelot.mo
@@ -66,6 +68,17 @@ usr/share/locale/et/LC_MESSAGES/plasma_applet_frame.mo
 usr/share/locale/et/LC_MESSAGES/plasma_applet_kolourpicker.mo
 usr/share/locale/et/LC_MESSAGES/plasma_applet_notes.mo
 usr/share/locale/et/LC_MESSAGES/plasma_applet_twitter.mo
+usr/share/locale/fr/LC_MESSAGES/desktop_extragear-plasma_applets.mo
+usr/share/locale/fr/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
+usr/share/locale/fr/LC_MESSAGES/lancelot.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_comic.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_dict.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_ebn.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_fileWatcher.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_frame.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_kolourpicker.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_notes.mo
+usr/share/locale/fr/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/ga/LC_MESSAGES/desktop_extragear-plasma_applets.mo
 usr/share/locale/ga/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
 usr/share/locale/ga/LC_MESSAGES/lancelot.mo
@@ -80,6 +93,7 @@ usr/share/locale/ga/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/gl/LC_MESSAGES/desktop_extragear-plasma_applets.mo
 usr/share/locale/gl/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
 usr/share/locale/gl/LC_MESSAGES/lancelot.mo
+usr/share/locale/gl/LC_MESSAGES/plasma_applet_comic.mo
 usr/share/locale/gl/LC_MESSAGES/plasma_applet_dict.mo
 usr/share/locale/gl/LC_MESSAGES/plasma_applet_ebn.mo
 usr/share/locale/gl/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -89,7 +103,16 @@ usr/share/locale/gl/LC_MESSAGES/plasma_applet_notes.mo
 usr/share/locale/gl/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/hi/LC_MESSAGES/plasma_applet_frame.mo
 usr/share/locale/it/LC_MESSAGES/desktop_extragear-plasma_applets.mo
+usr/share/locale/it/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
+usr/share/locale/it/LC_MESSAGES/lancelot.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_comic.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_dict.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_ebn.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_fileWatcher.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_frame.mo
 usr/share/locale/it/LC_MESSAGES/plasma_applet_kolourpicker.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_notes.mo
+usr/share/locale/it/LC_MESSAGES/plasma_applet_twitter.mo
 usr/share/locale/ja/LC_MESSAGES/desktop_extragear-plasma_applets.mo
 usr/share/locale/ja/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
 usr/share/locale/ja/LC_MESSAGES/lancelot.mo
@@ -114,6 +137,7 @@ usr/share/locale/lt/LC_MESSAGES/plasma_applet_dict.mo
 usr/share/locale/lt/LC_MESSAGES/plasma_applet_fileWatcher.mo
 usr/share/locale/lt/LC_MESSAGES/plasma_applet_kolourpicker.mo
 usr/share/locale/lv/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
+usr/share/locale/lv/LC_MESSAGES/plasma_applet_kolourpicker.mo
 usr/share/locale/lv/LC_MESSAGES/plasma_applet_notes.mo
 usr/share/locale/ms/LC_MESSAGES/desktop_extragear-plasma_applets.mo
 usr/share/locale/ms/LC_MESSAGES/desktop_extragear-plasma_dataengines.mo
