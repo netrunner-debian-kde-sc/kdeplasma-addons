@@ -3,6 +3,7 @@ extragear-plasma (4:4.0.0-1) experimental; urgency=low
   * New upstream release.
   * Update extragear-plasma-l10n.install.
   * Update years in copyright. 
+  * Build depend on kdebase-workspace-dev >= 4:4.0.0-1.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 09 Jan 2008 13:30:33 +0100
 
