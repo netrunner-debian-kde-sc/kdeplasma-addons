@@ -12,14 +12,14 @@ Architecture: any
 Section: utils
 Depends: ${shlibs:Depends}, extragear-plasma-data (>= ${source:Version})
 Replaces: kdebase-workspace-bin (<< 4:3.95.0)
-Description: extras for the desktop and panel user interface tool for KDE4
+Description: extras for the desktop and panel user interface tool for KDE 4
  extragear-plasma provides additional plasma components like widgets or data
  engines which are not shipped with kdebase.
 
 Package: extragear-plasma-data
 Architecture: all
 Section: utils
-Description: extras for the desktop and panel user interface tool for KDE4 - data
+Description: extras for the desktop and panel user interface tool for KDE 4 - data
  extragear-plasma provides additional plasma components like widgets or data
  engines which are not shipped with kdebase.
  .
