@@ -38,7 +38,7 @@ Description: debugging symbols for extragear-plasma
 
 Package: extragear-plasma-l10n
 Architecture: all
-Depends: extragear-plasma (= ${binary:Version})
+Depends: extragear-plasma (>= ${source:Version})
 Section: utils
 Description: localization files for extragear-plasma
  This package contains the localization files for extragear-plasma.
