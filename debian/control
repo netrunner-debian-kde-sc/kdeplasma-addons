@@ -11,20 +11,20 @@ Package: extragear-plasma
 Architecture: any
 Section: utils
 Depends: ${shlibs:Depends}, extragear-plasma-data (>= ${source:Version})
-Replaces: kdebase-workspace-bin (<< 4:3.95.0)
-Description: extras for the desktop and panel user interface tool for KDE 4
- extragear-plasma provides additional plasma components like widgets or data
- engines which are not shipped with kdebase.
+Replaces: kdebase-workspace-bin (<< 4:4.0.0)
+Description: extras for the KDE 4 Plasma desktop and panel
+ This package provides additional Plasma data engines and widgets found in the
+ KDE Extragear collection.
 
 Package: extragear-plasma-data
 Architecture: all
 Section: utils
-Description: extras for the desktop and panel user interface tool for KDE 4 - data
- extragear-plasma provides additional plasma components like widgets or data
- engines which are not shipped with kdebase.
+Description: extras for the KDE 4 Plasma desktop and panel - data
+ This package provides additional Plasma data engines and widgets found in the
+ KDE Extragear collection.
  .
- This package contains the architecture-independent shared data files needed
- for extragear-plasma.
+ This package contains the architecture-independent data files needed by
+ extragear-plasma.
 
 Package: extragear-plasma-dbg
 Section: devel
