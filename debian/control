@@ -10,7 +10,7 @@ Homepage: http://plasma.kde.org/
 Package: extragear-plasma
 Architecture: any
 Section: utils
-Depends: ${shlibs:Depends}, extragear-plasma-data (>= ${source:Version})
+Depends: ${shlibs:Depends}, extragear-plasma-data (= ${source:Version})
 Replaces: kdebase-workspace-bin (<< 4:4.0.0)
 Description: extras for the KDE 4 Plasma desktop and panel
  This package provides additional Plasma data engines and widgets found in the
@@ -38,7 +38,7 @@ Description: debugging symbols for extragear-plasma
 
 Package: extragear-plasma-l10n
 Architecture: all
-Depends: extragear-plasma (>= ${source:Version})
+Depends: extragear-plasma (= ${source:Version})
 Section: utils
 Description: localization files for extragear-plasma
  This package contains the localization files for extragear-plasma.
