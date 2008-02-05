@@ -1,7 +1,7 @@
-extragear-plasma (4:4.0.1-1) UNRELEASED; urgency=low
+extragear-plasma (4:4.0.1-1) experimental; urgency=low
 
-  * New upstream release: lancelot and fifteenpuzzle 
-    applets have been removed.
+  * New upstream release:
+    + lancelot and fifteenpuzzle applets have been removed.
 
   +++ Changes by Matthew Rosewarne:
 
@@ -11,9 +11,12 @@ extragear-plasma (4:4.0.1-1) UNRELEASED; urgency=low
   +++ Changes by Ana Beatriz Guerrero Lopez:
 
   * Update installed files.
-  * Update debhelper to 6.
-  * Remove LDFLAGS+="-Wl,--as-needed". It was integrated into
-    cdbs/kde.mk.
+  * Bump compat/debhelper to 6.
+  * Remove LDFLAGS+="-Wl,--as-needed". It was integrated into cdbs/kde.mk.
+
+  +++ Changes by Fathi Boudra:
+
+  * Add Vcs-Browser and Vcs-Svn fields.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 02 Feb 2008 06:45:02 +0100
 

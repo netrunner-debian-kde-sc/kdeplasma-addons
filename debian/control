@@ -3,9 +3,12 @@ Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>, Armin Berres <trigger+debian@space-based.de>
-Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake, quilt, kdebase-workspace-dev (>= 4:4.0.1-1)
+Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake, quilt,
+ kdebase-workspace-dev (>= 4:4.0.1-1)
 Standards-Version: 3.7.3
 Homepage: http://plasma.kde.org/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/extragear-plasma
+Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/extragear-plasma
 
 Package: extragear-plasma
 Architecture: any
@@ -38,7 +41,7 @@ Description: debugging symbols for extragear-plasma
 
 Package: extragear-plasma-l10n
 Architecture: all
-Depends: extragear-plasma (= ${source:Version})
+Depends: extragear-plasma (>= ${source:Version})
 Section: utils
 Description: localization files for extragear-plasma
  This package contains the localization files for extragear-plasma.
