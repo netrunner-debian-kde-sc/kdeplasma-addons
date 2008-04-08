@@ -1,11 +1,19 @@
-extragear-plasma (4:4.0.1-2) UNRELEASED; urgency=low
+extragear-plasma (4:4.0.68~svn794879-1) experimental; urgency=low
+
+  * Build plasma against KDE 4.1 from trunk:
+    - Update build depends to kdebase-workspace-dev (>= 4:4.0.68).
+  * Translation no included in purpose, so extragear-plasma-l10n is empty.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Update installed files.
 
   +++ Changes by Matthew Rosewarne:
 
   * Move extragear-plasma packages to Section: kde.
   * Move extragear-plasma-dbg to Section: libdevel.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 13 Feb 2008 19:05:58 -0500
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue,  8 Apr 2008 21:41:57 +0200
 
 extragear-plasma (4:4.0.1-1) experimental; urgency=low
 
