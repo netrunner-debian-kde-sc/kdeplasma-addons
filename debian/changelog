@@ -1,3 +1,10 @@
+extragear-plasma (4:4.0.72+svn802997-1) experimental; urgency=low
+
+  * New snapshot.
+  * Some stuff disable because it is totally broken, still no translations.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 01 May 2008 16:29:42 +0200
+
 extragear-plasma (4:4.0.68~svn794879-1) experimental; urgency=low
 
   * Build plasma against KDE 4.1 from trunk:
