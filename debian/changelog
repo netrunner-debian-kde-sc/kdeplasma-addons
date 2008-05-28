@@ -3,6 +3,7 @@ extragear-plasma (4:4.0.80-1) experimental; urgency=low
   * New upstream snapshot.
   * Add new needed build depends: libglu1-mesa-dev, libqt4-opengl-dev and
     libboost-dev.
+  * Update installed files, shipping translations again.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 28 May 2008 01:17:45 +0200
 
