@@ -1,3 +1,10 @@
+kdeplasmoids (4:4.0.81+svn815394-1) experimental; urgency=low
+
+  * New upstream spanshot. 
+  * Rename package, it used to be extragear-plasma.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Mon, 02 Jun 2008 01:14:04 +0200
+
 extragear-plasma (4:4.0.80-1) experimental; urgency=low
 
   * New upstream snapshot.

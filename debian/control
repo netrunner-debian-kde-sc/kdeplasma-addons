@@ -1,4 +1,4 @@
-Source: extragear-plasma
+Source: kdeplasmoids
 Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
@@ -8,41 +8,34 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake (>= 2.4.5), quilt,
  libboost-dev
 Standards-Version: 3.7.3
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/extragear-plasma
-Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/extragear-plasma
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/kdeplasmoids
+Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/kdeplasmoids
 
-Package: extragear-plasma
+Package: kdeplasmoids
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, extragear-plasma-data (= ${source:Version})
+Depends: ${shlibs:Depends}, kdeplasmoids-data (= ${source:Version})
 Replaces: kdebase-workspace-bin (<< 4:4.0.0)
 Description: extras for the KDE 4 Plasma desktop and panel
  This package provides additional Plasma data engines and widgets found in the
- KDE Extragear collection.
+ KDE Plasmoids collection.
 
-Package: extragear-plasma-data
+Package: kdeplasmoids-data
 Architecture: all
 Section: kde
 Description: extras for the KDE 4 Plasma desktop and panel - data
  This package provides additional Plasma data engines and widgets found in the
- KDE Extragear collection.
+ KDE Plasmoids collection.
  .
  This package contains the architecture-independent data files needed by
  extragear-plasma.
 
-Package: extragear-plasma-dbg
+Package: kdeplasmoids-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Depends: extragear-plasma (= ${binary:Version}), kdebase-workspace-dbg
-Description: debugging symbols for extragear-plasma
- This package contains the debugging symbols associated with extragear-plasma.
- They will automatically be used by gdb for debugging extragear-plasma related
+Depends: kdeplasmoids (= ${binary:Version}), kdebase-workspace-dbg
+Description: debugging symbols for kdeplasmoids
+ This package contains the debugging symbols associated with kdeplasmoids.
+ They will automatically be used by gdb for debugging kdeplasmoids related
  issues.
-
-Package: extragear-plasma-l10n
-Architecture: all
-Depends: extragear-plasma (>= ${source:Version})
-Section: kde
-Description: localization files for extragear-plasma
- This package contains the localization files for extragear-plasma.
