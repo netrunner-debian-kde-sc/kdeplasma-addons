@@ -16,7 +16,8 @@ Package: kdeplasmoids
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, kdeplasmoids-data (= ${source:Version})
-Replaces: kdebase-workspace-bin (<< 4:4.0.0)
+Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma
+Conflicts: extragear-plasma
 Description: extras for the KDE 4 Plasma desktop and panel
  This package provides additional Plasma data engines and widgets found in the
  KDE Plasmoids collection.
@@ -24,6 +25,8 @@ Description: extras for the KDE 4 Plasma desktop and panel
 Package: kdeplasmoids-data
 Architecture: all
 Section: kde
+Replaces: extragear-plasma-data
+Conflicts: extragear-plasma-data
 Description: extras for the KDE 4 Plasma desktop and panel - data
  This package provides additional Plasma data engines and widgets found in the
  KDE Plasmoids collection.
