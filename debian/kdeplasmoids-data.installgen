@@ -1,0 +1,7 @@
+# Do not install headers
+missing dst:usr/include/
+
+mime:text/.*
+mime:image/.*
+mime:application/(?!(x-executable|x-sharedlib)).*
+
