@@ -18,21 +18,48 @@ Section: kde
 Depends: ${shlibs:Depends}, kdeplasmoids-data (= ${source:Version})
 Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma
 Conflicts: extragear-plasma
-Description: extras for the KDE 4 Plasma desktop and panel
- This package provides additional Plasma data engines and widgets found in the
- KDE Plasmoids collection.
+Description: plasmoids for KDE 4 Plasma - main package
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
+ .
+ This package contains Plasma data engines and widgets (applets). Install
+ this package if you want to plasmoids from KDE Plasmoids module.
 
 Package: kdeplasmoids-data
 Architecture: all
 Section: kde
 Replaces: extragear-plasma-data
 Conflicts: extragear-plasma-data
-Description: extras for the KDE 4 Plasma desktop and panel - data
- This package provides additional Plasma data engines and widgets found in the
- KDE Plasmoids collection.
+Description: plasmoids for KDE 4 Plasma - data files
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
  .
  This package contains the architecture-independent data files needed by
- extragear-plasma.
+ kdeplasmoids.
+
+Package: kdeplasmoids-libs4
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: extragear-plasma
+Conflicts: extragear-plasma
+Description: plasmoids for KDE 4 Plasma - public libraries
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
+ .
+ This package contains public libraries included in the KDE Plasmoids module.
+
+Package: kdeplasmoids-dev
+Architecture: any
+Section: libdevel
+Depends: kdeplasmoids-libs4 (= ${binary:Version}),
+ ${sameVersionDep:libplasma-dev:kdeplasmoids-libs4-Depends-libplasma2}
+Description: plasmoids for KDE 4 Plasma - development files
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
+ .
+ This package contains development files for the libraries provided in the
+ `kdeplasmoids-libs4' package.
 
 Package: kdeplasmoids-dbg
 Section: libdevel

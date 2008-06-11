@@ -1,0 +1,5 @@
+missing dst:usr/lib/libplasmacomicprovidercore.so$ link:
+
+dst:usr/include/
+dst:usr/lib/[^/]+\.so$ link:usr/lib/[^/]+\.so\.
+

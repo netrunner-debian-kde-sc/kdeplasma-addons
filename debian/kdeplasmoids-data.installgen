@@ -1,5 +1,4 @@
-# Do not install headers
-missing dst:usr/include/
+depends kdeplasmoids-dev
 
 mime:text/.*
 mime:image/.*

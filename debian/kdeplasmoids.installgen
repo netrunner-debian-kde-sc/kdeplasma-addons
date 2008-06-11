@@ -1,7 +1,4 @@
-depends kdeplasmoids-data
-
-# Do not development stuff
-missing dst:usr/lib/[^/]+\.so$ link:usr/lib/[^/]+\.so\.
+depends last
 
 mime:application/.* dst:usr/bin
 mime:application/x-.* dst:usr/lib

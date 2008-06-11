@@ -27,7 +27,5 @@ usr/lib/kde4/plasma_comic_userfriendlyprovider.so
 usr/lib/kde4/plasma_comic_xkcdprovider.so
 usr/lib/kde4/plasma_engine_comic.so
 usr/lib/kde4/plasma_engine_twitter.so
-usr/lib/libplasmaappletdialog.so.4
-usr/lib/libplasmaappletdialog.so.4.1.0
 usr/lib/libplasmacomicprovidercore.so.1
 usr/lib/libplasmacomicprovidercore.so.1.0.0
