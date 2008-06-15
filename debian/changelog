@@ -1,4 +1,4 @@
-kdeplasmoids (4:4.0.82+svn819285-1~pre3) UNRELEASED; urgency=low
+kdeplasmoids (4:4.0.82+svn819867-1) experimental; urgency=low
 
   * New upstream development snapshot.
 
@@ -18,7 +18,7 @@ kdeplasmoids (4:4.0.82+svn819285-1~pre3) UNRELEASED; urgency=low
     - kdeplasmoids-dev - developments files for public libraries.
   * Tweak descriptions.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 11 Jun 2008 04:30:24 +0300
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 15 Jun 2008 17:27:04 +0200
 
 extragear-plasma (4:4.0.80-1) experimental; urgency=low
 
