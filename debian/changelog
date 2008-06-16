@@ -1,3 +1,11 @@
+kdeplasmoids (4:4.0.82+svn820966-2) UNRELEASED; urgency=low
+
+  +++ Changes by Modestas Vainius:
+
+  * Fix typo in kdeplasmoids description.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 16 Jun 2008 16:29:31 +0300
+
 kdeplasmoids (4:4.0.82+svn820966-1) experimental; urgency=low
 
   * New upstream development snapshot.

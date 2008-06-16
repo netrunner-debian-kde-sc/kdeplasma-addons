@@ -23,7 +23,7 @@ Description: plasmoids for KDE 4 Plasma - main package
  and widgets (applets). It is part of the official KDE 4 distribution.
  .
  This package contains Plasma data engines and widgets (applets). Install
- this package if you want to plasmoids from KDE Plasmoids module.
+ this package if you want to use plasmoids from the KDE Plasmoids module.
 
 Package: kdeplasmoids-data
 Architecture: all
