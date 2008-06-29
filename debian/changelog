@@ -1,3 +1,9 @@
+kdeplasmoids (4:4.0.84-1) experimental; urgency=low
+
+  * New upstream snapshot.
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 29 Jun 2008 12:04:46 +0200
+
 kdeplasmoids (4:4.0.82+svn820966-2) UNRELEASED; urgency=low
 
   +++ Changes by Modestas Vainius:

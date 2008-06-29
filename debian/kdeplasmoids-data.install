@@ -74,6 +74,7 @@ usr/share/kde4/apps/desktoptheme/heron/widgets/tooltip.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/LICENSE
 usr/share/kde4/apps/desktoptheme/slim-glow/colors
 usr/share/kde4/apps/desktoptheme/slim-glow/dialogs/background.svg
+usr/share/kde4/apps/desktoptheme/slim-glow/dialogs/krunner.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/dialogs/shutdowndialog.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/metadata.desktop
 usr/share/kde4/apps/desktoptheme/slim-glow/opaque/dialogs/background.svg
@@ -89,8 +90,10 @@ usr/share/kde4/apps/desktoptheme/slim-glow/widgets/notes.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/panel-background.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/picture-frame-default.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/plot-background.svg
+usr/share/kde4/apps/desktoptheme/slim-glow/widgets/tasks.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/toolbox-button.svg
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/tooltip.svg
+usr/share/kde4/apps/desktoptheme/slim-glow/widgets/translucentbackground.svg
 usr/share/kde4/apps/plasma-bluemarble/atmosphere.frag
 usr/share/kde4/apps/plasma-bluemarble/atmosphere.vert
 usr/share/kde4/apps/plasma-bluemarble/earth-night.png
