@@ -5,7 +5,7 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake (>= 2.4.5), quilt,
- kdebase-workspace-dev (>= 4:4.0.82), libglu1-mesa-dev, libqt4-opengl-dev,
+ kdebase-workspace-dev (>= 4:4.0.84), libglu1-mesa-dev, libqt4-opengl-dev,
  libboost-dev
 Standards-Version: 3.7.3
 Homepage: http://plasma.kde.org/
