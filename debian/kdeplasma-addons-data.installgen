@@ -1,4 +1,4 @@
-depends kdeplasmoids-dev
+depends kdeplasma-addons-dev
 
 mime:text/.*
 mime:image/.*

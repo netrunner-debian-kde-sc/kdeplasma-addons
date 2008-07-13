@@ -1,4 +1,4 @@
-Source: kdeplasmoids
+Source: kdeplasma-addons
 Section: utils
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
@@ -9,15 +9,15 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake (>= 2.4.5), quilt,
  libboost-dev
 Standards-Version: 3.7.3
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/kdeplasmoids
-Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/kdeplasmoids
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/kdeplasma-addons
+Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/kdeplasma-addons
 
-Package: kdeplasmoids
+Package: kdeplasma-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, kdeplasmoids-data (= ${source:Version})
-Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma
-Conflicts: extragear-plasma
+Depends: ${shlibs:Depends}, kdeplasma-addons-data (= ${source:Version})
+Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma, kdeplasmoids
+Conflicts: extragear-plasma, kdeplasmoids
 Description: plasmoids for KDE 4 Plasma - main package
  KDE Plasmoids module is a collection of additional Plasma data engines 
  and widgets (applets). It is part of the official KDE 4 distribution.
@@ -25,48 +25,52 @@ Description: plasmoids for KDE 4 Plasma - main package
  This package contains Plasma data engines and widgets (applets). Install
  this package if you want to use plasmoids from the KDE Plasmoids module.
 
-Package: kdeplasmoids-data
+Package: kdeplasma-addons-data
 Architecture: all
 Section: kde
-Replaces: extragear-plasma-data
-Conflicts: extragear-plasma-data
+Replaces: extragear-plasma-data, kdeplasmoids-data
+Conflicts: extragear-plasma-data, kdeplasmoids-data
 Description: plasmoids for KDE 4 Plasma - data files
  KDE Plasmoids module is a collection of additional Plasma data engines 
  and widgets (applets). It is part of the official KDE 4 distribution.
  .
  This package contains the architecture-independent data files needed by
- kdeplasmoids.
+ kdeplasma-addons.
 
-Package: kdeplasmoids-libs4
+Package: kdeplasma-addons-libs4
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: extragear-plasma
-Conflicts: extragear-plasma
+Replaces: extragear-plasma, kdeplasmoids-libs4
+Conflicts: extragear-plasma, kdeplasmoids-libs4
 Description: plasmoids for KDE 4 Plasma - public libraries
  KDE Plasmoids module is a collection of additional Plasma data engines 
  and widgets (applets). It is part of the official KDE 4 distribution.
  .
  This package contains public libraries included in the KDE Plasmoids module.
 
-Package: kdeplasmoids-dev
+Package: kdeplasma-addons-dev
 Architecture: any
 Section: libdevel
-Depends: kdeplasmoids-libs4 (= ${binary:Version}),
- ${sameVersionDep:libplasma-dev:kdeplasmoids-libs4-Depends-libplasma2}
+Replaces: kdeplasmoids-dev
+Conflicts: kdeplasmoids-dev
+Depends: kdeplasma-addons-libs4 (= ${binary:Version}),
+ ${sameVersionDep:libplasma-dev:kdeplasma-addons-libs4-Depends-libplasma2}
 Description: plasmoids for KDE 4 Plasma - development files
  KDE Plasmoids module is a collection of additional Plasma data engines 
  and widgets (applets). It is part of the official KDE 4 distribution.
  .
  This package contains development files for the libraries provided in the
- `kdeplasmoids-libs4' package.
+ `kdeplasma-addons-libs4' package.
 
-Package: kdeplasmoids-dbg
+Package: kdeplasma-addons-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Depends: kdeplasmoids (= ${binary:Version}), kdebase-workspace-dbg
-Description: debugging symbols for kdeplasmoids
- This package contains the debugging symbols associated with kdeplasmoids.
- They will automatically be used by gdb for debugging kdeplasmoids related
+Conflicts: kdeplasmoids-dbg
+Replaces: kdeplasmoids-dbg
+Depends: kdeplasma-addons (= ${binary:Version}), kdebase-workspace-dbg
+Description: debugging symbols for kdeplasma-addons
+ This package contains the debugging symbols associated with kdeplasma-addons.
+ They will automatically be used by gdb for debugging kdeplasma-addons related
  issues.
