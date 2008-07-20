@@ -3,70 +3,124 @@ Thu, 11 Oct 2007 22:41:12 +0200.
 
 It was downloaded from ftp://ftp.kde.org
 
-Upstream Authors, Copyright and Licenses:
+Upstream Authors and copyright holders:
 
-Dataengine ebn:
+    Copyright (C) 1996, Christopher Osburn, Lunar Outreach Services, <chris@speakeasy.org>
+    Copyright (C) 1998,2000 Stephan Kulow <coolo@kde.org>
+    Copyright (C) 2005,2006,2007 by Siraj Razick
+    Copyright (C) 2006-2007 Rivo Laks <rivolaks@hot.ee>
     Copyright (C) 2007 Aaron Seigo <aseigo@kde.org>
-    Copyright (C) 2007 Alex Merry <huntedhacker@tiscali.co.uk>
-    License: GPLv2
-
-Dataengine twitter:
-    Copyright (C) 2007 Trever Fischer <wm161@wm161.net>
+    Copyright (C) 2007,2008 by Alex Merry <alex.merry@kdemail.net>
+    Copyright (C) 2007 Alexis MÃ©nard <darktears31@gmail.com>
     Copyright (C) 2007 André Duffeck <andre@duffeck.de>
-    License: GPLv2
-
-Dataengine and applet comic:
-    Copyright (C) 2007 by Tobias Koenig <tokoe@kde.org>
-    License: GPLv2
-
-Applet bluemarble:
-    Copyright (C) 2007 Rivo Laks <rivolaks@hot.ee>
-    License: GPLv2
-    
-Applet dict:
-    Copyright (C) 2007 by Thomas Georgiou <TAGeorgiou@gmail.com>
-    Copyright (C) 2007 by Jeff Cooper <weirdsox11@gmail.com>
-    License: GPLv2 or (at your option) any later version.
-
-Applet ebn:
-    Copyright (C) 2007 by Alex Merry <alex.merry@kdemail.net>
-    License: GPLv2 or (at your option) any later version.
-
-Applet frame:
-    Copyright  2007 by Anne-Marie Mahfouf <annma@kde.org>
-    Copyright  2007 by Antonio Vinci <mercurio@personellarete.it>
-    The current (temporary) picture is a modified version of a Pedro Carbajal's
-    artwork, used with permission by the author.
-    License: GPLv2 or (at your option) any later version.
-
-Applet filewatcher:
-    Copyright (C) 2007 by Jesper Thomschutz <jesperht@yahoo.com>
-    Copyright (C) 2007 by Simon Hausmann <hausmann@kde.org>
-    License: GPLv2 or (at your option) any later version.
-
-Applet kolourpicker:
-    Copyright (C) 2007 by Pino Toscano <pino@kde.org>
-    License: GPLv2
-
-Applet lancelot:
+    Copyright (C) 2007-2008 Anne-Marie Mahfouf <annma@kde.org>
+    Copyright (C) 2007 Antonio Vinci <mercurio@personellarete.it>
+    Copyright (C) 2007 Brad Hards <bradh@frogmouth.net>
+    Copyright (C) 2007 Chani Armitage <chanika@gmail.com>
+    Copyright (C) 2007-2008 Davide Bettio <davide.bettio@kdemail.net>
+    Copyright (C) 2007 Henry Stanaland <stanaland@gmail.com>
     Copyright (C) 2007 Ivan Cukic <ivan.cukic+kde@gmail.com>
-    License: GPLv2
-
-Applet notes:
+    Copyright (C) 2007 Jeff Cooper <weirdsox11@gmail.com>
+    Copyright (C) 2007 Jesper Thomschutz <jesperht@yahoo.com>
     Copyright (C) 2007 Lukas Kropatschek <lukas.krop@kdemail.net>
-    License: GPLv2 or (at your option) any later version.
-
-Applet twitter:
-    Copyright (C) 2007 by André Duffeck <andre@duffeck.de>
-    License: GPLv2 or (at your option) any later version.
+    Copyright (C) 2007-2008 Marco Martin <notmart@gmail.com>
+    Copyright (C) 2007-2008 Petri DamstÃ©n <damu@iki.fi>
+    Copyright (C) 2007 Pino Toscano <pino@kde.org>
+    Copyright (C) 2007 Riccardo Iaconelli <ruphy@fsfe.org>
+    Copyright (C) 2007 Robert Knight <robertknight@gmail.com>
+    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>
+    Copyright (C) 2007 Simon Hausmann <hausmann@kde.org>
+    Copyright (C) 2007 Sven Burmeister <sven.burmeister@gmx.net>
+    Copyright (C) 2007 Teemu Rytilahti <tpr@iki.fi>
+    Copyright (C) 2007 Thomas Georgiou <TAGeorgiou@gmail.com>
+    Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
+    Copyright (C) 2007 Trever Fischer <wm161@wm161.net>
+    Copyright (C) 2008 Stefan Majewsky <majewsky@gmx.net>
+    Copyright (C) 2008 Thomas Coopman <thomas.coopman@gmail.com>
 
 License:
+
+
+Most applets are under gplv2 or later.
+Within the files there is occasionally a lgplv2 or later, but together with gplv2 files,
+these all becomes gplv2 or later. Lancelot is almost entirely lgplv2 or later, but at least
+one file is gplv2 or later, so most probably, entire lancelot is lgplv2 or later as well.
+A few cmake files are mentioning the COPYING-CMAKE-SCRIPTS, originating from kdelibs, 
+fullquoted in the end.
+
+
+The dataengines are all available under the lgplv2 or later
+
+Runners/contact: lgplv2 or later
+Runners/converter: gplv2 or later
+
+desktopthemes: gplv2, gplv3 or later. Referencing the default plasma theme which is gplv2 or later.
+
+GPLv2:
+
+    This program is free software; you can redistribute it and/or modify 
+    it under the terms of the GNU General Public License as published by  
+    the Free Software Foundation; either version 2 of the License, or     
+    (at your option) any later version.                                   
+                                                                          
+    This program is distributed in the hope that it will be useful,       
+    but WITHOUT ANY WARRANTY; without even the implied warranty of        
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         
+    GNU General Public License for more details.                          
+                                                                          
+    You should have received a copy of the GNU General Public License     
+    along with this program; if not, write to the                         
+    Free Software Foundation, Inc.,                                       
+    51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA .        
+	
+
+LGPLv2:
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU Lesser/Library General Public License version 2,
+    or (at your option) any later version, as published by the Free
+    Software Foundation
+ 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser/Library General Public License for more details
+ 
+    You should have received a copy of the GNU Lesser/Library General Public
+    License along with this program; if not, write to the
+    Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+COPYING-CMAKE-SCRIPTS:
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in `/usr/share/common-licenses/GPL-2
 
-On Debian systems, the complete text of the GNU General
-Public License can be found in `/usr/share/common-licenses/GPL'.
+On Debian systems, the complete text of the GNU Lesser General
+Public License version 2 can be found in `/usr/share/common-licenses/LGPL-2'.
 
 The Debian packaging is (C) 2007-2008, Debian Qt/KDE Maintainers and
 is licensed under the GPL, see above.
