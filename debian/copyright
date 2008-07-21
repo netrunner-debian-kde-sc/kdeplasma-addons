@@ -5,38 +5,44 @@ It was downloaded from ftp://ftp.kde.org
 
 Upstream Authors and copyright holders:
 
-    Copyright (C) 1996, Christopher Osburn, Lunar Outreach Services, <chris@speakeasy.org>
+    Copyright (C) 1989, 1991 Free Software Foundation, Inc.                                                                                                      
+    Copyright (C) 1996 Christopher Osburn <chris@speakeasy.org>                                                                                                      
+    Copyright (C) 1996-2002 the kicker authors. (fuzzy logic)
     Copyright (C) 1998,2000 Stephan Kulow <coolo@kde.org>
     Copyright (C) 2005,2006,2007 by Siraj Razick
     Copyright (C) 2006-2007 Rivo Laks <rivolaks@hot.ee>
     Copyright (C) 2007 Aaron Seigo <aseigo@kde.org>
-    Copyright (C) 2007,2008 by Alex Merry <alex.merry@kdemail.net>
-    Copyright (C) 2007 Alexis MÃ©nard <darktears31@gmail.com>
-    Copyright (C) 2007 André Duffeck <andre@duffeck.de>
-    Copyright (C) 2007-2008 Anne-Marie Mahfouf <annma@kde.org>
-    Copyright (C) 2007 Antonio Vinci <mercurio@personellarete.it>
+    Copyright (C) 2007 Alexis Ménard <darktears31@gmail.com>                                                                                                     
+    Copyright (C) 2007 André Duffeck <duffeck@kde.org>
+    Copyright (C) 2007 Antonio Vinci <mercurio@personellarete.it>                                                                                                
     Copyright (C) 2007 Brad Hards <bradh@frogmouth.net>
     Copyright (C) 2007 Chani Armitage <chanika@gmail.com>
-    Copyright (C) 2007-2008 Davide Bettio <davide.bettio@kdemail.net>
+    Copyright (C) 2007 David Faure <faure@kde.org>
     Copyright (C) 2007 Henry Stanaland <stanaland@gmail.com>
     Copyright (C) 2007 Ivan Cukic <ivan.cukic+kde@gmail.com>
     Copyright (C) 2007 Jeff Cooper <weirdsox11@gmail.com>
     Copyright (C) 2007 Jesper Thomschutz <jesperht@yahoo.com>
     Copyright (C) 2007 Lukas Kropatschek <lukas.krop@kdemail.net>
-    Copyright (C) 2007-2008 Marco Martin <notmart@gmail.com>
-    Copyright (C) 2007-2008 Petri DamstÃ©n <damu@iki.fi>
     Copyright (C) 2007 Pino Toscano <pino@kde.org>
-    Copyright (C) 2007 Riccardo Iaconelli <ruphy@fsfe.org>
+    Copyright (C) 2007 Riccardo Iaconelli <riccardo@kde.org>                                                                                                      
     Copyright (C) 2007 Robert Knight <robertknight@gmail.com>
-    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>
     Copyright (C) 2007 Simon Hausmann <hausmann@kde.org>
     Copyright (C) 2007 Sven Burmeister <sven.burmeister@gmx.net>
     Copyright (C) 2007 Teemu Rytilahti <tpr@iki.fi>
     Copyright (C) 2007 Thomas Georgiou <TAGeorgiou@gmail.com>
     Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
     Copyright (C) 2007 Trever Fischer <wm161@wm161.net>
+    Copyright (C) 2007,2008 Alex Merry <alex.merry@kdemail.net>                                                                                                   
+    Copyright (C) 2007-2008 Anne-Marie Mahfouf <annma@kde.org>
+    Copyright (C) 2007-2008 Davide Bettio <davide.bettio@kdemail.net>
+    Copyright (C) 2007-2008 Marco Martin <notmart@gmail.com>                                                                                                           
+    Copyright (C) 2007-2008 Petri Damstén <damu@iki.fi>
+    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>
+    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>                                                                                                          
+    Copyright (C) 2008 Laurent Montel <montel@kde.org>
     Copyright (C) 2008 Stefan Majewsky <majewsky@gmx.net>
-    Copyright (C) 2008 Thomas Coopman <thomas.coopman@gmail.com>
+    Copyright (C) 2008 Thomas Coopman <thomas.coopman@gmail.com>                                                                                                 
+
 
 License:
 
