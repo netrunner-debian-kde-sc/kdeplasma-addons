@@ -54,8 +54,7 @@ Architecture: any
 Section: libdevel
 Replaces: kdeplasmoids-dev
 Conflicts: kdeplasmoids-dev
-Depends: kdeplasma-addons-libs4 (= ${binary:Version}),
- ${sameVersionDep:libplasma-dev:kdeplasma-addons-libs4-Depends-libplasma2}
+Depends: kdeplasma-addons-libs4 (= ${binary:Version}), ${sameVersionDep:libplasma-dev:kdeplasma-addons-libs4}
 Description: plasmoids for KDE 4 Plasma - development files
  KDE Plasmoids module is a collection of additional Plasma data engines 
  and widgets (applets). It is part of the official KDE 4 distribution.
