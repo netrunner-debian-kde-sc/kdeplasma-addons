@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.1.2-0) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * Update patch 97_fix_target_link_libraries.diff.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 25 Sep 2008 23:12:12 +0200
+
 kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
 
   * New upstreams release.
