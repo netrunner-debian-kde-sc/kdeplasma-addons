@@ -1,8 +1,15 @@
-kdeplasma-addons (4:4.1.1-1~lenny+1) lenny; urgency=low
+kdeplasma-addons (4:4.1.2-1~lenny+1) lenny; urgency=low
 
   * Backport for Lenny.
 
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Fri, 12 Sep 2008 15:35:24 +0200
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 07 Oct 2008 18:35:41 +0200
+
+kdeplasma-addons (4:4.1.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update patch 97_fix_target_link_libraries.diff.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 30 Sep 2008 20:59:22 +0200
 
 kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
 
@@ -14,12 +21,6 @@ kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
     debian specific pimlibs changes
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 29 Aug 2008 08:46:37 +0200
-
-kdeplasma-addons (4:4.1.0-1~lenny+1) lenny; urgency=low
-
-  * Backport for Lenny.
-
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 20 Aug 2008 16:48:57 +0200
 
 kdeplasma-addons (4:4.1.0-1) experimental; urgency=low
 
