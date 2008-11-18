@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.1.3-2) UNRELEASED; urgency=low
+
+  * Add build depend on kdepimlibs5-dev, it is needed now since 
+    kdebase-workspace-dev depends have changed.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 18 Nov 2008 09:45:25 +0100
+
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
   * New upstream release
