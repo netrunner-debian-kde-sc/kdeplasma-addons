@@ -1,0 +1,16 @@
+[kdeplasma-addons-dev]
+missing dst:usr/lib/libplasmacomicprovidercore.so$ link:
+dst:usr/include/
+dst:usr/lib/[^/]+\.so$ link:usr/lib/[^/]+\.so\.
+
+[kdeplasma-addons-data]
+mime:text/.*
+mime:image/.*
+mime:application/(?!(x-executable|x-sharedlib)).*
+
+[kdeplasma-addons-libs4]
+dst:usr/lib/lib[^/]+\.so\.
+
+[kdeplasma-addons]
+mime:application/.* dst:usr/bin
+mime:application/x-.* dst:usr/lib

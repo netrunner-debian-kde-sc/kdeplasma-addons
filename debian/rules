@@ -2,3 +2,5 @@
 
 include debian/cdbs/kde.mk
 
+clean::
+	find applets/lancelot/tools/puck -name *.pyc -delete

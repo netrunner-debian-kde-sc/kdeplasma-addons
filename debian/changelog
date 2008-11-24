@@ -1,3 +1,24 @@
+kdeplasma-addons (4:4.1.80+svn888200-0r1) UNRELEASED; urgency=low
+
+  * New upstream development snapshot.
+
+  TODO: do we want to split off lancelot, liblancelot(-dev)?
+
+  +++ Changes by Modestas Vainius:
+
+  * Drop explicit build depend on cmake.
+  * Build depend on kdelibs5-dev, libplasma-dev and kdepimlibs5-dev
+    explicitly. Bump kdebase-workspace-dev dependency to 4:4.1.80.
+  * Build depend on libkexiv2-6-dev and python (the latter is needed by
+    lancelot at build time).
+  * Add debian/installgen and update install files.
+  * Bump Standards-Version to 3.8.0: add README.source.
+  * Drop 97_fix_target_link_libraries.diff, no longer needed.
+  * Update install files.
+  * Add a clean rule to *.pyc from applets/lancelot/tools/puck.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 24 Nov 2008 02:55:16 +0200
+
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
   * New upstream release
