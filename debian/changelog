@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.1.80+svn888200-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.1.80+svn889064-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
 
@@ -17,7 +17,7 @@ kdeplasma-addons (4:4.1.80+svn888200-0r1) UNRELEASED; urgency=low
   * Update install files.
   * Add a clean rule to *.pyc from applets/lancelot/tools/puck.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 24 Nov 2008 02:55:16 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 26 Nov 2008 03:37:30 +0200
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
