@@ -42,7 +42,7 @@ Package: kdeplasma-addons-libs4
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: extragear-plasma, kdeplasmoids-libs4
+Replaces: extragear-plasma, kdeplasmoids-libs4, kdeplasma-addons (<< 4:4.1.80)
 Conflicts: extragear-plasma, kdeplasmoids-libs4
 Description: plasmoids for KDE 4 Plasma - public libraries
  KDE Plasmoids module is a collection of additional Plasma data engines 
