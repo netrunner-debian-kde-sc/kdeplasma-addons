@@ -2,5 +2,7 @@
 
 include debian/cdbs/kde.mk
 
+DEB_DH_MAKESHLIBS_ARGS_kdeplasma-addons-libs4 := -V
+
 clean::
 	find applets/lancelot/tools/puck -name *.pyc -delete
