@@ -1,0 +1,2 @@
+    - Use our custom kde4.mk rather than built-in cdbs
+    - Keep our replaces/conflicts on old extragear-plasma/kdeplasma-addons packages 

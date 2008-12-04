@@ -1,0 +1,6 @@
+depends kdeplasma-addons-dev
+
+mime:text/.*
+mime:image/.*
+mime:application/(?!(x-executable|x-sharedlib)).*
+

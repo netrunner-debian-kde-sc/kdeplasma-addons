@@ -1,0 +1,4 @@
+depends last
+
+mime:application/.* dst:usr/bin
+mime:application/x-.* dst:usr/lib

@@ -1,0 +1,81 @@
+Source: kdeplasma-addons
+Section: utils
+Priority: optional
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
+ Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
+Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake (>= 2.6.2), quilt,
+ kdebase-workspace-dev (>= 4:4.1.80), libglu1-mesa-dev, libqt4-opengl-dev,
+ libboost-dev, python, libkexiv2-7-dev, kdebase-workspace-data (>= 4:4.1.80)
+Standards-Version: 3.8.0
+Homepage: http://plasma.kde.org/
+Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
+Vcs-Bzr: https://code.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
+
+Package: kdeplasma-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kdeplasma-addons-data (= ${source:Version})
+Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma,
+ plasmoid-lancelot, plasmoid-previewer
+Conflicts: extragear-plasma, kdeplasmoids, plasmoid-lancelot,
+ plasmoid-previewer
+Description: plasmoids for KDE 4 Plasma - main package
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
+ .
+ This package contains Plasma data engines and widgets (applets). Install
+ this package if you want to use plasmoids from the KDE Plasmoids module.
+
+Package: kdeplasmoids
+Architecture: all
+Priority: extra
+Depends: kdeplasma-addons
+Description: Transitional package
+ This dummy package is provided for a smooth transition from kdeplasmoids to
+ the new version, named kdeplasma-addons.
+ It may safely be removed after installation.
+
+Package: kdeplasma-addons-data
+Architecture: all
+Section: kde
+Replaces: extragear-plasma-data, plasmoid-lancelot, plasmoid-previewer
+Conflicts: extragear-plasma-data, kdeplasmoids-data, plasmoid-lancelot,
+ plasmoid-previewer
+Description: plasmoids for KDE 4 Plasma - data files
+ KDE Plasmoids module is a collection of additional Plasma data engines 
+ and widgets (applets). It is part of the official KDE 4 distribution.
+ .
+ This package contains the architecture-independent data files needed by
+ kdeplasma-addons.
+
+Package: kdeplasmoids-data
+Architecture: all
+Priority: extra
+Depends: kdeplasma-addons-data
+Description: Transitional package
+ This dummy package is provided for a smooth transition from kdeplasmoids to
+ the new version, named kdeplasma-addons.
+ It may safely be removed after installation.
+
+Package: kdeplasma-addons-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Conflicts: kdeplasmoids-dbg
+Replaces: kdeplasmoids-dbg
+Depends: kdeplasma-addons (= ${binary:Version}), kdebase-workspace-dbg
+Description: debugging symbols for kdeplasmoids
+ This package contains the debugging symbols associated with kdeplasma-addons.
+ They will automatically be used by gdb for debugging kdeplasma-addons related
+ issues.
+
+Package: kdeplasmoids-dbg
+Architecture: all
+Priority: extra
+Depends: kdeplasma-addons-dbg
+Description: Transitional package
+ This dummy package is provided for a smooth transition from kdeplasmoids to
+ the new version, named kdeplasma-addons.
+ It may safely be removed after installation.

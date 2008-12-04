@@ -1,0 +1,312 @@
+kdeplasma-addons (4:4.1.80-0ubuntu2) UNRELEASED; urgency=low
+
+  * Change Vcs-Browser to Launchpad and replace Vcs-Svn with Vcs-Bzr
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Wed, 03 Dec 2008 15:01:21 +0100
+
+kdeplasma-addons (4:4.1.80-0ubuntu1) jaunty; urgency=low
+
+  * New upstream beta release:
+    - Bump build-depends versions
+    - Add conflicts on plasmoid-lancelot and plasmoid-previewer to
+      kdeplasma-addons,
+    - Add python build-dep due to Lancelot's puck tool
+    - Add the execution puck's clean.sh script to debian/rule's make clean
+      target
+    - Add kdebase-workspace-data as a build-dep since Lancelot needs
+      /usr/share/dbus-1/interfaces/org.freedesktop.ScreenSaver.xml
+    - Update various debian/*.install files
+    - Remove kdeplasma-addons-libs4 and -dev packaging, libplasmaapletdialog
+      has moved to kdebase-workspace
+    - Change build-depend on libkexiv2-dev => libkexiv2-7-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Wed, 26 Nov 2008 20:14:49 -0500
+
+kdeplasma-addons (4:4.1.2-1ubuntu2) jaunty; urgency=low
+
+  * No change rebuild for new dh_sameversiondeps
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Nov 2008 16:34:21 +0000
+
+kdeplasma-addons (4:4.1.2-1ubuntu1) jaunty; urgency=low
+
+  * Merge with Debian, remaining changes:
+    - Use our custom kde4.mk rather than built-in cdbs
+    - Keep our replaces/conflicts on old extragear-plasma/kdeplasma-addons packages
+  * Add changes to KUBUNTU-DEBIAN-DIFFERENCES
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 07 Nov 2008 12:19:46 -0500
+
+kdeplasma-addons (4:4.1.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update patch 97_fix_target_link_libraries.diff.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 30 Sep 2008 20:59:22 +0200
+
+kdeplasma-addons (4:4.1.2-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 26 Sep 2008 09:26:38 -0400
+
+kdeplasma-addons (4:4.1.1-0ubuntu2) intrepid; urgency=low
+
+  * Rebuild against kdelibs 4:4.1.1+really4.1.1
+
+ -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Mon, 01 Sep 2008 21:33:35 -0400
+
+kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
+
+  * New upstreams release.
+
+  +++ Changes by Sune Vuorela:
+
+  * Change 97_ patch to fit with upstream changes and 
+    debian specific pimlibs changes
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 29 Aug 2008 08:46:37 +0200
+
+kdeplasma-addons (4:4.1.1-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release.
+
+ -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Fri, 29 Aug 2008 08:11:18 -0400
+
+kdeplasma-addons (4:4.1.0-0ubuntu3) intrepid; urgency=low
+
+  * Fix typo in kdeplasma-addons-libs4' Conflicts: list.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 08 Aug 2008 16:24:09 +0200
+
+kdeplasma-addons (4:4.1.0-0ubuntu2) intrepid; urgency=low
+
+  * switch to kde4.mk from cdbs
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 01 Aug 2008 15:29:42 +0000
+
+kdeplasma-addons (4:4.1.0-1) experimental; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by Modestas Vainius:
+
+  * Adapt sameVersionDep substvars to new dh_sameversiondeps syntax.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Update installed files and build depend version.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 28 Jul 2008 03:12:14 +0200
+
+kdeplasma-addons (4:4.1.0-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Thomas <echidnaman@gmail.com>  Thu, 24 Jul 2008 08:09:52 -0400
+
+kdeplasma-addons (4:4.0.98-1) experimental; urgency=low
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Renaming package, again, to kdeplasma-addons.
+  * Update installed files.
+  * Add 97_fix_target_link_libraries to add missing references
+    to kio libs.
+
+  +++ Changes by Sune Vuorela:
+
+  * Update license file
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 21 Jul 2008 00:01:13 +0200
+
+kdeplasma-addons (4:4.0.98-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release candidate
+  * Bump Standards-Version to 3.8.0
+  * Renamed source and binary packages to kdeplasma-addons
+    + Add replaces/conflicts for old packages
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Sat, 12 Jul 2008 15:09:05 +0200
+
+kdeplasmoids (4:4.0.84-1) experimental; urgency=low
+
+  * New upstream snapshot.
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 29 Jun 2008 12:04:46 +0200
+
+kdeplasmoids (4:4.0.83-0ubuntu1) intrepid; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 23 Jun 2008 15:07:27 +0000
+
+kdeplasmoids (4:4.0.82+svn820966-2) UNRELEASED; urgency=low
+
+  +++ Changes by Modestas Vainius:
+
+  * Fix typo in kdeplasmoids description.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 16 Jun 2008 16:29:31 +0300
+
+kdeplasmoids (4:4.0.82+svn820966-1) experimental; urgency=low
+
+  * New upstream development snapshot.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Rename package, it used to be extragear-plasma.
+
+  +++ Changes by Modestas Vainius:
+
+  * Add installgen files.
+  * Update install files.
+  * Add myself to Uploaders.
+  * Bump build depends to 4.0.82.
+  * Add Conflicts/Replaces with extragear-plasma-(data).
+  * Add new binary packages:
+    - kdeplasmoids-libs4 - public libraries.
+    - kdeplasmoids-dev - developments files for public libraries.
+  * Tweak descriptions.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 16 Jun 2008 13:39:58 +0200
+
+extragear-plasma (4:4.0.80-1) experimental; urgency=low
+
+  * New upstream snapshot.
+  * Add new needed build depends: libglu1-mesa-dev, libqt4-opengl-dev and
+    libboost-dev.
+  * Update installed files, shipping translations again.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 28 May 2008 01:17:45 +0200
+
+extragear-plasma (4:4.0.72+svn802997-1) experimental; urgency=low
+
+  * New snapshot.
+  * Some stuff disable because it is totally broken, still no translations.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 01 May 2008 16:29:42 +0200
+
+extragear-plasma (4:4.0.68~svn794879-1) experimental; urgency=low
+
+  * Build plasma against KDE 4.1 from trunk:
+    - Update build depends to kdebase-workspace-dev (>= 4:4.0.68).
+  * Translation no included in purpose, so extragear-plasma-l10n is empty.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Update installed files.
+
+  +++ Changes by Matthew Rosewarne:
+
+  * Move extragear-plasma packages to Section: kde.
+  * Move extragear-plasma-dbg to Section: libdevel.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue,  8 Apr 2008 21:41:57 +0200
+
+extragear-plasma (4:4.0.1-1) experimental; urgency=low
+
+  * New upstream release:
+    + lancelot and fifteenpuzzle applets have been removed.
+
+  +++ Changes by Matthew Rosewarne:
+
+  * Tweak descriptions.
+  * Tighten dependency versions.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Update installed files.
+  * Bump compat/debhelper to 6.
+  * Remove LDFLAGS+="-Wl,--as-needed". It was integrated into cdbs/kde.mk.
+
+  +++ Changes by Fathi Boudra:
+
+  * Add Vcs-Browser and Vcs-Svn fields.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 02 Feb 2008 06:45:02 +0100
+
+extragear-plasma (4:4.0.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update extragear-plasma-l10n.install.
+  * Update years in copyright. 
+  * Build depend on kdebase-workspace-dev >= 4:4.0.0-1.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 09 Jan 2008 13:30:33 +0100
+
+extragear-plasma (4:3.98.0~svn756095-1) experimental; urgency=low
+
+  * Svn snapshot of revision 756095.
+  * Update extragear-plasma-l10n.install.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 03 Jan 2008 07:49:11 +0100
+
+extragear-plasma (4:3.98~svn754166-1) experimental; urgency=low
+
+  * Svn snapshot of revision 754166.
+  * Update *.install files.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 29 Dec 2007 09:47:33 +0100
+
+extragear-plasma (4:3.97.0-2) experimental; urgency=low
+
+  * Update Standards-Version to 3.7.3.
+  * Remove extra LDFLAGS. Included via CDBS now.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Mon, 17 Dec 2007 23:49:29 +0100
+
+extragear-plasma (4:3.97.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Build depend on kdebase-workspace-dev >= 4:3.97.0.
+  * Update installed files.
+  * Add new package extragear-plasma-l10n for localization files.
+  * Remove dependency on sharutils. Not needed anymore.
+  * Add export LDFLAGS+="-Wl,--as-needed" in rules to make dpkg-shlibdeps
+    happier.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Fri, 07 Dec 2007 17:24:14 +0100
+
+extragear-plasma (4:3.96.0-2) experimental; urgency=low
+
+  * Update to r739712.
+  * Build depend on kdebase-workspace 4:3.96.0-2
+  * Build depend on sharutils for uudecoding the new images.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Wed, 21 Nov 2007 17:09:17 +0000
+
+extragear-plasma (4:3.96.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update *.install files.
+  * Move Homepage into control field.
+  * Build depend on kdebase-workspace-dev >= 4:3.96.0.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 15 Nov 2007 18:46:33 +0100
+
+extragear-plasma (3.95.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by Fathi Boudra:
+
+  * Update installed files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 09 Nov 2007 19:38:54 +0100
+
+extragear-plasma (3.95.0-1) experimental; urgency=low
+
+  * New upstream release: KDE4 beta4. First upload to the Debian archive.
+  * Build depend on kdebase-workspace-dev >= 4:3.95.0.
+  * Readd picture frame applet which isn't anymore a part of kdebase-workspace
+    and add replaces kdebase-workspace-bin << 4:3.95.0.
+  * Update *.install files.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Sat, 27 Oct 2007 18:45:56 +0200
+
+extragear-plasma (3.94.0-1) experimental; urgency=low
+
+  * Initial release.
+
+ -- Armin Berres <trigger+debian@space-based.de>  Wed, 24 Oct 2007 01:14:25 +0200
