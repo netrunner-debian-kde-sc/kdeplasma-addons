@@ -19,9 +19,9 @@ usr/share/icons/hicolor/64x64/apps/lancelot.png
 usr/share/icons/hicolor/64x64/apps/previewer.png
 usr/share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
 usr/share/icons/oxygen/scalable/apps/bball.svgz
-usr/share/kde4/apps/bball/bball.svg
+usr/share/kde4/apps/bball/bball.svgz
 usr/share/kde4/apps/bball/bounce.ogg
-usr/share/kde4/apps/bball/football.svg
+usr/share/kde4/apps/bball/football.svgz
 usr/share/kde4/apps/desktoptheme/Aya/dialogs/background.svgz
 usr/share/kde4/apps/desktoptheme/Aya/dialogs/kickoff.svgz
 usr/share/kde4/apps/desktoptheme/Aya/dialogs/krunner.svgz
@@ -144,10 +144,10 @@ usr/share/kde4/apps/desktoptheme/default/lancelot/section-buttons.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/system-buttons-extender.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/system-buttons.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/theme.config
-usr/share/kde4/apps/desktoptheme/default/rssnow/background.svg
-usr/share/kde4/apps/desktoptheme/default/rssnow/left.svg
-usr/share/kde4/apps/desktoptheme/default/rssnow/right.svg
-usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svg
+usr/share/kde4/apps/desktoptheme/default/rssnow/background.svgz
+usr/share/kde4/apps/desktoptheme/default/rssnow/left.svgz
+usr/share/kde4/apps/desktoptheme/default/rssnow/right.svgz
+usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svgz
 usr/share/kde4/apps/desktoptheme/default/stylesheets/news.css
 usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
@@ -157,7 +157,7 @@ usr/share/kde4/apps/desktoptheme/default/widgets/notes.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/picture-frame-default.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-16.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-22.svgz
-usr/share/kde4/apps/desktoptheme/default/widgets/timer.svg
+usr/share/kde4/apps/desktoptheme/default/widgets/timer.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/twitter.svgz
 usr/share/kde4/apps/desktoptheme/heron/colors
 usr/share/kde4/apps/desktoptheme/heron/dialogs/background.svgz
@@ -184,7 +184,6 @@ usr/share/kde4/apps/desktoptheme/heron/widgets/background.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/bar_meter_horizontal.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/bar_meter_vertical.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/clock.svgz
-usr/share/kde4/apps/desktoptheme/heron/widgets/connection-established.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/iconbutton.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/notes.svgz
 usr/share/kde4/apps/desktoptheme/heron/widgets/panel-background.svgz
@@ -218,7 +217,6 @@ usr/share/kde4/apps/desktoptheme/slim-glow/widgets/background.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/bar_meter_horizontal.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/bar_meter_vertical.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/clock.svgz
-usr/share/kde4/apps/desktoptheme/slim-glow/widgets/connection-established.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/iconbutton.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/notes.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/widgets/panel-background.svgz

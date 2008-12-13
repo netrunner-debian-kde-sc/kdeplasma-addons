@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.1.82+svn892722-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.1.85+svn896279-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
 
@@ -23,7 +23,7 @@ kdeplasma-addons (4:4.1.82+svn892722-0r1) UNRELEASED; urgency=low
   * kdeplasma-addons-libs4 replaces kdeplasma-addons << 4:4.1.80 as
     libplasmacomicprovidercore was moved.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 29 Nov 2008 22:02:35 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Dec 2008 14:11:29 +0200
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
