@@ -8,7 +8,8 @@ kdeplasma-addons (4:4.1.85+svn896279-0r1) UNRELEASED; urgency=low
 
   * Drop explicit build depend on cmake.
   * Build depend on kdelibs5-dev, libplasma-dev and kdepimlibs5-dev
-    explicitly. Bump kdebase-workspace-dev dependency to 4:4.1.80.
+    explicitly (4.1.85). Bump kdebase-workspace-dev dependency to
+    4:4.1.85+svn896324.
   * Build depend on libkexiv2-6-dev and python (the latter is needed by
     lancelot at build time).
   * Add debian/installgen and update install files.
