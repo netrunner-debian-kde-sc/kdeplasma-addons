@@ -1,3 +1,13 @@
+kdeplasma-addons (4:4.1.85-0ubuntu2) jaunty; urgency=low
+
+  * Drop no longer needed transitional packages
+    - kdeplasmoids
+    - kdeplasmoids-data
+    - kdeplasmoids-dbg
+  * Add kdeplasma-addons replaces kdeplasmoids and not just conflicts
+
+ -- Scott Kitterman <scott@kitterman.com>  Wed, 17 Dec 2008 13:38:10 -0500
+
 kdeplasma-addons (4:4.1.85-0ubuntu1) jaunty; urgency=low
 
   * New upstream release

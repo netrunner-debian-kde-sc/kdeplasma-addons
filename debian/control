@@ -19,7 +19,7 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, kdeplasma-addons-data (= ${source:Version})
 Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma,
- plasmoid-lancelot, plasmoid-previewer
+ plasmoid-lancelot, plasmoid-previewer, kdeplasmoids
 Conflicts: extragear-plasma, kdeplasmoids, plasmoid-lancelot,
  plasmoid-previewer
 Description: plasmoids for KDE 4 Plasma - main package
@@ -29,19 +29,11 @@ Description: plasmoids for KDE 4 Plasma - main package
  This package contains Plasma data engines and widgets (applets). Install
  this package if you want to use plasmoids from the KDE Plasmoids module.
 
-Package: kdeplasmoids
-Architecture: all
-Priority: extra
-Depends: kdeplasma-addons
-Description: Transitional package
- This dummy package is provided for a smooth transition from kdeplasmoids to
- the new version, named kdeplasma-addons.
- It may safely be removed after installation.
-
 Package: kdeplasma-addons-data
 Architecture: all
 Section: kde
-Replaces: extragear-plasma-data, plasmoid-lancelot, plasmoid-previewer
+Replaces: extragear-plasma-data, kdeplasmoids-data, plasmoid-lancelot,
+ plasmoid-previewer
 Conflicts: extragear-plasma-data, kdeplasmoids-data, plasmoid-lancelot,
  plasmoid-previewer
 Description: plasmoids for KDE 4 Plasma - data files
@@ -50,15 +42,6 @@ Description: plasmoids for KDE 4 Plasma - data files
  .
  This package contains the architecture-independent data files needed by
  kdeplasma-addons.
-
-Package: kdeplasmoids-data
-Architecture: all
-Priority: extra
-Depends: kdeplasma-addons-data
-Description: Transitional package
- This dummy package is provided for a smooth transition from kdeplasmoids to
- the new version, named kdeplasma-addons.
- It may safely be removed after installation.
 
 Package: kdeplasma-addons-dbg
 Section: libdevel
@@ -72,11 +55,3 @@ Description: debugging symbols for kdeplasmoids
  They will automatically be used by gdb for debugging kdeplasma-addons related
  issues.
 
-Package: kdeplasmoids-dbg
-Architecture: all
-Priority: extra
-Depends: kdeplasma-addons-dbg
-Description: Transitional package
- This dummy package is provided for a smooth transition from kdeplasmoids to
- the new version, named kdeplasma-addons.
- It may safely be removed after installation.
