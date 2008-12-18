@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.1.85-0ubuntu3) UNRELEASED; urgency=low
+
+  * Change Vcs-Browser to Launchpad and replace Vcs-Svn with Vcs-Bzr
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Thu, 18 Dec 2008 10:04:25 -0500
+
 kdeplasma-addons (4:4.1.85-0ubuntu2) jaunty; urgency=low
 
   * Drop no longer needed transitional packages
