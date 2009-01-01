@@ -1,8 +1,13 @@
 kdeplasma-addons (4:4.1.85-0ubuntu3) UNRELEASED; urgency=low
 
+  [ Harald Sitter ]
   * Change Vcs-Browser to Launchpad and replace Vcs-Svn with Vcs-Bzr
 
- -- Harald Sitter <apachelogger@ubuntu.com>  Thu, 18 Dec 2008 10:04:25 -0500
+  [ Michael Casadevall ] 
+  * debian/patches/kubuntu_01_qreal_portability_fixes.diff
+    - Upcasts qreal in templated functions to fix ARM FTBFSes
+
+ -- Michael Casadevall <sonicmctails@gmail.com>  Thu, 01 Jan 2009 00:30:12 -0500
 
 kdeplasma-addons (4:4.1.85-0ubuntu2) jaunty; urgency=low
 
