@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.1.85-0ubuntu3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.1.85-0ubuntu3) jaunty; urgency=low
 
   [ Harald Sitter ]
   * Change Vcs-Browser to Launchpad and replace Vcs-Svn with Vcs-Bzr
