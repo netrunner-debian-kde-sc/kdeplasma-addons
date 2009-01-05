@@ -5,7 +5,7 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), quilt,
- kdelibs5-dev (>= 4:4.1.85), libplasma-dev (>= 4:4.1.85), kdepimlibs5-dev (>= 4:4.1.85),
+ kdelibs5-dev (>= 4:4.1.85), kdepimlibs5-dev (>= 4:4.1.85),
  kdebase-workspace-dev (>= 4:4.1.85+svn896324), libboost-dev, libkexiv2-7-dev, python
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
@@ -128,7 +128,7 @@ Architecture: any
 Section: libdevel
 Replaces: kdeplasma-addons-dev
 Conflicts: kdeplasma-addons-dev
-Depends: liblancelot0 (= ${binary:Version}), ${sameVersionDep:libplasma-dev:liblancelot0}
+Depends: liblancelot0 (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:liblancelot0}
 Description: development headers for liblancelot
  Liblancelot is a base framework for everything in the world of Lancelot.
  It is built on top of Plasma. It provides a set of custom widgets, layouts

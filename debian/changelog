@@ -5,7 +5,7 @@ kdeplasma-addons (4:4.1.87+svn905624-0r2) UNRELEASED; urgency=low
   +++ Changes by Modestas Vainius:
 
   * Drop explicit build depend on cmake.
-  * Build depend on kdelibs5-dev, libplasma-dev and kdepimlibs5-dev
+  * Build depend on kdelibs5-dev and kdepimlibs5-dev
     explicitly (4.1.85). Bump kdebase-workspace-dev dependency to
     4:4.1.85+svn896324.
   * Build depend on libkexiv2-6-dev and python (the latter is needed by
@@ -16,6 +16,8 @@ kdeplasma-addons (4:4.1.87+svn905624-0r2) UNRELEASED; urgency=low
   * Update install files.
   * Add a clean rule to *.pyc from applets/lancelot/tools/puck.
   * Bump liblancelot0 shlibs on each new upstream release.
+  * Do not build depend on libplasma-dev. Plasma headers are in kdelibs5-dev
+    for now.
 
   ++ Changes by George Kiagiadakis:
 
