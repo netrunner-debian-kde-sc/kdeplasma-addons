@@ -15,4 +15,3 @@ usr/include/lancelot/widgets/ResizeBordersPanel.h
 usr/include/lancelot/widgets/Widget.h
 usr/include/lancelot/widgets/WidgetPositioner.h
 usr/lib/liblancelot.so
-usr/lib/libplasmaconverter.so

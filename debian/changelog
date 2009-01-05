@@ -1,8 +1,6 @@
-kdeplasma-addons (4:4.1.86+svn903225-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.1.87+svn905624-0r2) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
-
-  TODO: do we want to split off lancelot, liblancelot(-dev)?
 
   +++ Changes by Modestas Vainius:
 
@@ -17,14 +15,25 @@ kdeplasma-addons (4:4.1.86+svn903225-0r1) UNRELEASED; urgency=low
   * Drop 97_fix_target_link_libraries.diff, no longer needed.
   * Update install files.
   * Add a clean rule to *.pyc from applets/lancelot/tools/puck.
-  * Bump kdeplasma-addons-libs4 shlibs on each new upstream release.
+  * Bump liblancelot0 shlibs on each new upstream release.
 
   ++ Changes by George Kiagiadakis:
 
-  * kdeplasma-addons-libs4 replaces kdeplasma-addons << 4:4.1.80 as
-    libplasmacomicprovidercore was moved.
+  * Add new packages:
+    - plasma-applets-addons - contains the plasma applets.
+    - plasma-applets-addons-data - contains data files for the applets.
+    - plasma-dataengines-addons - contains the plasma dataengines.
+    - plasma-runners-addons - contains the plasma runners.
+    - plasma-applet-lancelot - contains the lancelot applet.
+    - plasma-applet-lancelot-data - contains data files for lancelot.
+    - liblancelot0 - contains the lancelot shared library.
+  * Make kdeplasma-addons be a metapackage that installs all of the above.
+  * Rename kdeplasma-addons-dev to liblancelot-dev.
+  * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
+  * Drop explicit build dependencies on libglu1-mesa-dev and libqt4-opengl-dev
+    as they are pulled from libplasma-dev now.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 30 Dec 2008 18:43:13 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 05 Jan 2009 15:14:48 +0200
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 

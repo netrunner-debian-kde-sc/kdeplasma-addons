@@ -6,62 +6,142 @@ Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pus
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), quilt,
  kdelibs5-dev (>= 4:4.1.85), libplasma-dev (>= 4:4.1.85), kdepimlibs5-dev (>= 4:4.1.85),
- kdebase-workspace-dev (>= 4:4.1.85+svn896324), libglu1-mesa-dev, libqt4-opengl-dev, libboost-dev,
- libkexiv2-7-dev, python
+ kdebase-workspace-dev (>= 4:4.1.85+svn896324), libboost-dev, libkexiv2-7-dev, python
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/kdeplasma-addons
 Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/kdeplasma-addons
 
 Package: kdeplasma-addons
-Architecture: any
-Section: kde
-Depends: ${shlibs:Depends}, kdeplasma-addons-data (= ${source:Version})
-Replaces: kdebase-workspace-bin (<< 4:4.0.0), extragear-plasma, kdeplasmoids
-Conflicts: extragear-plasma, kdeplasmoids
-Description: plasmoids for KDE 4 Plasma - main package
- KDE Plasmoids module is a collection of additional Plasma data engines 
- and widgets (applets). It is part of the official KDE 4 distribution.
- .
- This package contains Plasma data engines and widgets (applets). Install
- this package if you want to use plasmoids from the KDE Plasmoids module.
-
-Package: kdeplasma-addons-data
 Architecture: all
 Section: kde
-Replaces: extragear-plasma-data, kdeplasmoids-data
-Conflicts: extragear-plasma-data, kdeplasmoids-data
-Description: plasmoids for KDE 4 Plasma - data files
- KDE Plasmoids module is a collection of additional Plasma data engines 
- and widgets (applets). It is part of the official KDE 4 distribution.
+Depends: plasma-applets-addons (>= ${source:Version}),
+ plasma-runners-addons (>= ${source:Version}),
+ plasma-applet-lancelot (>= ${source:Version})
+Description: addons for KDE 4 Plasma - metapackage
+ The KDE Plasma addons module is a collection of additional Plasma
+ data engines, widgets (applets) and krunner plugins. It is part of
+ the official KDE 4 distribution.
  .
- This package contains the architecture-independent data files needed by
- kdeplasma-addons.
+ This package is a metapackage that installs all the applets, data
+ engines and krunner plugins from the KDE Plasma addons module.
 
-Package: kdeplasma-addons-libs4
+Package: plasma-applets-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
+ plasma-dataengines-addons (= ${binary:Version}),
+ plasma-applets-addons-data (= ${source:Version})
+Recommends: plasma-applet-lancelot
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
+Conflicts: kdeplasma-addons-data
+Description: addons for KDE 4 Plasma - applets
+ This package contains additional Plasma widgets (applets) shipped in the
+ KDE 4 plasma addons module. Install it if you want a variety of widgets
+ on your plasma desktop.
+ .
+ This package is part of the KDE 4 plasma addons module.
+
+Package: plasma-applets-addons-data
+Architecture: all
+Section: kde
+Replaces: kdeplasma-addons-data
+Conflicts: kdeplasma-addons-data
+Description: addons for KDE 4 Plasma - shared data for applets
+ This package contains architecture-independent shared data files used by
+ the plasma applets shipped in the KDE 4 plasma addons module.
+ .
+ This package is part of the KDE 4 plasma addons module.
+
+Package: plasma-dataengines-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
+Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Description: addons for KDE 4 Plasma - data engines
+ This package contains additional Plasma data engines shipped in KDE 4 plasma
+ addons module. These engines are needed by some KDE 4 plasma addons
+ Plasma applets, but they may be useful for any other Plasma applet too.
+ .
+ This package is part of the KDE 4 Plasma addons module.
+
+Package: plasma-runners-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
+Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Description: addons for KDE 4 Plasma - krunner plugins
+ This package contains additional plasma runners that are used in krunner
+ (the "run command" dialog of KDE 4) to reveal special search results.
+ If you use krunner a lot, you will probably like this package.
+ .
+ This package is part of the KDE 4 Plasma addons module.
+
+Package: plasma-applet-lancelot
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, plasma-applet-lancelot-data (= ${source:Version})
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
+Conflicts: kdeplasma-addons-data
+Description: addons for KDE 4 Plasma - lancelot applet
+ Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
+ provide a place from which all your jobs begin. It provides quick access
+ to applications, places, documents, contacts and system information.
+ .
+ This package is part of the KDE 4 plasma addons module.
+ 
+Package: plasma-applet-lancelot-data
+Architecture: all
+Section: kde
+Replaces: kdeplasma-addons-data
+Conflicts: kdeplasma-addons-data
+Description: addons for KDE 4 Plasma - lancelot applet data
+ Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
+ provide a place from which all your jobs begin. It provides quick access
+ to applications, places, documents, contacts and system information.
+ .
+ This package contains architecture-independent shared data files used by
+ the Lancelot plasma applet. It is part of the KDE 4 plasma addons module.
+
+Package: liblancelot0
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: extragear-plasma, kdeplasmoids-libs4, kdeplasma-addons (<< 4:4.1.80)
-Conflicts: extragear-plasma, kdeplasmoids-libs4
-Description: plasmoids for KDE 4 Plasma - public libraries
- KDE Plasmoids module is a collection of additional Plasma data engines 
- and widgets (applets). It is part of the official KDE 4 distribution.
+Replaces: kdeplasma-addons-libs4
+Conflicts: kdeplasma-addons-libs4
+Description: library that contains all UI widgets and layouts used in the Lancelot project
+ Liblancelot is a base framework for everything in the world of Lancelot.
+ It is built on top of Plasma. It provides a set of custom widgets, layouts
+ and has a few more advanced concepts for allowing for quicker development
+ of Plasma-based applications.
  .
- This package contains public libraries included in the KDE Plasmoids module.
+ Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
+ provide a place from which all your jobs begin. It provides quick access
+ to applications, places, documents, contacts and system information.
+ .
+ This package is part of the KDE 4 plasma addons module.
 
-Package: kdeplasma-addons-dev
+Package: liblancelot-dev
 Architecture: any
 Section: libdevel
-Replaces: kdeplasmoids-dev
-Conflicts: kdeplasmoids-dev
-Depends: kdeplasma-addons-libs4 (= ${binary:Version}), ${sameVersionDep:libplasma-dev:kdeplasma-addons-libs4}
-Description: plasmoids for KDE 4 Plasma - development files
- KDE Plasmoids module is a collection of additional Plasma data engines 
- and widgets (applets). It is part of the official KDE 4 distribution.
+Replaces: kdeplasma-addons-dev
+Conflicts: kdeplasma-addons-dev
+Depends: liblancelot0 (= ${binary:Version}), ${sameVersionDep:libplasma-dev:liblancelot0}
+Description: development headers for liblancelot
+ Liblancelot is a base framework for everything in the world of Lancelot.
+ It is built on top of Plasma. It provides a set of custom widgets, layouts
+ and has a few more advanced concepts for allowing for quicker development
+ of Plasma-based applications.
  .
- This package contains development files for the libraries provided in the
- `kdeplasma-addons-libs4' package.
+ Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
+ provide a place from which all your jobs begin. It provides quick access
+ to applications, places, documents, contacts and system information.
+ .
+ This package contains the development headers that are needed to compile
+ plasma applets that use the lancelot library. It is part of the KDE 4
+ plasma addons module.
 
 Package: kdeplasma-addons-dbg
 Section: libdevel
@@ -69,7 +149,9 @@ Architecture: any
 Priority: extra
 Conflicts: kdeplasmoids-dbg
 Replaces: kdeplasmoids-dbg
-Depends: kdeplasma-addons (= ${binary:Version}), kdebase-workspace-dbg
+Depends: plasma-applets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
+ plasma-runners-addons (= ${binary:Version}), plasma-applet-lancelot (= ${binary:Version}),
+ liblancelot0 (= ${binary:Version}), kdebase-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related
