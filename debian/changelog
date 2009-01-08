@@ -1,8 +1,6 @@
 kdeplasma-addons (4:4.1.96+svn906592-0r2) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
-  * Update install files:
-    - plasma-applets-addons.install: 12 new file(s) added; 4 file(s) removed;
 
   +++ Changes by Modestas Vainius:
 
