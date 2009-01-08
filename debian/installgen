@@ -1,16 +1,21 @@
-[kdeplasma-addons-dev]
-missing dst:usr/lib/libplasmacomicprovidercore.so$ link:
-dst:usr/include/
-dst:usr/lib/[^/]+\.so$ link:usr/lib/[^/]+\.so\.
+[liblancelot-dev]
+from:/applets/lancelot/ dst:usr/include/lancelot
+from:/applets/lancelot/ dst:usr/lib/liblancelot.so$ link:
 
-[kdeplasma-addons-data]
-mime:text/.*
-mime:image/.*
-mime:application/(?!(x-executable|x-sharedlib)).*
+[useless-dev_virtual]
+miss dst:usr/lib/lib[^/]+.so$ link:
 
-[kdeplasma-addons-libs4]
-dst:usr/lib/lib[^/]+\.so\.
+[liblancelot0]
+from:/applets/lancelot/ dst:usr/lib/liblancelot.so.0($|\.)
 
-[kdeplasma-addons]
-mime:application/.* dst:usr/bin
-mime:application/x-.* dst:usr/lib
+[plasma-applet-lancelot]
+from:/applets/lancelot/
+
+[plasma-applets-addons]
+from:/applets/
+
+[plasma-dataengines-addons]
+from:/dataengines/
+
+[plasma-runners-addons]
+from:/runners/

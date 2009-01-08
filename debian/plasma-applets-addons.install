@@ -1,5 +1,6 @@
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
+usr/lib/kde4/plasma_applet_bluemarble.so
 usr/lib/kde4/plasma_applet_calculator.so
 usr/lib/kde4/plasma_applet_charselect.so
 usr/lib/kde4/plasma_applet_comic.so
@@ -19,8 +20,8 @@ usr/lib/kde4/plasma_applet_luna.so
 usr/lib/kde4/plasma_applet_news.so
 usr/lib/kde4/plasma_applet_notes.so
 usr/lib/kde4/plasma_applet_nowplaying.so
-usr/lib/kde4/plasma_applet_pastebin.so
 usr/lib/kde4/plasma_applet_paste.so
+usr/lib/kde4/plasma_applet_pastebin.so
 usr/lib/kde4/plasma_applet_previewer.so
 usr/lib/kde4/plasma_applet_rssnow.so
 usr/lib/kde4/plasma_applet_showdashboard.so
@@ -44,8 +45,8 @@ usr/share/kde4/apps/desktoptheme/default/rssnow/left.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/right.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svgz
 usr/share/kde4/apps/desktoptheme/default/stylesheets/news.css
-usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd.svgz
+usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/eyes.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/luna.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/notes.svgz
@@ -54,10 +55,18 @@ usr/share/kde4/apps/desktoptheme/default/widgets/previewer-16.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-22.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/timer.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/twitter.svgz
+usr/share/kde4/apps/plasma-bluemarble/atmosphere.frag
+usr/share/kde4/apps/plasma-bluemarble/atmosphere.vert
+usr/share/kde4/apps/plasma-bluemarble/earth-night.png
+usr/share/kde4/apps/plasma-bluemarble/earth.frag
+usr/share/kde4/apps/plasma-bluemarble/earth.png
+usr/share/kde4/apps/plasma-bluemarble/earth.vert
 usr/share/kde4/apps/rssnow/feeds
 usr/share/kde4/config/comic.knsrc
+usr/share/kde4/services/ServiceMenus/preview.desktop
 usr/share/kde4/services/plasma-applet-bball.desktop
 usr/share/kde4/services/plasma-applet-binaryclock.desktop
+usr/share/kde4/services/plasma-applet-bluemarble.desktop
 usr/share/kde4/services/plasma-applet-calculator.desktop
 usr/share/kde4/services/plasma-applet-charselect.desktop
 usr/share/kde4/services/plasma-applet-eyes.desktop
@@ -70,8 +79,8 @@ usr/share/kde4/services/plasma-applet-life.desktop
 usr/share/kde4/services/plasma-applet-luna.desktop
 usr/share/kde4/services/plasma-applet-news.desktop
 usr/share/kde4/services/plasma-applet-nowplaying.desktop
-usr/share/kde4/services/plasma-applet-pastebin.desktop
 usr/share/kde4/services/plasma-applet-paste.desktop
+usr/share/kde4/services/plasma-applet-pastebin.desktop
 usr/share/kde4/services/plasma-applet-previewer.desktop
 usr/share/kde4/services/plasma-applet-rssnow.desktop
 usr/share/kde4/services/plasma-applet-showdashboard.desktop
@@ -86,4 +95,3 @@ usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
 usr/share/kde4/services/plasma-twitter-default.desktop
-usr/share/kde4/services/ServiceMenus/preview.desktop
