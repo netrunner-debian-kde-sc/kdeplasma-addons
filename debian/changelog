@@ -30,8 +30,7 @@ kdeplasma-addons (4:4.1.96+svn906592-0r2) UNRELEASED; urgency=low
   * Make kdeplasma-addons be a metapackage that installs all of the above.
   * Rename kdeplasma-addons-dev to liblancelot-dev.
   * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
-  * Drop explicit build dependencies on libglu1-mesa-dev and libqt4-opengl-dev
-    as they are pulled from libplasma-dev now.
+  * Drop explicit build dependency on libglu1-mesa-dev.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 08 Jan 2009 10:52:41 +0200
 
