@@ -31,7 +31,6 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
- plasma-applets-addons-data (= ${source:Version})
 Recommends: plasma-applet-lancelot
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
 Conflicts: kdeplasma-addons-data
@@ -39,17 +38,6 @@ Description: addons for KDE 4 Plasma - applets
  This package contains additional Plasma widgets (applets) shipped in the
  KDE 4 plasma addons module. Install it if you want a variety of widgets
  on your plasma desktop.
- .
- This package is part of the KDE 4 plasma addons module.
-
-Package: plasma-applets-addons-data
-Architecture: all
-Section: kde
-Replaces: kdeplasma-addons-data
-Conflicts: kdeplasma-addons-data
-Description: addons for KDE 4 Plasma - shared data for applets
- This package contains architecture-independent shared data files used by
- the plasma applets shipped in the KDE 4 plasma addons module.
  .
  This package is part of the KDE 4 plasma addons module.
 
@@ -82,7 +70,7 @@ Description: addons for KDE 4 Plasma - krunner plugins
 Package: plasma-applet-lancelot
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, plasma-applet-lancelot-data (= ${source:Version})
+Depends: ${shlibs:Depends}
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
 Conflicts: kdeplasma-addons-data
 Description: addons for KDE 4 Plasma - lancelot applet
@@ -91,19 +79,6 @@ Description: addons for KDE 4 Plasma - lancelot applet
  to applications, places, documents, contacts and system information.
  .
  This package is part of the KDE 4 plasma addons module.
- 
-Package: plasma-applet-lancelot-data
-Architecture: all
-Section: kde
-Replaces: kdeplasma-addons-data
-Conflicts: kdeplasma-addons-data
-Description: addons for KDE 4 Plasma - lancelot applet data
- Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
- provide a place from which all your jobs begin. It provides quick access
- to applications, places, documents, contacts and system information.
- .
- This package contains architecture-independent shared data files used by
- the Lancelot plasma applet. It is part of the KDE 4 plasma addons module.
 
 Package: liblancelot0
 Architecture: any
