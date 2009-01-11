@@ -9,6 +9,7 @@ usr/lib/kde4/krunner_konsolesessions.so
 usr/lib/kde4/krunner_spellcheckrunner.so
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
+usr/lib/kde4/plasma_applet_bluemarble.so
 usr/lib/kde4/plasma_applet_calculator.so
 usr/lib/kde4/plasma_applet_charselect.so
 usr/lib/kde4/plasma_applet_comic.so

@@ -1,3 +1,14 @@
+kdeplasma-addons (4:4.1.96-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release:
+    - Drop kubuntu_01_qreal_portability_fixes.diff, applied upstream
+    - Bump build-depend versions of various kde libs to (>= 4:4.1.96)
+    - Remove plasma themes from packaging, they live in kdeartwork now,
+      themes for kdeplasma-addons plasmoids stay
+    - Update various debian/.install files for new marble plasmoid
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 09 Jan 2009 12:47:32 -0500
+
 kdeplasma-addons (4:4.1.85-0ubuntu3) jaunty; urgency=low
 
   [ Harald Sitter ]
