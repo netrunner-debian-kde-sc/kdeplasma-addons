@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.1.96-0ubuntu2) jaunty; urgency=low
+
+  * Rebuild against new libplasma-dev
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Thu, 15 Jan 2009 02:04:38 -0500
+
 kdeplasma-addons (4:4.1.96-0ubuntu1) jaunty; urgency=low
 
   * New upstream release:
