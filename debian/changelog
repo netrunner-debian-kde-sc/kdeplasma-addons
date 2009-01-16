@@ -1,6 +1,7 @@
 kdeplasma-addons (4:4.1.96+svn911283-0r1) UNRELEASED; urgency=low
 
   * New upstream development snapshot.
+    - Includes lancelot (Closes: #499222).
 
   +++ Changes by Modestas Vainius:
 
