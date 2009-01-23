@@ -1,14 +1,14 @@
-kdeplasma-addons (4:4.1.96+svn911283-0r2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.2.0-0r1) UNRELEASED; urgency=low
 
-  * New upstream development snapshot.
+  * New upstream release.
   * Includes lancelot (Closes: #499222).
 
   +++ Changes by Modestas Vainius:
 
   * Drop explicit build depend on cmake.
   * Build depend on kdelibs5-dev and kdepimlibs5-dev
-    explicitly (4.1.85). Bump kdebase-workspace-dev dependency to
-    4:4.1.85+svn896324.
+    explicitly (4.2.0). Bump kdebase-workspace-dev dependency to
+    4:4.2.0.
   * Build depend on libkexiv2-6-dev and python (the latter is needed by
     lancelot at build time).
   * Add debian/installgen and update install files.
@@ -33,7 +33,7 @@ kdeplasma-addons (4:4.1.96+svn911283-0r2) UNRELEASED; urgency=low
   * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
   * Drop explicit build dependency on libglu1-mesa-dev.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 16 Jan 2009 21:15:41 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 23 Jan 2009 21:49:04 +0100
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
