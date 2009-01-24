@@ -19,6 +19,8 @@ kdeplasma-addons (4:4.2.0-0r1) UNRELEASED; urgency=low
   * Bump liblancelot0 shlibs on each new upstream release.
   * Do not build depend on libplasma-dev. Plasma headers are in kdelibs5-dev
     for now.
+  * Bump debian/compat and debhelper build dependency to v7 (to get more
+    sophisticated debian/tmp handling).
 
   ++ Changes by George Kiagiadakis:
 
@@ -33,7 +35,7 @@ kdeplasma-addons (4:4.2.0-0r1) UNRELEASED; urgency=low
   * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
   * Drop explicit build dependency on libglu1-mesa-dev.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 23 Jan 2009 21:49:04 +0100
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 24 Jan 2009 03:39:52 +0200
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
