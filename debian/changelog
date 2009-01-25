@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.2.0-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release
+    - remove kubuntu_01_qreal_portability_fixes.diff, resolved upstream
+    - bump version build-deps in debian/control
+    - add build-dep on quilt
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Sat, 24 Jan 2009 20:32:42 -0500
+
 kdeplasma-addons (4:4.1.96-0ubuntu2) jaunty; urgency=low
 
   * Rebuild against new libplasma-dev

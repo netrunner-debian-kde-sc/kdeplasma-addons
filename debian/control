@@ -6,9 +6,9 @@ XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 6), cmake (>= 2.6.2),
- kdebase-workspace-dev (>= 4:4.1.96), libglu1-mesa-dev, libqt4-opengl-dev,
- libboost-dev, python, libkexiv2-7-dev, kdebase-workspace-data (>= 4:4.1.96),
- libxcomposite-dev, kdepimlibs5-dev (>= 4:4.1.96)
+ kdebase-workspace-dev (>= 4:4.2.0), libglu1-mesa-dev, libqt4-opengl-dev,
+ libboost-dev, python, libkexiv2-7-dev, kdebase-workspace-data (>= 4:4.2.0),
+ libxcomposite-dev, kdepimlibs5-dev (>= 4:4.2.0), quilt
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
