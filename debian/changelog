@@ -40,6 +40,10 @@ kdeplasma-addons (4:4.2.0-0r1) UNRELEASED; urgency=low
   * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
   * Drop explicit build dependency on libglu1-mesa-dev.
 
+  +++ Changes by Sune Vuorela:
+
+  * Update copyright file.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 24 Jan 2009 03:39:52 +0200
 
 kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
