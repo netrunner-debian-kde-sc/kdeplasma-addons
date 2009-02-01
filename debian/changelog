@@ -1,6 +1,7 @@
 kdeplasma-addons (4:4.2.0-0ubuntu2) jaunty; urgency=low
 
-  * Rebuild for boost transition 
+  * Rebuild for boost transition (LP: #297152)
+  * Changed build-dep in debian/control libboost-dev -> libboost1.35-dev
 
  -- Richard Birnie <Arbyuk@googlemail.com>  Sun, 01 Feb 2009 16:30:32 +0000
 
