@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.2.0-0ubuntu2) jaunty; urgency=low
+
+  * Rebuild for boost transition 
+
+ -- Richard Birnie <Arbyuk@googlemail.com>  Sun, 01 Feb 2009 16:30:32 +0000
+
 kdeplasma-addons (4:4.2.0-0ubuntu1) jaunty; urgency=low
 
   * New upstream release
