@@ -9,8 +9,8 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4)
  kdebase-workspace-dev (>= 4:4.2.0), libboost-dev, libkexiv2-7-dev, python
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/branches/kde4/packages/kdeplasma-addons
-Vcs-Svn: svn://svn.debian.org/pkg-kde/branches/kde4/packages/kdeplasma-addons
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons
+Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdeplasma-addons
 
 Package: kdeplasma-addons
 Architecture: all
