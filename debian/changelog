@@ -1,9 +1,9 @@
-kdeplasma-addons (4:4.2.0-0ubuntu3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.2.0-0ubuntu3) jaunty; urgency=low
 
   [ Michal Zajac ]
   * Add kubuntu_01_lancelot_qt45.diff to fix Lancelot glitches with Qt 4.5.
 
- -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 20 Feb 2009 15:26:21 -0500
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 23 Feb 2009 10:50:09 +0000
 
 kdeplasma-addons (4:4.2.0-0ubuntu2) jaunty; urgency=low
 
