@@ -15,29 +15,29 @@ Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdeplasma-addons
 Package: kdeplasma-addons
 Architecture: all
 Section: kde
-Depends: plasma-applets-addons (>= ${source:Version}),
+Depends: plasma-widgets-addons (>= ${source:Version}),
  plasma-runners-addons (>= ${source:Version}),
- plasma-applet-lancelot (>= ${source:Version})
+ plasma-widget-lancelot (>= ${source:Version})
 Description: addons for KDE 4 Plasma - metapackage
  The KDE Plasma addons module is a collection of additional Plasma
- data engines, widgets (applets) and krunner plugins. It is part of
+ data engines, widgets and krunner plugins. It is part of
  the official KDE 4 distribution.
  .
- This package is a metapackage that installs all the applets, data
+ This package is a metapackage that installs all the widgets, data
  engines and krunner plugins from the KDE Plasma addons module.
 
-Package: plasma-applets-addons
+Package: plasma-widgets-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
-Recommends: plasma-applet-lancelot
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
-Conflicts: kdeplasma-addons-data
-Description: addons for KDE 4 Plasma - applets
- This package contains additional Plasma widgets (applets) shipped in the
- KDE 4 plasma addons module. Install it if you want a variety of widgets
- on your plasma desktop.
+Recommends: plasma-widget-lancelot
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons
+Conflicts: kdeplasma-addons-data, plasma-applets-addons
+Description: addons for KDE 4 Plasma - widgets
+ This package contains additional Plasma widgets shipped in the KDE 4 plasma
+ addons module. Install it if you want a variety of widgets on your plasma
+ desktop.
  .
  This package is part of the KDE 4 plasma addons module.
 
@@ -50,7 +50,7 @@ Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
 Description: addons for KDE 4 Plasma - data engines
  This package contains additional Plasma data engines shipped in KDE 4 plasma
  addons module. These engines are needed by some KDE 4 plasma addons
- Plasma applets, but they may be useful for any other Plasma applet too.
+ Plasma widgets, but they may be useful for any other Plasma widget too.
  .
  This package is part of the KDE 4 Plasma addons module.
 
@@ -67,13 +67,13 @@ Description: addons for KDE 4 Plasma - krunner plugins
  .
  This package is part of the KDE 4 Plasma addons module.
 
-Package: plasma-applet-lancelot
+Package: plasma-widget-lancelot
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data
-Conflicts: kdeplasma-addons-data
-Description: addons for KDE 4 Plasma - lancelot applet
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applet-lancelot
+Conflicts: kdeplasma-addons-data, plasma-applet-lancelot
+Description: addons for KDE 4 Plasma - lancelot widget
  Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
  provide a place from which all your jobs begin. It provides quick access
  to applications, places, documents, contacts and system information.
@@ -115,7 +115,7 @@ Description: development headers for liblancelot
  to applications, places, documents, contacts and system information.
  .
  This package contains the development headers that are needed to compile
- plasma applets that use the lancelot library. It is part of the KDE 4
+ plasma widgets that use the lancelot library. It is part of the KDE 4
  plasma addons module.
 
 Package: kdeplasma-addons-dbg
@@ -124,8 +124,8 @@ Architecture: any
 Priority: extra
 Conflicts: kdeplasmoids-dbg
 Replaces: kdeplasmoids-dbg
-Depends: plasma-applets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
- plasma-runners-addons (= ${binary:Version}), plasma-applet-lancelot (= ${binary:Version}),
+Depends: plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
+ plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
  liblancelot0 (= ${binary:Version}), kdebase-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.

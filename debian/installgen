@@ -8,10 +8,10 @@ miss dst:usr/lib/lib[^/]+.so$ link:
 [liblancelot0]
 from:/applets/lancelot/ dst:usr/lib/liblancelot.so.0($|\.)
 
-[plasma-applet-lancelot]
+[plasma-widget-lancelot]
 from:/applets/lancelot/
 
-[plasma-applets-addons]
+[plasma-widget-addons]
 from:/applets/
 
 [plasma-dataengines-addons]
