@@ -1,4 +1,6 @@
-kdeplasma-addons (4:4.2.1-0) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.2.1-1) UNRELEASED; urgency=low
+
+  * New upstream release.
 
   +++ Changes by Modestas Vainius:
 
@@ -8,8 +10,9 @@ kdeplasma-addons (4:4.2.1-0) UNRELEASED; urgency=low
   * Rename plasma-applets-lancelot to plasma-widgets-lancelot, add appropriate
     conflicts/replaces for the old package.
   * Replace all references to plasma "applet" with "widget".
+  * Bump KDE build depends to 4.2.1.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 27 Feb 2009 22:10:47 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 27 Feb 2009 23:49:30 +0200
 
 kdeplasma-addons (4:4.2.0-1) experimental; urgency=low
 

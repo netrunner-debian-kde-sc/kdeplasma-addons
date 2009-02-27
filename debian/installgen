@@ -11,7 +11,7 @@ from:/applets/lancelot/ dst:usr/lib/liblancelot.so.0($|\.)
 [plasma-widget-lancelot]
 from:/applets/lancelot/
 
-[plasma-widget-addons]
+[plasma-widgets-addons]
 from:/applets/
 
 [plasma-dataengines-addons]
