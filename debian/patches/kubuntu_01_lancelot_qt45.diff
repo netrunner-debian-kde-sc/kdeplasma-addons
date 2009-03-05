@@ -1,7 +1,7 @@
-Index: kdeplasma-addons-4.2.0/applets/lancelot/app/src/models/ContactsKopete.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/app/src/models/ContactsKopete.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/app/src/models/ContactsKopete.cpp	2009-02-20 20:25:37.518200148 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/app/src/models/ContactsKopete.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/app/src/models/ContactsKopete.cpp	2008-11-28 10:33:58.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/app/src/models/ContactsKopete.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -22,7 +22,7 @@
  #include <KStandardDirs>
  #include <KDebug>
@@ -11,10 +11,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/app/src/models/ContactsKopete.cpp
  #define CHECK_RUNNING_INTERVAL 5000
  
  namespace Models {
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/Global.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/Global.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/Global.cpp	2009-02-20 20:25:37.434195296 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/Global.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/Global.cpp	2008-12-21 15:20:19.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/Global.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -326,8 +326,11 @@
  
      d->confMain = new KConfig("lancelot" + app + "rc");
@@ -36,10 +36,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/Global.cpp
      d->confTheme = new KConfig(path);
  
      Instance::Private::activeInstance = this;
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp	2009-02-20 20:25:37.550200367 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp	2008-08-20 15:53:48.000000000 -0400
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/layouts/CardLayout.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -31,6 +31,35 @@
      {
      }
@@ -119,10 +119,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/CardLayout.
      d->shown = NULL;
  }
  
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp	2009-02-20 20:25:37.582200751 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp	2008-11-28 10:33:58.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/layouts/FullBorderLayout.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -41,10 +41,10 @@
      {
      }
@@ -163,10 +163,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/layouts/FullBorderL
          d->itemPositions[Center]->setGeometry(itemRect);
      }
  }
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp	2009-02-20 20:25:37.614199910 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp	2008-11-28 10:33:59.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/CustomListView.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -164,9 +164,9 @@
              QGraphicsWidget * item = itemForIndex(i);
              QRectF itemGeometry = item->geometry();
@@ -179,10 +179,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/CustomListV
                  transform.reset();
                  if (!viewport.contains(itemGeometry)) {
                      QRectF clip = viewport.intersect(itemGeometry);
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp	2009-02-20 20:25:37.486199844 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp	2009-01-06 12:23:55.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/PassagewayView.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -20,6 +20,10 @@
  #include "PassagewayView.h"
  
@@ -260,10 +260,10 @@ Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/PassagewayV
          QObject::connect(
              list, SIGNAL(activated(int)),
              parent, SLOT(listItemActivated(int))
-Index: kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp
+Index: kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp
 ===================================================================
---- kdeplasma-addons-4.2.0.orig/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp	2009-02-20 20:25:37.646199596 +0100
-+++ kdeplasma-addons-4.2.0/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp	2009-02-20 20:27:20.106197578 +0100
+--- kdeplasma-addons-4.2.1.orig/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp	2009-01-21 05:29:18.000000000 -0500
++++ kdeplasma-addons-4.2.1/applets/lancelot/libs/lancelot/widgets/ScrollPane.cpp	2009-02-27 17:25:30.000000000 -0500
 @@ -227,8 +227,10 @@
  
  void ScrollPane::setGeometry(const QRectF & rect) //>

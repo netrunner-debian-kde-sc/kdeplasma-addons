@@ -1,3 +1,17 @@
+kdeplasma-addons (4:4.2.1-0ubuntu2) jaunty; urgency=low
+
+  * Reupload since all built failed due to missing deps appart
+    from i386.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 05 Mar 2009 17:50:09 +0100
+
+kdeplasma-addons (4:4.2.1-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release:
+    - Bump various build-depend versions for update
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 27 Feb 2009 17:25:34 -0500
+
 kdeplasma-addons (4:4.2.0-0ubuntu3) jaunty; urgency=low
 
   [ Michal Zajac ]
