@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.2.2-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release
+  * Bump KDE version in debian/control to 4.2.2
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Sun, 29 Mar 2009 18:03:53 -0400
+
 kdeplasma-addons (4:4.2.1-0ubuntu2) jaunty; urgency=low
 
   * Reupload since all built failed due to missing deps appart
