@@ -1,0 +1,11 @@
+usr/lib/kde4/plasma_comic_krossprovider.so
+usr/lib/kde4/plasma_engine_comic.so
+usr/lib/kde4/plasma_engine_twitter.so
+usr/lib/kde4/plasma_packagestructure_comic.so
+usr/lib/libplasmacomicprovidercore.so.1
+usr/lib/libplasmacomicprovidercore.so.1.0.0
+usr/share/kde4/apps/plasma/services/tweet.operations
+usr/share/kde4/services/plasma-dataengine-comic.desktop
+usr/share/kde4/services/plasma-dataengine-twitter.desktop
+usr/share/kde4/services/plasma-packagestructure-comic.desktop
+usr/share/kde4/servicetypes/plasma_comicprovider.desktop
