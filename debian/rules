@@ -1,6 +1,8 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/class/kde4.mk
+include /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk
+
+DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V
 
 clean::
-	./applets/lancelot/tools/puck/clean.sh
+	find applets/lancelot/tools/puck -name *.pyc -delete

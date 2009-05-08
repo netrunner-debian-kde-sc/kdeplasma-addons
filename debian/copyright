@@ -4,63 +4,88 @@ Thu, 11 Oct 2007 22:41:12 +0200.
 It was downloaded from ftp://ftp.kde.org
 
 Upstream Authors and copyright holders:
-
-    Copyright (C) 1989, 1991 Free Software Foundation, Inc.                                                                                                      
-    Copyright (C) 1996 Christopher Osburn <chris@speakeasy.org>                                                                                                      
-    Copyright (C) 1996-2002 the kicker authors. (fuzzy logic)
-    Copyright (C) 1998,2000 Stephan Kulow <coolo@kde.org>
-    Copyright (C) 2005,2006,2007 by Siraj Razick
-    Copyright (C) 2006-2007 Rivo Laks <rivolaks@hot.ee>
-    Copyright (C) 2007 Aaron Seigo <aseigo@kde.org>
-    Copyright (C) 2007 Alexis Ménard <darktears31@gmail.com>                                                                                                     
-    Copyright (C) 2007 André Duffeck <duffeck@kde.org>
-    Copyright (C) 2007 Antonio Vinci <mercurio@personellarete.it>                                                                                                
+    Copyright (C) 1989, 1991, 1999-2002, 2007 Free Software Foundation, Inc.
+    Copyright (C) 1996  Christopher Osburn, Lunar Outreach Services, <chris@speakeasy.org>                                                                                           
+    Copyright (C) 1998,2000 Stephan Kulow <coolo@kde.org>                                                                                                                            
+    Copyright (c) 1996-2002 the kicker authors. (fuzzy logic)                                                                                                                    
+    Copyright (C) 2005,2006,2007 Siraj Razick <siraj@kde.org>                                                                                                                    
+    Copyright (C) 2006-2007 Rivo Laks <rivolaks@hot.ee>                                                                                                                          
+    Copyright (C) 2007,2008 Alex Merry <alex.merry@kdemail.net>                                                                                                                  
+    Copyright (C) 2007, 2008 Petri Damsten <damu@iki.fi>                                                                                                                         
+    Copyright (C) 2007, 2008 Rob Scheepmaker <r.scheepmaker@student.utwente.nl>                                                                                                  
+    Copyright (C) 2007-2008 Shawn Starr <shawn.starr@rogers.com>                                                                                                                 
+    Copyright (C) 2007 Alexis MÃ©nard <darktears31@gmail.com>                                                                                                                    
+    Copyright (C) 2007 AndrÃ© Duffeck <duffeck@kde.org>                                                                                                                          
+    Copyright (C) 2007-2008 Anne-Marie Mahfouf <annma@kde.org>                                                                                                                        
+    Copyright (C) 2007 Antonio Vinci <mercurio@personellarete.it>                                                                                                                
+    Copyright (C) 2007-2008 Artur Duque de Souza <morpheuz@gmail.com>                                                                                                                 
     Copyright (C) 2007 Brad Hards <bradh@frogmouth.net>
     Copyright (C) 2007 Chani Armitage <chanika@gmail.com>
+    Copyright (C) 2007-2008 Davide Bettio <davide.bettio@kdemail.net>
     Copyright (C) 2007 David Faure <faure@kde.org>
     Copyright (C) 2007 Henry Stanaland <stanaland@gmail.com>
     Copyright (C) 2007 Ivan Cukic <ivan.cukic+kde@gmail.com>
-    Copyright (C) 2007 Jeff Cooper <weirdsox11@gmail.com>
     Copyright (C) 2007 Jesper Thomschutz <jesperht@yahoo.com>
     Copyright (C) 2007 Lukas Kropatschek <lukas.krop@kdemail.net>
+    Copyright (C) 2007-2008 Marco Martin <notmart@gmail.com>
     Copyright (C) 2007 Pino Toscano <pino@kde.org>
-    Copyright (C) 2007 Riccardo Iaconelli <riccardo@kde.org>                                                                                                      
+    Copyright (C) 2007 Riccardo Iaconelli <ruphy@fsfe.org>
     Copyright (C) 2007 Robert Knight <robertknight@gmail.com>
-    Copyright (C) 2007 Simon Hausmann <hausmann@kde.org>
+    Copyright (C) 2007 Ryan P. Bitanga <ephebiphobic@gmail.com>
+    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>
     Copyright (C) 2007 Sven Burmeister <sven.burmeister@gmx.net>
     Copyright (C) 2007 Teemu Rytilahti <tpr@iki.fi>
-    Copyright (C) 2007 Thomas Georgiou <TAGeorgiou@gmail.com>
+    Copyright (C) 2007 Thomas Georgiou <TAGeorgiou@gmail.com> 
+    Copyright (C) 2007 Jeff Cooper <weirdsox11@gmail.com>
     Copyright (C) 2007 Tobias Koenig <tokoe@kde.org>
     Copyright (C) 2007 Trever Fischer <wm161@wm161.net>
-    Copyright (C) 2007,2008 Alex Merry <alex.merry@kdemail.net>                                                                                                   
-    Copyright (C) 2007-2008 Anne-Marie Mahfouf <annma@kde.org>
-    Copyright (C) 2007-2008 Davide Bettio <davide.bettio@kdemail.net>
-    Copyright (C) 2007-2008 Marco Martin <notmart@gmail.com>                                                                                                           
-    Copyright (C) 2007-2008 Petri Damstén <damu@iki.fi>
-    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>
-    Copyright (C) 2007-2008 Sebastian Kuegler <sebas@kde.org>                                                                                                          
+    Copyright (C) 2008 Aaron Seigo <aseigo@kde.org>
+    Copyright (C) 2008 Alessandro Diaferia <alediaferia@gmail.com>
+    Copyright (C) 2008 Christian Weilbach <dunsens@web.de>
+    Copyright (C) 2008 Kristof Bal <kristof.bal@gmail.com>
     Copyright (C) 2008 Laurent Montel <montel@kde.org>
-    Copyright (C) 2008 Stefan Majewsky <majewsky@gmx.net>
-    Copyright (C) 2008 Thomas Coopman <thomas.coopman@gmail.com>                                                                                                 
+    Copyright (C) 2008 Marco Gulino <marco.gulino@gmail.com
+    Copyright (C) 2008 Matthias Fuchs <mat69@gmx.net>
+    Copyright (C) 2008 Montel Laurent <montel@kde.org>
+    Copyright (C) 2008 Nick Shaforostoff <shaforostoff@kde.ru>
+    Copyright (C) 2008 Olivier Goffart <ogoffart@kde.org>
+    Copyright (C) 2008 Ryan P. Bitanga <ryan.bitanga@gmail.com>
+    Copyright (C) 2008 Thomas Coopman <thomas.coopman@gmail.com>
+    Copyright (C) 2008 Thomas Gillespie <tomjamesgillespie@googlemail.com>
+    Copyright (C) 2008 Tobias Koenig <tokoe@kde.org>
+
 
 
 License:
 
 
-Most applets are under gplv2 or later.
+Most widgets are under gplv2 or later.
 Within the files there is occasionally a lgplv2 or later, but together with gplv2 files,
-these all becomes gplv2 or later. Lancelot is almost entirely lgplv2 or later, but at least
-one file is gplv2 or later, so most probably, entire lancelot is lgplv2 or later as well.
-A few cmake files are mentioning the COPYING-CMAKE-SCRIPTS, originating from kdelibs, 
-fullquoted in the end.
+these all becomes gplv2 or later. i
+
+applets/bluemarble/ is gplv2 only.
+applets/incomingmsg/ is GNU Library Public License v2.
+applets/leavenote/ is GNU library Public License v2.
+applets/rssnow/ is a mix of LGPLv2 or later and GPLv2 or later.
 
 
-The dataengines are all available under the lgplv2 or later
 
-Runners/contact: lgplv2 or later
+applets/lancelot/ Lancelot is almost entirely gplv2 or later, but at least
+                  some files is under lgplv2 or later (especially the lib/ dir), so entire 
+		  lancelot is gplv2 or later as well.
+
+
+
+dataengines/comic is under GNU Library General Public License v2
+dataengines/twitter is under GNU Library General Public License v2 or later.
+
+runners/browserhistory: gplv2 or later
+Runners/contacts: lgplv2 or later
 Runners/converter: gplv2 or later
-
-desktopthemes: gplv2, gplv3 or later. Referencing the default plasma theme which is gplv2 or later.
+runners/katesessions: lgplv2 or later
+runners/konsolesessions: lpglv2 or later
+runners/konquerorsessinos: lgplv2 or later
+runners/spellchecker: mix of lgplv2 or later and gplv2 or later => gpl v2 or later.
 
 GPLv2:
 
@@ -96,36 +121,12 @@ LGPLv2:
     Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-COPYING-CMAKE-SCRIPTS:
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-1. Redistributions of source code must retain the copyright
-   notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
-3. The name of the author may not be used to endorse or promote products
-   derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 On Debian systems, the complete text of the GNU General
 Public License version 2 can be found in `/usr/share/common-licenses/GPL-2
 
-On Debian systems, the complete text of the GNU Lesser General
+On Debian systems, the complete text of the GNU Library General
 Public License version 2 can be found in `/usr/share/common-licenses/LGPL-2'.
 
 The Debian packaging is (C) 2007-2008, Debian Qt/KDE Maintainers and
