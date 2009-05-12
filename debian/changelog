@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.2.2-1ubuntu2) karmic; urgency=low
+
+  * Add kubuntu_01_qt_phonon.diff to make it compile with Qt's Phonon
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 11 May 2009 22:37:02 +0000
+
 kdeplasma-addons (4:4.2.2-1ubuntu1) karmic; urgency=low
 
   * Merge from Debian unstable, remaining changes:
