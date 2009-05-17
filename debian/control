@@ -87,7 +87,7 @@ Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}), kdewallpapers,
  kdebase-workspace-wallpapers
 Conflicts: kdeplasma-addons-data, plasma-applets-addons
-Description: addons for KDE 4 Plasma - widgets
+Description: addons for KDE 4 Plasma - wallpapers
  This package contains additional Plasma wallpapers shipped in the KDE 4
  plasma addons module. Install it if you want a variety of wallpapers on your
  plasma desktop.

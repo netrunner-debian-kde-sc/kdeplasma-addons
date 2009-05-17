@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.2.85-0ubuntu3) UNRELEASED; urgency=low
+
+  * widgets -> wallpapers in plasma-widget-wallpapers short description
+    (LP: #377707)
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 17 May 2009 16:20:20 -0400
+
 kdeplasma-addons (4:4.2.85-0ubuntu2) karmic; urgency=low
 
   * Add a build-dep on libqimageblitz-dev to prevent FTBFS
