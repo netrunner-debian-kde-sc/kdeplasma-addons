@@ -6,8 +6,6 @@ usr/lib/kde4/krunner_katesessions.so
 usr/lib/kde4/krunner_konquerorsessions.so
 usr/lib/kde4/krunner_konsolesessions.so
 usr/lib/kde4/krunner_spellcheckrunner.so
-usr/lib/libplasmaconverter.so.4
-usr/lib/libplasmaconverter.so.4.2.0
 usr/share/kde4/services/browserhistory.desktop
 usr/share/kde4/services/katesessions.desktop
 usr/share/kde4/services/konquerorsessions.desktop

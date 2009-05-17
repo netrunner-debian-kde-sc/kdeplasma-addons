@@ -1,3 +1,6 @@
 #development symlink
+./usr/lib/libconversion.so
 ./usr/lib/libplasmacomicprovidercore.so
 ./usr/lib/libplasmaconverter.so
+./usr/lib/libplasmapotdprovidercore.so
+./usr/lib/libplasmaweather.so

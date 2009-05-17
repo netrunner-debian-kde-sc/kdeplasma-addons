@@ -1,3 +1,15 @@
+kdeplasma-addons (4:4.2.85-0ubuntu1) karmic; urgency=low
+
+  * New upstream beta release:
+    - Bump build-depends
+    - Add new plasma-wallpapers-addons package
+    - Add new plasma-dataengines-addons-dev package
+    - Remove 01_lancelot_qt4.5_support.diff, merged upstream
+    - Add kubuntu_01_qt_phonon.diff, for real
+    - Add conflicts of plasma-widget-weather to plasma-widgets-addons
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sat, 16 May 2009 16:18:34 -0400
+
 kdeplasma-addons (4:4.2.2-1ubuntu2) karmic; urgency=low
 
   * Add kubuntu_01_qt_phonon.diff to make it compile with Qt's Phonon

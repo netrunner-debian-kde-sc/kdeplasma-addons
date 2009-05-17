@@ -6,8 +6,8 @@ XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
- kdelibs5-dev (>= 4:4.2.2), kdepimlibs5-dev (>= 4:4.2.2), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.2.2), libboost1.35-dev, libkexiv2-7-dev, python
+ kdelibs5-dev (>= 4:4.2.85), kdepimlibs5-dev (>= 4:4.2.85), libqt4-opengl-dev,
+ kdebase-workspace-dev (>= 4:4.2.85), libboost1.35-dev, libkexiv2-7-dev, python
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -18,7 +18,8 @@ Architecture: all
 Section: kde
 Depends: plasma-widgets-addons (>= ${source:Version}),
  plasma-runners-addons (>= ${source:Version}),
- plasma-widget-lancelot (>= ${source:Version})
+ plasma-widget-lancelot (>= ${source:Version}),
+ plasma-wallpapers-addons (>= ${source:Version})
 Description: addons for KDE 4 Plasma - metapackage
  The KDE Plasma addons module is a collection of additional Plasma
  data engines, widgets and krunner plugins. It is part of
@@ -33,7 +34,8 @@ Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
 Recommends: plasma-widget-lancelot
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons,
+ plasma-widget-weather
 Conflicts: kdeplasma-addons-data, plasma-applets-addons
 Description: addons for KDE 4 Plasma - widgets
  This package contains additional Plasma widgets shipped in the KDE 4 plasma
@@ -55,6 +57,15 @@ Description: addons for KDE 4 Plasma - data engines
  .
  This package is part of the KDE 4 Plasma addons module.
 
+Package: plasma-dataengines-addons-dev
+Architecture: any
+Section: kde
+Depends: plasma-dataengines-addons (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:plasma-dataengines-addons}
+Description: addons for KDE 4 Plasma - data engine development headers
+ This package contains the development headers that are needed to compile
+ plasma widgets that use the extra libraries provides by plasma-addons. It is
+ part of the KDE 4 plasma addons module.
+
 Package: plasma-runners-addons
 Architecture: any
 Section: kde
@@ -67,6 +78,20 @@ Description: addons for KDE 4 Plasma - krunner plugins
  If you use krunner a lot, you will probably like this package.
  .
  This package is part of the KDE 4 Plasma addons module.
+
+Package: plasma-wallpapers-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
+ plasma-dataengines-addons (= ${binary:Version}), kdewallpapers,
+ kdebase-workspace-wallpapers
+Conflicts: kdeplasma-addons-data, plasma-applets-addons
+Description: addons for KDE 4 Plasma - widgets
+ This package contains additional Plasma wallpapers shipped in the KDE 4
+ plasma addons module. Install it if you want a variety of wallpapers on your
+ plasma desktop.
+ .
+ This package is part of the KDE 4 plasma addons module.
 
 Package: plasma-widget-lancelot
 Architecture: any
