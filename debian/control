@@ -7,7 +7,8 @@ Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pus
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
  kdelibs5-dev (>= 4:4.2.85), kdepimlibs5-dev (>= 4:4.2.85), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.2.85), libboost1.35-dev, libkexiv2-7-dev, python
+ kdebase-workspace-dev (>= 4:4.2.85), libboost1.35-dev, libkexiv2-7-dev, python,
+ libqimageblitz-dev
 Standards-Version: 3.8.0
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
