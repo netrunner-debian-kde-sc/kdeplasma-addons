@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.2.85-0ubuntu2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.2.85-0ubuntu2) karmic; urgency=low
 
   * Add a build-dep on libqimageblitz-dev to prevent FTBFS
 
