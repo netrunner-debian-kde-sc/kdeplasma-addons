@@ -1,9 +1,14 @@
-kdeplasma-addons (4:4.2.85-0ubuntu3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.2.90-0ubuntu1) karmic; urgency=low
 
+  * New upstream release:
+    - Bump build-depend versions
+    - Update various .install files
+  * Build-depend on libeigen2-dev to build the mandlebrot wallpaper
+  * Build-depend on libmarble-dev to build the marble wallpaper
   * widgets -> wallpapers in plasma-widget-wallpapers short description
-    (LP: #377707)
+    (LP: #377707) 
 
- -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 17 May 2009 16:20:20 -0400
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 05 Jun 2009 11:57:58 -0400
 
 kdeplasma-addons (4:4.2.85-0ubuntu2) karmic; urgency=low
 

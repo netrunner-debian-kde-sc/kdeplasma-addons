@@ -20,5 +20,4 @@ usr/include/lancelot/widgets/PopupList.h
 usr/include/lancelot/widgets/PopupMenu.h
 usr/include/lancelot/widgets/ResizeBordersPanel.h
 usr/include/lancelot/widgets/Widget.h
-usr/include/lancelot/widgets/WidgetPositioner.h
 usr/lib/liblancelot.so

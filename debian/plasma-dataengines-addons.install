@@ -13,7 +13,8 @@ usr/lib/kde4/plasma_potd_wcpotdprovider.so
 usr/lib/libconversion.so.4
 usr/lib/libconversion.so.4.3.0
 usr/lib/libocsclient.so
-usr/lib/libocsclient.so.SOVERSION
+usr/lib/libocsclient.so.4
+usr/lib/libocsclient.so.4.3.0
 usr/lib/libplasmacomicprovidercore.so.1
 usr/lib/libplasmacomicprovidercore.so.1.0.0
 usr/lib/libplasmapotdprovidercore.so.1
