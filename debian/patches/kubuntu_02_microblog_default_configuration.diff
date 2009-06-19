@@ -1,0 +1,202 @@
+diff -u kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.cpp kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.cpp
+--- kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.cpp	2009-05-06 11:14:08.000000000 +0100
++++ kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.cpp	2009-06-19 18:14:11.000000000 +0100
+@@ -91,6 +91,9 @@
+     case TimelineWithFriends:
+         m_url = KUrl(m_serviceBaseUrl, "statuses/friends_timeline.xml");
+         break;
++    case NoAuth:
++        m_url = KUrl(m_serviceBaseUrl, QString("statuses/user_timeline/%1.xml").arg(account.at(0)));
++        break;
+     case Timeline:
+     default:
+         m_url = KUrl(m_serviceBaseUrl, "statuses/user_timeline.xml");
+@@ -134,7 +137,7 @@
+ 
+ void TimelineSource::update()
+ {
+-    if (m_job || (!account().isEmpty() && password().isEmpty())) {
++    if (m_job) {
+         // We are already performing a fetch, let's not bother starting over
+         //kDebug() << "already updating....." << account() << password();
+         return;
+diff -u kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.h kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.h
+--- kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.h	2009-02-04 18:19:46.000000000 +0000
++++ kdeplasma-addons-4.2.90/dataengines/microblog/timelinesource.h	2009-06-19 16:54:17.000000000 +0100
+@@ -78,7 +78,8 @@
+     enum RequestType {
+         Timeline = 0,
+         TimelineWithFriends,
+-        Profile
++        Profile,
++        NoAuth
+     };
+ 
+     TimelineSource(const QString &who, RequestType requestType, QObject* parent);
+diff -u kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.cpp kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.cpp
+--- kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.cpp	2009-02-04 18:19:46.000000000 +0000
++++ kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.cpp	2009-06-19 18:15:32.000000000 +0100
+@@ -37,6 +37,7 @@
+ const QString TwitterEngine::timelinePrefix("Timeline:");
+ const QString TwitterEngine::timelineWithFriendsPrefix("TimelineWithFriends:");
+ const QString TwitterEngine::profilePrefix("Profile:");
++const QString TwitterEngine::noauthPrefix("NoAuth:");
+ 
+ TwitterEngine::TwitterEngine(QObject* parent, const QVariantList& args)
+     : Plasma::DataEngine(parent, args)
+@@ -56,7 +57,7 @@
+         return true;
+     }
+ 
+-    if (!name.startsWith(timelinePrefix) && !name.startsWith(timelineWithFriendsPrefix)  && !name.startsWith(profilePrefix)) {
++    if (!name.startsWith(timelinePrefix) && !name.startsWith(timelineWithFriendsPrefix)  && !name.startsWith(profilePrefix) && !name.startsWith(noauthPrefix)) {
+         return false;
+     }
+ 
+@@ -84,9 +85,8 @@
+ //always returns false becaues everything is async
+ bool TwitterEngine::updateSourceEvent(const QString &name)
+ {
+-    //kDebug() << name;
+     //right now it only makes sense to do an update on timelines
+-    if (!name.startsWith(timelinePrefix) && !name.startsWith(timelineWithFriendsPrefix) && !name.startsWith(profilePrefix)) {
++    if (!name.startsWith(timelinePrefix) && !name.startsWith(timelineWithFriendsPrefix) && !name.startsWith(profilePrefix) && !name.startsWith(noauthPrefix)) {
+         return false;
+     }
+ 
+@@ -99,6 +99,9 @@
+     } else if (name.startsWith(profilePrefix)) {
+         requestType = TimelineSource::Profile;
+         who.remove(profilePrefix);
++    } else if (name.startsWith(noauthPrefix)) {
++        requestType = TimelineSource::NoAuth;
++        who.remove(noauthPrefix);
+     }else{
+         requestType = TimelineSource::Timeline;
+         who.remove(timelinePrefix);
+diff -u kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.h kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.h
+--- kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.h	2009-04-30 19:02:33.000000000 +0100
++++ kdeplasma-addons-4.2.90/dataengines/microblog/twitterengine.h	2009-06-19 16:54:34.000000000 +0100
+@@ -70,6 +70,7 @@
+ 	static const QString timelinePrefix;
+ 	static const QString timelineWithFriendsPrefix;
+ 	static const QString profilePrefix;
++	static const QString noauthPrefix;
+         ImageSource *m_imageSource;
+ 
+ };
+diff -u kdeplasma-addons-4.2.90/applets/microblog/microblog.cpp kdeplasma-addons-4.2.90/applets/microblog/microblog.cpp
+--- kdeplasma-addons-4.2.90/applets/microblog/microblog.cpp	2009-06-03 12:54:30.000000000 +0100
++++ kdeplasma-addons-4.2.90/applets/microblog/microblog.cpp	2009-06-19 18:12:29.000000000 +0100
+@@ -32,6 +32,7 @@
+ #include <QGraphicsProxyWidget>
+ #include <QAction>
+ #include <QLabel>
++#include <QFile>
+ 
+ #include <KColorScheme>
+ #include <KConfigDialog>
+@@ -170,7 +171,7 @@
+     m_serviceUrl = cg.readEntry("serviceUrl", "https://identi.ca/api/");
+     m_username = cg.readEntry("username");
+     m_password = KStringHandler::obscure(cg.readEntry("password"));
+-    m_historySize = cg.readEntry("historySize", 2);
++    m_historySize = cg.readEntry("historySize", 10);
+     m_historyRefresh = cg.readEntry("historyRefresh", 5);
+     m_includeFriends = cg.readEntry("includeFriends", true);
+ 
+@@ -208,12 +209,12 @@
+ 
+     m_layout->addItem(flashLayout);
+ 
+-    Plasma::Frame *headerFrame = new Plasma::Frame(this);
+-    m_headerLayout = new QGraphicsLinearLayout( Qt::Horizontal, headerFrame );
++    m_headerFrame = new Plasma::Frame(this);
++    m_headerLayout = new QGraphicsLinearLayout( Qt::Horizontal, m_headerFrame );
+     m_headerLayout->setContentsMargins( 5, 5, 5, 10 );
+     m_headerLayout->setSpacing( 5 );
+-    m_layout->addItem( headerFrame );
+ 
++    m_layout->addItem( m_headerFrame );
+ 
+     m_icon = new Plasma::IconWidget(this);
+     m_icon->setIcon(KIcon("user-identity"));
+@@ -257,6 +258,7 @@
+     //set things in motion
+     if (m_username.isEmpty()) {
+         setAuthRequired(true);
++        downloadHistory();
+     } else if (m_password.isEmpty()) {
+         kDebug() << "started, password is not in config file, trying wallet";
+         m_walletWait = Read;
+@@ -323,7 +325,9 @@
+     } else if (m_password.isEmpty()) {
+         //FIXME: when out of string freeze, tell the user WHY they need
+         //       to configure the widget;
+-        setConfigurationRequired(true);
++        if (!QFile::exists("/usr/bin/ubiquity")) {  //don't show on live CD
++            setConfigurationRequired(true);
++        }
+         kDebug() << "failed to read password";
+     }
+ 
+@@ -348,7 +352,9 @@
+ 
+ void MicroBlog::setAuthRequired(bool required)
+ {
+-    setConfigurationRequired(required);
++    if (!QFile::exists("/usr/bin/ubiquity")) {
++        setConfigurationRequired(required);
++    }
+     m_statusEdit->setEnabled(!required);
+ }
+ 
+@@ -715,17 +721,25 @@
+ {
+     //kDebug() ;
+     if (m_username.isEmpty() || m_password.isEmpty()) {
++      /*
+         if (!m_curTimeline.isEmpty()) {
+             m_engine->disconnectSource(m_curTimeline, this);
+             m_engine->disconnectSource("Error:" + m_curTimeline, this);
+         }
+         return;
++      */
++        m_username = "kubuntu"; // default to show when unconfigured
++        m_headerFrame->hide();
++    } else {
++        m_headerFrame->show();
+     }
+ 
+     m_flash->flash( i18n("Refreshing timeline..."), -1 );
+ 
+     QString query;
+-    if( m_includeFriends) {
++    if (m_password.isEmpty()) {
++        query = QString("NoAuth:%1@%2");
++    } else if( m_includeFriends) {
+         query = QString("TimelineWithFriends:%1@%2");
+     } else {
+         query = QString("Timeline:%1@%2");
+@@ -748,7 +762,9 @@
+     delete m_service;
+     m_service = m_engine->serviceForSource(query);
+     KConfigGroup cg = m_service->operationDescription("auth");
+-    cg.writeEntry("password", m_password);
++    if (!m_password.isEmpty()) {
++        cg.writeEntry("password", m_password);
++    }
+     m_service->startOperationCall(cg);
+     connect(m_service, SIGNAL(finished(Plasma::ServiceJob*)), this, SLOT(serviceFinished(Plasma::ServiceJob*)));
+ 
+diff -u kdeplasma-addons-4.2.90/applets/microblog/microblog.h kdeplasma-addons-4.2.90/applets/microblog/microblog.h
+--- kdeplasma-addons-4.2.90/applets/microblog/microblog.h	2009-05-27 20:54:08.000000000 +0100
++++ kdeplasma-addons-4.2.90/applets/microblog/microblog.h	2009-06-19 18:10:36.000000000 +0100
+@@ -140,6 +140,7 @@
+         QGraphicsLinearLayout *m_tweetsLayout;
+         QGraphicsLinearLayout *m_layout;
+         QGraphicsLinearLayout *m_headerLayout;
++        Plasma::Frame *m_headerFrame;
+         QGraphicsWidget *m_graphicsWidget;
+         QPixmap m_popupIcon;
+ 
