@@ -1,3 +1,17 @@
+kdeplasma-addons (4:4.2.95-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build-depend versions
+    - Update plasma-widget-addons.install
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 27 Jun 2009 19:11:06 +0200
+
+kdeplasma-addons (4:4.2.90-0ubuntu3) karmic; urgency=low
+
+  * bzr add patch before upload
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 19 Jun 2009 20:19:30 +0100
+
 kdeplasma-addons (4:4.2.90-0ubuntu2) karmic; urgency=low
 
   * Add kubuntu_02_microblog_default_configuration.diff, make
