@@ -1,3 +1,13 @@
+kdeplasma-addons (4:4.2.96-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release
+    - Bump build-depend versions
+    - Update plasma-widget-lancelot.installed
+    - Update kubuntu_02_microblog_default_configuration.diff
+    - Remove kubuntu_01_qt_phonon.diff no longer need
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Fri, 10 Jul 2009 13:55:16 +0200
+
 kdeplasma-addons (4:4.2.95-0ubuntu1) karmic; urgency=low
 
   * New upstream release
