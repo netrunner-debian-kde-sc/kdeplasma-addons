@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.2.96-1) unstable; urgency=low
+kdeplasma-addons (4:4.2.96-1) experimental; urgency=low
 
   * New upstream release candidate.
     - New fancy background things, marble, fractals.
