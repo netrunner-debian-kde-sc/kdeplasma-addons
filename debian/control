@@ -33,8 +33,8 @@ Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
 Recommends: plasma-widget-lancelot
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons
-Conflicts: kdeplasma-addons-data, plasma-applets-addons
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
+Conflicts: kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
 Description: addons for KDE 4 Plasma - widgets
  This package contains additional Plasma widgets shipped in the KDE 4 plasma
  addons module. Install it if you want a variety of widgets on your plasma

@@ -2,9 +2,16 @@ kdeplasma-addons (4:4.2.96-1) unstable; urgency=low
 
   * New upstream release candidate.
     - New fancy background things, marble, fractals.
+
+  +++ Changes by Sune Vuorela:
+
   * Drop patch to make it lancelot work with qt4.5, merged upstream
 
- -- Sune Vuorela <debian@pusling.com>  Sun, 12 Jul 2009 19:37:01 +0200
+  +++ Changes by Modestas Vainius:
+
+  * plasma-widgets-addons conflicts & replaces plasma-widget-weather.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 13 Jul 2009 12:39:34 +0300
 
 kdeplasma-addons (4:4.2.4-1) unstable; urgency=low
 
