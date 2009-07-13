@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.2.96-1) unstable; urgency=low
+
+  * New upstream release candidate.
+    - New fancy background things, marble, fractals.
+  * Drop patch to make it lancelot work with qt4.5, merged upstream
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 12 Jul 2009 19:37:01 +0200
+
 kdeplasma-addons (4:4.2.4-1) unstable; urgency=low
 
   * New upstream release.

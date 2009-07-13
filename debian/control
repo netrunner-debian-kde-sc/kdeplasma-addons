@@ -5,8 +5,9 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
- kdelibs5-dev (>= 4:4.2.2), kdepimlibs5-dev (>= 4:4.2.2), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.2.2), libboost-dev, libkexiv2-7-dev, python
+ kdelibs5-dev (>= 4:4.2.90), kdepimlibs5-dev (>= 4:4.2.90), libqt4-opengl-dev,
+ kdebase-workspace-dev (>= 4:4.2.90), libboost-dev, libkexiv2-7-dev, python, libmarble-dev (>> 4:4.2.90), libqimageblitz-dev,
+ libeigen2-dev
 Standards-Version: 3.8.1
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons
@@ -65,6 +66,15 @@ Description: addons for KDE 4 Plasma - krunner plugins
  (the "run command" dialog of KDE 4) to reveal special search results.
  If you use krunner a lot, you will probably like this package.
  .
+ This package is part of the KDE 4 Plasma addons module.
+
+Package: plasma-wallpapers-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Description: addons for KDE 4 Plasma - wallpaper plugins
+ This package contains additional plasma wallpaper plugins that are used in 
+ the plasma desktop to give marble, mandelbrot and other such wallpapers.
  This package is part of the KDE 4 Plasma addons module.
 
 Package: plasma-widget-lancelot

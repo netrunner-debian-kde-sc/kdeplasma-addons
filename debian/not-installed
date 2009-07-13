@@ -1,3 +1,13 @@
 #development symlink
 ./usr/lib/libplasmacomicprovidercore.so
-./usr/lib/libplasmaconverter.so
+./usr/lib/libconversion.so
+./usr/lib/libocsclient.so
+./usr/include/conversion/converter.h
+./usr/include/conversion/plasmaconversion_export.h
+./usr/include/conversion/unit.h
+./usr/include/conversion/unitcategory.h
+./usr/include/conversion/value.h
+./usr/lib/libplasmaweather.so
+./usr/lib/librtm.so
+./usr/share/kde4/apps/cmake/modules/FindConversion.cmake
+
