@@ -1,6 +1,6 @@
-kdeplasma-addons (4:4.2.98-0~pre1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.0-0r1) UNRELEASED; urgency=low
 
-  * New upstream release, RC3. 
+  * New upstream release. 
   * Bump to Standards-Version: 3.8.2, no changes required.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sun, 26 Jul 2009 22:52:50 +0200
