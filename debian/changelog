@@ -2,6 +2,8 @@ kdeplasma-addons (4:4.3.0-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release
     - Bump build-depends
+    - Add kubuntu_03_microblog_allow_updating_status.diff, to allow updating
+      of status via microblog plasmoid
 
  -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Thu, 30 Jul 2009 14:00:30 +0200
 
