@@ -1,11 +1,11 @@
-kdeplasma-addons (4:4.3.0-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.0-1) unstable; urgency=low
 
   * New upstream release. 
   * Bump to Standards-Version: 3.8.2, no changes required.
   * Bump build dependencies to >= 4.3.0.
   * Update installed files.
 
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 01 Aug 2009 22:27:24 +0200
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 04 Aug 2009 09:20:58 +0200
 
 kdeplasma-addons (4:4.2.96-1) experimental; urgency=low
 
