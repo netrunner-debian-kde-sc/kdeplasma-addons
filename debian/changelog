@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.3.0-0ubuntu2) karmic; urgency=low
+
+  * Remove kubuntu_03_microblog_allow_updating_status.diff, fixed upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Aug 2009 14:38:06 +0100
+
 kdeplasma-addons (4:4.3.0-0ubuntu1) karmic; urgency=low
 
   * New upstream release
