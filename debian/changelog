@@ -1,6 +1,8 @@
 kdeplasma-addons (4:4.3.0-0ubuntu2) karmic; urgency=low
 
   * Remove kubuntu_03_microblog_allow_updating_status.diff, fixed upstream
+  * Add kubuntu_03_opendestop_setup.diff, make applet smaller and force minimum 
+    size to stop is shrinking on startup
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Aug 2009 14:38:06 +0100
 
