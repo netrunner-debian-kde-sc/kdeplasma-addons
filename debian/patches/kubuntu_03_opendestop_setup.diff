@@ -1,5 +1,5 @@
---- ../orig/kdeplasma-addons-4.3.0/applets/opendesktop/opendesktop.cpp	2009-07-29 12:13:00.000000000 +0100
-+++ applets/opendesktop/opendesktop.cpp	2009-08-06 17:05:03.000000000 +0100
+--- kdeplasma-addons-4.3.0/applets/opendesktop/opendesktop.cpp	2009-07-29 12:13:00.000000000 +0100
++++ kdeplasma-addons-4.3.0/applets/opendesktop/opendesktop.cpp	2009-08-06 17:05:03.000000000 +0100
 @@ -81,6 +81,7 @@
  
  
