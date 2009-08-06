@@ -1,6 +1,6 @@
 kdeplasma-addons (4:4.3.0-0ubuntu3) karmic; urgency=low
 
-  * Fix headers in kubuntu_03_opendestop_setup.diff
+  * Disable kubuntu_03_opendestop_setup.diff, it causes it to crash
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 06 Aug 2009 17:16:28 +0100
 
