@@ -10,7 +10,6 @@ usr/lib/kde4/plasma_potd_epodprovider.so
 usr/lib/kde4/plasma_potd_flickrprovider.so
 usr/lib/kde4/plasma_potd_oseiprovider.so
 usr/lib/kde4/plasma_potd_wcpotdprovider.so
-usr/lib/kde4/plasma_wallpaper_pattern.so
 usr/lib/libocsclient.so.4
 usr/lib/libocsclient.so.4.3.0
 usr/lib/libplasmacomicprovidercore.so.1

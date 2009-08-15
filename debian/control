@@ -73,6 +73,7 @@ Package: plasma-wallpapers-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}
+Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: addons for KDE 4 Plasma - wallpaper plugins
  This package contains additional plasma wallpaper plugins that are used in 
  the plasma desktop to give marble, mandelbrot and other such wallpapers.

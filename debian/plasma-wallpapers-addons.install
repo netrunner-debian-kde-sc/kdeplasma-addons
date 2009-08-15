@@ -1,5 +1,6 @@
 usr/lib/kde4/plasma_wallpaper_mandelbrot.so
 usr/lib/kde4/plasma_wallpaper_marble.so
+usr/lib/kde4/plasma_wallpaper_pattern.so
 usr/lib/kde4/plasma_wallpaper_virus.so
 usr/lib/kde4/plasma_wallpaper_weather.so
 usr/share/kde4/apps/plasma_wallpaper_pattern/patterns/fish.desktop

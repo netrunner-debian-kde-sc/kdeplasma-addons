@@ -4,6 +4,8 @@ kdeplasma-addons (4:4.3.0-2) UNRELEASED; urgency=low
 
   * Add dependency on plasma-wallpapers-addons to kdeplasma-addons
     and kdeplasma-addons-dbg.
+  * Move plasma_wallpaper_pattern.so to plasma-wallpapers-addons and
+    make plasma-wallpapers-addons replace plasma-dataengines-addons for this.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 15 Aug 2009 17:02:35 +0300
 
