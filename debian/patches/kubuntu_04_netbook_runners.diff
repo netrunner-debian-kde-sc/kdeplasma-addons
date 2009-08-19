@@ -10,25 +10,26 @@ Index: contacts/contactsrunner.cpp
  }
  
  ContactsRunner::~ContactsRunner()
-@@ -68,10 +69,18 @@
+@@ -69,10 +69,18 @@
              return;
          }
  
--        bool matchedName = a.realName().contains(term, Qt::CaseInsensitive);
+-        const bool matchedName = a.realName().contains(term, Qt::CaseInsensitive);
 -        bool matchedMail = false;
-+        bool matchedName;
-+        bool matchedMail;
- 
+-
 -        if (!matchedName) {
-+        if (term.compare(i18nc("list of all people in address book", "list contacts"), Qt::CaseInsensitive) == 0) {
-+            matchedName = true;
-+            matchedMail = true;
-+        } else {
-+            matchedName = a.realName().contains(term, Qt::CaseInsensitive);
-+            matchedMail = false;
-+        }
-+
-+        if (!matchedName && !matchedMail) {
++         bool matchedName;
++         bool matchedMail;
++  
++         if (term.compare(i18nc("list of all people in address book", "list contacts"), Qt::CaseInsensitive) == 0) {
++             matchedName = true;
++             matchedMail = true;
++         } else {
++             matchedName = a.realName().contains(term, Qt::CaseInsensitive);
++             matchedMail = false;
++         }
++ 
++         if (!matchedName && !matchedMail) {
              // Name didn't match, so lets try the name portion of the email address
-             int indexOf = a.preferredEmail().indexOf(term, Qt::CaseInsensitive);
+             const int indexOf = a.preferredEmail().indexOf(term, Qt::CaseInsensitive);
              matchedMail = indexOf > -1 && indexOf < a.preferredEmail().indexOf('@');
