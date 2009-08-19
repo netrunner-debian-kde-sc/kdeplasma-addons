@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.0-0ubuntu4) karmic; urgency=low
+
+  * Add kubuntu_04_netbook_runners.diff from 
+    plasma-netbook runners-patches/kdeplasma-addons_runners.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Aug 2009 15:05:53 +0100
+
 kdeplasma-addons (4:4.3.0-0ubuntu3) karmic; urgency=low
 
   * Disable kubuntu_03_opendestop_setup.diff, it causes it to crash
