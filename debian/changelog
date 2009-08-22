@@ -11,6 +11,11 @@ kdeplasma-addons (4:4.3.0-2) unstable; urgency=low
     and libxrender-dev to build compositing support for lancelot.
   * Add myself to uploaders.
 
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Bump to Standards-Version: 3.8.3 (no changes required).
+  * Update copyright years.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Aug 2009 15:53:02 +0200
 
 kdeplasma-addons (4:4.3.0-1) unstable; urgency=low
