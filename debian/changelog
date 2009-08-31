@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.3.1-1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.1-0r1) UNRELEASED; urgency=low
 
   * New upstream release.
 
@@ -7,6 +7,10 @@ kdeplasma-addons (4:4.3.1-1) UNRELEASED; urgency=low
   * Remove build dependency on libxcomposite-dev and libxdamage-dev
     as they are no longer needed for building lancelot compositing
     support.
+
+  +++ Changes by Fathi Boudra:
+
+  * Bump KDE build dependencies to 4.3.1.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 29 Aug 2009 17:48:16 +0300
 
