@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.3.1-0ubuntu2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.1-0ubuntu2) karmic; urgency=low
 
   * Add another fix to kubuntu_01_fix_armel_build.diff
 
