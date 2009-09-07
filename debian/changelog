@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.1-0ubuntu3) karmic; urgency=low
+
+  * Add wallpapers/mandelbrot/mandelbrot.cpp armel fixes to
+    kubuntu_01_fix_armel_build.diff
+
+ -- Scott Kitterman <scott@kitterman.com>  Mon, 07 Sep 2009 12:29:57 -0400
+
 kdeplasma-addons (4:4.3.1-0ubuntu2) karmic; urgency=low
 
   * Add another fix to kubuntu_01_fix_armel_build.diff
