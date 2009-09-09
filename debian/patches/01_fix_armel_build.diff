@@ -24,7 +24,7 @@ Index: kdeplasma-addons-4.3.1/applets/mediaplayer/mediaplayer.cpp
          break;
      case Qt::Key_Down:
 -        audio->setVolume(qMax(qreal(0.0), audio->volume() - 0.1));
-+        audio->setVolume(qMax<static_cast<qreal>(0.0), static_cast<qreal>(audio->volume() - 0.1)));
++        audio->setVolume(qMax(static_cast<qreal>(0.0), static_cast<qreal>(audio->volume() - 0.1)));
          break;
      case Qt::Key_R:
          RaiseLower();
