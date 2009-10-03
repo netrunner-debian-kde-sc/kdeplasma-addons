@@ -1,3 +1,15 @@
+kdeplasma-addons (4:4.3.2-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build deps
+    - Remove build dependency on libxcomposite-dev and libxdamage-dev
+      as they are no longer needed for building lancelot compositing
+      support
+    - Remove kubuntu_01_fix_armel_build.diff, fixed by upstream
+    - Update plasma-widget-addons.install
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 03 Oct 2009 18:52:18 +0200
+
 kdeplasma-addons (4:4.3.1-0ubuntu3) karmic; urgency=low
 
   * Add wallpapers/mandelbrot/mandelbrot.cpp armel fixes to
