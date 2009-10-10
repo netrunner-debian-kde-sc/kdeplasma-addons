@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove 01_fix_armel_build patch, merged upstream.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 10 Oct 2009 19:43:05 +0200
+
 kdeplasma-addons (4:4.3.1-2) unstable; urgency=low
 
   * Add patch to fix build failure. Thanks to ubuntu people to bring us the
