@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.3.2-0ubuntu2) karmic; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff, fix
+    setting of when applet needs configuration and fix downloading of
+    authenticated accounts timelines.  Closes LP: #414572 (also
+    https://bugs.kde.org/200475)
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2009 14:05:24 +0100
+
 kdeplasma-addons (4:4.3.2-0ubuntu1) karmic; urgency=low
 
   * New upstream release

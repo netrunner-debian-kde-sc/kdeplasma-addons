@@ -61,7 +61,7 @@ Index: kdeplasma-addons-4.2.96/applets/microblog/microblog.cpp
  {
 -    setConfigurationRequired(required);
 +    if (!QFile::exists("/usr/bin/ubiquity")) {
-+	    setConfigurationRequired(true);
++	    setConfigurationRequired(required);
 +    }
      m_statusEdit->setEnabled(!required);
  }
@@ -137,7 +137,7 @@ Index: kdeplasma-addons-4.2.96/dataengines/microblog/timelinesource.cpp
  void TimelineSource::update()
  {
 -    if (m_job || (!account().isEmpty() && password().isEmpty())) {
-+    if (m_job) {
++    if ( account() != "kubuntu" && (m_job || (!account().isEmpty() && password().isEmpty())) ) {
          // We are already performing a fetch, let's not bother starting over
          //kDebug() << "already updating....." << account() << password();
          return;
