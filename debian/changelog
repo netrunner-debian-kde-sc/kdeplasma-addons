@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.2-0ubuntu5) karmic; urgency=low
+
+  * Update kubuntu_06_microblog_twitter_id_fix.diff with fix from
+    http://websvn.kde.org/?revision=1036051&view=revision
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 Oct 2009 23:02:49 +0100
+
 kdeplasma-addons (4:4.3.2-0ubuntu4) karmic; urgency=low
 
   * Add kubuntu_06_microblog_twitter_id_fix.diff from 4.3 branch, is the
