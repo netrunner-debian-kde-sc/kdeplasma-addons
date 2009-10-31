@@ -1,3 +1,13 @@
+kdeplasma-addons (4:4.3.3-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+  * Remove patches fixed by upstream:
+    - kubuntu_05_rememberthemilk_auth_fix.diff
+    - kubuntu_06_microblog_twitter_id_fix.diff
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 31 Oct 2009 21:22:10 +0100
+
 kdeplasma-addons (4:4.3.2-0ubuntu5) karmic; urgency=low
 
   * Update kubuntu_06_microblog_twitter_id_fix.diff with fix from
