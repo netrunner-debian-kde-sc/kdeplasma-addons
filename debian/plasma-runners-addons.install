@@ -14,3 +14,5 @@ usr/share/kde4/services/plasma-runner-contacts.desktop
 usr/share/kde4/services/plasma-runner-converter.desktop
 usr/share/kde4/services/plasma-runner-spellchecker_config.desktop
 usr/share/kde4/services/plasma-runner-spellchecker.desktop
+usr/lib/libconversion.so.4
+usr/lib/libconversion.so.4.3.0

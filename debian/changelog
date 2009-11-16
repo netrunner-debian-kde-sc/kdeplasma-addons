@@ -1,12 +1,29 @@
-kdeplasma-addons (4:4.3.3-0ubuntu1~ppa1) karmic; urgency=low
+kdeplasma-addons (4:4.3.3-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release
-    - Bump build-deps
   * Remove patches fixed by upstream:
     - kubuntu_05_rememberthemilk_auth_fix.diff
     - kubuntu_06_microblog_twitter_id_fix.diff
+  * Merge with Debian testing remaining changes:
+    - Add KUBUNTU-DEBIAN-DIFFERENCES
+    - debian/control:
+      - Build against libboost1.38-dev
+      - Keep our conflicts/replaces
+      - Keep plasma-dataengines-addons-dev package
+      - plasma-wallpapers-addons depends on kdewallpapers and
+        kdebase-workspace-wallpapers
+      - add blank line in plasma-wallpapers-addons description
+    - debian/plasma-dataengines-addons.install:
+      - Don't install usr/lib/libplasmapotdprovidercore.so
+      - Don't add duplicate line
+        usr/share/kde4/services/plasma-dataengine-potd.desktop
+    - debian/patches:
+      - Add kubuntu_02_microblog_default_configuration.diff
+      - Add kubuntu_03_opendestop_setup.diff
+      - kubuntu_04_netbook_runners.diff
+      - Don't add 01_fix_armel_build.diff
 
- -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 31 Oct 2009 21:22:10 +0100
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Mon, 16 Nov 2009 03:40:10 +0100
 
 kdeplasma-addons (4:4.3.2-0ubuntu6) lucid; urgency=low
 
@@ -58,6 +75,13 @@ kdeplasma-addons (4:4.3.2-0ubuntu1) karmic; urgency=low
 
  -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 03 Oct 2009 18:52:18 +0200
 
+kdeplasma-addons (4:4.3.1-2) unstable; urgency=low
+
+  * Add patch to fix build failure. Thanks to ubuntu people to bring us the
+    patch. Modified to use static_cast instead of c-style casts.
+
+ -- Sune Vuorela <debian@pusling.com>  Wed, 09 Sep 2009 08:42:03 +0200
+
 kdeplasma-addons (4:4.3.1-0ubuntu3) karmic; urgency=low
 
   * Add wallpapers/mandelbrot/mandelbrot.cpp armel fixes to
@@ -87,6 +111,42 @@ kdeplasma-addons (4:4.3.1-0ubuntu1) karmic; urgency=low
 
  -- Harald Sitter <apachelogger@ubuntu.com>  Sun, 30 Aug 2009 20:11:55 +0200
 
+kdeplasma-addons (4:4.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by George Kiagiadakis:
+
+  * Remove build dependency on libxcomposite-dev and libxdamage-dev
+    as they are no longer needed for building lancelot compositing
+    support.
+
+  +++ Changes by Fathi Boudra:
+
+  * Bump KDE build dependencies to 4.3.1.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 29 Aug 2009 17:48:16 +0300
+
+kdeplasma-addons (4:4.3.0-2) unstable; urgency=low
+
+  +++ Changes by George Kiagiadakis:
+
+  * Add dependency on plasma-wallpapers-addons to kdeplasma-addons
+    and kdeplasma-addons-dbg.
+  * Move plasma_wallpaper_pattern.so to plasma-wallpapers-addons and
+    make plasma-wallpapers-addons replace plasma-dataengines-addons for this.
+  * Update installed files: install the bball widget icons.
+  * Add build dependency on libxcomposite-dev, libxdamage-dev
+    and libxrender-dev to build compositing support for lancelot.
+  * Add myself to uploaders.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Bump to Standards-Version: 3.8.3 (no changes required).
+  * Update copyright years.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 22 Aug 2009 15:53:02 +0200
+
 kdeplasma-addons (4:4.3.0-0ubuntu4) karmic; urgency=low
 
   * Add kubuntu_04_netbook_runners.diff from 
@@ -107,6 +167,15 @@ kdeplasma-addons (4:4.3.0-0ubuntu2) karmic; urgency=low
     size to stop is shrinking on startup
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Aug 2009 14:38:06 +0100
+
+kdeplasma-addons (4:4.3.0-1) unstable; urgency=low
+
+  * New upstream release. 
+  * Bump to Standards-Version: 3.8.2, no changes required.
+  * Bump build dependencies to >= 4.3.0.
+  * Update installed files.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 04 Aug 2009 09:20:58 +0200
 
 kdeplasma-addons (4:4.3.0-0ubuntu1) karmic; urgency=low
 
@@ -130,6 +199,21 @@ kdeplasma-addons (4:4.2.98-0ubuntu1) karmic; urgency=low
   * Fixes in plasma-widgets-addons.install
 
  -- Michał Zając <michal.zajac@gmail.com>  Thu, 23 Jul 2009 01:59:29 +0200
+
+kdeplasma-addons (4:4.2.96-1) experimental; urgency=low
+
+  * New upstream release candidate.
+    - New fancy background things, marble, fractals.
+
+  +++ Changes by Sune Vuorela:
+
+  * Drop patch to make it lancelot work with qt4.5, merged upstream
+
+  +++ Changes by Modestas Vainius:
+
+  * plasma-widgets-addons conflicts & replaces plasma-widget-weather.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 13 Jul 2009 12:39:34 +0300
 
 kdeplasma-addons (4:4.2.96-0ubuntu1) karmic; urgency=low
 
@@ -191,6 +275,16 @@ kdeplasma-addons (4:4.2.85-0ubuntu1) karmic; urgency=low
     - Add conflicts of plasma-widget-weather to plasma-widgets-addons
 
  -- Jonathan Thomas <echidnaman@kubuntu.org>  Sat, 16 May 2009 16:18:34 -0400
+
+kdeplasma-addons (4:4.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by Fathi Boudra:
+  * Fix section for debug package.
+  * Bump Standards-Version from 3.8.0 to 3.8.1 (no changes needed).
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 14 Mar 2009 13:52:37 +0100
 
 kdeplasma-addons (4:4.2.2-1ubuntu2) karmic; urgency=low
 

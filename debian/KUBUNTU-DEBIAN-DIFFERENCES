@@ -1,0 +1,11 @@
+    - debian/control:
+      - Build against libboost1.38-dev
+      - Keep our conflicts/replaces
+      - Keep plasma-dataengines-addons-dev package
+      - plasma-wallpapers-addons depends on kdewallpapers and
+        kdebase-workspace-wallpapers
+      - add blank line in plasma-wallpapers-addons description
+    - debian/plasma-dataengines-addons.install:
+      - Don't install usr/lib/libplasmapotdprovidercore.so
+      - Don't add duplicate line
+        usr/share/kde4/services/plasma-dataengine-potd.desktop

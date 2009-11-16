@@ -4,12 +4,12 @@ Priority: optional
 Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
- Armin Berres <trigger+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>
+ Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>, George Kiagiadakis <gkiagiad@csd.uoc.gr>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
- kdelibs5-dev (>= 4:4.3.3), kdepimlibs5-dev (>= 4:4.3.3), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.3.3), libboost1.38-dev, libkexiv2-7-dev, python,
- libqimageblitz-dev, libeigen2-dev, libmarble-dev, libxrender-dev
-Standards-Version: 3.8.0
+ kdelibs5-dev (>= 4:4.3.1), kdepimlibs5-dev (>= 4:4.3.1), libqt4-opengl-dev,
+ kdebase-workspace-dev (>= 4:4.3.1), libboost1.38-dev, libkexiv2-7-dev, python, libmarble-dev (>> 4:4.3.0),
+ libqimageblitz-dev, libeigen2-dev, libxrender-dev
+Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
 Vcs-Bzr: https://code.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -33,10 +33,9 @@ Package: plasma-widgets-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
- plasma-dataengines-addons (= ${binary:Version}),
+ plasma-dataengines-addons (= ${binary:Version})
 Recommends: plasma-widget-lancelot
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons,
- plasma-widget-weather
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
 Conflicts: kdeplasma-addons-data, plasma-applets-addons
 Description: addons for KDE 4 Plasma - widgets
  This package contains additional Plasma widgets shipped in the KDE 4 plasma
@@ -49,7 +48,8 @@ Package: plasma-dataengines-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4,
+ plasma-widgets-addons (<< 4:4.3.3)
 Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
 Description: addons for KDE 4 Plasma - data engines
  This package contains additional Plasma data engines shipped in KDE 4 plasma
@@ -71,7 +71,8 @@ Package: plasma-runners-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4,
+ plasma-dataengines-addons (<< 4:4.3.3)
 Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
 Description: addons for KDE 4 Plasma - krunner plugins
  This package contains additional plasma runners that are used in krunner
@@ -87,12 +88,11 @@ Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}), kdewallpapers,
  kdebase-workspace-wallpapers
 Conflicts: kdeplasma-addons-data, plasma-applets-addons
-Description: addons for KDE 4 Plasma - wallpapers
- This package contains additional Plasma wallpapers shipped in the KDE 4
- plasma addons module. Install it if you want a variety of wallpapers on your
- plasma desktop.
+Description: addons for KDE 4 Plasma - wallpaper plugins
+ This package contains additional plasma wallpaper plugins that are used in 
+ the plasma desktop to give marble, mandelbrot and other such wallpapers.
  .
- This package is part of the KDE 4 plasma addons module.
+ This package is part of the KDE 4 Plasma addons module.
 
 Package: plasma-widget-lancelot
 Architecture: any
@@ -146,14 +146,14 @@ Description: development headers for liblancelot
  plasma addons module.
 
 Package: kdeplasma-addons-dbg
-Section: libdevel
+Section: debug
 Architecture: any
 Priority: extra
 Conflicts: kdeplasmoids-dbg
 Replaces: kdeplasmoids-dbg
 Depends: plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- liblancelot0 (= ${binary:Version}), kdebase-workspace-dbg
+ liblancelot0 (= ${binary:Version}), plasma-wallpapers-addons (= ${binary:Version}), kdebase-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related
