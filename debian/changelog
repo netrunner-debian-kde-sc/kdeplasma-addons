@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.4-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 28 Nov 2009 04:27:22 +0100
+
 kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release
