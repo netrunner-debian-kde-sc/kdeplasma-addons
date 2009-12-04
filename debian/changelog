@@ -6,6 +6,10 @@ kdeplasma-addons (4:4.3.4-0r1) UNRELEASED; urgency=low
 
   * Remove myself from Uploaders.
 
+  +++ Changes by Modestas Vainius:
+
+  * Bump KDE build dependencies to current version.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 05 Dec 2009 01:03:54 +0200
 
 kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
