@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.3.3-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.4-0r1) UNRELEASED; urgency=low
 
   * New upstream release.
 
@@ -6,7 +6,7 @@ kdeplasma-addons (4:4.3.3-0r1) UNRELEASED; urgency=low
 
   * Remove myself from Uploaders.
 
- -- Lukasz Janyst <janyst@gmail.com>  Tue, 10 Nov 2009 19:37:34 +0100
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 05 Dec 2009 01:03:54 +0200
 
 kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
 
