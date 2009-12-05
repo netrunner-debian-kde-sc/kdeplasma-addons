@@ -36,6 +36,12 @@ usr/lib/kde4/plasma_applet_timer.so
 usr/lib/kde4/plasma_applet_unitconverter.so
 usr/lib/kde4/plasma_applet_weather.so
 usr/lib/kde4/plasma_applet_weatherstation.so
+usr/lib/kde4/plasma_applet_blackboard.so                                                                   
+usr/lib/kde4/plasma_applet_knowledgebase.so                                                                
+usr/lib/kde4/plasma_applet_opendesktop_activities.so                                                       
+usr/lib/kde4/plasma_applet_plasmaboard.so                                                                  
+usr/lib/kde4/plasma_applet_spellcheck.so                                                                   
+usr/lib/kde4/plasma_applet_webslice.so 
 usr/share/icons/hicolor/128x128/apps/bball.png
 usr/share/icons/hicolor/128x128/apps/previewer.png
 usr/share/icons/hicolor/16x16/apps/bball.png
@@ -54,7 +60,7 @@ usr/share/kde4/apps/bball/bball.svgz
 usr/share/kde4/apps/bball/bounce.ogg
 usr/share/kde4/apps/bball/football.svgz
 usr/share/kde4/apps/desktoptheme/default/bubblemon/bubble.svg
-usr/share/kde4/apps/desktoptheme/default/fifteenPuzzle/greensquare.svgz
+usr/share/kde4/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
 usr/share/kde4/apps/desktoptheme/default/rssnow/background.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/left.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/right.svgz
@@ -73,8 +79,10 @@ usr/share/kde4/apps/desktoptheme/default/widgets/timer.svgz
 usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
 usr/share/kde4/apps/plasma-applet-opendesktop/user.css
 usr/share/kde4/apps/plasma_pastebin/plasma_pastebin.notifyrc
+usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 usr/share/kde4/apps/rssnow/feeds
 usr/share/kde4/config/comic.knsrc
+usr/share/kde4/config/plasmaweather.knsrc
 usr/share/kde4/services/ServiceMenus/preview.desktop
 usr/share/kde4/services/plasma-applet-bball.desktop
 usr/share/kde4/services/plasma-applet-binaryclock.desktop
@@ -114,3 +122,9 @@ usr/share/kde4/services/plasma-fileWatcher-default.desktop
 usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
+usr/share/kde4/services/plasma-applet-blackboard.desktop                                                   
+usr/share/kde4/services/plasma-applet-knowledgebase.desktop                                                
+usr/share/kde4/services/plasma-applet-opendesktop-activities.desktop                                       
+usr/share/kde4/services/plasma-applet-spellcheck.desktop                                                   
+usr/share/kde4/services/plasma-applet-webslice.desktop
+usr/share/kde4/services/plasma_applet_plasmaboard.desktop

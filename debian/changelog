@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.3.80-0ubuntu1~ppa1) lucid; urgency=low
+
+  * New upstream beta
+  * Dropped netbook patch, already implemented upstream
+  * Commented out social from the start patch, needs rewriting, it causes FTBFS
+
+ -- Michał Zając <michal.zajac@gmail.com>  Sat, 05 Dec 2009 21:02:13 +0100
+
 kdeplasma-addons (4:4.3.4-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release

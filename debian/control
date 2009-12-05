@@ -8,7 +8,8 @@ Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pus
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
  kdelibs5-dev (>= 4:4.3.4), kdepimlibs5-dev (>= 4:4.3.4), libqt4-opengl-dev,
  kdebase-workspace-dev (>= 4:4.3.4), libboost1.38-dev, libkexiv2-7-dev, python, libmarble-dev (>> 4:4.3.0),
- libqimageblitz-dev, libeigen2-dev, libxrender-dev
+ libqimageblitz-dev, libeigen2-dev, libxrender-dev, libattica-dev, libxtst-dev,
+ libmarble-dev
 Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -57,15 +58,6 @@ Description: addons for KDE 4 Plasma - data engines
  Plasma widgets, but they may be useful for any other Plasma widget too.
  .
  This package is part of the KDE 4 Plasma addons module.
-
-Package: plasma-dataengines-addons-dev
-Architecture: any
-Section: kde
-Depends: plasma-dataengines-addons (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:plasma-dataengines-addons}
-Description: addons for KDE 4 Plasma - data engine development headers
- This package contains the development headers that are needed to compile
- plasma widgets that use the extra libraries provides by plasma-addons. It is
- part of the KDE 4 plasma addons module.
 
 Package: plasma-runners-addons
 Architecture: any

@@ -60,7 +60,7 @@ usr/share/kde4/apps/desktoptheme/default/lancelot/action-list-view-items-extende
 usr/share/kde4/apps/desktoptheme/default/lancelot/action-list-view-items.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/extender-button-icon.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/inner-background.svgz
-usr/share/kde4/apps/desktoptheme/default/lancelot/main-background.svgz
+#usr/share/kde4/apps/desktoptheme/default/lancelot/main-background.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/passageway-view-buttons-extender.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/passageway-view-buttons.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/passageway-view-inactivebuttons.svgz
@@ -68,6 +68,7 @@ usr/share/kde4/apps/desktoptheme/default/lancelot/passageway-view-spacer.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/section-buttons.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/system-buttons-extender.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/system-buttons.svgz
+usr/share/kde4/apps/desktoptheme/default/lancelot/action-list-view-drop-indicator.svgz
 usr/share/kde4/apps/desktoptheme/default/lancelot/theme.config
 usr/share/kde4/apps/desktoptheme/heron/lancelot/action-list-view-categories-applet.svgz
 usr/share/kde4/apps/desktoptheme/heron/lancelot/action-list-view-categories-extender.svgz
