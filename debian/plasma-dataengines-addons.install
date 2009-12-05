@@ -33,7 +33,6 @@ usr/share/kde4/services/plasma-dataengine-comic.desktop
 usr/share/kde4/services/plasma-dataengine-microblog.desktop
 usr/share/kde4/services/plasma-dataengine-ocs.desktop
 usr/share/kde4/services/plasma-dataengine-potd.desktop
-usr/share/kde4/services/plasma-dataengine-potd.desktop
 usr/share/kde4/services/plasma-engine-rtm.desktop
 usr/share/kde4/services/plasma-packagestructure-comic.desktop
 usr/share/kde4/services/wcpotdprovider.desktop
