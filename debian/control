@@ -122,7 +122,7 @@ Architecture: any
 Section: libdevel
 Replaces: kdeplasma-addons-dev
 Conflicts: kdeplasma-addons-dev
-Depends: liblancelot1 (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:liblancelot0}
+Depends: liblancelot1 (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:liblancelot1}
 Description: development headers for liblancelot
  Liblancelot is a base framework for everything in the world of Lancelot.
  It is built on top of Plasma. It provides a set of custom widgets, layouts
