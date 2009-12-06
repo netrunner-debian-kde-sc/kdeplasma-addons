@@ -1,10 +1,14 @@
 kdeplasma-addons (4:4.3.80-0ubuntu1~ppa1) lucid; urgency=low
 
   * New upstream beta
+  * Bump on Build-Depends
+  * Changes in install files.
   * Dropped netbook patch, already implemented upstream
   * Commented out social from the start patch, needs rewriting, it causes FTBFS
+  * Added 99_fix_ftbfs_on_marble_wallpaper.diff
+  * Dropped plasma-dataengines-dev since no files are produced
 
- -- Michał Zając <michal.zajac@gmail.com>  Sat, 05 Dec 2009 21:02:13 +0100
+ -- Michał Zając <michal.zajac@gmail.com>  Sun, 06 Dec 2009 02:48:11 +0100
 
 kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
 
