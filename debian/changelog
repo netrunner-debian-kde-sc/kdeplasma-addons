@@ -1,14 +1,25 @@
-kdeplasma-addons (4:4.3.80-0ubuntu1~ppa1) lucid; urgency=low
+kdeplasma-addons (4:4.3.80-0ubuntu1~ppa4) lucid; urgency=low
 
+  [ Michał Zając ]
   * New upstream beta
-  * Bump on Build-Depends
   * Changes in install files.
   * Dropped netbook patch, already implemented upstream
   * Commented out social from the start patch, needs rewriting, it causes FTBFS
   * Added 99_fix_ftbfs_on_marble_wallpaper.diff
   * Dropped plasma-dataengines-dev since no files are produced
 
- -- Michał Zając <michal.zajac@gmail.com>  Sun, 06 Dec 2009 02:48:11 +0100
+  [ Scott Kitterman ]
+  * Bump KDE build depends to 4.3.80 or later
+  * Switch to boost 1.40
+  * Clean up commented out entry in debian/plasma-widget-lancelot.install
+  * Remove left over generated files from debian dir
+  * liblancelot0 to liblancelot1 transition
+    - Change library package name in debian/control
+    - Update liblancelot-dev depends
+    - Rename install file
+    - Update kdeplasma-addons-dbg depends
+
+ -- Scott Kitterman <scott@kitterman.com>  Sat, 05 Dec 2009 23:30:01 -0500
 
 kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
 
