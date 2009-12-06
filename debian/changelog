@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.3.80-0ubuntu2) lucid; urgency=low
+
+  * Added two libs in liblancelot-dev.install
+  * ${sameVersionDep:kdelibs5-dev:liblancelot1} has been removed from
+    debian/control
+  * Added shared-desktop-ontologies as a Build-Depend
+
+ -- Michał Zając <michal.zajac@gmail.com>  Sun, 06 Dec 2009 15:12:49 +0100
+
 kdeplasma-addons (4:4.3.80-0ubuntu1) lucid; urgency=low
 
   [ Michał Zając ]
@@ -7,10 +16,7 @@ kdeplasma-addons (4:4.3.80-0ubuntu1) lucid; urgency=low
   * Commented out social from the start patch, needs rewriting, it causes FTBFS
   * Added 99_fix_ftbfs_on_marble_wallpaper.diff
   * Dropped plasma-dataengines-dev since no files are produced
-  * Added two libs in liblancelot-dev.install
-  * ${sameVersionDep:kdelibs5-dev:liblancelot1} has been removed from
-    debian/control
-  * Added shared-desktop-ontologies as a Build-Depend
+
 
   [ Scott Kitterman ]
   * Bump KDE build depends to 4.3.80 or later
