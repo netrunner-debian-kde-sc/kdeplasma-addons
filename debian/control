@@ -9,7 +9,7 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.
  kdelibs5-dev (>= 4:4.3.80), kdepimlibs5-dev (>= 4:4.3.80), libqt4-opengl-dev,
  kdebase-workspace-dev (>= 4:4.3.80), libboost1.40-dev, libkexiv2-7-dev, python, libmarble-dev (>= 4:4.3.0),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, libattica-dev, libxtst-dev,
- libmarble-dev
+ libmarble-dev, shared-desktop-ontologies
 Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -122,7 +122,7 @@ Architecture: any
 Section: libdevel
 Replaces: kdeplasma-addons-dev
 Conflicts: kdeplasma-addons-dev
-Depends: liblancelot1 (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:liblancelot1}
+Depends: liblancelot1 (= ${binary:Version})
 Description: development headers for liblancelot
  Liblancelot is a base framework for everything in the world of Lancelot.
  It is built on top of Plasma. It provides a set of custom widgets, layouts

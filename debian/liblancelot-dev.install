@@ -21,3 +21,6 @@ usr/include/lancelot/widgets/PopupMenu.h
 usr/include/lancelot/widgets/ResizeBordersPanel.h
 usr/include/lancelot/widgets/Widget.h
 usr/lib/liblancelot.so
+usr/lib/liblancelot.so.0
+usr/lib/liblancelot.so.1.7.0
+
