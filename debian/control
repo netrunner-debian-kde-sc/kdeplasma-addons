@@ -99,7 +99,7 @@ Description: addons for KDE 4 Plasma - lancelot widget
  .
  This package is part of the KDE 4 plasma addons module.
 
-Package: liblancelot1
+Package: liblancelot0
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -122,7 +122,7 @@ Architecture: any
 Section: libdevel
 Replaces: kdeplasma-addons-dev
 Conflicts: kdeplasma-addons-dev
-Depends: liblancelot1 (= ${binary:Version})
+Depends: liblancelot0 (= ${binary:Version}), ${sameVersionDep:kdelibs5-dev:liblancelot0}
 Description: development headers for liblancelot
  Liblancelot is a base framework for everything in the world of Lancelot.
  It is built on top of Plasma. It provides a set of custom widgets, layouts
@@ -145,7 +145,7 @@ Conflicts: kdeplasmoids-dbg
 Replaces: kdeplasmoids-dbg
 Depends: plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- liblancelot1 (= ${binary:Version}), plasma-wallpapers-addons (= ${binary:Version}), kdebase-workspace-dbg
+ liblancelot0 (= ${binary:Version}), plasma-wallpapers-addons (= ${binary:Version}), kdebase-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related
