@@ -1,3 +1,16 @@
+kdeplasma-addons (4:4.3.80-0ubuntu4) lucid; urgency=low
+
+  * Fix libkexiv2 build-dep to libkexiv2-8
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 08 Dec 2009 15:31:07 -0500
+
+kdeplasma-addons (4:4.3.80-0ubuntu3) lucid; urgency=low
+
+  * Make plasma-widget-addons conflict/replace on plasma-widget-plasmaboard,
+    which moved here in KDE 4.4
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 08 Dec 2009 15:31:07 -0500
+
 kdeplasma-addons (4:4.3.80-0ubuntu2) lucid; urgency=low
 
   [ Michał Zając ]
@@ -5,9 +18,6 @@ kdeplasma-addons (4:4.3.80-0ubuntu2) lucid; urgency=low
 
   [ Scott Kitterman ]
   * Revert mistaken liblancelot1 transition and return to liblancelot0
-
-  [ Jonathan Riddell ]
-  * Fix libkexiv2 build-dep to libkexiv2-8
 
  -- Scott Kitterman <scott@kitterman.com>  Sun, 06 Dec 2009 21:42:35 -0500
 
