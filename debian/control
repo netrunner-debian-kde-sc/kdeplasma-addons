@@ -7,9 +7,9 @@ Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pus
  Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>, George Kiagiadakis <gkiagiad@csd.uoc.gr>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
  kdelibs5-dev (>= 4:4.3.80), kdepimlibs5-dev (>= 4:4.3.80), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.3.80), libboost1.40-dev, libkexiv2-7-dev, python, libmarble-dev (>= 4:4.3.0),
+ kdebase-workspace-dev (>= 4:4.3.80), libboost1.40-dev, libkexiv2-8-dev (>= 4:4.3.80-0ubuntu2), python, libmarble-dev (>= 4:4.3.0),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, libattica-dev, libxtst-dev,
- libmarble-dev, shared-desktop-ontologies
+ shared-desktop-ontologies
 Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
