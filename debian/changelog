@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.3.80-0ubuntu5) lucid; urgency=low
+
+  * Remove 99_fix_ftbfs_on_marble_wallpaper.diff, fixes fail to build
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 09 Dec 2009 14:57:57 +0000
+
 kdeplasma-addons (4:4.3.80-0ubuntu4) lucid; urgency=low
 
   * Fix libkexiv2 build-dep to libkexiv2-8
