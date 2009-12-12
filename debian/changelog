@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.3.80-0ubuntu6) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.3.80-0ubuntu6) karmic; urgency=low
 
   * Make plasma-widgets-addons conflict/replace on plasma-widget-spellcheck
 
