@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.3.80-0ubuntu6) UNRELEASED; urgency=low
+
+  * Make plasma-widgets-addons conflict/replace on plasma-widget-spellcheck
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 12 Dec 2009 03:59:19 +0100
+
 kdeplasma-addons (4:4.3.80-0ubuntu5) lucid; urgency=low
 
   * Remove 99_fix_ftbfs_on_marble_wallpaper.diff, fixes fail to build
