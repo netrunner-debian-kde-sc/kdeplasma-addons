@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.3.85-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 19 Dec 2009 22:35:02 +0100
+
 kdeplasma-addons (4:4.3.80-0ubuntu6) lucid; urgency=low
 
   * Make plasma-widgets-addons conflict/replace on plasma-widget-spellcheck
