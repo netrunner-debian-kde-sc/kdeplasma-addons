@@ -10,7 +10,7 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.
  libqimageblitz-dev, libeigen2-dev, libxrender-dev
 Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons/#_trunk_packages_kdeplasma-addons_
 Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdeplasma-addons
 
 Package: kdeplasma-addons
