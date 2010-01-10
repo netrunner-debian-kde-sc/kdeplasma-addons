@@ -1,3 +1,16 @@
+kdeplasma-addons (4:4.3.90-0ubuntu2) UNRELEASED; urgency=low
+
+  * Build Kimpanel Plasma widget:
+    - Add build-depend on scim-dev
+    - Add plasma-widget-kimpanel to debian/control
+    - Add plasma-widget-kimpanel.install
+  * Build the KDE Observatory Plasma widget:
+    - Add build-depend on libqwt5-qt4-dev
+    - Add plasma-widget-kdeobservatory to debian/control
+    - Add plasma-widget-kdeobservatory.install
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 10 Jan 2010 11:11:31 -0500
+
 kdeplasma-addons (4:4.3.90-0ubuntu1) lucid; urgency=low
 
   * New upstream release candidate:
