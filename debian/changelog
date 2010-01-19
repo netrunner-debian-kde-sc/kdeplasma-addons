@@ -84,7 +84,6 @@ kdeplasma-addons (4:4.3.80-0ubuntu1) lucid; urgency=low
 
  -- Scott Kitterman <scott@kitterman.com>  Sat, 05 Dec 2009 23:30:01 -0500
 
->>>>>>> MERGE-SOURCE
 kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release
