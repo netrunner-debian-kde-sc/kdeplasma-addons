@@ -1,5 +1,10 @@
-kdeplasma-addons (4:4.3.90-0ubuntu3) lucid; urgency=low
+kdeplasma-addons (4:4.3.95-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Alessandro Ghersi ]
+  * New upstream release
+    - Bump build-deps
+
+  [ Zhengpeng Hou ]
   * Split plasma-widget-kimpanel into 3 packages, 1 for frontend, 2 
     for backend.
   * Add ibus backend support.
