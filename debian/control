@@ -141,11 +141,29 @@ Description: development headers for liblancelot
 Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, plasma-widget-kimpanel-backend-ibus | plasma-widget-kimpanel-backend-scim
 Description: addons for KDE 4 Plasma - universal input method widget
  Kimpanel is a a Plasma widget for the scim and fcitx input methods.
  .
  This package is part of the KDE 4 plasma addons module.
+
+Package: plasma-widget-kimpanel-backend-ibus
+Architecture: all
+Section: kde
+Depends: ${shlibs:Depends}, ibus-qt4
+Description: addons for KDE 4 Plasma - universal input method widget
+ Kimpanel is a a Plasma widget for the scim and fcitx input methods.
+ .
+ This package contains the ibus backend for kimpanel.
+
+Package: plasma-widget-kimpanel-backend-scim
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Description: addons for KDE 4 Plasma - universal input method widget
+ Kimpanel is a a Plasma widget for the scim and fcitx input methods.
+ .
+ This package contains the scim backend for kimpanel
 
 Package: plasma-widget-kdeobservatory
 Architecture: any

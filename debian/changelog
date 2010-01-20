@@ -1,3 +1,13 @@
+kdeplasma-addons (4:4.3.90-0ubuntu3) lucid; urgency=low
+
+  * Split plasma-widget-kimpanel into 3 packages, 1 for frontend, 2 
+    for backend.
+  * Add ibus backend support.
+  * Provide conffile for im-switch, to let language-selector set it as default
+    for Kubuntu users.
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Wed, 20 Jan 2010 16:57:36 +0800
+
 kdeplasma-addons (4:4.3.90-0ubuntu2) lucid; urgency=low
 
   * Build Kimpanel Plasma widget:

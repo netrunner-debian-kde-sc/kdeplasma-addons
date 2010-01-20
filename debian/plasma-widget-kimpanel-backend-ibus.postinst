@@ -1,0 +1,33 @@
+#!/bin/sh
+set -e
+
+ua_inst () {
+	update-alternatives \
+        --install /etc/X11/xinit/xinput.d/$1 xinput-$1 \
+        /etc/X11/xinit/xinput.d/$2 $3 ;
+}
+
+case "$1" in
+    configure)
+        #ua_inst all_ALL ibus  0
+        ua_inst ja_JP   ibus-kde 60
+        ua_inst ko_KR   ibus-kde 60
+        ua_inst zh_CN   ibus-kde 60
+        ua_inst zh_TW   ibus-kde 60
+        ua_inst zh_HK   ibus-kde 60
+        ua_inst zh_SG   ibus-kde 60
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+

@@ -4,5 +4,12 @@ include /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk
 
 DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V
 
+install/plasma-widget-kimpanel-backend-ibus::
+	mkdir -p $(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/usr/lib/ibus/
+	cp $(CURDIR)/applets/kimpanel/backend/ibus/panel.py \
+		$(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/usr/lib/ibus/ibus-ui-kde
+	mkdir -p $(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/etc/X11/xinit/xinput.d/
+	cp $(CURDIR)/debian/xinput/ibus-kde \
+		$(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/etc/X11/xinit/xinput.d/
 clean::
 	find applets/lancelot/tools/puck -name *.pyc -delete
