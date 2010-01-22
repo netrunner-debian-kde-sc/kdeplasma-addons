@@ -5,11 +5,15 @@ kdeplasma-addons (4:4.3.95-0ubuntu1) UNRELEASED; urgency=low
     - Bump build-deps
 
   [ Zhengpeng Hou ]
-  * Split plasma-widget-kimpanel into 3 packages, 1 for frontend, 2 
+  * Split plasma-widget-kimpanel into 3 packages, 1 for frontend, 2
     for backend.
   * Add ibus backend support.
   * Provide conffile for im-switch, to let language-selector set it as default
     for Kubuntu users.
+
+  [ Jonathan Riddell ]
+  * Make plasma-widget-lancelot suggests not a recommends of plasma-widget-addons, not
+    needed on CD
 
  -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Wed, 20 Jan 2010 16:57:36 +0800
 

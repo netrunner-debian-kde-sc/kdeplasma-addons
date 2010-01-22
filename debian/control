@@ -35,7 +35,7 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version})
-Recommends: plasma-widget-lancelot
+Suggests: plasma-widget-lancelot
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather,
  plasma-widget-plasmaboard, plasma-widget-spellcheck
 Conflicts: kdeplasma-addons-data, plasma-applets-addons, plasma-widget-plasmaboard, plasma-widget-spellcheck
