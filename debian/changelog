@@ -1,6 +1,10 @@
 kdeplasma-addons (4:4.3.98-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Christian Mangold ]
   * New upstream release candidate
+
+  [ Alessandro Ghersi ]
+  * Bump Qt to 4.6.1
     - Bump build dep versions
 
  -- Christian Mangold <neversfelde@ubuntu.com>  Mon, 01 Feb 2010 20:50:22 +0100
