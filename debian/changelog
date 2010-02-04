@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.4.0-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Thu, 04 Feb 2010 17:03:03 -0500
+
 kdeplasma-addons (4:4.3.98-0ubuntu1) lucid; urgency=low
 
   [ Christian Mangold ]
