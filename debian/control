@@ -9,7 +9,7 @@ Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.
  kdelibs5-dev (>= 4:4.4.0), kdepimlibs5-dev (>= 4:4.4.0), libqt4-opengl-dev (>=4:4.6.1),
  kdebase-workspace-dev (>= 4:4.4.0), libboost1.40-dev, libkexiv2-8-dev (>= 4:4.4.0), python, libmarble-dev (>= 4:4.4.0),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, libattica-dev, libxtst-dev,
- shared-desktop-ontologies, scim-dev, libqwt5-qt4-dev
+ shared-desktop-ontologies, libqwt5-qt4-dev
 Standards-Version: 3.8.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -156,14 +156,16 @@ Description: addons for KDE 4 Plasma - universal input method widget
  .
  This package contains the ibus backend for kimpanel.
 
-Package: plasma-widget-kimpanel-backend-scim
-Architecture: any
-Section: kde
-Depends: ${shlibs:Depends}
-Description: addons for KDE 4 Plasma - universal input method widget
- Kimpanel is a a Plasma widget for the scim and fcitx input methods.
- .
- This package contains the scim backend for kimpanel
+# Disabled, scim unmaintained upstream and in universe
+#
+#Package: plasma-widget-kimpanel-backend-scim
+#Architecture: any
+#Section: kde
+#Depends: ${shlibs:Depends}
+#Description: addons for KDE 4 Plasma - universal input method widget
+# Kimpanel is a a Plasma widget for the scim and fcitx input methods.
+# .
+# This package contains the scim backend for kimpanel
 
 Package: plasma-widget-kdeobservatory
 Architecture: any
