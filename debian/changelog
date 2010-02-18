@@ -1,12 +1,13 @@
 kdeplasma-addons (4:4.4.0-0r1) UNRELEASED; urgency=low
 
   * New upstream release.
+    - blubblemon animates correctly. (Closes: #558787)
 
   [ Modestas Vainius ]
   * Change my email address to modax@debian.org in Uploaders field.
   * Fix Vcs-Browser URL.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 18 Feb 2010 01:43:42 +0100
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 18 Feb 2010 01:44:39 +0100
 
 kdeplasma-addons (4:4.3.4-1) unstable; urgency=low
 
