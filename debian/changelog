@@ -7,7 +7,15 @@ kdeplasma-addons (4:4.4.0-0r1) UNRELEASED; urgency=low
   * Change my email address to modax@debian.org in Uploaders field.
   * Fix Vcs-Browser URL.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 18 Feb 2010 01:44:39 +0100
+  [ George Kiagiadakis ]
+  * Bump kdelibs5-dev build dependency to >= 4:4.4.0.
+  * Bump kdebase-workspace-dev build dependency to >= 4:4.4.0.
+  * Bump libmarble-dev build dependency to >= 4:4.4.0.
+  * Add build dependency on shared-desktop-ontologies, libattica-dev,
+    libscim-dev, libxtst-dev.
+  * Update installed files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 23 Feb 2010 21:37:23 +0200
 
 kdeplasma-addons (4:4.3.4-1) unstable; urgency=low
 
