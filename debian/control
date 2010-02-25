@@ -5,12 +5,12 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modax@debian.org>, George Kiagiadakis <gkiagiad@csd.uoc.gr>
 Build-Depends: kde-sc-dev-latest (>= 4:4.4.1~) | kde-sc-dev-maint,
- cdbs (>= 0.4.51), cmake, debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
- kdelibs5-dev (>= 4:4.4.0), kdepimlibs5-dev (>= 4:4.3.4), libqt4-opengl-dev,
- kdebase-workspace-dev (>= 4:4.4.0), libboost-dev, libkexiv2-7-dev, python, libmarble-dev (>= 4:4.4.0),
+ cdbs (>= 0.4.51), cmake, debhelper (>= 7), quilt, pkg-kde-tools (>= 0.6.4),
+ kdelibs5-dev (>= 4:4.4), kdepimlibs5-dev (>= 4:4.4), kdebase-workspace-dev (>= 4:4.4),
+ libqt4-opengl-dev, libboost-dev, libkexiv2-dev (>= 4:4.4), python, libmarble-dev (>= 4:4.4),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
  libscim-dev, libxtst-dev, libqalculate-dev, libxml2-dev
-Standards-Version: 3.8.3
+Standards-Version: 3.8.4
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons/#_trunk_packages_kdeplasma-addons_
 Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdeplasma-addons

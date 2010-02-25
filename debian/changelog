@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.4.1~svn-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.1~svn1095364-0r1) UNRELEASED; urgency=low
 
   * New upstream release:
     - blubblemon animates correctly. (Closes: #558787)
@@ -8,11 +8,16 @@ kdeplasma-addons (4:4.4.1~svn-0r1) UNRELEASED; urgency=low
   * Fix Vcs-Browser URL.
   * Add cmake to Build-Depends.
   * Add kde-sc-dev-latest (>= 4:4.4.1~) | kde-sc-dev-maint to Build-Depends.
+  * Bump Standards-Version to 3.8.4: no changes needed.
+  * Bump kdepimlibs5-dev build dependency to 4:4.4.
+  * Bump pkg-kde-tools build dependency to 0.6.4.
+  * Change libkexiv2-7-dev build dependency to libkexiv2-dev (>= 4:4.4).
+  * Add a symbol file for liblancelot0, build depend on dpkg-dev 1.15.5.
 
   [ George Kiagiadakis ]
-  * Bump kdelibs5-dev build dependency to >= 4:4.4.0.
-  * Bump kdebase-workspace-dev build dependency to >= 4:4.4.0.
-  * Bump libmarble-dev build dependency to >= 4:4.4.0.
+  * Bump kdelibs5-dev build dependency to >= 4:4.4.
+  * Bump kdebase-workspace-dev build dependency to >= 4:4.4.
+  * Bump libmarble-dev build dependency to >= 4:4.4.
   * Add build dependency on shared-desktop-ontologies, libattica-dev,
     libscim-dev, libxtst-dev, libqalculate-dev, libxml2-dev.
   * Update installed files.
