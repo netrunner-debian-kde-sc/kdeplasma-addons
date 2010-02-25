@@ -2,7 +2,7 @@
 
 include /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk
 
-DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V
+DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V -u-c0
 
 clean::
 	find applets/lancelot/tools/puck -name *.pyc -delete

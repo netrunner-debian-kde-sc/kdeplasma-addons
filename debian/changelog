@@ -13,6 +13,7 @@ kdeplasma-addons (4:4.4.1~svn1095364-0r1) UNRELEASED; urgency=low
   * Bump pkg-kde-tools build dependency to 0.6.4.
   * Change libkexiv2-7-dev build dependency to libkexiv2-dev (>= 4:4.4).
   * Add a symbol file for liblancelot0, build depend on dpkg-dev 1.15.5.
+  * Make dpkg-gensymbols not to fail if there are lost symbols in liblancelot0.
 
   [ George Kiagiadakis ]
   * Bump kdelibs5-dev build dependency to >= 4:4.4.
