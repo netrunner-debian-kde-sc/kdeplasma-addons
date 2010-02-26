@@ -2,6 +2,8 @@ kdeplasma-addons (4:4.4.1~svn1095364-0r1) UNRELEASED; urgency=low
 
   * New upstream release:
     - blubblemon animates correctly. (Closes: #558787)
+    - resolves some cyclical relayout crashes and some layout estetic
+      problems. (Closes: #564912)
 
   [ Modestas Vainius ]
   * Change my email address to modax@debian.org in Uploaders field.
