@@ -9,7 +9,7 @@ kdeplasma-addons (4:4.4.1-0r1) UNRELEASED; urgency=low
   * Change my email address to modax@debian.org in Uploaders field.
   * Fix Vcs-Browser URL.
   * Add cmake to Build-Depends.
-  * Add kde-sc-dev-latest (>= 4:4.4.1~) | kde-sc-dev-maint to Build-Depends.
+  * Add kde-sc-dev-latest (>= 4:4.4.1) | kde-sc-dev-maint to Build-Depends.
   * Bump Standards-Version to 3.8.4: no changes needed.
   * Bump kdepimlibs5-dev build dependency to 4:4.4.
   * Bump pkg-kde-tools build dependency to 0.6.4.
