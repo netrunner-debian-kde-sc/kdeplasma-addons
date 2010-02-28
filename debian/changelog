@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.4.1-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream bugfix release:
+    - Bump build-depend versions
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 28 Feb 2010 13:03:48 -0500
+
 kdeplasma-addons (4:4.4.0-0ubuntu2) lucid; urgency=low
 
   * Add kubuntu_04_kimpanel_disable_scim.diff and remove scim-dev
