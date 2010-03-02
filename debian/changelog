@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.4.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.1-0ubuntu1) lucid; urgency=low
 
   * New upstream bugfix release:
     - Bump build-depend versions
