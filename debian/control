@@ -6,8 +6,8 @@ XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modestas@vainius.eu>, George Kiagiadakis <gkiagiad@csd.uoc.gr>
 Build-Depends: cdbs (>= 0.4.51), debhelper (>= 7), quilt, pkg-kde-tools (>= 0.4.2),
- kdelibs5-dev (>= 4:4.4.1), kdepimlibs5-dev (>= 4:4.4.1), libqt4-opengl-dev (>=4:4.6.2),
- kdebase-workspace-dev (>= 4:4.4.1), libboost1.40-dev, libkexiv2-8-dev (>= 4:4.4.1), python, libmarble-dev (>= 4:4.4.1),
+ kdelibs5-dev (>= 4:4.4.2), kdepimlibs5-dev (>= 4:4.4.2), libqt4-opengl-dev (>=4:4.6.2),
+ kdebase-workspace-dev (>= 4:4.4.1), libboost1.40-dev, libkexiv2-8-dev (>= 4:4.4.2), python, libmarble-dev (>= 4:4.4.2),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, libattica-dev, libxtst-dev,
  shared-desktop-ontologies, libqwt5-qt4-dev
 Standards-Version: 3.8.3
