@@ -1,4 +1,14 @@
-kdeplasma-addons (4:4.4.2-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.2-0ubuntu2) UNRELEASED; urgency=low
+
+  * Add kubuntu_01_fix_picture_of_the_day.diff from branch (LP: #566127)
+    https://bugs.kde.org/show_bug.cgi?id=226230
+    - In slideshow.cpp don't we want add a new string since we are in final
+      freeze, removed it from the patch, the new string is not closely need
+      to fix this bug
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 14 Apr 2010 20:49:47 +0200
+
+kdeplasma-addons (4:4.4.2-0ubuntu1) lucid; urgency=low
 
   * New upstream release
     - Bump build-depend versions

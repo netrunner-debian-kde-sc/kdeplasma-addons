@@ -1,0 +1,125 @@
+diff -Nur kdeplasma-addons-4.4.2.orig/applets/frame/frame.cpp kdeplasma-addons-4.4.2/applets/frame/frame.cpp
+--- kdeplasma-addons-4.4.2.orig/applets/frame/frame.cpp	2010-01-31 20:34:30.000000000 +0100
++++ kdeplasma-addons-4.4.2/applets/frame/frame.cpp	2010-04-18 18:39:52.375624344 +0200
+@@ -542,7 +542,6 @@
+     QDate mCurrentDate = QDate::currentDate();
+     const QString identifier = m_potdProvider + ':' + mCurrentDate.toString(Qt::ISODate);
+     engine->disconnectSource(identifier, m_mySlideShow);
+-    m_potd = false;
+ }
+ 
+ void Frame::initSlideShow()
+@@ -602,6 +601,7 @@
+     }
+ 
+     stopPotd();
++    m_potd = false;
+     initSlideShow();
+ 
+     KConfigGroup cg = config();
+diff -Nur kdeplasma-addons-4.4.2.orig/applets/frame/picture.cpp kdeplasma-addons-4.4.2/applets/frame/picture.cpp
+--- kdeplasma-addons-4.4.2.orig/applets/frame/picture.cpp	2009-10-15 18:34:26.000000000 +0200
++++ kdeplasma-addons-4.4.2/applets/frame/picture.cpp	2010-04-18 19:15:39.524846053 +0200
+@@ -175,4 +175,9 @@
+     emit pictureLoaded(correctRotation(image, path));
+ }
+ 
++void Picture::setMessage(const QString &message)
++{
++    m_message = message;
++}
++
+ #include "picture.moc"
+diff -Nur kdeplasma-addons-4.4.2.orig/applets/frame/picture.h kdeplasma-addons-4.4.2/applets/frame/picture.h
+--- kdeplasma-addons-4.4.2.orig/applets/frame/picture.h	2009-09-23 21:22:34.000000000 +0200
++++ kdeplasma-addons-4.4.2/applets/frame/picture.h	2010-04-18 19:14:45.704843638 +0200
+@@ -54,6 +54,7 @@
+     KIO::StoredTransferJob * m_job;
+     KUrl url();
+     QString message();
++    void setMessage(const QString &message);
+ 
+ Q_SIGNALS:
+     void pictureLoaded(QPixmap image);
+diff -Nur kdeplasma-addons-4.4.2.orig/applets/frame/slideshow.cpp kdeplasma-addons-4.4.2/applets/frame/slideshow.cpp
+--- kdeplasma-addons-4.4.2.orig/applets/frame/slideshow.cpp	2009-12-14 11:55:28.000000000 +0100
++++ kdeplasma-addons-4.4.2/applets/frame/slideshow.cpp	2010-04-18 19:08:12.814846056 +0200
+@@ -202,7 +202,8 @@
+         return;
+     }
+ 
+-    m_image = data[0].value<QPixmap>();
++    m_image = data[name].value<QPixmap>();
++    m_picture->setMessage(QString());
+     emit pictureUpdated();
+ }
+ 
+diff -Nur kdeplasma-addons-4.4.2.orig/dataengines/potd/epodprovider.cpp kdeplasma-addons-4.4.2/dataengines/potd/epodprovider.cpp
+--- kdeplasma-addons-4.4.2.orig/dataengines/potd/epodprovider.cpp	2009-05-06 12:14:08.000000000 +0200
++++ kdeplasma-addons-4.4.2/dataengines/potd/epodprovider.cpp	2010-04-18 18:42:40.147343148 +0200
+@@ -56,20 +56,18 @@
+     }
+     
+     const QString data = QString::fromUtf8( job->data() );
+-    kDebug() << "####### data " << data << endl;
+-    
+-    // TODO extract the picture name "image/*.jpg" better from data!!!
+-    const QString pattern( "<IMG SRC= \"archive/images/*.jpg" );
++    //kDebug() << "####### data " << data << endl;
++
++    const QString pattern( "<strong><a href=*" );
+     QRegExp exp( pattern );
+     exp.setPatternSyntax(QRegExp::Wildcard);
+     
+     int pos = exp.indexIn( data ) + pattern.length();
+-    kDebug() << "length " << exp.matchedLength() << endl;
+-    const QString sub = data.mid( pos, exp.matchedLength() -31);
+-    kDebug() << "####### sub " << sub << endl; //TODO should return *.jpg
++    //kDebug() << "length " << pattern.length() << endl;
++    const QString sub = data.mid( pos, pattern.length()+41);
++    //kDebug() << "####### sub " << sub << endl; //TODO should return *.jpg
+     
+-    KUrl url( QString( "http://epod.usra.edu/archive/images/%1" ).arg( sub ) );
+-    kDebug() << "####### URL " << url.path() << endl; //should return URL for the pic
++    KUrl url(  sub  );
+ 
+     KIO::StoredTransferJob *imageJob = KIO::storedGet( url );
+     QObject::connect(imageJob, SIGNAL( finished( KJob* )), mParent, SLOT( imageRequestFinished( KJob* ) ) );
+@@ -96,7 +94,7 @@
+     else
+ 	Q_ASSERT( false && "Invalid type passed to potd provider" );
+ 
+-    KUrl url( QString( "http://epod.usra.edu/" ) );
++    KUrl url( QString( "http://epod.usra.edu/blog/" ) );
+     KIO::StoredTransferJob *job = KIO::storedGet( url );
+ 
+     connect( job, SIGNAL( finished( KJob* ) ), SLOT( pageRequestFinished( KJob* ) ) );
+diff -Nur kdeplasma-addons-4.4.2.orig/dataengines/potd/wcpotdprovider.cpp kdeplasma-addons-4.4.2/dataengines/potd/wcpotdprovider.cpp
+--- kdeplasma-addons-4.4.2.orig/dataengines/potd/wcpotdprovider.cpp	2009-05-06 12:14:08.000000000 +0200
++++ kdeplasma-addons-4.4.2/dataengines/potd/wcpotdprovider.cpp	2010-04-18 18:43:49.584845221 +0200
+@@ -55,15 +55,7 @@
+ 	return;
+     }
+ 
+-    const QString data = QString::fromUtf8( job->data() );
+-    //get image URL
+-    const QString pattern( "<a href=\"http://commons.wikimedia.org/wiki/Image:*.jpg" );
+-    QRegExp exp( pattern );
+-    exp.setPatternSyntax(QRegExp::Wildcard);
+-    int pos = exp.indexIn( data );
+-    //38 is for <img src=\"http://commons.wikimedia.org
+-    const QString sub = data.mid( pos+49, pattern.length()-14);//FIXME check if this really works!!!
+-    KUrl picUrl( QString( "http://toolserver.org/tsthumb/tsthumb?f=%1&amp;domain=commons.wikimedia.org&amp;w=800" ).arg( sub ) );
++    KUrl picUrl( QString( "http://tools.wikimedia.de/~daniel/potd/potd.php/commons/800x600" ) );
+     KIO::StoredTransferJob *imageJob = KIO::storedGet( picUrl );
+     mParent->connect( imageJob, SIGNAL( finished( KJob *) ), SLOT( imageRequestFinished( KJob* ) ) );
+ }
+@@ -89,7 +81,7 @@
+     else
+ 	Q_ASSERT( false && "Invalid type passed to potd provider" );
+ 
+-    KUrl url( "http://toolserver.org/~daniel/potd/commons/potd-800x600.snippet" );
++    KUrl url( "http://tools.wikimedia.de/~daniel/potd/potd.php/commons/800x600" );
+     KIO::StoredTransferJob *job = KIO::storedGet( url );
+     connect( job, SIGNAL( finished( KJob *) ), SLOT( pageRequestFinished( KJob* ) ) );
+ }
