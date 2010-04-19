@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.4.2-0ubuntu2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.2-0ubuntu2) lucid; urgency=low
 
   * Add kubuntu_01_fix_picture_of_the_day.diff from branch (LP: #566127)
     https://bugs.kde.org/show_bug.cgi?id=226230
