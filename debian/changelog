@@ -1,12 +1,13 @@
-kdeplasma-addons (4:4.4.3-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.3-1) unstable; urgency=low
 
   * New upstream release:
     - Image providers in picture frame now work correctly. (Closes: #577948)
 
   [ Modestas Vainius ]
   * Bump kde-sc-dev-latest build dependency to 4.4.3.
+  * Release KDE SC 4.4.3 to unstable.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 26 Apr 2010 21:24:22 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 01 May 2010 23:37:56 +0300
 
 kdeplasma-addons (4:4.4.2-1) experimental; urgency=low
 
