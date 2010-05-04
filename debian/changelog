@@ -1,6 +1,7 @@
-kdeplasma-addons (4:4.4.3-0ubuntu1~ppa1) lucid; urgency=low
+kdeplasma-addons (4:4.4.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release
+    - Bump build depends
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 04 May 2010 13:52:34 +0100
 
