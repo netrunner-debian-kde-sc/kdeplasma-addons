@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.4.3-0ubuntu1~ppa1) lucid; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 04 May 2010 13:52:34 +0100
+
 kdeplasma-addons (4:4.4.2-0ubuntu2) lucid-proposed; urgency=low
 
   * Add kubuntu_01_fix_picture_of_the_day.diff from branch (LP: #566127)
