@@ -1,3 +1,35 @@
+kdeplasma-addons (4:4.4.3-1ubuntu1) maverick; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - Add debian/xinput folder
+    - Keep our patch
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-scim package commented
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-ibus.{postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.42-dev
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - plasma-widget-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widget-addons (<< 4:4.4.60)
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Fri, 21 May 2010 02:49:00 +0200
+
+kdeplasma-addons (4:4.4.3-1) unstable; urgency=low
+
+  * New upstream release:
+    - Image providers in picture frame now work correctly. (Closes: #577948)
+
+  [ Modestas Vainius ]
+  * Bump kde-sc-dev-latest build dependency to 4.4.3.
+  * Release KDE SC 4.4.3 to unstable.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 01 May 2010 23:37:56 +0300
+
 kdeplasma-addons (4:4.4.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release
@@ -13,6 +45,37 @@ kdeplasma-addons (4:4.4.2-0ubuntu2) lucid-proposed; urgency=low
       needed to fix this bug
 
  -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 14 Apr 2010 20:49:47 +0200
+
+kdeplasma-addons (4:4.4.2-1) experimental; urgency=low
+
+  * New upstream release:
+    - blubblemon animates correctly. (Closes: #558787)
+    - resolves some cyclical relayout crashes and some layout estetic
+      problems. (Closes: #564912)
+
+  [ Modestas Vainius ]
+  * Change my email address to modax@debian.org in Uploaders field.
+  * Fix Vcs-Browser URL.
+  * Add cmake to Build-Depends.
+  * Add kde-sc-dev-latest (>= 4:4.4.2) to Build-Depends.
+  * Bump Standards-Version to 3.8.4: no changes needed.
+  * Bump kdepimlibs5-dev build dependency to 4:4.4.
+  * Bump pkg-kde-tools build dependency to 0.6.4.
+  * Change libkexiv2-7-dev build dependency to libkexiv2-dev (>= 4:4.4).
+  * Add a symbol file for liblancelot0, build depend on dpkg-dev 1.15.5.
+  * Make dpkg-gensymbols not to fail if there are lost symbols in liblancelot0.
+  * Remove liblancelot0 to liblancelot0a, library is ABI/API incompatible.
+  * Add ${misc:Depends} to all binary packages.
+
+  [ George Kiagiadakis ]
+  * Bump kdelibs5-dev build dependency to >= 4:4.4.
+  * Bump kdebase-workspace-dev build dependency to >= 4:4.4.
+  * Bump libmarble-dev build dependency to >= 4:4.4.
+  * Add build dependency on shared-desktop-ontologies, libattica-dev,
+    libscim-dev, libxtst-dev, libqalculate-dev, libxml2-dev.
+  * Update installed files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 09 Apr 2010 18:40:08 +0300
 
 kdeplasma-addons (4:4.4.2-0ubuntu1) lucid; urgency=low
 
@@ -158,6 +221,21 @@ kdeplasma-addons (4:4.3.80-0ubuntu1) lucid; urgency=low
 
  -- Scott Kitterman <scott@kitterman.com>  Sat, 05 Dec 2009 23:30:01 -0500
 
+kdeplasma-addons (4:4.3.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by Ana Beatriz Guerrero Lopez:
+
+  * Remove myself from Uploaders.
+
+  +++ Changes by Modestas Vainius:
+
+  * Bump KDE build dependencies to current version.
+  * Update install files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 09 Dec 2009 00:24:11 +0200
+
 kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release
@@ -215,6 +293,13 @@ kdeplasma-addons (4:4.3.2-0ubuntu3) karmic; urgency=low
     https://bugs.kde.org/200475)
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2009 14:05:24 +0100
+
+kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove 01_fix_armel_build patch, merged upstream.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 10 Oct 2009 19:43:05 +0200
 
 kdeplasma-addons (4:4.3.2-0ubuntu2) karmic; urgency=low
 

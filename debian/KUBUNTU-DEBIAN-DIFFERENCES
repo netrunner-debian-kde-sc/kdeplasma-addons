@@ -1,11 +1,15 @@
-    - debian/control:
-      - Build against libboost1.38-dev
-      - Keep our conflicts/replaces
-      - Keep plasma-dataengines-addons-dev package
-      - plasma-wallpapers-addons depends on kdewallpapers and
-        kdebase-workspace-wallpapers
-      - add blank line in plasma-wallpapers-addons description
-    - debian/plasma-dataengines-addons.install:
-      - Don't install usr/lib/libplasmapotdprovidercore.so
-      - Don't add duplicate line
-        usr/share/kde4/services/plasma-dataengine-potd.desktop
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-scim package commented
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-ibus.{postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.42-dev
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - plasma-widget-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widget-addons (<< 4:4.4.60)

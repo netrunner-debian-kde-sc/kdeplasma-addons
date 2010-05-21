@@ -1,0 +1,21 @@
+[liblancelot-dev]
+from:/applets/lancelot/ dst:usr/include/lancelot
+from:/applets/lancelot/ dst:usr/lib/liblancelot.so$ link:
+
+[useless-dev_virtual]
+miss dst:usr/lib/lib[^/]+.so$ link:
+
+[liblancelot0]
+from:/applets/lancelot/ dst:usr/lib/liblancelot.so.0($|\.)
+
+[plasma-widget-lancelot]
+from:/applets/lancelot/
+
+[plasma-widgets-addons]
+from:/applets/
+
+[plasma-dataengines-addons]
+from:/dataengines/
+
+[plasma-runners-addons]
+from:/runners/
