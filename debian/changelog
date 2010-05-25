@@ -1,3 +1,37 @@
+kdeplasma-addons (4:4.4.80-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream beta release:
+    - Bump kde-sc-dev-latest build-dep version to 4.4.80
+    - Refresh kubuntu_04_kimpanel_disable_scim.diff
+    - Update various .install files
+    - Drop liblancelot0a and liblancelot-dev packages; Upstream has broken ABI
+      without an .so version bump, and after discussion with Debian it was
+      decided it was not worth it to ship an unstable library.
+    - Add liblancelot files to plasma-widget-lancelot, adding appropriate
+      Replaces: entries
+  * Switch to source format 3.0 (quilt):
+    - Bump debhelper build-depend version to 7.3.16 or greater
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 25 May 2010 09:50:14 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu4) maverick; urgency=low
+
+  * Add missing build-deps on shared-mime-info and libglib2.0-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 18:09:32 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu3) maverick; urgency=low
+
+  * Build-dep on libkexiv2-dev, rather than libkexiv2-8-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 15:50:04 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu2) maverick; urgency=low
+
+  * Rebuild upload for package name changes in kdebase-workspace
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 12:55:46 -0400
+
 kdeplasma-addons (4:4.4.3-1ubuntu1) maverick; urgency=low
 
   * Merge with Debian unstable, remaining changes:
