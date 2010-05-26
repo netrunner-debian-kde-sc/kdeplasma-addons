@@ -85,28 +85,11 @@ Package: plasma-widget-lancelot
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applet-lancelot
-Conflicts: kdeplasma-addons-data, plasma-applet-lancelot
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applet-lancelot,
+ deplasma-addons-libs4, liblancelot0, liblancelot0a
+Conflicts: kdeplasma-addons-data, plasma-applet-lancelot, kdeplasma-addons-libs4,
+ liblancelot0, liblancelot0a
 Description: addons for KDE 4 Plasma - lancelot widget
- Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
- provide a place from which all your jobs begin. It provides quick access
- to applications, places, documents, contacts and system information.
- .
- This package is part of the KDE 4 plasma addons module.
-
-Package: liblancelot0a
-Architecture: any
-Section: libs
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons-libs4, liblancelot0, liblancelot0-api
-Conflicts: kdeplasma-addons-libs4, liblancelot0, liblancelot0-api
-Provides: liblancelot0-api
-Description: library that contains all UI widgets and layouts used in the Lancelot project
- Liblancelot is a base framework for everything in the world of Lancelot.
- It is built on top of Plasma. It provides a set of custom widgets, layouts
- and has a few more advanced concepts for allowing for quicker development
- of Plasma-based applications.
- .
  Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
  provide a place from which all your jobs begin. It provides quick access
  to applications, places, documents, contacts and system information.

@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.4.3-2) UNRELEASED; urgency=low
+
+  * Drop liblancelot-dev (popcon 7). Clearly not worth it.
+  * Merge liblancelot0 into plasma-widget-lancelot. liblancelot.so.0 broke ABI
+    without bumping a soname in KDE SC 4.5 again.
+
+ -- Modestas Vainius <modax@debian.org>  Wed, 26 May 2010 23:39:25 +0300
+
 kdeplasma-addons (4:4.4.3-1) unstable; urgency=low
 
   * New upstream release:
