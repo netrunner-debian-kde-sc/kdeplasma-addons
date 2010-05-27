@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.4.80-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.4.80-0ubuntu1~ppa1) maverick; urgency=low
 
   * New upstream beta release:
     - Bump kde-sc-dev-latest build-dep version to 4.4.80
