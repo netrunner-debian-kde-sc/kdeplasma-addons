@@ -5,7 +5,7 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modax@debian.org>, George Kiagiadakis <gkiagiad@csd.uoc.gr>
 Build-Depends: kde-sc-dev-latest (>= 4:4.4.3),
- cdbs (>= 0.4.51), cmake, debhelper (>= 7), quilt, pkg-kde-tools (>= 0.6.4),
+ cdbs (>= 0.4.51), cmake, debhelper (>= 7), quilt, pkg-kde-tools (>= 0.9),
  kdelibs5-dev (>= 4:4.4), kdepimlibs5-dev (>= 4:4.4), kdebase-workspace-dev (>= 4:4.4),
  libqt4-opengl-dev, libboost-dev, libkexiv2-dev (>= 4:4.4), python, libmarble-dev (>= 4:4.4),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
