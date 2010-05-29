@@ -16,6 +16,7 @@ kdeplasma-addons (4:4.4.4-0r1) UNRELEASED; urgency=low
   * Drop debian/source/lintian-overrides, quilt-build-dep-but-no-series-file no
     longer relevant.
   * Bump kde-sc-dev-latest build dependency to 4:4.4.4.
+  * Update install files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 28 May 2010 21:51:21 +0300
 
