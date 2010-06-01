@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.4.80-0ubuntu2) maverick; urgency=low
+
+  * plasma-widget-lancelot replaces liblancelot0
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 01 Jun 2010 17:54:52 +0000
+
 kdeplasma-addons (4:4.4.80-0ubuntu1) maverick; urgency=low
 
   * New upstream beta release:
