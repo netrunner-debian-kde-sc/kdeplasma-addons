@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.4.85-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream beta release
+    - Bump kde-sc-dev-latest to 4.4.85
+    - Update install files
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Tue, 08 Jun 2010 22:32:44 +0200
+
 kdeplasma-addons (4:4.4.80-0ubuntu2) maverick; urgency=low
 
   * plasma-widget-lancelot replaces liblancelot0
