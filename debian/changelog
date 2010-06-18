@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.4.85-0ubuntu3) maverick; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff from Michał
+    Zając
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 18 Jun 2010 13:14:03 +0100
+
 kdeplasma-addons (4:4.4.85-0ubuntu2) maverick; urgency=low
 
   * Rebuild for libplasmaclock4a -> libplasmaclock4b transition
