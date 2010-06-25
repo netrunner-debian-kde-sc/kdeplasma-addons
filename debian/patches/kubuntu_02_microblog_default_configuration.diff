@@ -1,7 +1,7 @@
-Index: kdeplasma-addons-4.4.85/applets/microblog/microblog.cpp
+Index: kdeplasma-addons-4.4.90/applets/microblog/microblog.cpp
 ===================================================================
---- kdeplasma-addons-4.4.85.orig/applets/microblog/microblog.cpp	2010-05-27 18:24:02.000000000 +0100
-+++ kdeplasma-addons-4.4.85/applets/microblog/microblog.cpp	2010-06-18 12:37:25.603694858 +0100
+--- kdeplasma-addons-4.4.90.orig/applets/microblog/microblog.cpp	2010-05-27 19:24:02.000000000 +0200
++++ kdeplasma-addons-4.4.90/applets/microblog/microblog.cpp	2010-06-26 00:08:46.530645529 +0200
 @@ -27,6 +27,8 @@
  #include <QGraphicsAnchorLayout>
  #include <QAction>
@@ -96,11 +96,11 @@ Index: kdeplasma-addons-4.4.85/applets/microblog/microblog.cpp
          } else {
              query = QString("Timeline:%1@%2");
          }
-Index: kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.cpp
+Index: kdeplasma-addons-4.4.90/dataengines/microblog/timelinesource.cpp
 ===================================================================
---- kdeplasma-addons-4.4.85.orig/dataengines/microblog/timelinesource.cpp	2010-05-27 18:23:58.000000000 +0100
-+++ kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.cpp	2010-06-18 12:35:49.156693793 +0100
-@@ -97,6 +97,9 @@
+--- kdeplasma-addons-4.4.90.orig/dataengines/microblog/timelinesource.cpp	2010-06-24 18:32:17.000000000 +0200
++++ kdeplasma-addons-4.4.90/dataengines/microblog/timelinesource.cpp	2010-06-26 00:10:42.942095727 +0200
+@@ -118,6 +118,9 @@
      case TimelineWithFriends:
          m_url = KUrl(m_serviceBaseUrl, "statuses/friends_timeline.xml");
          break;
@@ -110,20 +110,20 @@ Index: kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.cpp
      case Timeline:
      default:
          m_url = KUrl(m_serviceBaseUrl, "statuses/user_timeline.xml");
-@@ -141,7 +144,7 @@
+@@ -201,7 +204,7 @@
  
  void TimelineSource::update(bool forcedUpdate)
  {
--    if (m_job || (!account().isEmpty() && password().isEmpty())) {
-+    if ( account() != "kubuntu" && (m_job || (!account().isEmpty() && password().isEmpty())) ) {
+-    if (m_job || (!account().isEmpty() && password().isEmpty() && !m_oauthToken.size())) {
++    if ( account() != "kubuntu" && (m_job || (!account().isEmpty() && password().isEmpty() && !m_oauthToken.size())) ) {
          // We are already performing a fetch, let's not bother starting over
          //kDebug() << "already updating....." << m_job << account().isEmpty() << password().isEmpty();
          return;
-Index: kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.h
+Index: kdeplasma-addons-4.4.90/dataengines/microblog/timelinesource.h
 ===================================================================
---- kdeplasma-addons-4.4.85.orig/dataengines/microblog/timelinesource.h	2009-08-12 11:00:01.000000000 +0100
-+++ kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.h	2010-06-18 12:35:49.156693793 +0100
-@@ -80,7 +80,8 @@
+--- kdeplasma-addons-4.4.90.orig/dataengines/microblog/timelinesource.h	2010-06-24 18:32:17.000000000 +0200
++++ kdeplasma-addons-4.4.90/dataengines/microblog/timelinesource.h	2010-06-26 00:08:46.530645529 +0200
+@@ -82,7 +82,8 @@
          TimelineWithFriends,
          Replies,
          DirectMessages,
@@ -133,10 +133,10 @@ Index: kdeplasma-addons-4.4.85/dataengines/microblog/timelinesource.h
      };
  
      TimelineSource(const QString &who, RequestType requestType, QObject* parent);
-Index: kdeplasma-addons-4.4.85/dataengines/microblog/twitterengine.cpp
+Index: kdeplasma-addons-4.4.90/dataengines/microblog/twitterengine.cpp
 ===================================================================
---- kdeplasma-addons-4.4.85.orig/dataengines/microblog/twitterengine.cpp	2009-08-12 11:00:01.000000000 +0100
-+++ kdeplasma-addons-4.4.85/dataengines/microblog/twitterengine.cpp	2010-06-18 12:35:49.156693793 +0100
+--- kdeplasma-addons-4.4.90.orig/dataengines/microblog/twitterengine.cpp	2009-08-12 12:00:01.000000000 +0200
++++ kdeplasma-addons-4.4.90/dataengines/microblog/twitterengine.cpp	2010-06-26 00:08:46.530645529 +0200
 @@ -30,6 +30,7 @@
  const QString TwitterEngine::timelinePrefix("Timeline:");
  const QString TwitterEngine::timelineWithFriendsPrefix("TimelineWithFriends:");
@@ -177,10 +177,10 @@ Index: kdeplasma-addons-4.4.85/dataengines/microblog/twitterengine.cpp
      } else if (name.startsWith(repliesPrefix)) {
          requestType = TimelineSource::Replies;
          who.remove(repliesPrefix);
-Index: kdeplasma-addons-4.4.85/dataengines/microblog/twitterengine.h
+Index: kdeplasma-addons-4.4.90/dataengines/microblog/twitterengine.h
 ===================================================================
---- kdeplasma-addons-4.4.85.orig/dataengines/microblog/twitterengine.h	2009-08-12 11:00:01.000000000 +0100
-+++ kdeplasma-addons-4.4.85/dataengines/microblog/twitterengine.h	2010-06-18 12:35:49.160692396 +0100
+--- kdeplasma-addons-4.4.90.orig/dataengines/microblog/twitterengine.h	2009-08-12 12:00:01.000000000 +0200
++++ kdeplasma-addons-4.4.90/dataengines/microblog/twitterengine.h	2010-06-26 00:08:46.530645529 +0200
 @@ -67,6 +67,7 @@
          static const QString timelinePrefix;
          static const QString timelineWithFriendsPrefix;

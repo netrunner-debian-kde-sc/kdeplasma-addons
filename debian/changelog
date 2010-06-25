@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.4.90-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+    - Bump kde-sc-dev-latest to 4.4.90
+    - Adapt kubuntu_02_microblog_default_configuration.diff
+  * Add build-depends on libqca2-dev
+
+ -- Andreas Wenning <awen@awen.dk>  Sat, 26 Jun 2010 00:38:27 +0200
+
 kdeplasma-addons (4:4.4.85-0ubuntu3) maverick; urgency=low
 
   * Update kubuntu_02_microblog_default_configuration.diff from Michał
