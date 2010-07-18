@@ -7,6 +7,7 @@ kdeplasma-addons (4:4.4.5-1) UNRELEASED; urgency=low
   [ Sune Vuorela ]
   * Update descriptions
   * Update email address
+  * Add qca2 to build deps
 
  -- Sune Vuorela <sune@debian.org>  Sun, 18 Jul 2010 13:41:40 +0200
 
