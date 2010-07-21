@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.4.92-0ubuntu2) maverick; urgency=low
+
+  * Build against kde4libs 4.4.92-0ubuntu3 for webkit transition
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 21 Jul 2010 09:45:31 +0100
+
 kdeplasma-addons (4:4.4.92-0ubuntu1) maverick; urgency=low
 
   * New upstream release
