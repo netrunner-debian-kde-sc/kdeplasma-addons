@@ -12,8 +12,8 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.4.5),
  libscim-dev, libxtst-dev, libqalculate-dev, libxml2-dev, libqca2-dev
 Standards-Version: 3.8.4
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeplasma-addons/#_trunk_packages_kdeplasma-addons_
-Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdeplasma-addons
+Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
+Vcs-Git: git://git.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
 
 Package: kdeplasma-addons
 Architecture: all
