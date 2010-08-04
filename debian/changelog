@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.5.0b-0ubuntu1) maverick; urgency=low
+
+  * New tar from upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 04 Aug 2010 23:20:06 +0100
+
 kdeplasma-addons (4:4.5.0-0ubuntu1) maverick; urgency=low
 
   * New upstream release
