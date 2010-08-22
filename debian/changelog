@@ -8,6 +8,9 @@ kdeplasma-addons (4:4.5.0+svn1166315-0r1) UNRELEASED; urgency=low
   [ Pino Toscano ]
   * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)
 
+  [ George Kiagiadakis ]
+  * Change my email address in uploaders.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
 
 kdeplasma-addons (4:4.4.5-1) unstable; urgency=low
