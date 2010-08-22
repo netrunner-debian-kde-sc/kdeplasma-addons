@@ -1,4 +1,6 @@
-kdeplasma-addons (4:4.4.5-2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.5.0+svn1166315-0r1) UNRELEASED; urgency=low
+
+  * New upstream release.
 
   [ Modestas Vainius ]
   * Point debian/control Vcs fields to the new Git repository.
