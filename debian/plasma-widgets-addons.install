@@ -3,6 +3,7 @@ usr/lib/kde4/plasma-applet_systemloadviewer.so
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
 usr/lib/kde4/plasma_applet_blackboard.so
+usr/lib/kde4/plasma_applet_bookmarks.so
 usr/lib/kde4/plasma_applet_bubblemon.so
 usr/lib/kde4/plasma_applet_calculator.so
 usr/lib/kde4/plasma_applet_charselect.so
@@ -87,6 +88,11 @@ usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
 usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 usr/share/kde4/apps/plasma-applet-opendesktop/user.css
 usr/share/kde4/apps/plasma_pastebin/plasma_pastebin.notifyrc
+usr/share/kde4/apps/plasmaboard/basic.xml
+usr/share/kde4/apps/plasmaboard/extended.xml
+usr/share/kde4/apps/plasmaboard/full.xml
+usr/share/kde4/apps/plasmaboard/mid.xml
+usr/share/kde4/apps/plasmaboard/tablet.xml
 usr/share/kde4/apps/rssnow/feeds
 usr/share/kde4/config.kcfg/kimpanelconfig.kcfg
 usr/share/kde4/config/comic.knsrc
@@ -94,6 +100,7 @@ usr/share/kde4/services/ServiceMenus/preview.desktop
 usr/share/kde4/services/plasma-applet-bball.desktop
 usr/share/kde4/services/plasma-applet-binaryclock.desktop
 usr/share/kde4/services/plasma-applet-blackboard.desktop
+usr/share/kde4/services/plasma-applet-bookmarks.desktop
 usr/share/kde4/services/plasma-applet-bubblemon.desktop
 usr/share/kde4/services/plasma-applet-calculator.desktop
 usr/share/kde4/services/plasma-applet-charselect.desktop
