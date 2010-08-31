@@ -1,8 +1,12 @@
 kdeplasma-addons (4:4.5.1-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Felix Geyer ]
   * New upstream release.
 
- -- Felix Geyer <debfx-pkg@fobos.de>  Tue, 31 Aug 2010 10:12:58 +0200
+  [ Benjamin Kay ]
+  * Fix typo in debian/xinput/ibus-kde
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Tue, 31 Aug 2010 10:45:27 +0200
 
 kdeplasma-addons (4:4.5.0b-0ubuntu1) maverick; urgency=low
 
