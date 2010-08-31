@@ -14,6 +14,7 @@ kdeplasma-addons (4:4.5.1-0r1) UNRELEASED; urgency=low
     build dependencies to version 4.5.
   * Update installed files.
   * Remove build dependency on libxml2-dev, not needed anymore.
+  * Update lintian overrides.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
 
