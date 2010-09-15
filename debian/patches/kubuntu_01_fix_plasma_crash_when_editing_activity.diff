@@ -1,0 +1,26 @@
+--- kdeplasma-addons-4.5.1/applets/fileWatcher/fileWatcher.cpp	2010/09/12 23:26:23	1174608
++++ kdeplasma-addons-4.5.1/applets/fileWatcher/fileWatcher.cpp	2010/09/12 23:29:23	1174609
+@@ -36,7 +36,11 @@
+ #include "fileWatcherTextItem.h"
+ 
+ FileWatcher::FileWatcher(QObject *parent, const QVariantList &args)
+-    : Plasma::Applet(parent, args)
++    : Plasma::Applet(parent, args),
++      file(new QFile(this)),
++      watcher(new KDirWatch(this)),
++      textItem(new FileWatcherTextItem(this)),
++      textStream(0)
+ {
+   setAspectRatioMode(Plasma::IgnoreAspectRatio);
+   setHasConfigurationInterface(true);
+@@ -50,10 +54,6 @@
+ 
+ void FileWatcher::init()
+ {
+-  file = new QFile(this);
+-  textStream = 0;
+-  watcher = new KDirWatch(this);
+-  textItem = new FileWatcherTextItem(this);
+   textItem->moveBy(contentsRect().x(), contentsRect().y());
+   textItem->setSize((int) contentsRect().width(), (int) contentsRect().height());
+   textDocument = textItem->document();

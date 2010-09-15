@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.5.1-0ubuntu2) maverick; urgency=low
+
+  * Add kubuntu_01_fix_plasma_crash_when_editing_activity.diff
+    (http://bugs.kde.org/show_bug.cgi?id=250935)
+  * Add kubuntu_05_fix_exif_rotation.diff
+    enable exif rotation again in frame widget
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 15 Sep 2010 04:28:56 +0200
+
 kdeplasma-addons (4:4.5.1-0ubuntu1) maverick; urgency=low
 
   [ Felix Geyer ]
