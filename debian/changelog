@@ -1,3 +1,18 @@
+kdeplasma-addons (4:4.5.1-0ubuntu3) maverick; urgency=low
+
+  * Cherry pick additional patches from kdesvn 4.5 branch:
+    - debian/patches/kubuntu_06_fix_weatherlocation.diff to properly parse the
+      result of the geolocation engine
+    - debian/patches/kubuntu_07_lancelot_fixes.diff to correctly detect
+      kdepimlibs integration for lancelot data models
+    - debian/patches/kubuntu_08_fix_comic_widget.diff to fix registration of
+      new comics and simplify (and remove bugs from) combobox implementation
+    - debian/patches/kubuntu_09_personservice_ptr.diff to check the value of
+      the shared ptr before using it and also not create services for
+      providers that don't exist
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 23 Sep 2010 00:25:57 -0400
+
 kdeplasma-addons (4:4.5.1-0ubuntu2) maverick; urgency=low
 
   * Add kubuntu_01_fix_plasma_crash_when_editing_activity.diff
