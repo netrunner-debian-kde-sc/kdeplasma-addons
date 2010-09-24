@@ -1,7 +1,7 @@
 kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
 
   * Drop obsolete (pre-lucid) conflicts/replaces
-  * Convert conflicts/replaces to breaks replaces per current policy
+  * Convert conflicts/replaces to breaks/replaces per current policy
   * Add plasma-widgets-addons breaks/replaces plasma-widget-system-status
     since it is now incorporated in that package
 
