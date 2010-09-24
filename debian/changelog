@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
+
+  * Drop obsolete (pre-lucid) conflicts/replaces
+  * Convert conflicts/replaces to breaks replaces per current policy
+  * Add plasma-widgets-addons breaks/replaces plasma-widget-system-status
+    since it is now incorporated in that package
+
+ -- Scott Kitterman <scott@kitterman.com>  Fri, 24 Sep 2010 13:42:12 -0400
+
 kdeplasma-addons (4:4.5.1-0ubuntu3) maverick; urgency=low
 
   * Cherry pick additional patches from kdesvn 4.5 branch:

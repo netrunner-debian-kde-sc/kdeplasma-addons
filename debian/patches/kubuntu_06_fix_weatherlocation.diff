@@ -1,0 +1,16 @@
+Index: a/libs/plasmaweather/weatherlocation.cpp
+===================================================================
+--- a/libs/plasmaweather/weatherlocation.cpp	(revision 1169142)
++++ b/libs/plasmaweather/weatherlocation.cpp	(revision 1170058)
+@@ -82,7 +82,10 @@
+     d->locationEngine->disconnectSource(source, this);
+ 
+     QString city = data["city"].toString();
+-    city.truncate(city.indexOf(',') - 1);
++
++    if (city.contains(","))
++        city.truncate(city.indexOf(',') - 1);
++
+     if (!city.isEmpty()) {
+         d->validator.validate("bbcukmet", city, true);
+         return;

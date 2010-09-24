@@ -1,0 +1,176 @@
+kdesvn revisions 1170580 and 1175599
+Index: kdeplasma-addons-4.5.1/dataengines/comic/comic_package.cpp
+===================================================================
+--- kdeplasma-addons-4.5.1.orig/dataengines/comic/comic_package.cpp	2008-10-30 10:15:54.000000000 -0400
++++ kdeplasma-addons-4.5.1/dataengines/comic/comic_package.cpp	2010-09-23 00:48:13.000000000 -0400
+@@ -22,7 +22,7 @@
+ #include "plasma/package.h"
+ 
+ ComicPackage::ComicPackage( QObject *parent, QVariantList args )
+-    : Plasma::PackageStructure( parent, "Comic" )
++    : Plasma::PackageStructure( parent, "Plasma/Comic" )
+ {
+     Q_UNUSED( args )
+     addDirectoryDefinition( "images", "images", i18n( "Images" ) );
+Index: kdeplasma-addons-4.5.1/applets/comic/configwidget.cpp
+===================================================================
+--- kdeplasma-addons-4.5.1.orig/applets/comic/configwidget.cpp	2010-07-23 17:15:20.000000000 -0400
++++ kdeplasma-addons-4.5.1/applets/comic/configwidget.cpp	2010-09-23 00:48:13.000000000 -0400
+@@ -24,10 +24,11 @@
+ #include <QtCore/QTimer>
+ #include <QtGui/QSortFilterProxyModel>
+ 
++#include <KConfigDialog>
+ #include <KNS3/DownloadDialog>
+ 
+-ConfigWidget::ConfigWidget( Plasma::DataEngine *engine, ComicModel *model, const QStringList &usedComics, QSortFilterProxyModel *proxy, QWidget *parent )
+-    : QWidget( parent ), mEngine( engine ), mModel( model ), mUsedComics( usedComics ), mProxyModel( proxy ), mNewStuffDialog( 0 )
++ConfigWidget::ConfigWidget( Plasma::DataEngine *engine, ComicModel *model, const QStringList &usedComics, QSortFilterProxyModel *proxy, KConfigDialog *parent )
++    : QWidget( parent ), mEngine( engine ), mModel( model ), mProxyModel( proxy ), mNewStuffDialog( 0 )
+ {
+     comicSettings = new QWidget( this );
+     comicUi.setupUi( comicSettings );
+@@ -49,38 +50,23 @@
+         //set the correct initial item of the comboBox if it is defined
+         const int index = comicUi.comboBox_comic->findData( usedComics.first() );
+         comicUi.comboBox_comic->setCurrentIndex( index );
+-        mCurrentIndex = mProxyModel->index( index, 0 );
+     }
+ 
+     comicUi.listView_comic->setModel( mProxyModel );
+     comicUi.listView_comic->resizeColumnToContents( 0 );
+ 
+-    connect( comicUi.comboBox_comic, SIGNAL( currentIndexChanged( int ) ), this, SLOT( slotCurrentIndexChanged( int ) ) );
++    connect( comicUi.checkBox_useTabs, SIGNAL( clicked( bool ) ), this, SLOT( slotListChosen() ) );
+     connect( comicUi.checkBox_useTabs_2, SIGNAL( clicked( bool ) ), this, SLOT( slotComboBoxChosen() ) );
++    connect(parent, SIGNAL(applyClicked()), this, SLOT(slotSave()));
++    connect(parent, SIGNAL(okClicked()), this, SLOT(slotSave()));
+ }
+ 
+ ConfigWidget::~ConfigWidget()
+ {
+ }
+ 
+-void ConfigWidget::slotComboBoxChosen()
+-{
+-    comicUi.comboBox_comic->setCurrentIndex( 0 );
+-}
+-
+-void ConfigWidget::slotCurrentIndexChanged( int newIndex )
++void ConfigWidget::checkCurrentIndex()
+ {
+-    if ( useTabs() || !mProxyModel->rowCount() ) {
+-        return;
+-    }
+-
+-    //decide wether to modify newIndex or not
+-    const bool oldIsChecked = mCurrentIndex.isValid() && mCurrentIndex.data( Qt::CheckStateRole ) == Qt::Checked;
+-    if ( !oldIsChecked ) {
+-        //is not checked, i.e. comics have been added/removed, choose the first entry instead
+-        newIndex = 0;
+-    }
+-
+     //set all items of mProxyModel to unchecked
+     for ( int i = 0; i < mProxyModel->rowCount(); ++i ) {
+         QModelIndex index = mProxyModel->index( i, 0 );
+@@ -88,14 +74,30 @@
+     }
+ 
+     //check the selected index
+-    mCurrentIndex = mProxyModel->index( newIndex, 0 );
+-    mProxyModel->setData( mCurrentIndex, Qt::Checked, Qt::CheckStateRole );
++    QModelIndex index = mProxyModel->index( comicUi.comboBox_comic->currentIndex(), 0 );
++    mProxyModel->setData( index, Qt::Checked, Qt::CheckStateRole );
++}
++
+ 
+-    if ( !oldIsChecked ) {
+-        comicUi.comboBox_comic->setCurrentIndex( 0 );
++void ConfigWidget::slotSave()
++{
++    //useTabs() is already handled in the proxy itself
++    if ( !useTabs() ) {
++        checkCurrentIndex();
+     }
+ }
+ 
++
++void ConfigWidget::slotComboBoxChosen()
++{
++    comicUi.comboBox_comic->setCurrentIndex( 0 );
++}
++
++void ConfigWidget::slotListChosen()
++{
++    checkCurrentIndex();
++}
++
+ void ConfigWidget::getNewStuff()
+ {
+     if (!mNewStuffDialog) {
+@@ -108,7 +110,6 @@
+ void ConfigWidget::newStuffFinished()
+ {
+     if ( mNewStuffDialog->changedEntries().count() ) {
+-        mCurrentIndex = QModelIndex();
+         mModel->setComics( mEngine->query( "providers" ), mModel->selected() );
+ 
+         comicUi.listView_comic->resizeColumnToContents( 0 );
+Index: kdeplasma-addons-4.5.1/applets/comic/configwidget.h
+===================================================================
+--- kdeplasma-addons-4.5.1.orig/applets/comic/configwidget.h	2010-04-07 11:18:37.000000000 -0400
++++ kdeplasma-addons-4.5.1/applets/comic/configwidget.h	2010-09-23 00:48:13.000000000 -0400
+@@ -28,6 +28,7 @@
+ #include <QTime>
+ 
+ class ComicModel;
++class KConfigDialog;
+ class QCheckBox;
+ class QComboBox;
+ class QSortFilterProxyModel;
+@@ -45,7 +46,7 @@
+ {
+         Q_OBJECT
+     public:
+-        ConfigWidget( Plasma::DataEngine *engine, ComicModel *model, const QStringList &usedComics, QSortFilterProxyModel *proxy, QWidget *parent );
++        ConfigWidget( Plasma::DataEngine *engine, ComicModel *model, const QStringList &usedComics, QSortFilterProxyModel *proxy, KConfigDialog *parent );
+         ~ConfigWidget();
+ 
+         void setShowComicUrl( bool show );
+@@ -83,18 +84,20 @@
+         void newStuffFinished();
+ 
+     private slots:
+-        void slotCurrentIndexChanged( int newIndex );
+         void slotComboBoxChosen();
++        void slotListChosen();
++        void slotSave();
++
++    private:
++        void checkCurrentIndex();
+ 
+     private:
+         Ui::ComicSettings comicUi;
+         Ui::AppearanceSettings appearanceUi;
+         Plasma::DataEngine *mEngine;
+         ComicModel *mModel;
+-        QStringList mUsedComics;
+         QSortFilterProxyModel *mProxyModel;
+         KNS3::DownloadDialog* mNewStuffDialog;
+-        QModelIndex mCurrentIndex;
+ };
+ 
+ #endif
+Index: kdeplasma-addons-4.5.1/applets/comic/comic.cpp
+===================================================================
+--- kdeplasma-addons-4.5.1.orig/applets/comic/comic.cpp	2010-09-23 00:51:16.000000000 -0400
++++ kdeplasma-addons-4.5.1/applets/comic/comic.cpp	2010-09-23 00:52:09.000000000 -0400
+@@ -1069,7 +1069,7 @@
+ void ComicApplet::fullView()
+ {
+     if ( !mFullViewWidget ) {
+-        mFullViewWidget = new FullViewWidget();
++        mFullViewWidget = new FullViewWidget;
+     }
+ 
+     if ( !mFullViewWidget->isVisible() ) {

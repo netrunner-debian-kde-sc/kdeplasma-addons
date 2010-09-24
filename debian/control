@@ -38,8 +38,8 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version})
 Suggests: plasma-widget-lancelot
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
-Conflicts: kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
+Replaces: plasma-widget-system-status
+Breaks: plasma-widget-system-status
 Description: addons for KDE 4 Plasma - widgets
  This package contains additional Plasma widgets shipped in the KDE 4 plasma
  addons module. Install it if you want a variety of widgets on your plasma
@@ -51,9 +51,7 @@ Package: plasma-dataengines-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons (<< 4:4.4.60), kdeplasma-addons-data, kdeplasma-addons-libs4,
- plasma-widget-addons (<< 4:4.4.60)
-Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Replaces: kdeplasma-addons (<< 4:4.4.60), plasma-widget-addons (<< 4:4.4.60)
 Description: addons for KDE 4 Plasma - data engines
  This package contains additional Plasma data engines shipped in KDE 4 plasma
  addons module. These engines are needed by some KDE 4 plasma addons
@@ -65,8 +63,7 @@ Package: plasma-runners-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
-Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1)
 Description: addons for KDE 4 Plasma - krunner plugins
  This package contains additional plasma runners that are used in krunner
  (the "run command" dialog of KDE 4) to reveal special search results.
@@ -89,9 +86,7 @@ Package: plasma-widget-lancelot
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applet-lancelot, 
- liblancelot0a, liblancelot0
-Conflicts: kdeplasma-addons-data, plasma-applet-lancelot
+Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), liblancelot0a, liblancelot0
 Description: addons for KDE 4 Plasma - lancelot widget
  Lancelot is an application launcher menu (or ALI) for KDE 4 designed to
  provide a place from which all your jobs begin. It provides quick access
@@ -143,8 +138,6 @@ Package: kdeplasma-addons-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Conflicts: kdeplasmoids-dbg
-Replaces: kdeplasmoids-dbg
 Depends: ${misc:Depends}, plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
  plasma-wallpapers-addons (= ${binary:Version}), kdebase-workspace-dbg

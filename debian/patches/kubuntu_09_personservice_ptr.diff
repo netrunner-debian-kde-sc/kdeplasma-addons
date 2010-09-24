@@ -1,0 +1,44 @@
+Index: a/dataengines/ocs/personservice.cpp
+===================================================================
+--- a/dataengines/ocs/personservice.cpp	(revision 1175599)
++++ b/dataengines/ocs/personservice.cpp	(revision 1176837)
+@@ -39,6 +39,10 @@
+ 
+ Plasma::ServiceJob* PersonService::createJob(const QString& operation, QMap<QString, QVariant>& parameters)
+ {
++    if (!m_provider) {
++        return 0;
++    }
++
+     kDebug() << "operation: " << operation << "params: " << parameters;
+     if (operation == "sendMessage") {
+         Message message;
+@@ -76,6 +80,6 @@
+         kDebug() << "Set credentials: " << parameters.value("username") << parameters.value("password");
+         return job;
+     } else {
+-        return new Plasma::ServiceJob("", operation, parameters);
++        return 0;
+     }
+ }
+Index: a/dataengines/ocs/ocsengine.cpp
+===================================================================
+--- a/dataengines/ocs/ocsengine.cpp	(revision 1175599)
++++ b/dataengines/ocs/ocsengine.cpp	(revision 1176837)
+@@ -70,7 +70,7 @@
+     if (request == "Person" || request == "Settings") {
+         QString id = arguments.value("id");
+         QString providerString = arguments.value("provider");
+-        if (!id.isEmpty() && !providerString.isEmpty()) {
++        if (!id.isEmpty() && !providerString.isEmpty() && m_providers.value(providerString)) {
+             return new PersonService(m_providers.value(providerString), id, m_serviceUpdates, this);
+         }
+     }
+@@ -861,7 +861,6 @@
+ 
+ void OcsEngine::providerAdded(const Attica::Provider& provider)
+ {
+-    
+     qDebug() << "providerAdded" << provider.baseUrl();
+ 
+     QString baseUrl = provider.baseUrl().toString();

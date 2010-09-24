@@ -1,0 +1,22 @@
+kdesvn revisions 1169142 and 1171090
+Index: kdeplasma-addons-4.5.1/libs/lancelot-datamodels/MessagesKmail_p.h
+===================================================================
+--- kdeplasma-addons-4.5.1.orig/libs/lancelot-datamodels/MessagesKmail_p.h	2010-05-16 16:05:13.000000000 -0400
++++ kdeplasma-addons-4.5.1/libs/lancelot-datamodels/MessagesKmail_p.h	2010-09-23 00:43:22.000000000 -0400
+@@ -21,11 +21,14 @@
+ #include <QHash>
+ #include <KIcon>
+ #include <KJob>
+-#include <Akonadi/Entity>
+-#include <Akonadi/Collection>
+ 
+ #include "config-lancelot-datamodels.h"
+ 
++#ifdef LANCELOT_DATAMODELS_HAS_PIMLIBS
++#include <Akonadi/Entity>
++#include <Akonadi/Collection>
++#endif
++
+ namespace Lancelot {
+ namespace Models {
+ 
