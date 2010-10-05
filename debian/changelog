@@ -1,3 +1,15 @@
+kdeplasma-addons (4:4.5.2-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+   - kubuntu_01_fix_plasma_crash_when_editing_activity.diff
+   - kubuntu_05_fix_exif_rotation.diff
+   - kubuntu_06_fix_weatherlocation.diff
+   - kubuntu_07_lancelot_fixes.diff
+   - kubuntu_08_fix_comic_widget.diff
+   - kubuntu_09_personservice_ptr.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 05 Oct 2010 00:09:38 +0000
+
 kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
 
   * Drop obsolete (pre-lucid) conflicts/replaces

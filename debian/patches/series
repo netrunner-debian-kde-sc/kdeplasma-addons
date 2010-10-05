@@ -1,9 +1,3 @@
-kubuntu_01_fix_plasma_crash_when_editing_activity.diff
 kubuntu_02_microblog_default_configuration.diff
 #kubuntu_03_opendestop_setup.diff
 kubuntu_04_kimpanel_disable_scim.diff
-kubuntu_05_fix_exif_rotation.diff
-kubuntu_06_fix_weatherlocation.diff
-kubuntu_07_lancelot_fixes.diff
-kubuntu_08_fix_comic_widget.diff
-kubuntu_09_personservice_ptr.diff
