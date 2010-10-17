@@ -1,5 +1,24 @@
-kdeplasma-addons (4:4.5.2-0ubuntu1) maverick; urgency=low
+kdeplasma-addons (4:4.5.2-1ubuntu1) UNRELEASED; urgency=low
 
+  [ Alessandro Ghersi ]
+  * Merge with Debian git remaining changes:
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-scim package commented
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-ibus.{postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.42-dev
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - plasma-widget-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widget-addons (<< 4:4.4.60)
+
+  [ Jonathan Riddell ]
   * New upstream release
    - kubuntu_01_fix_plasma_crash_when_editing_activity.diff
    - kubuntu_05_fix_exif_rotation.diff
@@ -8,7 +27,29 @@ kdeplasma-addons (4:4.5.2-0ubuntu1) maverick; urgency=low
    - kubuntu_08_fix_comic_widget.diff
    - kubuntu_09_personservice_ptr.diff
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 05 Oct 2010 00:09:38 +0000
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sun, 17 Oct 2010 07:29:38 +0200
+
+kdeplasma-addons (4:4.5.1-0r2) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+  [ Modestas Vainius ]
+  * Point debian/control Vcs fields to the new Git repository.
+
+  [ Pino Toscano ]
+  * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)
+
+  [ George Kiagiadakis ]
+  * Change my email address in uploaders.
+  * Bump kdelibs5-dev, kdepimlibs5-dev, kdebase-workspace-dev
+    and libmarble-dev build dependencies to version 4.5.
+  * Update installed files.
+  * Remove build dependency on libxml2-dev, not needed anymore.
+  * Update lintian overrides.
+  * Drop replaces/conflicts against liblancelot0/0a from
+    plasma-widget-lancelot, as they no longer have any common files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
 
 kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
 
@@ -131,6 +172,41 @@ kdeplasma-addons (4:4.4.80-0ubuntu1) maverick; urgency=low
     - Bump debhelper build-depend version to 7.3.16 or greater
 
  -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 25 May 2010 09:50:14 -0400
+
+kdeplasma-addons (4:4.4.5-1) unstable; urgency=low
+
+  [ Modestas Vainius ]
+  * New upstream release.
+  * Bump kde-sc-dev-latest build dependency to 4:4.4.5.
+
+  [ Sune Vuorela ]
+  * Update descriptions
+  * Update email address
+  * Add qca2 to build deps
+
+ -- Sune Vuorela <sune@debian.org>  Sun, 18 Jul 2010 13:41:40 +0200
+
+kdeplasma-addons (4:4.4.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ Modestas Vainius ]
+  * Drop liblancelot-dev (popcon 7). Clearly not worth it.
+  * Merge liblancelot0 into plasma-widget-lancelot. liblancelot.so.0 broke ABI
+    without bumping a soname in KDE SC 4.5 again.
+  * Bump pkg-kde-tools build dependency to (>= 0.9) for HTML_INSTALL_DIR
+    switch and 3.0 (quilt) source format support.
+  * Switch to 3.0 (quilt) source package format and original tar.bz2
+    tarballs.
+  * Drop quilt from Build-Depends, no longer needed for 3.0 (quilt).
+  * Remove debian/README.source. Patch support is part of source format
+    now.
+  * Drop debian/source/lintian-overrides, quilt-build-dep-but-no-series-file no
+    longer relevant.
+  * Bump kde-sc-dev-latest build dependency to 4:4.4.4.
+  * Update install files.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 01 Jun 2010 01:15:18 +0300
 
 kdeplasma-addons (4:4.4.3-1ubuntu4) maverick; urgency=low
 
