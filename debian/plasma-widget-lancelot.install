@@ -1,7 +1,7 @@
 usr/bin/lancelot
 usr/lib/kde4/plasma_applet_lancelot_launcher.so
 usr/lib/kde4/plasma_applet_lancelot_part.so
-usr/lib/liblancelot-datamodels.so
+usr/lib/liblancelot-datamodels.so.0
 usr/lib/liblancelot-datamodels.so.1.7.0
 usr/lib/liblancelot.so.1
 usr/lib/liblancelot.so.1.9.0
