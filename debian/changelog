@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.5.2-1ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.5.2-0ubuntu1) UNRELEASED; urgency=low
 
   [ Alessandro Ghersi ]
   * Merge with Debian git remaining changes:
@@ -17,6 +17,7 @@ kdeplasma-addons (4:4.5.2-1ubuntu1) UNRELEASED; urgency=low
       recommends
     - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
       plasma-widget-addons (<< 4:4.4.60)
+    - Build against kdelibs5-dev 4.5.2-0ubuntu1 for libkutils4 transition
 
   [ Jonathan Riddell ]
   * New upstream release
