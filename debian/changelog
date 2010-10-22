@@ -18,6 +18,7 @@ kdeplasma-addons (4:4.5.2-0ubuntu1) UNRELEASED; urgency=low
     - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
       plasma-widget-addons (<< 4:4.4.60)
     - Build against kdelibs5-dev 4.5.2-0ubuntu1 for libkutils4 transition
+    - Add libxml2-dev to build-dependencies
 
   [ Jonathan Riddell ]
   * New upstream release

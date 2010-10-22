@@ -10,7 +10,8 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.4.92),
  kdelibs5-dev (>= 4:4.5.2-0ubuntu1), kdepimlibs5-dev (>= 4:4.5), kdebase-workspace-dev (>= 4:4.5),
  libqt4-opengl-dev, libboost1.42-dev, libkexiv2-dev (>= 4:4.5), python, libmarble-dev (>= 4:4.5),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
- libxtst-dev, libqalculate-dev, libqwt5-qt4-dev, shared-mime-info, libglib2.0-dev, libqca2-dev
+ libxtst-dev, libqalculate-dev, libqwt5-qt4-dev, shared-mime-info, libglib2.0-dev, libqca2-dev,
+ libxml2-dev
 #libscim-dev
 Standards-Version: 3.8.4
 Homepage: http://plasma.kde.org/
