@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.5.2-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.5.2-0ubuntu1) natty; urgency=low
 
   [ Alessandro Ghersi ]
   * Merge with Debian git remaining changes:
