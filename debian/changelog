@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.5.80-0ubuntu1) natty; urgency=low
+
+  * New upstream beta release
+  * Disable kubuntu_02_microblog_default_configuration.diff does not apply
+  * New package plasma-containments-addons
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Nov 2010 13:35:18 +0000
+
 kdeplasma-addons (4:4.5.3-0ubuntu1) natty; urgency=low
 
   * New upstream release

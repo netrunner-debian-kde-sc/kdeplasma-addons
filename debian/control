@@ -84,6 +84,14 @@ Description: additional wallpaper plugins for Plasma
  the Plasma desktop to give marble, mandelbrot and other such wallpapers.
  This package is part of the KDE Plasma addons module.
 
+Package: plasma-containments-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: additional containment plugins for Plasma
+ This package contains additional Plasma containment plugins.
+ This package is part of the KDE Plasma addons module.
+
 Package: plasma-widget-lancelot
 Architecture: any
 Section: kde

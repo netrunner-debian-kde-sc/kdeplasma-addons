@@ -138,3 +138,4 @@ usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
 usr/share/kde4/services/plasma_applet_plasmaboard.desktop
+usr/share/kde4/config/pastebin.knsrc

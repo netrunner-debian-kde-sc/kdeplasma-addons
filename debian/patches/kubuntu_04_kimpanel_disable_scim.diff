@@ -1,8 +1,8 @@
-Index: kdeplasma-addons-4.5.2/applets/CMakeLists.txt
+Index: kdeplasma-addons-4.5.80/applets/CMakeLists.txt
 ===================================================================
---- kdeplasma-addons-4.5.2.orig/applets/CMakeLists.txt	2010-10-22 22:06:11.600971000 +0200
-+++ kdeplasma-addons-4.5.2/applets/CMakeLists.txt	2010-10-22 22:09:25.512971000 +0200
-@@ -83,11 +83,11 @@
+--- kdeplasma-addons-4.5.80.orig/applets/CMakeLists.txt	2010-10-19 13:40:15.000000000 +0000
++++ kdeplasma-addons-4.5.80/applets/CMakeLists.txt	2010-11-26 13:35:57.058951002 +0000
+@@ -87,11 +87,11 @@
  if (Q_WS_X11)
     if (X11_Xrender_FOUND)
        set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/kimpanel/cmake)
@@ -18,10 +18,10 @@ Index: kdeplasma-addons-4.5.2/applets/CMakeLists.txt
     endif (X11_Xrender_FOUND)
  endif (Q_WS_X11)
  
-Index: kdeplasma-addons-4.5.2/applets/kimpanel/backend/CMakeLists.txt
+Index: kdeplasma-addons-4.5.80/applets/kimpanel/backend/CMakeLists.txt
 ===================================================================
---- kdeplasma-addons-4.5.2.orig/applets/kimpanel/backend/CMakeLists.txt	2010-10-22 22:10:05.068971002 +0200
-+++ kdeplasma-addons-4.5.2/applets/kimpanel/backend/CMakeLists.txt	2010-10-22 22:10:16.380971002 +0200
+--- kdeplasma-addons-4.5.80.orig/applets/kimpanel/backend/CMakeLists.txt	2009-12-01 00:35:52.000000000 +0000
++++ kdeplasma-addons-4.5.80/applets/kimpanel/backend/CMakeLists.txt	2010-11-26 13:35:57.058951002 +0000
 @@ -1 +1 @@
 -macro_optional_add_subdirectory(scim)
 +#macro_optional_add_subdirectory(scim)
