@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.5.90-0ubuntu1~ppa1) natty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 22 Dec 2010 18:48:57 +0000
+
 kdeplasma-addons (4:4.5.85-0ubuntu1) natty; urgency=low
 
   * New upstream beta release
