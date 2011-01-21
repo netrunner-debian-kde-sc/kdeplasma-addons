@@ -102,6 +102,9 @@
 ./usr/include/lancelot/layouts/FullBorderLayout.h
 ./usr/include/lancelot/layouts/NodeLayout.h
 ./usr/include/lancelot/widgets/TabBar.h
+./usr/include/lancelot/widgets/CustomListView.h
+./usr/include/lancelot/widgets/ScrollBar.h
+./usr/include/lancelot/widgets/ScrollPane.h
 ./usr/lib/liblancelot-datamodels.so
 ./usr/share/kde4/apps/cmake/modules/FindLancelot.cmake
 ./usr/share/kde4/apps/cmake/modules/FindLancelot-Datamodels.cmake
