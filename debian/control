@@ -11,7 +11,7 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.6.0),
  libqt4-opengl-dev, libboost1.42-dev, libkexiv2-dev (>= 4:4.5), python, libmarble-dev (>= 4:4.5),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
  libxtst-dev, libqalculate-dev, libqwt5-qt4-dev, shared-mime-info, libglib2.0-dev, libqca2-dev,
- libxml2-dev, libscim-dev
+ libxml2-dev
 Standards-Version: 3.8.4
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-members/kdeplasma-addons/ubuntu
@@ -106,9 +106,9 @@ Description: lancelot widget for Plasma
 Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, plasma-widget-kimpanel-backend-ibus | plasma-widget-kimpanel-backend-scim
+Depends: ${shlibs:Depends}, plasma-widget-kimpanel-backend-ibus
 Description: addons for KDE 4 Plasma - universal input method widget
- Kimpanel is a a Plasma widget for the scim and fcitx input methods.
+ Kimpanel is a a Plasma widget for the ibus input method.
  .
  This package is part of the KDE 4 plasma addons module.
 
@@ -117,7 +117,7 @@ Architecture: all
 Section: kde
 Depends: ${shlibs:Depends}, ibus-qt4
 Description: addons for KDE 4 Plasma - universal input method widget
- Kimpanel is a a Plasma widget for the scim and fcitx input methods.
+ Kimpanel is a a Plasma widget for the ibus input method.
  .
  This package contains the ibus backend for kimpanel.
 
