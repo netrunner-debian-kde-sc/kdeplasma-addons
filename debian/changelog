@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.6.1-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release 
+  * Added icons to plasma-widgets-addons.install
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Mon, 28 Feb 2011 16:58:04 +0100
+
 kdeplasma-addons (4:4.6.0-0ubuntu2) natty; urgency=low
 
   * Do not build-depend on libscim-dev
