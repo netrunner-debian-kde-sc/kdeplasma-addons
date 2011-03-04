@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.6.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.1-0ubuntu1) natty; urgency=low
 
   * New upstream release 
   * Added icons to plasma-widgets-addons.install
