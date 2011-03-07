@@ -21,8 +21,6 @@
 ./usr/include/KDE/Lancelot/Global
 ./usr/include/KDE/Lancelot/HoverIcon
 ./usr/include/KDE/Lancelot/Lancelot
-./usr/include/KDE/Lancelot/LancelotTestApplication
-./usr/include/KDE/Lancelot/LancelotTestWindow
 ./usr/include/KDE/Lancelot/MergedActionListModel
 ./usr/include/KDE/Lancelot/Models/Applications
 ./usr/include/KDE/Lancelot/Models/AvailableModels
@@ -92,6 +90,7 @@
 ./usr/include/lancelot/models/StandardActionTreeModel.h
 ./usr/include/lancelot/widgets/ActionListView.h
 ./usr/include/lancelot/widgets/BasicWidget.h
+./usr/include/lancelot/widgets/CustomListView.h
 ./usr/include/lancelot/widgets/ExtenderButton.h
 ./usr/include/lancelot/widgets/HoverIcon.h
 ./usr/include/lancelot/widgets/Panel.h
@@ -99,6 +98,8 @@
 ./usr/include/lancelot/widgets/PopupList.h
 ./usr/include/lancelot/widgets/PopupMenu.h
 ./usr/include/lancelot/widgets/ResizeBordersPanel.h
+./usr/include/lancelot/widgets/ScrollBar.h
+./usr/include/lancelot/widgets/ScrollPane.h
 ./usr/include/lancelot/widgets/TabBar.h
 ./usr/include/lancelot/widgets/Widget.h
 ./usr/lib/liblancelot-datamodels.so

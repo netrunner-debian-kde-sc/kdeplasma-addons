@@ -21,7 +21,8 @@ Section: kde
 Depends: ${misc:Depends}, plasma-widgets-addons (>= ${source:Version}),
  plasma-runners-addons (>= ${source:Version}),
  plasma-widget-lancelot (>= ${source:Version}),
- plasma-wallpapers-addons (>= ${source:Version})
+ plasma-wallpapers-addons (>= ${source:Version}),
+ plasma-containments-addons (>= ${source:Version})
 Description: addons for Plasma
  The KDE Plasma addons module is a collection of additional Plasma
  data engines, widgets and krunner plugins. It is part of
@@ -42,6 +43,20 @@ Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
  desktop.
+ .
+ This package is part of the KDE Plasma addons module.
+
+Package: plasma-containments-addons
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: additional containment plugins for Plasma
+ This package contains additional Plasma containment plugins. These plugins
+ allow the user to layout Plasma widgets in groups.
+ .
+ Plasma widgets can be added to a group dropping them from the Add Widgets
+ Explorer or moving them over the group. If it is necessary (like in the grid
+ group) a drop zone will be shown (like the one in the panel).
  .
  This package is part of the KDE Plasma addons module.
 
