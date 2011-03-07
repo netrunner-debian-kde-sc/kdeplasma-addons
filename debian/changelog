@@ -21,6 +21,7 @@ kdeplasma-addons (4:4.6.1-0r0) UNRELEASED; urgency=low
   [ José Manuel Santamaría Lema ]
   * Bump kde-sc-dev-latest build dependency to 4:4.6.1.
   * Add plasma-containments-addons package.
+  * Add libqtwebkit-dev build dependency.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
 
