@@ -18,6 +18,9 @@ kdeplasma-addons (4:4.6.1-0r0) UNRELEASED; urgency=low
   * Drop replaces/conflicts against liblancelot0/0a from
     plasma-widget-lancelot, as they no longer have any common files.
 
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.6.1.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
 
 kdeplasma-addons (4:4.4.5-1) unstable; urgency=low
