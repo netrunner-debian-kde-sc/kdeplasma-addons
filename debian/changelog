@@ -23,6 +23,7 @@ kdeplasma-addons (4:4.6.1-0r0) UNRELEASED; urgency=low
   * Add plasma-containments-addons package.
   * Add libqtwebkit-dev build dependency.
   * Bump Standards-Version to 3.9.1: update Breaks/Replaces/Conflicts.
+  * Update lintian overrides.
   * Add myself to Uploaders.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
