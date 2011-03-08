@@ -10,7 +10,7 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.6.1),
  libqt4-opengl-dev, libboost-dev, libkexiv2-dev (>= 4:4.4), python, libmarble-dev (>= 4:4.6),
  libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
  libscim-dev, libxtst-dev, libqalculate-dev, libqca2-dev, libqtwebkit-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
 Vcs-Git: git://git.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
@@ -38,7 +38,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
 Recommends: plasma-widget-lancelot
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
-Conflicts: kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
+Breaks: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, plasma-applets-addons, plasma-widget-weather
 Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
@@ -65,7 +65,7 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
-Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Breaks: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
 Description: additional data engines for Plasma
  This package contains additional Plasma data engines shipped in Plasma
  addons module. These engines are needed by some plasma widgets
@@ -78,7 +78,7 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
-Conflicts: kdeplasma-addons-data, kdeplasma-addons-libs4
+Breaks: kdeplasma-addons (<= 4:4.1.87+svn905624-0r1), kdeplasma-addons-data, kdeplasma-addons-libs4
 Description: additional runners for Plasma and Krunner
  This package contains additional Plasma runners that are used in krunner
  (the "run command" dialog of Plasma) to reveal special search results.
