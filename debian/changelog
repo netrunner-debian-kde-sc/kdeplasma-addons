@@ -5,6 +5,7 @@ kdeplasma-addons (4:4.6.1-0r1) UNRELEASED; urgency=low
 
   [ Modestas Vainius ]
   * Point debian/control Vcs fields to the new Git repository.
+  * Switch debian/rules engine to dhmk based qt-kde-team/2/*.
 
   [ Pino Toscano ]
   * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)

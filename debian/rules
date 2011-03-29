@@ -1,8 +1,12 @@
 #!/usr/bin/make -f
 
-include /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk
+include /usr/share/pkg-kde-tools/qt-kde-team/2/debian-qt-kde.mk
 
-DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V -u-c0
+.PHONY: override_dh_auto_test
 
-clean::
+override_dh_strip:
+	$(overriden_command) --dbg-package=kdeplasma-addons-dbg
+
+override_auto_clean:
+	$(overriden_command)
 	find applets/lancelot/tools/puck -name *.pyc -delete
