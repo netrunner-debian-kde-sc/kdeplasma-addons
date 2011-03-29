@@ -7,14 +7,16 @@ kdeplasma-addons (4:4.6.1-0r1) UNRELEASED; urgency=low
   * Point debian/control Vcs fields to the new Git repository.
   * Switch debian/rules engine to dhmk based qt-kde-team/2/*.
   * Clean trailing whitespaces from the copyright file.
+  * Reorder Build-Depends a bit: move KDE SC ones nearer beginning next to each
+    other.
 
   [ Pino Toscano ]
   * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)
 
   [ George Kiagiadakis ]
   * Change my email address in uploaders.
-  * Bump kdelibs5-dev, kdepimlibs5-dev, kdebase-workspace-dev
-    and libmarble-dev build dependencies to version 4.6.
+  * Bump kdelibs5-dev, kdepimlibs5-dev, kdebase-workspace-dev,
+    libkexiv2-dev and libmarble-dev build dependencies to version 4.6.
   * Remove build dependency on libxml2-dev, not needed anymore.
   * Update lintian overrides.
   * Drop replaces/conflicts against liblancelot0/0a from

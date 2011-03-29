@@ -8,9 +8,10 @@ Uploaders: Sune Vuorela <sune@debian.org>, Fathi Boudra <fabo@debian.org>,
 Build-Depends: kde-sc-dev-latest (>= 4:4.6.1),
  cmake, debhelper (>= 7.2.7~), pkg-kde-tools (>= 0.11),
  kdelibs5-dev (>= 4:4.6), kdepimlibs5-dev (>= 4:4.6), kdebase-workspace-dev (>= 4:4.6),
- libqt4-opengl-dev, libboost-dev, libkexiv2-dev (>= 4:4.4), python, libmarble-dev (>= 4:4.6),
- libqimageblitz-dev, libeigen2-dev, libxrender-dev, shared-desktop-ontologies, libattica-dev,
- libscim-dev, libxtst-dev, libqalculate-dev, libqca2-dev, libqtwebkit-dev
+ libkexiv2-dev (>= 4:4.6), libmarble-dev (>= 4:4.6),
+ libqt4-opengl-dev, libboost-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
+ shared-desktop-ontologies, libattica-dev, libscim-dev, libxtst-dev, libqalculate-dev,
+ libqca2-dev, libqtwebkit-dev
 Standards-Version: 3.9.1
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
