@@ -1,6 +1,9 @@
 kdeplasma-addons (4:4.6.1-0r3) UNRELEASED; urgency=low
 
-  * New upstream release.
+  * New upstream release:
+    - fixes wetter.com forecast retrieval for some geographic regions
+      (Closes: #580518)
+    - fixes BBC forecast location retrieval (Closes: #578920)
   * Update installed files.
 
   [ Modestas Vainius ]
