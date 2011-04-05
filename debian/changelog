@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.6.2-0ubuntu1~ppa1) natty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 04 Apr 2011 15:23:42 +0000
+
 kdeplasma-addons (4:4.6.1-0ubuntu2) UNRELEASED; urgency=low
 
   * Update kubuntu_02_microblog_default_configuration.diff
