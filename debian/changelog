@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.6.1-0r3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.2-0r0) UNRELEASED; urgency=low
 
   * New upstream release:
     - fixes wetter.com forecast retrieval for some geographic regions
@@ -26,7 +26,7 @@ kdeplasma-addons (4:4.6.1-0r3) UNRELEASED; urgency=low
     plasma-widget-lancelot, as they no longer have any common files.
 
   [ José Manuel Santamaría Lema ]
-  * Bump kde-sc-dev-latest build dependency to 4:4.6.1.
+  * Bump kde-sc-dev-latest build dependency to 4:4.6.2.
   * Add plasma-containments-addons package.
   * Add libqtwebkit-dev build dependency.
   * Bump Standards-Version to 3.9.1: update Breaks/Replaces/Conflicts.
