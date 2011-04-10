@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.6.2-0ubuntu3) natty; urgency=low
+
+  * Add kubuntu_05_comic_prefetch.diff, recommended on kde-packagers.
+
+ -- Romain Perier <romain.perier@gmail.com>  Sun, 10 Apr 2011 10:40:45 +0200
+
 kdeplasma-addons (4:4.6.2-0ubuntu2) natty; urgency=low
 
   * Disable kubuntu_02_microblog_default_configuration.diff, it doesn't
