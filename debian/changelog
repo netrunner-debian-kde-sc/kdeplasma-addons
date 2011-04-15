@@ -15,6 +15,7 @@ kdeplasma-addons (4:4.6.2-0r0) UNRELEASED; urgency=low
 
   [ Pino Toscano ]
   * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)
+  * Clean up Replaces/Breaks from the pre-squeeze era whenever possible.
 
   [ George Kiagiadakis ]
   * Change my email address in uploaders.
