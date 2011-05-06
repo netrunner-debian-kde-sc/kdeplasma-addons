@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.6.3-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release
+    - update kde-sc-dev-latest version
+    - drop kubuntu_05_comic_prefetch.diff, applied upstream
+  * Update Vcs- links as the branch is now owned by kubuntu-packagers
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Fri, 06 May 2011 12:56:10 +0200
+
 kdeplasma-addons (4:4.6.2-0ubuntu3) natty; urgency=low
 
   * Add kubuntu_05_comic_prefetch.diff, recommended on kde-packagers.
