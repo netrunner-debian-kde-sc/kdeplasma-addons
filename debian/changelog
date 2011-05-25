@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.6.3-0r0) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.3-1) unstable; urgency=low
 
   * New upstream release.
 
@@ -6,7 +6,7 @@ kdeplasma-addons (4:4.6.3-0r0) UNRELEASED; urgency=low
   * Bump kde-sc-dev-latest build dependency to 4:4.6.3.
   * Bump Standards-Version to 3.9.2; no changes required.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 06 May 2011 20:59:05 +0200
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 26 May 2011 02:41:39 +0300
 
 kdeplasma-addons (4:4.6.2-1) experimental; urgency=low
 
