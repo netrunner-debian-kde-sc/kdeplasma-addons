@@ -1,15 +1,18 @@
 #!/usr/bin/make -f
 
-include /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk
+include /usr/share/pkg-kde-tools/qt-kde-team/2/debian-qt-kde.mk
 
-DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V -u-c0
+.PHONY: override_dh_auto_test
 
-install/plasma-widget-kimpanel-backend-ibus::
-	mkdir -p $(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/usr/lib/ibus/
+override_dh_strip:
+	$(overridden_command) --dbg-package=kdeplasma-addons-dbg
+
+override_dh_install:
+	mkdir -p $(CURDIR)/debian/tmp/usr/lib/ibus/
 	cp $(CURDIR)/applets/kimpanel/backend/ibus/panel.py \
-		$(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/usr/lib/ibus/ibus-ui-kde
-	mkdir -p $(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/etc/X11/xinit/xinput.d/
-	cp $(CURDIR)/debian/xinput/ibus-kde \
-		$(CURDIR)/debian/plasma-widget-kimpanel-backend-ibus/etc/X11/xinit/xinput.d/
-clean::
+		$(CURDIR)/debian/tmp/usr/lib/ibus/ibus-ui-kde
+	$(overridden_command)
+
+override_auto_clean:
+	$(overridden_command)
 	find applets/lancelot/tools/puck -name *.pyc -delete

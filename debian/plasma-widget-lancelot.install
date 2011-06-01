@@ -3,8 +3,8 @@ usr/lib/kde4/plasma_applet_lancelot_launcher.so
 usr/lib/kde4/plasma_applet_lancelot_part.so
 usr/lib/liblancelot-datamodels.so.1
 usr/lib/liblancelot-datamodels.so.1.7.0
-usr/lib/liblancelot.so.2
 usr/lib/liblancelot.so.1.9.0
+usr/lib/liblancelot.so.2
 usr/share/icons/hicolor/128x128/apps/lancelot-start.png
 usr/share/icons/hicolor/128x128/apps/lancelot.png
 usr/share/icons/hicolor/128x128/apps/plasmaapplet-shelf.png
@@ -74,7 +74,7 @@ usr/share/kde4/apps/desktoptheme/slim-glow/lancelot/system-buttons-extender.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/lancelot/system-buttons.svgz
 usr/share/kde4/apps/desktoptheme/slim-glow/lancelot/theme.config
 usr/share/kde4/apps/lancelot/lancelot.notifyrc
+usr/share/kde4/services/lancelot.desktop
 usr/share/kde4/services/plasma-applet-lancelot-launcher.desktop
 usr/share/kde4/services/plasma-applet-lancelot-part.desktop
 usr/share/mime/packages/lancelotpart-mime.xml
-usr/share/kde4/services/lancelot.desktop

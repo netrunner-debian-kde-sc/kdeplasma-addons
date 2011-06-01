@@ -1,6 +1,7 @@
 usr/lib/kde4/kcm_krunner_audioplayercontrol.so
 usr/lib/kde4/kcm_krunner_charrunner.so
 usr/lib/kde4/kcm_krunner_spellcheck.so
+usr/lib/kde4/kcm_plasma_runner_events.so
 usr/lib/kde4/krunner_audioplayercontrol.so
 usr/lib/kde4/krunner_browserhistory.so
 usr/lib/kde4/krunner_charrunner.so
@@ -13,6 +14,7 @@ usr/lib/kde4/krunner_kopete.so
 usr/lib/kde4/krunner_mediawiki.so
 usr/lib/kde4/krunner_spellcheckrunner.so
 usr/lib/kde4/plasma_runner_datetime.so
+usr/lib/kde4/plasma_runner_events.so
 usr/share/kde4/services/CharRunner_config.desktop
 usr/share/kde4/services/CharacterRunner.desktop
 usr/share/kde4/services/browserhistory.desktop
@@ -24,13 +26,11 @@ usr/share/kde4/services/plasma-runner-audioplayercontrol_config.desktop
 usr/share/kde4/services/plasma-runner-contacts.desktop
 usr/share/kde4/services/plasma-runner-converter.desktop
 usr/share/kde4/services/plasma-runner-datetime.desktop
+usr/share/kde4/services/plasma-runner-events.desktop
+usr/share/kde4/services/plasma-runner-events_config.desktop
 usr/share/kde4/services/plasma-runner-kopete.desktop
 usr/share/kde4/services/plasma-runner-spellchecker.desktop
 usr/share/kde4/services/plasma-runner-spellchecker_config.desktop
 usr/share/kde4/services/plasma-runner-techbase.desktop
 usr/share/kde4/services/plasma-runner-wikipedia.desktop
 usr/share/kde4/services/plasma-runner-wikitravel.desktop
-usr/share/kde4/services/plasma-runner-events.desktop
-usr/lib/kde4/plasma_runner_events.so
-usr/lib/kde4/kcm_plasma_runner_events.so
-usr/share/kde4/services/plasma-runner-events_config.desktop

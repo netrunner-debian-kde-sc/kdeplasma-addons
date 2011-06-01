@@ -1,8 +1,6 @@
 usr/bin/kimpanel
 usr/lib/kde4/plasma_applet_kimpanel.so
-usr/lib/libkimpanelruntime.so
 usr/lib/libkimpanelruntime.so.0
-usr/share/dbus-1/interfaces/org.kde.impanel.xml
 usr/share/kde4/config.kcfg/kimpanelconfig.kcfg
 usr/share/kde4/services/plasma-applet-kimpanel.desktop
 
