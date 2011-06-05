@@ -13,6 +13,6 @@ override_dh_install:
 		$(CURDIR)/debian/tmp/usr/lib/ibus/ibus-ui-kde
 	$(overridden_command)
 
-override_auto_clean:
+override_dh_auto_clean:
 	$(overridden_command)
 	find applets/lancelot/tools/puck -name *.pyc -delete
