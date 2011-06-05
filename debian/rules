@@ -7,6 +7,6 @@ include /usr/share/pkg-kde-tools/qt-kde-team/2/debian-qt-kde.mk
 override_dh_strip:
 	$(overridden_command) --dbg-package=kdeplasma-addons-dbg
 
-override_auto_clean:
+override_dh_auto_clean:
 	$(overridden_command)
 	find applets/lancelot/tools/puck -name *.pyc -delete

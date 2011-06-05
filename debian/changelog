@@ -1,5 +1,7 @@
 kdeplasma-addons (4:4.6.3-2) UNRELEASED; urgency=low
 
+  [ Felix Geyer ]
+  * Fix name of the clean override target.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 05 Jun 2011 11:42:23 +0200
 
