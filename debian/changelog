@@ -9,7 +9,7 @@ kdeplasma-addons (4:4.6.3-1ubuntu1) UNRELEASED; urgency=low
       kdewallpapers, kdebase-workspace-wallpapers
     - Add plasma-widget-kimpanel-backend-ibus.{install, postinst, prerm}
     - Don't install kimpanel in plasma-widget-addons
-    - Build against libboost1.42-dev
+    - Build against libboost1.46-dev
     - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
       plasma-widgets-addons (<< 4:4.4.60)
     - plasma-widgets-addons suggests plasma-widget-lancelot instead of

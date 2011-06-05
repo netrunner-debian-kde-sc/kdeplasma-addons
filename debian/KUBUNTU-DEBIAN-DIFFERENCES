@@ -4,7 +4,7 @@
       plasma-widget-kimpanel-backend-ibus
     - Add plasma-widget-kimpanel-backend-ibus.{install, postinst, prerm}
     - Don't install kimpanel in plasma-widget-addons
-    - Build against libboost1.42-dev
+    - Build against libboost1.46-dev
     - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
       kdewallpapers, kdebase-workspace-wallpapers
     - plasma-widget-addons suggests plasma-widget-lancelot instead of

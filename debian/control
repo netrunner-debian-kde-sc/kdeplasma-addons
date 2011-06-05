@@ -10,7 +10,7 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.6.3),
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
  kdelibs5-dev (>= 4:4.6), kdepimlibs5-dev (>= 4:4.6), kdebase-workspace-dev (>= 4:4.6),
  libkexiv2-dev (>= 4:4.6), libmarble-dev (>= 4:4.6), shared-mime-info, libglib2.0-dev,
- libqt4-opengl-dev, libboost1.42-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
+ libqt4-opengl-dev, libboost1.46-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqwt5-qt4-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev
 Standards-Version: 3.9.2
