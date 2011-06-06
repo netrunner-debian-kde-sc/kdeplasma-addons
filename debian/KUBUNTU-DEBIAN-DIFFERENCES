@@ -12,3 +12,4 @@
     - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
       plasma-widget-addons (<< 4:4.4.60)
     - plasma-widgets-addons Breaks/Replaces plasma-widget-system-status
+    - Build-depend on shared-mime-info and libglib2.0-dev
