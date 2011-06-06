@@ -123,7 +123,7 @@ Description: addons for KDE 4 Plasma - universal input method widget
 Package: plasma-widget-kimpanel-backend-ibus
 Architecture: all
 Section: kde
-Depends: ${shlibs:Depends}, ibus-qt4
+Depends: ${shlibs:Depends}, ibus-qt4, python
 Description: addons for KDE 4 Plasma - universal input method widget
  Kimpanel is a a Plasma widget for the ibus input method.
  .
