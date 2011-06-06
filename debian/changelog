@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.6.3-1ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.3-1ubuntu1) oneiric; urgency=low
 
   [ Philip Muškovac ]
   * Merge from debian. Remaining changes: 
@@ -22,7 +22,7 @@ kdeplasma-addons (4:4.6.3-1ubuntu1) UNRELEASED; urgency=low
   [ Felix Geyer ]
   * Add python to plasma-widget-kimpanel-backend-ibus dependencies.
 
- -- Philip Muškovac <yofel@kubuntu.org>  Wed, 01 Jun 2011 17:08:25 +0200
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 07 Jun 2011 00:52:20 +0200
 
 kdeplasma-addons (4:4.6.3-1) unstable; urgency=low
 
