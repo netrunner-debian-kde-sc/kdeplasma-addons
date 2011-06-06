@@ -183,28 +183,6 @@ kdeplasma-addons (4:4.5.2-0ubuntu1) natty; urgency=low
 
  -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sun, 17 Oct 2010 07:29:38 +0200
 
-kdeplasma-addons (4:4.5.1-0r2) UNRELEASED; urgency=low
-
-  * New upstream release.
-
-  [ Modestas Vainius ]
-  * Point debian/control Vcs fields to the new Git repository.
-
-  [ Pino Toscano ]
-  * Fix typo in description of plasma-widget-lancelot. (Closes: #591216)
-
-  [ George Kiagiadakis ]
-  * Change my email address in uploaders.
-  * Bump kdelibs5-dev, kdepimlibs5-dev, kdebase-workspace-dev
-    and libmarble-dev build dependencies to version 4.5.
-  * Update installed files.
-  * Remove build dependency on libxml2-dev, not needed anymore.
-  * Update lintian overrides.
-  * Drop replaces/conflicts against liblancelot0/0a from
-    plasma-widget-lancelot, as they no longer have any common files.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 02 Aug 2010 23:04:29 +0200
-
 kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
 
   * Drop obsolete (pre-lucid) conflicts/replaces
@@ -459,37 +437,6 @@ kdeplasma-addons (4:4.4.2-0ubuntu2) lucid-proposed; urgency=low
 
  -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 14 Apr 2010 20:49:47 +0200
 
-kdeplasma-addons (4:4.4.2-1) experimental; urgency=low
-
-  * New upstream release:
-    - blubblemon animates correctly. (Closes: #558787)
-    - resolves some cyclical relayout crashes and some layout estetic
-      problems. (Closes: #564912)
-
-  [ Modestas Vainius ]
-  * Change my email address to modax@debian.org in Uploaders field.
-  * Fix Vcs-Browser URL.
-  * Add cmake to Build-Depends.
-  * Add kde-sc-dev-latest (>= 4:4.4.2) to Build-Depends.
-  * Bump Standards-Version to 3.8.4: no changes needed.
-  * Bump kdepimlibs5-dev build dependency to 4:4.4.
-  * Bump pkg-kde-tools build dependency to 0.6.4.
-  * Change libkexiv2-7-dev build dependency to libkexiv2-dev (>= 4:4.4).
-  * Add a symbol file for liblancelot0, build depend on dpkg-dev 1.15.5.
-  * Make dpkg-gensymbols not to fail if there are lost symbols in liblancelot0.
-  * Remove liblancelot0 to liblancelot0a, library is ABI/API incompatible.
-  * Add ${misc:Depends} to all binary packages.
-
-  [ George Kiagiadakis ]
-  * Bump kdelibs5-dev build dependency to >= 4:4.4.
-  * Bump kdebase-workspace-dev build dependency to >= 4:4.4.
-  * Bump libmarble-dev build dependency to >= 4:4.4.
-  * Add build dependency on shared-desktop-ontologies, libattica-dev,
-    libscim-dev, libxtst-dev, libqalculate-dev, libxml2-dev.
-  * Update installed files.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 09 Apr 2010 18:40:08 +0300
-
 kdeplasma-addons (4:4.4.2-0ubuntu1) lucid; urgency=low
 
   * New upstream release
@@ -714,13 +661,6 @@ kdeplasma-addons (4:4.3.2-0ubuntu3) karmic; urgency=low
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2009 14:05:24 +0100
 
-kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
-
-  * New upstream release.
-  * Remove 01_fix_armel_build patch, merged upstream.
-
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 10 Oct 2009 19:43:05 +0200
-
 kdeplasma-addons (4:4.3.2-0ubuntu2) karmic; urgency=low
 
   * Adding kubuntu_05_rememberthemilk_auth_fix.diff to fix the authorization
@@ -792,22 +732,6 @@ kdeplasma-addons (4:4.3.1-0ubuntu1) karmic; urgency=low
 
  -- Harald Sitter <apachelogger@ubuntu.com>  Sun, 30 Aug 2009 20:11:55 +0200
 
-kdeplasma-addons (4:4.3.1-1) unstable; urgency=low
-
-  * New upstream release.
-
-  +++ Changes by George Kiagiadakis:
-
-  * Remove build dependency on libxcomposite-dev and libxdamage-dev
-    as they are no longer needed for building lancelot compositing
-    support.
-
-  +++ Changes by Fathi Boudra:
-
-  * Bump KDE build dependencies to 4.3.1.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 29 Aug 2009 17:48:16 +0300
-
 kdeplasma-addons (4:4.3.0-2) unstable; urgency=low
 
   +++ Changes by George Kiagiadakis:
@@ -857,15 +781,6 @@ kdeplasma-addons (4:4.3.0-0ubuntu2) karmic; urgency=low
     size to stop is shrinking on startup
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Aug 2009 14:38:06 +0100
-
-kdeplasma-addons (4:4.3.0-1) unstable; urgency=low
-
-  * New upstream release. 
-  * Bump to Standards-Version: 3.8.2, no changes required.
-  * Bump build dependencies to >= 4.3.0.
-  * Update installed files.
-
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 04 Aug 2009 09:20:58 +0200
 
 kdeplasma-addons (4:4.3.0-0ubuntu1) karmic; urgency=low
 
@@ -1102,22 +1017,6 @@ kdeplasma-addons (4:4.2.0-0ubuntu2) jaunty; urgency=low
 
  -- Richard Birnie <Arbyuk@googlemail.com>  Sun, 01 Feb 2009 16:30:32 +0000
 
-kdeplasma-addons (4:4.2.1-1) experimental; urgency=low
-
-  * New upstream release.
-
-  +++ Changes by Modestas Vainius:
-
-  * Point Debian Vcs URLs to pkg-kde/trunk (new location).
-  * Rename plasma-applets-addons to plasma-widgets-addons, add appropriate
-    conflicts/replaces for the old packages.
-  * Rename plasma-applets-lancelot to plasma-widgets-lancelot, add appropriate
-    conflicts/replaces for the old package.
-  * Replace all references to plasma "applet" with "widget".
-  * Bump KDE build depends to 4.2.1.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 27 Feb 2009 23:49:30 +0200
-
 kdeplasma-addons (4:4.2.0-0ubuntu1) jaunty; urgency=low
 
   * New upstream release
@@ -1126,54 +1025,6 @@ kdeplasma-addons (4:4.2.0-0ubuntu1) jaunty; urgency=low
     - add build-dep on quilt
 
  -- Steve Stalcup <vorian@ubuntu.com>  Sat, 24 Jan 2009 20:32:42 -0500
-
-kdeplasma-addons (4:4.2.0-1) experimental; urgency=low
-
-  * New upstream release.
-  * Includes lancelot (Closes: #499222).
-
-  +++ Changes by Modestas Vainius:
-
-  * Drop explicit build depend on cmake.
-  * Build depend on kdelibs5-dev and kdepimlibs5-dev
-    explicitly (4.2.0). Bump kdebase-workspace-dev dependency to
-    4:4.2.0.
-  * Build depend on libkexiv2-6-dev and python (the latter is needed by
-    lancelot at build time).
-  * Add debian/installgen and update install files.
-  * Bump Standards-Version to 3.8.0: add README.source.
-  * Drop 97_fix_target_link_libraries.diff, no longer needed.
-  * Update install files.
-  * Add a clean rule to *.pyc from applets/lancelot/tools/puck.
-  * Bump liblancelot0 shlibs on each new upstream release.
-  * Do not build depend on libplasma-dev. Plasma headers are in kdelibs5-dev
-    for now.
-  * Bump debian/compat and debhelper build dependency to v7 (to get more
-    sophisticated debian/tmp handling).
-  * Switch from internal debian/cdbs/kde.mk to pkg-kde-tools:
-    - build depend on pkg-kde-tools 0.4;
-    - remove debian/cdbs directory;
-    - replace debian/cdbs/kde.mk with
-      /usr/share/pkg-kde-tools/qt-kde-team/1/debian-qt-kde.mk in debian/rules.
-
-  ++ Changes by George Kiagiadakis:
-
-  * Add new packages:
-    - plasma-applets-addons - contains the plasma applets.
-    - plasma-dataengines-addons - contains the plasma dataengines.
-    - plasma-runners-addons - contains the plasma runners.
-    - plasma-applet-lancelot - contains the lancelot applet.
-    - liblancelot0 - contains the lancelot shared library.
-  * Make kdeplasma-addons be a metapackage that installs all of the above.
-  * Rename kdeplasma-addons-dev to liblancelot-dev.
-  * Remove the kdeplasma-addons-libs4 and kdeplasma-addons-data packages.
-  * Drop explicit build dependency on libglu1-mesa-dev.
-
-  +++ Changes by Sune Vuorela:
-
-  * Update copyright file.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 24 Jan 2009 03:39:52 +0200
 
 kdeplasma-addons (4:4.1.96-0ubuntu2) jaunty; urgency=low
 
@@ -1269,13 +1120,6 @@ kdeplasma-addons (4:4.1.2-1ubuntu2) jaunty; urgency=low
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Nov 2008 16:34:21 +0000
 
-kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
-
-  * New upstream release
-    - bump b-d.
-
- -- Sune Vuorela <debian@pusling.com>  Sat, 01 Nov 2008 16:43:04 +0100
-
 kdeplasma-addons (4:4.1.2-1ubuntu1) jaunty; urgency=low
 
   * Merge with Debian, remaining changes:
@@ -1315,17 +1159,6 @@ kdeplasma-addons (4:4.1.1-0ubuntu2) intrepid; urgency=low
 
  -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Mon, 01 Sep 2008 21:33:35 -0400
 
-kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
-
-  * New upstreams release.
-
-  +++ Changes by Sune Vuorela:
-
-  * Change 97_ patch to fit with upstream changes and 
-    debian specific pimlibs changes
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 29 Aug 2008 08:46:37 +0200
-
 kdeplasma-addons (4:4.1.1-0ubuntu1) intrepid; urgency=low
 
   * New upstream release.
@@ -1357,20 +1190,6 @@ kdeplasma-addons (4:4.1.0-0ubuntu2) intrepid; urgency=low
   * switch to kde4.mk from cdbs
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 01 Aug 2008 15:29:42 +0000
-
-kdeplasma-addons (4:4.1.0-1) experimental; urgency=low
-
-  * New upstream release.
-
-  +++ Changes by Modestas Vainius:
-
-  * Adapt sameVersionDep substvars to new dh_sameversiondeps syntax.
-
-  +++ Changes by Ana Beatriz Guerrero Lopez:
-
-  * Update installed files and build depend version.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 28 Jul 2008 03:12:14 +0200
 
 kdeplasma-addons (4:4.1.0-0ubuntu1) intrepid; urgency=low
 
@@ -1406,6 +1225,10 @@ kdeplasmoids (4:4.0.84-1) experimental; urgency=low
 
   * New upstream snapshot.
 
+  +++ Changes by Modestas Vainius:
+
+  * Fix typo in kdeplasmoids description.
+
  -- Sune Vuorela <debian@pusling.com>  Sun, 29 Jun 2008 12:04:46 +0200
 
 kdeplasmoids (4:4.0.83-0ubuntu1) intrepid; urgency=low
@@ -1413,14 +1236,6 @@ kdeplasmoids (4:4.0.83-0ubuntu1) intrepid; urgency=low
   * New upstream beta release
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 23 Jun 2008 15:07:27 +0000
-
-kdeplasmoids (4:4.0.82+svn820966-2) UNRELEASED; urgency=low
-
-  +++ Changes by Modestas Vainius:
-
-  * Fix typo in kdeplasmoids description.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 16 Jun 2008 16:29:31 +0300
 
 kdeplasmoids (4:4.0.82+svn820966-1) experimental; urgency=low
 
@@ -1458,14 +1273,6 @@ extragear-plasma (4:4.0.72+svn802997-1) experimental; urgency=low
   * New snapshot.
   * Some stuff disable because it is totally broken, still no translations.
 
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 01 May 2008 16:29:42 +0200
-
-extragear-plasma (4:4.0.68~svn794879-1) experimental; urgency=low
-
-  * Build plasma against KDE 4.1 from trunk:
-    - Update build depends to kdebase-workspace-dev (>= 4:4.0.68).
-  * Translation no included in purpose, so extragear-plasma-l10n is empty.
-
   +++ Changes by Ana Beatriz Guerrero Lopez:
 
   * Update installed files.
@@ -1475,7 +1282,7 @@ extragear-plasma (4:4.0.68~svn794879-1) experimental; urgency=low
   * Move extragear-plasma packages to Section: kde.
   * Move extragear-plasma-dbg to Section: libdevel.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue,  8 Apr 2008 21:41:57 +0200
+ -- Debian Qt/KDE Maintainers <ana@debian.org>  Thu, 01 May 2008 16:29:42 +0200
 
 extragear-plasma (4:4.0.1-1) experimental; urgency=low
 
@@ -1503,7 +1310,7 @@ extragear-plasma (4:4.0.0-1) experimental; urgency=low
 
   * New upstream release.
   * Update extragear-plasma-l10n.install.
-  * Update years in copyright. 
+  * Update years in copyright.
   * Build depend on kdebase-workspace-dev >= 4:4.0.0-1.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 09 Jan 2008 13:30:33 +0100
@@ -1519,15 +1326,10 @@ extragear-plasma (4:3.98~svn754166-1) experimental; urgency=low
 
   * Svn snapshot of revision 754166.
   * Update *.install files.
-
- -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 29 Dec 2007 09:47:33 +0100
-
-extragear-plasma (4:3.97.0-2) experimental; urgency=low
-
   * Update Standards-Version to 3.7.3.
   * Remove extra LDFLAGS. Included via CDBS now.
 
- -- Armin Berres <trigger+debian@space-based.de>  Mon, 17 Dec 2007 23:49:29 +0100
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 29 Dec 2007 09:47:33 +0100
 
 extragear-plasma (4:3.97.0-1) experimental; urgency=low
 
@@ -1539,7 +1341,7 @@ extragear-plasma (4:3.97.0-1) experimental; urgency=low
   * Add export LDFLAGS+="-Wl,--as-needed" in rules to make dpkg-shlibdeps
     happier.
 
- -- Armin Berres <trigger+debian@space-based.de>  Fri, 07 Dec 2007 17:24:14 +0100
+ -- Armin Berres <armin+debian@space-based.de>  Fri, 07 Dec 2007 17:24:14 +0100
 
 extragear-plasma (4:3.96.0-2) experimental; urgency=low
 
@@ -1547,7 +1349,7 @@ extragear-plasma (4:3.96.0-2) experimental; urgency=low
   * Build depend on kdebase-workspace 4:3.96.0-2
   * Build depend on sharutils for uudecoding the new images.
 
- -- Armin Berres <trigger+debian@space-based.de>  Wed, 21 Nov 2007 17:09:17 +0000
+ -- Armin Berres <armin+debian@space-based.de>  Wed, 21 Nov 2007 17:09:17 +0000
 
 extragear-plasma (4:3.96.0-1) experimental; urgency=low
 
@@ -1558,16 +1360,6 @@ extragear-plasma (4:3.96.0-1) experimental; urgency=low
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Thu, 15 Nov 2007 18:46:33 +0100
 
-extragear-plasma (3.95.2-1) experimental; urgency=low
-
-  * New upstream release.
-
-  +++ Changes by Fathi Boudra:
-
-  * Update installed files.
-
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 09 Nov 2007 19:38:54 +0100
-
 extragear-plasma (3.95.0-1) experimental; urgency=low
 
   * New upstream release: KDE4 beta4. First upload to the Debian archive.
@@ -1576,11 +1368,5 @@ extragear-plasma (3.95.0-1) experimental; urgency=low
     and add replaces kdebase-workspace-bin << 4:3.95.0.
   * Update *.install files.
 
- -- Armin Berres <trigger+debian@space-based.de>  Sat, 27 Oct 2007 18:45:56 +0200
-
-extragear-plasma (3.94.0-1) experimental; urgency=low
-
-  * Initial release.
-
- -- Armin Berres <trigger+debian@space-based.de>  Wed, 24 Oct 2007 01:14:25 +0200
+ -- Armin Berres <armin+debian@space-based.de>  Sat, 27 Oct 2007 18:45:56 +0200
 
