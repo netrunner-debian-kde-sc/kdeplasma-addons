@@ -8,15 +8,15 @@ Uploaders: Sune Vuorela <sune@debian.org>, Fathi Boudra <fabo@debian.org>,
  José Manuel Santamaría Lema <panfaust@gmail.com>
 Build-Depends: kde-sc-dev-latest (>= 4:4.6.3),
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdelibs5-dev (>= 4:4.6), kdepimlibs5-dev (>= 4:4.6), kdebase-workspace-dev (>= 4:4.6),
+ kdelibs5-dev (>= 4:4.6), kdepimlibs5-dev (>= 4:4.6), kde-workspace-dev (>= 4:4.6),
  libkexiv2-dev (>= 4:4.6), libmarble-dev (>= 4:4.6), shared-mime-info, libglib2.0-dev,
  libqt4-opengl-dev, libboost1.46-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqwt5-qt4-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev
 Standards-Version: 3.9.2
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kdeplasma-addons/ubuntu
-Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kdeplasma-addons/ubuntu
+Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
+Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
 
 Package: kdeplasma-addons
 Architecture: all
@@ -91,7 +91,7 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}), kdewallpapers,
- kdebase-workspace-wallpapers
+ kde-wallpapers
 Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: additional wallpaper plugins for Plasma
  This package contains additional Plasma wallpaper plugins that are used in 
@@ -146,7 +146,7 @@ Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- plasma-wallpapers-addons (= ${binary:Version}), kdebase-workspace-dbg
+ plasma-wallpapers-addons (= ${binary:Version}), kde-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related
