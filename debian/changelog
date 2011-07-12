@@ -1,10 +1,10 @@
-kdeplasma-addons (4:4.6.90-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.90-0ubuntu1) oneiric; urgency=low
 
   * New upstream development release
     - Change dependencies to match new packages names
     - Update install files
 
- -- Romain Perier <romain.perier@gmail.com>  Tue, 12 Jul 2011 16:26:21 +0200
+ -- Romain Perier <romain.perier@gmail.com>  Tue, 12 Jul 2011 18:23:07 +0200
 
 kdeplasma-addons (4:4.6.3-1ubuntu1) oneiric; urgency=low
 
