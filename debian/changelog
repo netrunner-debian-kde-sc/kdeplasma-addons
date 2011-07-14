@@ -1,7 +1,12 @@
-kdeplasma-addons (4:4.6.3-2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.5-0r0) UNRELEASED; urgency=low
+
+  * New upstream release.
 
   [ Felix Geyer ]
   * Fix name of the clean override target.
+
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.6.5.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 05 Jun 2011 11:42:23 +0200
 
