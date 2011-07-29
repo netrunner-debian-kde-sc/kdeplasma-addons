@@ -1,9 +1,9 @@
-kdeplasma-addons (4:4.7.0-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.0-0ubuntu1) oneiric; urgency=low
 
   * New upstream release
    - Bump on kde-sc-dev-latest
 
- -- Michał Zając <quintasan@kubuntu.org>  Sun, 24 Jul 2011 19:32:37 +0200
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 29 Jul 2011 10:52:25 +0200
 
 kdeplasma-addons (4:4.6.90-0ubuntu1) oneiric; urgency=low
 
