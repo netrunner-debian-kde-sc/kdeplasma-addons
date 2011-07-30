@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.7.0-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick upstream commit 67b5c56e564f5052238bab38342a85e5f4af570b
+    as kubuntu_Fix-assignment-operator-and-add-copy-constructor.diff
+    to fix crash when using the desktop grid layout.
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 30 Jul 2011 20:01:32 +0200
+
 kdeplasma-addons (4:4.7.0-0ubuntu1) oneiric; urgency=low
 
   * New upstream release
