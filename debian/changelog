@@ -1,3 +1,11 @@
+kdeplasma-addons (4:4.7.0-0ubuntu3) oneiric; urgency=low
+
+  * Switch to build-dep on libqwt-dev to support transition to qwt6
+  * Add debian/patches/qwt6_build.patch backported from upstream trunk to
+    fix FTBFS with newer qwt
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 25 Aug 2011 12:23:57 -0400
+
 kdeplasma-addons (4:4.7.0-0ubuntu2) oneiric; urgency=low
 
   * Cherry-pick upstream commit 67b5c56e564f5052238bab38342a85e5f4af570b

@@ -2,3 +2,4 @@ kubuntu_04_kimpanel_disable_scim.diff
 #kubuntu_02_microblog_default_configuration.diff
 #kubuntu_03_opendestop_setup.diff
 kubuntu_Fix-assignment-operator-and-add-copy-constructor.diff
+qwt6_build.patch

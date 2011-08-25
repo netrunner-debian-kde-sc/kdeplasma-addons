@@ -1,0 +1,17 @@
+Backport from KDE trunk b3527f12ad9f577535d07e9614cfda9ef8131910
+Index: kdeplasma-addons-4.7.0/applets/kdeobservatory/src/commithistoryview.cpp
+===================================================================
+--- kdeplasma-addons-4.7.0.orig/applets/kdeobservatory/src/commithistoryview.cpp	2011-08-25 12:21:01.379133375 -0400
++++ kdeplasma-addons-4.7.0/applets/kdeobservatory/src/commithistoryview.cpp	2011-08-25 12:22:39.299133403 -0400
+@@ -124,7 +124,11 @@
+         plot->setCanvasBackground(QColor(0, 0, 140));
+ 
+         QwtPlotCurve *curve = new QwtPlotCurve;
++#if QWT_VERSION >= (((6) << 16) | ((0) << 8) | (0))
++        curve->setSamples(x, y, j);	
++#else
+         curve->setData(x, y, j);
++#endif
+         delete []x;
+         delete []y;
+ 
