@@ -1,10 +1,10 @@
-kdeplasma-addons (4:4.7.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.1-0ubuntu1) oneiric; urgency=low
 
   * New upstream release
   * droped qwt6_build.patch
   * droped kubuntu_Fix-assignment-operator-and-add-copy-constructor.diff
 
- -- Jonathan Kolberg <bulldog98@kubuntu-de.org>  Sun, 04 Sep 2011 11:26:03 +0200
+ -- Jonathan Kolberg <bulldog98@kubuntu-de.org>  Fri, 09 Sep 2011 00:22:29 -0400
 
 kdeplasma-addons (4:4.7.0-0ubuntu3) oneiric; urgency=low
 
