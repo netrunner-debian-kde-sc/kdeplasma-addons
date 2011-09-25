@@ -6,6 +6,7 @@ kdeplasma-addons (4:4.7.1-0r0) UNRELEASED; urgency=low
   * Update build depends:
     - Bump kde-sc-dev-latest build dependency to 4:4.7.1.
     - Bump the rest of the KDE SC build depends to 4:4.7.
+  * Update installed files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 25 Sep 2011 20:35:31 +0200
 

@@ -16,9 +16,9 @@ usr/lib/libplasmacomicprovidercore.so.1.0.0
 usr/lib/libplasmapotdprovidercore.so.1
 usr/lib/libplasmapotdprovidercore.so.1.0.0
 usr/lib/libplasmaweather.so.4
-usr/lib/libplasmaweather.so.4.6.0
+usr/lib/libplasmaweather.so.4.7.0
 usr/lib/librtm.so.4
-usr/lib/librtm.so.4.6.0
+usr/lib/librtm.so.4.7.0
 usr/share/kde4/apps/plasma/services/kdeobservatory.operations
 usr/share/kde4/apps/plasma/services/ocsPerson.operations
 usr/share/kde4/apps/plasma/services/rtmauth.operations
