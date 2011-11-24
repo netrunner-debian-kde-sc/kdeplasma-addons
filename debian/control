@@ -44,6 +44,55 @@ Description: additional widgets for Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
  desktop.
  .
+ This package provides the following widgets:
+  * Binary Clock
+  * Black Board
+  * Bookmarks
+  * Bouncy Ball
+  * Bubblemon
+  * Calculator
+  * Character Selector
+  * Color Picker
+  * Comic Strip
+  * Dictionary
+  * Eyes
+  * Fifteen Puzzle
+  * File Watcher
+  * Fuzzy Clock
+  * Incoming Message
+  * Input Method Panel
+  * Knowledge Base
+  * Konqueror Profiles
+  * Konsole Profile
+  * LCD Weather Station
+  * Leave a Note
+  * Life
+  * Luna
+  * Magnifique
+  * Media Player
+  * Microblogging
+  * News
+  * Notes
+  * Now Playing
+  * OpenDesktop.org Community
+  * OpenDesktop.org Social News
+  * Paste
+  * Pastebin
+  * Picture Frame
+  * Plasmaboard
+  * Previewer
+  * Qalculate!
+  * Remember The Milk
+  * RSSNOW
+  * Show Widget Dashboard
+  * Show Desktop
+  * Spell Check
+  * System Load Viewer
+  * Timer
+  * Unit Converter
+  * Weather Forecast
+  * Web Slice
+ .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-containments-addons
@@ -80,6 +129,24 @@ Description: additional runners for Plasma and Krunner
  (the "run command" dialog of Plasma) to reveal special search results.
  If you use krunner a lot, you will probably like this package.
  .
+ This package contains the following runners:
+  * Audio Player Control
+  * Calendar Events
+  * Contacts
+  * Date and Time
+  * Kate Sessions
+  * KDE TechBase
+  * KDE Userbase Documentation
+  * Konqueror Sessions
+  * Konsole Sessions
+  * Kopete Contacts
+  * Special Characters
+  * Spell Checker
+  * Unit Converter
+  * Web Browser History
+  * Wikipedia
+  * Wikitravel
+ .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-wallpapers-addons
@@ -90,6 +157,14 @@ Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: additional wallpaper plugins for Plasma
  This package contains additional Plasma wallpaper plugins that are used in 
  the Plasma desktop to give marble, mandelbrot and other such wallpapers.
+ .
+ This package contains the following wallpaper plugins:
+  * Globe (Marble)
+  * Mandelbrot
+  * Pattern
+  * Virus
+  * Weather
+ .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-widget-lancelot

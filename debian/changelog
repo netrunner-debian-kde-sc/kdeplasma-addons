@@ -11,6 +11,10 @@ kdeplasma-addons (4:4.7.2-0r0) UNRELEASED; urgency=low
   [ Eshat Cakar ]
   * Add myself to uploaders
 
+  [ Pino Toscano ]
+  * Improve descriptions of plasma-widgets-addons, plasma-runners-addons,
+    and plasma-wallpapers-addons listing all the plugins contained in each.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 16 Oct 2011 00:17:34 +0200
 
 kdeplasma-addons (4:4.6.5-1) unstable; urgency=low
