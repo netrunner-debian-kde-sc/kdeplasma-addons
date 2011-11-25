@@ -1,8 +1,56 @@
-kdeplasma-addons (4:4.7.3-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.3-0ubuntu1) precise; urgency=low
 
   * New upstream release
+  * Merge from debian. Remaining changes:
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kde-wallpapers
+    - Add plasma-widget-kimpanel-backend-ibus.{install, postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons.install
+    - Build against libboost1.46-dev
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widgets-addons (<< 4:4.4.60)
+    - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-widgets-addons Breaks/Replaces plasma-widget-system-status
+    - Do not build-dep on libscim-dev
+    - Add build-dep on libqwt-dev
+    - kubuntu_04_kimpanel_disable_scim.diff to build kimpanel without scim
+  * Drop build-depends on shared-mime-info, libglib2.0-dev, unused
+  * kdeplasma-addons-dbg dependency kdebase-workspace-dbg -> kde-workspace-dbg
 
- -- Philip Muškovac <yofel@kubuntu.org>  Tue, 01 Nov 2011 18:20:23 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 23 Nov 2011 23:46:45 +0000
+
+kdeplasma-addons (4:4.7.2-0r0) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+  [ José Manuel Santamaría Lema ]
+  * Update build depends:
+    - Bump kde-sc-dev-latest build dependency to 4:4.7.2.
+    - Bump the rest of the KDE SC build depends to 4:4.7.
+  * Update installed files.
+  
+  [ Eshat Cakar ]
+  * Add myself to uploaders
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 16 Oct 2011 00:17:34 +0200
+
+kdeplasma-addons (4:4.6.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ Felix Geyer ]
+  * Fix name of the clean override target.
+
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.6.5.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 18 Jul 2011 21:53:59 +0300
 
 kdeplasma-addons (4:4.7.2-0ubuntu1) oneiric-proposed; urgency=low
 

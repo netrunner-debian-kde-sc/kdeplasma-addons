@@ -1,5 +1,6 @@
 usr/lib/kde4/plasma_comic_krossprovider.so
 usr/lib/kde4/plasma_engine_comic.so
+usr/lib/kde4/plasma_engine_kdeobservatory.so
 usr/lib/kde4/plasma_engine_microblog.so
 usr/lib/kde4/plasma_engine_ocs.so
 usr/lib/kde4/plasma_engine_potd.so
@@ -18,6 +19,7 @@ usr/lib/libplasmaweather.so.4
 usr/lib/libplasmaweather.so.4.7.0
 usr/lib/librtm.so.4
 usr/lib/librtm.so.4.7.0
+usr/share/kde4/apps/plasma/services/kdeobservatory.operations
 usr/share/kde4/apps/plasma/services/ocsPerson.operations
 usr/share/kde4/apps/plasma/services/rtmauth.operations
 usr/share/kde4/apps/plasma/services/rtmtask.operations
@@ -32,6 +34,7 @@ usr/share/kde4/services/plasma-dataengine-comic.desktop
 usr/share/kde4/services/plasma-dataengine-microblog.desktop
 usr/share/kde4/services/plasma-dataengine-ocs.desktop
 usr/share/kde4/services/plasma-dataengine-potd.desktop
+usr/share/kde4/services/plasma-engine-kdeobservatory.desktop
 usr/share/kde4/services/plasma-engine-rtm.desktop
 usr/share/kde4/services/plasma-packagestructure-comic.desktop
 usr/share/kde4/services/wcpotdprovider.desktop
