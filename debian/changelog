@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.7.3-0ubuntu3) precise; urgency=low
+
+  * Add build-dep on shared-mime-info, also needed
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 25 Nov 2011 02:56:46 +0000
+
 kdeplasma-addons (4:4.7.3-0ubuntu2) precise; urgency=low
 
   * Add back build-dep on libglib2.0-dev, needed by libqalculate
