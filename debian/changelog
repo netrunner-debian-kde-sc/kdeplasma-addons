@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.7.3-0ubuntu2) precise; urgency=low
+
+  * Add back build-dep on libglib2.0-dev, needed by libqalculate
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 25 Nov 2011 02:43:54 +0000
+
 kdeplasma-addons (4:4.7.3-0ubuntu1) precise; urgency=low
 
   * New upstream release
