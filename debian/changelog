@@ -1,11 +1,11 @@
-kdeplasma-addons (4:4.7.4-0r0) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.4-1) experimental; urgency=low
 
   * New upstream release.
 
   [ José Manuel Santamaría Lema ]
   * Bump kde-sc-dev-latest build dependency to 4:4.7.4.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 08 Dec 2011 03:49:19 +0100
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Dec 2011 01:40:15 +0100
 
 kdeplasma-addons (4:4.7.2-1) experimental; urgency=low
 
