@@ -7,11 +7,11 @@ include /usr/share/pkg-kde-tools/qt-kde-team/2/debian-qt-kde.mk
 override_dh_strip:
 	$(overridden_command) --dbg-package=kdeplasma-addons-dbg
 
-override_dh_install:
-	mkdir -p $(CURDIR)/debian/tmp/usr/lib/ibus/
-	cp $(CURDIR)/applets/kimpanel/backend/ibus/panel.py \
-		$(CURDIR)/debian/tmp/usr/lib/ibus/ibus-ui-kde
-	$(overridden_command)
+#override_dh_install:
+#	mkdir -p $(CURDIR)/debian/tmp/usr/lib/ibus/
+#	cp $(CURDIR)/applets/kimpanel/backend/ibus/panel.py \
+#		$(CURDIR)/debian/tmp/usr/lib/ibus/ibus-ui-kde
+#	$(overridden_command)
 
 override_dh_auto_clean:
 	$(overridden_command)

@@ -41,3 +41,5 @@ usr/share/kde4/services/plasma-wallpaper-marble.desktop
 usr/share/kde4/services/plasma-wallpaper-pattern.desktop
 usr/share/kde4/services/plasma-wallpaper-virus.desktop
 usr/share/kde4/services/plasma-wallpaper-weather.desktop
+usr/lib/kde4/plasma_wallpaper_potd.so
+usr/share/kde4/services/plasma-wallpaper-potd.desktop

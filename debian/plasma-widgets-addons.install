@@ -160,3 +160,11 @@ usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
 usr/share/kde4/services/plasma_applet_plasmaboard.desktop
+usr/lib/kde4/plasma_applet_icontasks.so
+usr/share/kde4/services/plasma-applet-icontasks.desktop
+usr/share/kde4/apps/desktoptheme/default/icontasks/indicators.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/dropindicators.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/progress.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/badge.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/launcherseparator.svgz
+usr/share/kde4/apps/kdeplasma-addons/mediabuttonsrc

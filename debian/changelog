@@ -1,3 +1,13 @@
+kdeplasma-addons (4:4.7.90-0ubuntu1) precise; urgency=low
+
+  * new upstream beta release
+  * Remove kubuntu_04_kimpanel_disable_scim.diff now scim applet has gone
+  * Remove ibus bits from debian/rules
+  * Remove kimpanel packages
+  * Add build-dep on libdbusmenu-qt-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Dec 2011 14:17:52 +0000
+
 kdeplasma-addons (4:4.7.3-0ubuntu3) precise; urgency=low
 
   * Add build-dep on shared-mime-info, also needed

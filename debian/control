@@ -12,7 +12,8 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.7.2),
  libkexiv2-dev (>= 4:4.7), libmarble-dev (>= 4:4.7),
  libqt4-opengl-dev, libboost1.46-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libqwt-dev, libglib2.0-dev, shared-mime-info
+ libqca2-dev, libqtwebkit-dev, libqwt-dev, libglib2.0-dev, shared-mime-info,
+ libdbusmenu-qt-dev
 Standards-Version: 3.9.2
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kdeplasma-addons/ubuntu
@@ -121,14 +122,14 @@ Description: addons for KDE 4 Plasma - universal input method widget
  .
  This package is part of the KDE plasma addons module.
 
-Package: plasma-widget-kimpanel-backend-ibus
-Architecture: all
-Section: kde
-Depends: ${shlibs:Depends}, ibus-qt4, python
-Description: addons for KDE 4 Plasma - universal input method widget
- Kimpanel is a a Plasma widget for the ibus input method.
- .
- This package contains the ibus backend for kimpanel.
+#Package: plasma-widget-kimpanel-backend-ibus
+#Architecture: all
+#Section: kde
+#Depends: ${shlibs:Depends}, ibus-qt4, python
+#Description: addons for KDE 4 Plasma - universal input method widget
+# Kimpanel is a a Plasma widget for the ibus input method.
+# .
+# This package contains the ibus backend for kimpanel.
 
 Package: plasma-widget-kdeobservatory
 Architecture: any
