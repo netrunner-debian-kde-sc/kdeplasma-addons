@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.7.90-0ubuntu3) UNRELEASED; urgency=low
+
+  * Fix Vcs-* headers to match current Kubuntu branches
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 22 Dec 2011 23:06:08 -0500
+
 kdeplasma-addons (4:4.7.90-0ubuntu2) precise; urgency=low
 
   * Fix lintian warning description-contains-duplicated-word.

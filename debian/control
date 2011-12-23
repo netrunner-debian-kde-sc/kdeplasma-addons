@@ -16,8 +16,8 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.7.2),
  libdbusmenu-qt-dev
 Standards-Version: 3.9.2
 Homepage: http://plasma.kde.org/
-Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kdeplasma-addons/ubuntu
-Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kdeplasma-addons/ubuntu
+Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
+Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
 X-Debian-Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
 X-Debian-Vcs-Git: git://git.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
 
