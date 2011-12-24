@@ -1,8 +1,13 @@
-kdeplasma-addons (4:4.7.90-0ubuntu3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.95-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Philip Muškovac ]
+  * New upstream release candidate
+    - update plasma-widgets-addons.install
+  
+  [ Scott Kitterman ]
   * Fix Vcs-* headers to match current Kubuntu branches
 
- -- Scott Kitterman <scott@kitterman.com>  Thu, 22 Dec 2011 23:06:08 -0500
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 24 Dec 2011 22:35:24 +0100
 
 kdeplasma-addons (4:4.7.90-0ubuntu2) precise; urgency=low
 
