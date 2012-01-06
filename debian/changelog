@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.7.97-0ubuntu1~ppa1) precise; urgency=low
+kdeplasma-addons (4:4.7.97-0ubuntu1) precise; urgency=low
 
   * New upstream release candidate
   * Remove kubuntu_fix_qreal_float.diff now upstream
