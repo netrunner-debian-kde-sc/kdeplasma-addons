@@ -43,8 +43,8 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
 Suggests: plasma-widget-lancelot
-Replaces: plasma-widget-system-status
-Breaks: plasma-widget-system-status
+Replaces: plasma-widget-system-status, plasma-engine-kdeobservatory (<< 4.8.0)
+Breaks: plasma-widget-system-status, plasma-engine-kdeobservatory (<< 4.8.0)
 Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
@@ -135,6 +135,8 @@ Package: plasma-widget-kdeobservatory
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}
+Replaces: plasma-dataengines-addons (<< 4:4.8.0)
+Breaks: plasma-dataengines-addons (<< 4:4.8.0)
 Description: addons for KDE 4 Plasma - KDE development tracking tool
  The KDE Observatory Plasma widget is a way to track various metrics of the
  KDE project as a whole, including commit counts, Krazy2 report numbers for

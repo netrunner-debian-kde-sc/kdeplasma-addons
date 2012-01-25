@@ -1,8 +1,11 @@
-kdeplasma-addons (4:4.8.0-0ubuntu1~ppa1) precise; urgency=low
+kdeplasma-addons (4:4.8.0-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release
+  * really remove kdeobservatory files from other packages
+  * plasma-widgets-addons replaces/breaks plasma-engine-kdeobservatory
+  * plasma-engine-kdeobservatory replaces/breaks old plasma-widgets-addons
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 20 Jan 2012 12:10:23 +0000
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Jan 2012 12:47:23 +0000
 
 kdeplasma-addons (4:4.7.97-0ubuntu1) precise; urgency=low
 
