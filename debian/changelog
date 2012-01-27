@@ -3,6 +3,7 @@ kdeplasma-addons (4:4.8.0-0ubuntu2) UNRELEASED; urgency=low
   * plasma-widget-kimpanel conflicts/replaces
     plasma-widget-kimpanel-backend-ibus since the latter doesn't exist
     anymore.
+  * Add ${misc:Depends} to all packages where it was missing.
 
  -- Felix Geyer <debfx@ubuntu.com>  Fri, 27 Jan 2012 14:20:42 +0100
 

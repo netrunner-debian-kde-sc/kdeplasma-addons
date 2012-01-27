@@ -116,7 +116,7 @@ Description: lancelot widget for Plasma
 Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: plasma-widget-kimpanel-backend-ibus
 Replaces: plasma-widget-kimpanel-backend-ibus
 Description: addons for KDE 4 Plasma - universal input method widget
@@ -127,7 +127,7 @@ Description: addons for KDE 4 Plasma - universal input method widget
 #Package: plasma-widget-kimpanel-backend-ibus
 #Architecture: all
 #Section: kde
-#Depends: ${shlibs:Depends}, ibus-qt4, python
+#Depends: ${shlibs:Depends}, ${misc:Depends}, ibus-qt4, python
 #Description: addons for KDE 4 Plasma - universal input method widget
 # Kimpanel is a a Plasma widget for the ibus input method.
 # .
@@ -136,7 +136,7 @@ Description: addons for KDE 4 Plasma - universal input method widget
 Package: plasma-widget-kdeobservatory
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: plasma-dataengines-addons (<< 4:4.8.0)
 Breaks: plasma-dataengines-addons (<< 4:4.8.0)
 Description: addons for KDE 4 Plasma - KDE development tracking tool
