@@ -116,7 +116,9 @@ Description: lancelot widget for Plasma
 Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, plasma-widget-kimpanel-backend-ibus
+Depends: ${shlibs:Depends}
+Conflicts: plasma-widget-kimpanel-backend-ibus
+Replaces: plasma-widget-kimpanel-backend-ibus
 Description: addons for KDE 4 Plasma - universal input method widget
  Kimpanel is a Plasma widget for the ibus input method.
  .
