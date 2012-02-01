@@ -4,6 +4,7 @@ kdeplasma-addons (4:4.8.0-0r0) UNRELEASED; urgency=low
 
   [ Eshat Cakar ]
   * Bump various kde build dependecies to 4:4.8.
+  * Update not-installed files.
   
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 25 Jan 2012 11:39:58 +0100
 
