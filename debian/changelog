@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.8.0-0r0) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 25 Jan 2012 11:39:58 +0100
+
 kdeplasma-addons (4:4.7.4-1) experimental; urgency=low
 
   * New upstream release.
