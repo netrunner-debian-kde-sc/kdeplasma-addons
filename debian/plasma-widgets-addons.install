@@ -13,6 +13,7 @@ usr/lib/kde4/plasma_applet_fifteenPuzzle.so
 usr/lib/kde4/plasma_applet_fileWatcher.so
 usr/lib/kde4/plasma_applet_frame.so
 usr/lib/kde4/plasma_applet_fuzzy_clock.so
+usr/lib/kde4/plasma_applet_icontasks.so
 usr/lib/kde4/plasma_applet_incomingmsg.so
 usr/lib/kde4/plasma_applet_kimpanel.so
 usr/lib/kde4/plasma_applet_knowledgebase.so
@@ -89,6 +90,11 @@ usr/share/kde4/apps/bball/bounce.ogg
 usr/share/kde4/apps/bball/football.svgz
 usr/share/kde4/apps/desktoptheme/default/bubblemon/bubble.svg
 usr/share/kde4/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
+usr/share/kde4/apps/desktoptheme/default/icontasks/badge.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/dropindicators.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/indicators.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/launcherseparator.svgz
+usr/share/kde4/apps/desktoptheme/default/icontasks/progress.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/arrows.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/background.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svgz
@@ -104,6 +110,7 @@ usr/share/kde4/apps/desktoptheme/default/widgets/nowplaying/nocover.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-16.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-22.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/timer.svgz
+usr/share/kde4/apps/kdeplasma-addons/mediabuttonsrc
 usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
 usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 usr/share/kde4/apps/plasma-applet-opendesktop/user.css
@@ -126,6 +133,7 @@ usr/share/kde4/services/plasma-applet-calculator.desktop
 usr/share/kde4/services/plasma-applet-charselect.desktop
 usr/share/kde4/services/plasma-applet-eyes.desktop
 usr/share/kde4/services/plasma-applet-fifteenPuzzle.desktop
+usr/share/kde4/services/plasma-applet-icontasks.desktop
 usr/share/kde4/services/plasma-applet-incomingmsg.desktop
 usr/share/kde4/services/plasma-applet-kimpanel.desktop
 usr/share/kde4/services/plasma-applet-knowledgebase.desktop
