@@ -7,6 +7,10 @@ kdeplasma-addons (4:4.8.0-0r0) UNRELEASED; urgency=low
   * Update not-installed files.
   * Update installed files.
   * Add libdbusmenu-qt-dev to build dependecies to support icontasks widget.
+
+  [ Pino Toscano ]
+  * Add marble-4.7-compat.diff to make the marble plasma wallpaper compile
+    also with marble 4.7.
   
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 25 Jan 2012 11:39:58 +0100
 
