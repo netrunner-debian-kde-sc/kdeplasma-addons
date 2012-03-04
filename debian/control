@@ -6,10 +6,10 @@ XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.
 Uploaders: Sune Vuorela <sune@debian.org>, Fathi Boudra <fabo@debian.org>,
  Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modax@debian.org>, George Kiagiadakis <kiagiadakis.george@gmail.com>,
  José Manuel Santamaría Lema <panfaust@gmail.com>, Eshat Cakar <info@eshat.de>
-Build-Depends: kde-sc-dev-latest (>= 4:4.8.0),
+Build-Depends: kde-sc-dev-latest (>= 4:4.8.1),
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdelibs5-dev (>= 4:4.7), kdepimlibs5-dev (>= 4:4.7), kde-workspace-dev (>= 4:4.7),
- libkexiv2-dev (>= 4:4.7), libmarble-dev (>= 4:4.7),
+ kdelibs5-dev (>= 4:4.8.1), kdepimlibs5-dev (>= 4:4.8.1), kde-workspace-dev (>= 4:4.8.1),
+ libkexiv2-dev (>= 4:4.8.1), libmarble-dev (>= 4:4.8.1),
  libqt4-opengl-dev, libboost1.46-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev, libqwt-dev, libglib2.0-dev, shared-mime-info,
