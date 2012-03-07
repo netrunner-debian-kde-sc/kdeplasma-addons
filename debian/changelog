@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.7.4-2) unstable; urgency=low
+
+  * Team upload. Upload to unstable.
+  * Update uploaders, remove Armin.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 07 Mar 2012 11:25:47 +0100
+
 kdeplasma-addons (4:4.7.4-1) experimental; urgency=low
 
   * New upstream release.
