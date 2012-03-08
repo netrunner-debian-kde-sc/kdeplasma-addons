@@ -1,6 +1,7 @@
-kdeplasma-addons (4:4.8.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.8.1-0ubuntu1) precise; urgency=low
 
   * New upstream release 
+  * plasma-widgets-addons breaks/replaces plasma-widget-icon-tasks
 
  -- Philip Muškovac <yofel@kubuntu.org>  Sat, 03 Mar 2012 23:00:13 +0100
 
