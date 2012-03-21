@@ -11,7 +11,7 @@ kdeplasma-addons (4:4.8.0-0r0) UNRELEASED; urgency=low
   [ Pino Toscano ]
   * Add marble-4.7-compat.diff to make the marble plasma wallpaper compile
     also with marble 4.7.
-  
+
   [ José Manuel Santamaría Lema ]
   * Bump kde-sc-dev-latest build dependency to 4:4.8.1.
   * Bump Standards-Version to 3.9.3, no changes needed.
