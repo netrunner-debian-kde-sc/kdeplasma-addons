@@ -1,4 +1,5 @@
 usr/lib/kde4/libexec/kimpanel-scim-panel
+usr/lib/kde4/plasma-applet_systemloadviewer.so
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
 usr/lib/kde4/plasma_applet_blackboard.so
@@ -29,10 +30,10 @@ usr/lib/kde4/plasma_applet_microblog.so
 usr/lib/kde4/plasma_applet_news.so
 usr/lib/kde4/plasma_applet_notes.so
 usr/lib/kde4/plasma_applet_nowplaying.so
-usr/lib/kde4/plasma_applet_opendesktop_activities.so
 usr/lib/kde4/plasma_applet_opendesktop.so
-usr/lib/kde4/plasma_applet_pastebin.so
+usr/lib/kde4/plasma_applet_opendesktop_activities.so
 usr/lib/kde4/plasma_applet_paste.so
+usr/lib/kde4/plasma_applet_pastebin.so
 usr/lib/kde4/plasma_applet_plasmaboard.so
 usr/lib/kde4/plasma_applet_previewer.so
 usr/lib/kde4/plasma_applet_qalculate.so
@@ -41,7 +42,6 @@ usr/lib/kde4/plasma_applet_rtm.so
 usr/lib/kde4/plasma_applet_showdashboard.so
 usr/lib/kde4/plasma_applet_showdesktop.so
 usr/lib/kde4/plasma_applet_spellcheck.so
-usr/lib/kde4/plasma-applet_systemloadviewer.so
 usr/lib/kde4/plasma_applet_timer.so
 usr/lib/kde4/plasma_applet_unitconverter.so
 usr/lib/kde4/plasma_applet_weather.so
@@ -99,9 +99,9 @@ usr/share/kde4/apps/desktoptheme/default/rssnow/arrows.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/background.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svgz
 usr/share/kde4/apps/desktoptheme/default/stylesheets/news.css
-usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
-usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd.svgz
 usr/share/kde4/apps/desktoptheme/default/weather/wind-arrows.svgz
+usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd.svgz
+usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/eyes.svg
 usr/share/kde4/apps/desktoptheme/default/widgets/luna.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/microblog.svgz
@@ -114,16 +114,17 @@ usr/share/kde4/apps/kdeplasma-addons/mediabuttonsrc
 usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
 usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 usr/share/kde4/apps/plasma-applet-opendesktop/user.css
+usr/share/kde4/apps/plasma_pastebin/plasma_pastebin.notifyrc
 usr/share/kde4/apps/plasmaboard/basic.xml
 usr/share/kde4/apps/plasmaboard/extended.xml
 usr/share/kde4/apps/plasmaboard/full.xml
 usr/share/kde4/apps/plasmaboard/mid.xml
 usr/share/kde4/apps/plasmaboard/tablet.xml
-usr/share/kde4/apps/plasma_pastebin/plasma_pastebin.notifyrc
 usr/share/kde4/apps/rssnow/feeds
-usr/share/kde4/config/comic.knsrc
 usr/share/kde4/config.kcfg/kimpanelconfig.kcfg
+usr/share/kde4/config/comic.knsrc
 usr/share/kde4/config/pastebin.knsrc
+usr/share/kde4/services/ServiceMenus/preview.desktop
 usr/share/kde4/services/plasma-applet-bball.desktop
 usr/share/kde4/services/plasma-applet-binaryclock.desktop
 usr/share/kde4/services/plasma-applet-blackboard.desktop
@@ -149,9 +150,8 @@ usr/share/kde4/services/plasma-applet-news.desktop
 usr/share/kde4/services/plasma-applet-nowplaying.desktop
 usr/share/kde4/services/plasma-applet-opendesktop-activities.desktop
 usr/share/kde4/services/plasma-applet-opendesktop.desktop
-usr/share/kde4/services/plasma-applet-pastebin.desktop
 usr/share/kde4/services/plasma-applet-paste.desktop
-usr/share/kde4/services/plasma_applet_plasmaboard.desktop
+usr/share/kde4/services/plasma-applet-pastebin.desktop
 usr/share/kde4/services/plasma-applet-previewer.desktop
 usr/share/kde4/services/plasma-applet-qalculate.desktop
 usr/share/kde4/services/plasma-applet-rememberthemilk.desktop
@@ -174,4 +174,4 @@ usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
 usr/share/kde4/services/plasma-wallpaper-potd.desktop
-usr/share/kde4/services/ServiceMenus/preview.desktop
+usr/share/kde4/services/plasma_applet_plasmaboard.desktop
