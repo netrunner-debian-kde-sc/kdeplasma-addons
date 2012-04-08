@@ -3,7 +3,10 @@ kdeplasma-addons (4:4.8.0-0r0) UNRELEASED; urgency=low
   * New upstream release.
 
   [ Eshat Cakar ]
-  * Bump various kde build dependecies to 4:4.8.
+  * Bump various kde build dependecies to 4:4.8:
+    - kdelibs5-dev
+    - kdepimlibs5-dev
+    - kde-workspace-dev 
   * Update not-installed files.
   * Update installed files.
   * Add libdbusmenu-qt-dev to build dependecies to support icontasks widget.
