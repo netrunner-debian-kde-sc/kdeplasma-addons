@@ -10,6 +10,8 @@ kdeplasma-addons (4:4.8.2-0r0) UNRELEASED; urgency=low
   * Update not-installed files.
   * Update installed files.
   * Add libdbusmenu-qt-dev to build dependecies to support icontasks widget.
+  * Remove obsolete lintian override: 
+    package-name-doesnt-match-sonames libkimpanelruntime0
 
   [ Pino Toscano ]
   * Add marble-4.7-compat.diff to make the marble plasma wallpaper compile
