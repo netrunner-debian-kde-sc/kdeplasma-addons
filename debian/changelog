@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.8.2-0ubuntu3) precise-proposed; urgency=low
+
+  * Rebuild for .pot generation
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 12 Apr 2012 16:32:03 +0100
+
 kdeplasma-addons (4:4.8.2-0ubuntu2) precise; urgency=low
 
   * Support the FD.o desktop file actions in the icon tasks applet.
