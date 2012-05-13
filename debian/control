@@ -28,7 +28,6 @@ Depends: ${misc:Depends}, plasma-widgets-addons (>= ${source:Version}),
  plasma-widget-lancelot (>= ${source:Version}),
  plasma-wallpapers-addons (>= ${source:Version}),
  plasma-containments-addons (>= ${source:Version})
-Suggests: plasma-widget-kimpanel (>= ${source:Version})
 Description: addons for Plasma
  The KDE Plasma addons module is a collection of additional Plasma
  data engines, widgets and krunner plugins. It is part of
@@ -43,6 +42,7 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
 Recommends: plasma-widget-lancelot
+Suggests: plasma-widget-kimpanel
 Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
@@ -64,7 +64,6 @@ Description: additional widgets for Plasma
   * File Watcher
   * Fuzzy Clock
   * Incoming Message
-  * Input Method Panel
   * Knowledge Base
   * Konqueror Profiles
   * Konsole Profile
@@ -201,7 +200,7 @@ Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- plasma-wallpapers-addons (= ${binary:Version}), kde-workspace-dbg
+ plasma-wallpapers-addons (= ${binary:Version}), plasma-widget-kimpanel (= ${binary:Version}), kde-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related
