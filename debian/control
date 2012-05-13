@@ -183,6 +183,17 @@ Description: lancelot widget for Plasma
  .
  This package is part of the KDE Plasma addons module.
 
+Package: plasma-widget-kimpanel
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: plasma-widgets-addons (<< 4:4.8.3)
+Conflicts: plasma-widgets-addons (<< 4:4.8.3)
+Description: KIMPanel widget for Plasma
+ This package provides the KDE Input Method Panel widget for Plasma.
+ .
+ This package is part of the KDE Plasma addons module.
+
 Package: kdeplasma-addons-dbg
 Section: debug
 Architecture: any

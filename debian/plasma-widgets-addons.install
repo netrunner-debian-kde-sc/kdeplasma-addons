@@ -1,4 +1,3 @@
-usr/lib/kde4/libexec/kimpanel-scim-panel
 usr/lib/kde4/plasma-applet_systemloadviewer.so
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
@@ -16,7 +15,6 @@ usr/lib/kde4/plasma_applet_frame.so
 usr/lib/kde4/plasma_applet_fuzzy_clock.so
 usr/lib/kde4/plasma_applet_icontasks.so
 usr/lib/kde4/plasma_applet_incomingmsg.so
-usr/lib/kde4/plasma_applet_kimpanel.so
 usr/lib/kde4/plasma_applet_knowledgebase.so
 usr/lib/kde4/plasma_applet_kolourpicker.so
 usr/lib/kde4/plasma_applet_konqprofiles.so
@@ -47,7 +45,6 @@ usr/lib/kde4/plasma_applet_unitconverter.so
 usr/lib/kde4/plasma_applet_weather.so
 usr/lib/kde4/plasma_applet_weatherstation.so
 usr/lib/kde4/plasma_applet_webslice.so
-usr/lib/kde4/plasma_engine_kimpanel.so
 usr/lib/kde4/plasma_wallpaper_potd.so
 usr/share/icons/hicolor/128x128/apps/bball.png
 usr/share/icons/hicolor/128x128/apps/eyes.png
@@ -136,7 +133,6 @@ usr/share/kde4/services/plasma-applet-eyes.desktop
 usr/share/kde4/services/plasma-applet-fifteenPuzzle.desktop
 usr/share/kde4/services/plasma-applet-icontasks.desktop
 usr/share/kde4/services/plasma-applet-incomingmsg.desktop
-usr/share/kde4/services/plasma-applet-kimpanel.desktop
 usr/share/kde4/services/plasma-applet-knowledgebase.desktop
 usr/share/kde4/services/plasma-applet-konqprofiles.desktop
 usr/share/kde4/services/plasma-applet-konsoleprofiles.desktop
@@ -167,7 +163,6 @@ usr/share/kde4/services/plasma-applet-weatherstation.desktop
 usr/share/kde4/services/plasma-applet-webslice.desktop
 usr/share/kde4/services/plasma-clock-fuzzy.desktop
 usr/share/kde4/services/plasma-comic-default.desktop
-usr/share/kde4/services/plasma-dataengine-kimpanel.desktop
 usr/share/kde4/services/plasma-dict-default.desktop
 usr/share/kde4/services/plasma-fileWatcher-default.desktop
 usr/share/kde4/services/plasma-frame-default.desktop
