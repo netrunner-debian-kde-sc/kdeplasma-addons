@@ -28,6 +28,7 @@ Depends: ${misc:Depends}, plasma-widgets-addons (>= ${source:Version}),
  plasma-widget-lancelot (>= ${source:Version}),
  plasma-wallpapers-addons (>= ${source:Version}),
  plasma-containments-addons (>= ${source:Version})
+Suggests: plasma-widget-kimpanel (>= ${source:Version})
 Description: addons for Plasma
  The KDE Plasma addons module is a collection of additional Plasma
  data engines, widgets and krunner plugins. It is part of
