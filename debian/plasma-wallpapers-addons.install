@@ -1,6 +1,7 @@
 usr/lib/kde4/plasma_wallpaper_mandelbrot.so
 usr/lib/kde4/plasma_wallpaper_marble.so
 usr/lib/kde4/plasma_wallpaper_pattern.so
+usr/lib/kde4/plasma_wallpaper_potd.so
 usr/lib/kde4/plasma_wallpaper_virus.so
 usr/lib/kde4/plasma_wallpaper_weather.so
 usr/share/kde4/apps/plasma_wallpaper_pattern/patterns/bees.desktop
@@ -39,5 +40,6 @@ usr/share/kde4/config/virus_wallpaper.knsrc
 usr/share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 usr/share/kde4/services/plasma-wallpaper-marble.desktop
 usr/share/kde4/services/plasma-wallpaper-pattern.desktop
+usr/share/kde4/services/plasma-wallpaper-potd.desktop
 usr/share/kde4/services/plasma-wallpaper-virus.desktop
 usr/share/kde4/services/plasma-wallpaper-weather.desktop

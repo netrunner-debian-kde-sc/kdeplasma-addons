@@ -45,7 +45,6 @@ usr/lib/kde4/plasma_applet_unitconverter.so
 usr/lib/kde4/plasma_applet_weather.so
 usr/lib/kde4/plasma_applet_weatherstation.so
 usr/lib/kde4/plasma_applet_webslice.so
-usr/lib/kde4/plasma_wallpaper_potd.so
 usr/share/icons/hicolor/128x128/apps/bball.png
 usr/share/icons/hicolor/128x128/apps/eyes.png
 usr/share/icons/hicolor/128x128/apps/lifegame.png
@@ -168,5 +167,4 @@ usr/share/kde4/services/plasma-fileWatcher-default.desktop
 usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
-usr/share/kde4/services/plasma-wallpaper-potd.desktop
 usr/share/kde4/services/plasma_applet_plasmaboard.desktop
