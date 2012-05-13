@@ -18,7 +18,7 @@ kdeplasma-addons (4:4.8.3-0r0) UNRELEASED; urgency=low
     also with marble 4.7.
   * Split the kimpanel Plasma widget in an own plasma-widget-kimpanel package.
   * Make plasma-widgets-addons suggest plasma-widget-kimpanel.
-  * Update description of plasma-widgets-addons with added/removed widgets.
+  * Update descriptions.
 
   [ José Manuel Santamaría Lema ]
   * Bump kde-sc-dev-latest build dependency to 4:4.8.3.
