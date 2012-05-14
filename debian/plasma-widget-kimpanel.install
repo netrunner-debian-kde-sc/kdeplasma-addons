@@ -1,4 +1,5 @@
 usr/lib/kde4/libexec/kimpanel-scim-panel
+usr/lib/kde4/libexec/kimpanel-ibus-panel
 usr/lib/kde4/plasma_applet_kimpanel.so
 usr/lib/kde4/plasma_engine_kimpanel.so
 usr/share/kde4/apps/plasma/services/kimpanel.operations

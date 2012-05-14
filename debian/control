@@ -14,7 +14,7 @@ Build-Depends: kde-sc-dev-latest (>= 4:4.8.3),
  libkexiv2-dev (>= 4:4.7), libmarble-dev (>= 4:4.7),
  libqt4-opengl-dev, libboost-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libscim-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev
+ libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev
 Standards-Version: 3.9.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git

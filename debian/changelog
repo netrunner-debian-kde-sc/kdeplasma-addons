@@ -19,6 +19,7 @@ kdeplasma-addons (4:4.8.3-0r1) UNRELEASED; urgency=low
   * Split the kimpanel Plasma widget in an own plasma-widget-kimpanel package.
   * Make plasma-widgets-addons suggest plasma-widget-kimpanel.
   * Update descriptions.
+  * Build depend on libibus-1.0-dev to add IBUS support in kimpanel.
 
   [ José Manuel Santamaría Lema ]
   * Bump kde-sc-dev-latest build dependency to 4:4.8.3.
