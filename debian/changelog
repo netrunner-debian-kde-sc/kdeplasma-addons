@@ -1,8 +1,9 @@
-kdeplasma-addons (4:4.8.3-0ubuntu0.1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.8.3-0ubuntu1) quantal; urgency=low
 
   * New upstream release
+  * Switch boost build-dep to 1.49 
 
- -- Philip Muškovac <yofel@kubuntu.org>  Thu, 03 May 2012 15:21:14 +0200
+ -- Philip Muškovac <yofel@kubuntu.org>  Mon, 14 May 2012 20:58:05 +0200
 
 kdeplasma-addons (4:4.8.2-0ubuntu3) precise-proposed; urgency=low
 
