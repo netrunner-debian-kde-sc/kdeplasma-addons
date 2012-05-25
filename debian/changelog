@@ -1,5 +1,7 @@
 kdeplasma-addons (4:4.7.4-3) UNRELEASED; urgency=low
 
+  [ Pino Toscano ]
+  * Improve the description of plasma-dataengines-addons. (Closes: #674596)
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 25 May 2012 22:19:20 +0200
 
