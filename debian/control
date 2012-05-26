@@ -119,8 +119,8 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: additional data engines for Plasma
  This package contains additional Plasma data engines shipped in Plasma
- addons module. These engines are needed by some plasma widgets
- Plasma widgets, but they may be useful for any other Plasma widget too.
+ addons module. These engines are needed by some Plasma widget shipped with
+ plasma-widgets-addons, but they may be useful for any other Plasma widgets too.
  .
  This package is part of the KDE Plasma addons module.
 

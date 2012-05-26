@@ -25,6 +25,9 @@ kdeplasma-addons (4:4.8.3-0r2) UNRELEASED; urgency=low
   * Bump kde-sc-dev-latest build dependency to 4:4.8.3.
   * Bump Standards-Version to 3.9.3, no changes needed.
 
+  [ Pino Toscano ]
+  * Improve the description of plasma-dataengines-addons. (Closes: #674596)
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 25 Jan 2012 11:39:58 +0100
 
 kdeplasma-addons (4:4.7.4-2) unstable; urgency=low
