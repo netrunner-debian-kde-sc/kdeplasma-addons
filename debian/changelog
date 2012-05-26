@@ -1,6 +1,7 @@
-kdeplasma-addons (4:4.8.3-0r2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.8.3-1) experimental; urgency=low
 
   * New upstream release.
+  * Team upload.
 
   [ Eshat Cakar ]
   * Bump various kde build dependecies to 4:4.8:
@@ -28,7 +29,7 @@ kdeplasma-addons (4:4.8.3-0r2) UNRELEASED; urgency=low
   [ Pino Toscano ]
   * Improve the description of plasma-dataengines-addons. (Closes: #674596)
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 25 Jan 2012 11:39:58 +0100
+ -- Modestas Vainius <modax@debian.org>  Sun, 27 May 2012 02:38:37 +0300
 
 kdeplasma-addons (4:4.7.4-2) unstable; urgency=low
 
