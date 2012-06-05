@@ -4,6 +4,7 @@ kdeplasma-addons (4:4.8.4-0r0) UNRELEASED; urgency=low
 
   [ Eshat Cakar ]
   * Add watch file.
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
 
  -- Eshat Cakar <info@eshat.de>  Wed, 06 Jun 2012 00:08:10 +0200
 
