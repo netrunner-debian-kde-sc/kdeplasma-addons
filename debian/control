@@ -3,18 +3,21 @@ Section: utils
 Priority: optional
 Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
-Uploaders: Sune Vuorela <sune@debian.org>, Fathi Boudra <fabo@debian.org>,
- Armin Berres <armin+debian@space-based.de>, Modestas Vainius <modax@debian.org>, George Kiagiadakis <kiagiadakis.george@gmail.com>,
- José Manuel Santamaría Lema <panfaust@gmail.com>, Eshat Cakar <info@eshat.de>
-Build-Depends: kde-sc-dev-latest (>= 4:4.8.3),
+Uploaders: Sune Vuorela <sune@debian.org>,
+ Fathi Boudra <fabo@debian.org>,
+ Modestas Vainius <modax@debian.org>,
+ George Kiagiadakis <kiagiadakis.george@gmail.com>,
+ José Manuel Santamaría Lema <panfaust@gmail.com>,
+ Eshat Cakar <info@eshat.de>
+Build-Depends: kde-sc-dev-latest (>= 4:4.8.80),
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdelibs5-dev (>= 4:4.8.1), kdepimlibs5-dev (>= 4:4.8.1), kde-workspace-dev (>= 4:4.8.1),
- libkexiv2-dev (>= 4:4.8.1), libmarble-dev (>= 4:4.8.1),
+ kdelibs5-dev (>= 4:4.8), kdepimlibs5-dev (>= 4:4.8), kde-workspace-dev (>= 4:4.8),
+ libkexiv2-dev (>= 4:4.7), libmarble-dev (>= 4:4.7),
  libqt4-opengl-dev, libboost1.49-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libqwt-dev, libglib2.0-dev, shared-mime-info,
- libdbusmenu-qt-dev
-Standards-Version: 3.9.2
+ libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev,
+ libqwt-dev, libglib2.0-dev, shared-mime-info, libqoauth-dev, libqjson-dev
+Standards-Version: 3.9.3
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
 Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
@@ -42,15 +45,60 @@ Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
  plasma-dataengines-addons (= ${binary:Version}),
-Suggests: plasma-widget-lancelot
-Replaces: plasma-widget-system-status, plasma-engine-kdeobservatory (<< 4.8.0),
- plasma-widget-icon-tasks
-Breaks: plasma-widget-system-status, plasma-engine-kdeobservatory (<< 4.8.0),
- plasma-widget-icon-tasks
+Suggests: plasma-widget-lancelot, plasma-widget-kimpanel
 Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
  desktop.
+ .
+ This package provides the following widgets:
+  * Binary Clock
+  * Black Board
+  * Bookmarks
+  * Bouncy Ball
+  * Bubblemon
+  * Calculator
+  * Character Selector
+  * Color Picker
+  * Comic Strip
+  * Dictionary
+  * Eyes
+  * Fifteen Puzzle
+  * File Watcher
+  * Fuzzy Clock
+  * Icon Tasks
+  * Incoming Message
+  * Knowledge Base
+  * Konqueror Profiles
+  * Konsole Profile
+  * LCD Weather Station
+  * Leave a Note
+  * Life
+  * Luna
+  * Magnifique
+  * Media Player
+  * Microblogging
+  * News
+  * Notes
+  * Now Playing
+  * OpenDesktop.org Community
+  * OpenDesktop.org Social News
+  * Paste
+  * Pastebin
+  * Picture Frame
+  * Plasmaboard
+  * Previewer
+  * Qalculate!
+  * Remember The Milk
+  * RSSNOW
+  * Show Widget Dashboard
+  * Show Desktop
+  * Spell Check
+  * System Load Viewer
+  * Timer
+  * Unit Converter
+  * Weather Forecast
+  * Web Slice
  .
  This package is part of the KDE Plasma addons module.
 
@@ -72,11 +120,10 @@ Package: plasma-dataengines-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: kdeplasma-addons (<< 4:4.4.60), plasma-widgets-addons (<< 4:4.4.60)
 Description: additional data engines for Plasma
  This package contains additional Plasma data engines shipped in Plasma
- addons module. These engines are needed by some plasma widgets
- Plasma widgets, but they may be useful for any other Plasma widget too.
+ addons module. These engines are needed by some Plasma widget shipped with
+ plasma-widgets-addons, but they may be useful for any other Plasma widgets too.
  .
  This package is part of the KDE Plasma addons module.
 
@@ -89,6 +136,24 @@ Description: additional runners for Plasma and Krunner
  (the "run command" dialog of Plasma) to reveal special search results.
  If you use krunner a lot, you will probably like this package.
  .
+ This package contains the following runners:
+  * Audio Player Control
+  * Calendar Events
+  * Contacts
+  * Date and Time
+  * Kate Sessions
+  * KDE TechBase
+  * KDE Userbase Documentation
+  * Konqueror Sessions
+  * Konsole Sessions
+  * Kopete Contacts
+  * Special Characters
+  * Spell Checker
+  * Unit Converter
+  * Web Browser History
+  * Wikipedia
+  * Wikitravel
+ .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-wallpapers-addons
@@ -100,13 +165,22 @@ Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: additional wallpaper plugins for Plasma
  This package contains additional Plasma wallpaper plugins that are used in 
  the Plasma desktop to give marble, mandelbrot and other such wallpapers.
+ .
+ This package contains the following wallpaper plugins:
+  * Globe (Marble)
+  * Mandelbrot
+  * Pattern
+  * Picture of the day
+  * Virus
+  * Weather
+ .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-widget-lancelot
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: plasma-applet-lancelot, liblancelot0, liblancelot0a
+Replaces: plasma-applet-lancelot
 Conflicts: plasma-applet-lancelot
 Description: lancelot widget for Plasma
  Lancelot is an application launcher menu (or ALI) for Plasma designed to
@@ -119,21 +193,12 @@ Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: plasma-widget-kimpanel-backend-ibus
-Replaces: plasma-widget-kimpanel-backend-ibus
-Description: addons for KDE 4 Plasma - universal input method widget
- Kimpanel is a Plasma widget for the ibus input method.
+Replaces: plasma-widgets-addons (<< 4:4.8.80)
+Breaks: plasma-widgets-addons (<< 4:4.8.80)
+Description: KIMPanel widget for Plasma
+ This package provides the KDE Input Method Panel widget for Plasma.
  .
- This package is part of the KDE plasma addons module.
-
-#Package: plasma-widget-kimpanel-backend-ibus
-#Architecture: all
-#Section: kde
-#Depends: ${shlibs:Depends}, ${misc:Depends}, ibus-qt4, python
-#Description: addons for KDE 4 Plasma - universal input method widget
-# Kimpanel is a a Plasma widget for the ibus input method.
-# .
-# This package contains the ibus backend for kimpanel.
+ This package is part of the KDE Plasma addons module.
 
 Package: plasma-widget-kdeobservatory
 Architecture: any
@@ -141,12 +206,12 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: plasma-dataengines-addons (<< 4:4.8.0)
 Breaks: plasma-dataengines-addons (<< 4:4.8.0)
-Description: addons for KDE 4 Plasma - KDE development tracking tool
+Description: KDE development tracking widget for Plasma
  The KDE Observatory Plasma widget is a way to track various metrics of the
  KDE project as a whole, including commit counts, Krazy2 report numbers for
  various KDE modules, and other statistics.
  .
- This package is part of the KDE plasma addons module.
+ This package is part of the KDE Plasma addons module.
 
 Package: kdeplasma-addons-dbg
 Section: debug
@@ -154,7 +219,7 @@ Architecture: any
 Priority: extra
 Depends: ${misc:Depends}, plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
  plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- plasma-wallpapers-addons (= ${binary:Version}), kde-workspace-dbg
+ plasma-wallpapers-addons (= ${binary:Version}), plasma-widget-kimpanel (= ${binary:Version}), kde-workspace-dbg
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related

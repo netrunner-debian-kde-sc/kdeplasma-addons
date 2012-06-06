@@ -3,8 +3,6 @@
 ./usr/lib/libplasmapotdprovidercore.so
 ./usr/lib/libplasmaweather.so
 ./usr/lib/librtm.so
-./usr/lib/libkimpanelruntime.so
-./usr/share/dbus-1/interfaces/org.kde.impanel.xml
 ./usr/lib/libplasma_groupingcontainment.so
 
 # lancelot-dev stuff. Do not ship

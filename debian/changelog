@@ -1,3 +1,65 @@
+kdeplasma-addons (4:4.8.80-0ubuntu1) UNRELEASED; urgency=low
+
+  * Merge with Debian git repository, remaining changes:
+    - Build plasma-widget-kdeobservatory
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kde-wallpapers
+    - Don't install kimpanel in plasma-widget-addons.install
+    - Build against libboost1.49-dev
+    - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - Do not build-dep on libscim-dev
+    - Add build-dep on libqwt-dev, libglib2.0-dev, shared-mime-info
+  * New upstream beta release.
+    - Drop kubuntu_support_new_fdo_desktop_actions.diff, merged upstream.
+    - Build-depend on libqoauth-dev and libqjson-dev.
+    - Update install files.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Wed, 06 Jun 2012 11:03:36 +0200
+
+kdeplasma-addons (4:4.8.4-0r1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+  [ Eshat Cakar ]
+  * Add watch file.
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
+
+ -- Eshat Cakar <info@eshat.de>  Wed, 06 Jun 2012 00:08:10 +0200
+
+kdeplasma-addons (4:4.8.3-1) experimental; urgency=low
+
+  * New upstream release.
+  * Team upload.
+
+  [ Eshat Cakar ]
+  * Bump various kde build dependecies to 4:4.8:
+    - kdelibs5-dev
+    - kdepimlibs5-dev
+    - kde-workspace-dev
+  * Update not-installed files.
+  * Update installed files.
+  * Add libdbusmenu-qt-dev to build dependecies to support icontasks widget.
+  * Remove obsolete lintian override:
+    package-name-doesnt-match-sonames libkimpanelruntime0
+
+  [ Pino Toscano ]
+  * Add marble-4.7-compat.diff to make the marble plasma wallpaper compile
+    also with marble 4.7.
+  * Split the kimpanel Plasma widget in an own plasma-widget-kimpanel package.
+  * Make plasma-widgets-addons suggest plasma-widget-kimpanel.
+  * Update descriptions.
+  * Build depend on libibus-1.0-dev to add IBUS support in kimpanel.
+
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.3.
+  * Bump Standards-Version to 3.9.3, no changes needed.
+
+  [ Pino Toscano ]
+  * Improve the description of plasma-dataengines-addons. (Closes: #674596)
+
+ -- Modestas Vainius <modax@debian.org>  Sun, 27 May 2012 02:38:37 +0300
+
 kdeplasma-addons (4:4.8.3-0ubuntu1) quantal; urgency=low
 
   * New upstream release
@@ -87,6 +149,22 @@ kdeplasma-addons (4:4.7.90-0ubuntu1) precise; urgency=low
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Dec 2011 14:17:52 +0000
 
+kdeplasma-addons (4:4.7.4-2) unstable; urgency=low
+
+  * Team upload. Upload to unstable.
+  * Update uploaders, remove Armin.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 07 Mar 2012 11:25:47 +0100
+
+kdeplasma-addons (4:4.7.4-1) experimental; urgency=low
+
+  * New upstream release.
+
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.7.4.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Dec 2011 01:40:15 +0100
+
 kdeplasma-addons (4:4.7.3-0ubuntu3) precise; urgency=low
 
   * Add build-dep on shared-mime-info, also needed
@@ -126,7 +204,7 @@ kdeplasma-addons (4:4.7.3-0ubuntu1) precise; urgency=low
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 23 Nov 2011 23:46:45 +0000
 
-kdeplasma-addons (4:4.7.2-0r0) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.7.2-1) experimental; urgency=low
 
   * New upstream release.
 
@@ -135,11 +213,19 @@ kdeplasma-addons (4:4.7.2-0r0) UNRELEASED; urgency=low
     - Bump kde-sc-dev-latest build dependency to 4:4.7.2.
     - Bump the rest of the KDE SC build depends to 4:4.7.
   * Update installed files.
-  
+
   [ Eshat Cakar ]
   * Add myself to uploaders
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 16 Oct 2011 00:17:34 +0200
+  [ Pino Toscano ]
+  * Improve descriptions of plasma-widgets-addons, plasma-runners-addons,
+    and plasma-wallpapers-addons listing all the plugins contained in each.
+  * Manage some packages renamings:
+    - Build depend on kde-workspace-dev instead of kdebase-workspace-dev.
+    - kdeplasma-addons-dbg depends on kde-workspace-dbg instead of
+      kdebase-workspace-dbg. (Closes: #649963)
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 03 Dec 2011 10:43:51 -0300
 
 kdeplasma-addons (4:4.6.5-1) unstable; urgency=low
 
