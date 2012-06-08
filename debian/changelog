@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.8.80-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.8.80-0ubuntu1) quantal; urgency=low
 
   * Merge with Debian git repository, remaining changes:
     - Build plasma-widget-kdeobservatory
