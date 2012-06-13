@@ -105,3 +105,10 @@
 ./usr/lib/liblancelot.so
 ./usr/share/kde4/apps/cmake/modules/FindLancelot-Datamodels.cmake
 ./usr/share/kde4/apps/cmake/modules/FindLancelot.cmake
+
+./usr/share/icons/hicolor/16x16/actions/youtube.png
+./usr/share/icons/hicolor/22x22/actions/youtube.png
+./usr/share/icons/hicolor/32x32/actions/youtube.png
+./usr/share/icons/hicolor/48x48/actions/youtube.png
+./usr/share/icons/hicolor/64x64/actions/youtube.png
+./usr/share/icons/hicolor/scalable/actions/youtube.svgz

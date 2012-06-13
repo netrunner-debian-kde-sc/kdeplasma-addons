@@ -18,12 +18,13 @@ usr/lib/kde4/krunner_spellcheckrunner.so
 usr/lib/kde4/krunner_youtube.so
 usr/lib/kde4/plasma_runner_datetime.so
 usr/lib/kde4/plasma_runner_events.so
-usr/share/icons/hicolor/16x16/actions/youtube.png
-usr/share/icons/hicolor/22x22/actions/youtube.png
-usr/share/icons/hicolor/32x32/actions/youtube.png
-usr/share/icons/hicolor/48x48/actions/youtube.png
-usr/share/icons/hicolor/64x64/actions/youtube.png
-usr/share/icons/hicolor/scalable/actions/youtube.svgz
+#workaround to stop overlap with files in kamoso
+usr/share/icons/hicolor/16x16/actions/youtube.png usr/share/icons/oxygen/16x16/actions/
+usr/share/icons/hicolor/22x22/actions/youtube.png usr/share/icons/oxygen/22x22/actions/
+usr/share/icons/hicolor/32x32/actions/youtube.png usr/share/icons/oxygen/32x32/actions/
+usr/share/icons/hicolor/48x48/actions/youtube.png usr/share/icons/oxygen/48x48/actions/
+usr/share/icons/hicolor/64x64/actions/youtube.png usr/share/icons/oxygen/64x64/actions/
+usr/share/icons/hicolor/scalable/actions/youtube.svgz usr/share/icons/oxygen/scalable/actions/
 usr/share/kde4/services/CharRunner_config.desktop
 usr/share/kde4/services/CharacterRunner.desktop
 usr/share/kde4/services/browserhistory.desktop

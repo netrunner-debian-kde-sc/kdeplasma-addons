@@ -1,6 +1,10 @@
 kdeplasma-addons (4:4.8.90-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Felix Geyer ]
   * New upstream beta release.
+
+  [ Jonathan Riddell ]
+  * Move youtube.png icons into oxygen to stop overlap with kamoso http://bugs.kde.org/296280
 
  -- Felix Geyer <debfx@ubuntu.com>  Mon, 11 Jun 2012 23:17:43 +0200
 
