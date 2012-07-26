@@ -1,8 +1,9 @@
-kdeplasma-addons (4:4.8.90-0ubuntu2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.9.0-0ubuntu1) UNRELEASED; urgency=low
 
   * Use direct build-depends versions rather than kde-sc-dev-latest
+  * New upstream release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Jul 2012 16:25:19 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Jul 2012 17:55:23 +0100
 
 kdeplasma-addons (4:4.8.90-0ubuntu1) quantal; urgency=low
 
