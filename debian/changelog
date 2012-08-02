@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.9.0-0ubuntu2) quantal; urgency=low
+
+  * Build-dep on kdelibs 4.9.0a, adjust .install files to new library
+    version no
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Aug 2012 11:57:50 +0100
+
 kdeplasma-addons (4:4.9.0-0ubuntu1) quantal; urgency=low
 
   * Use direct build-depends versions rather than kde-sc-dev-latest

@@ -2,7 +2,7 @@ usr/lib/kde4/plasma_containment_griddesktop.so
 usr/lib/kde4/plasma_containment_groupingdesktop.so
 usr/lib/kde4/plasma_containment_groupingpanel.so
 usr/lib/libplasma_groupingcontainment.so.4
-usr/lib/libplasma_groupingcontainment.so.4.8.0
+usr/lib/libplasma_groupingcontainment.so.4.9.0
 usr/share/kde4/services/plasma-containment-griddesktop.desktop
 usr/share/kde4/services/plasma-containment-groupingdesktop.desktop
 usr/share/kde4/services/plasma-containment-groupingpanel.desktop
