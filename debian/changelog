@@ -1,8 +1,12 @@
 kdeplasma-addons (4:4.9.1-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Harald Sitter ]
   * New upstream release
 
- -- Harald Sitter <apachelogger@ubuntu.com>  Tue, 04 Sep 2012 15:09:30 +0530
+  [ Philip Muškovac ]
+  * Change sonames from 4.9.0 to 4.9.* 
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 09 Sep 2012 14:40:34 +0200
 
 kdeplasma-addons (4:4.9.0-0ubuntu2) quantal; urgency=low
 
