@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.9.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.9.1-0ubuntu1) quantal; urgency=low
 
   [ Harald Sitter ]
   * New upstream release
