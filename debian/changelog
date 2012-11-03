@@ -1,8 +1,15 @@
-kdeplasma-addons (4:4.9.2-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.9.2-0ubuntu2) quantal; urgency=low
+
+  * Add kubuntu_01_news_applet_name.diff revert name of News plasmoid,
+    prevents broken widget on Kubuntu Active workspace LP: #1046437
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 11 Oct 2012 17:28:24 +0100
+
+kdeplasma-addons (4:4.9.2-0ubuntu1) quantal-proposed; urgency=low
 
   * New upstream bugfix release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 01 Oct 2012 15:17:14 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 02 Oct 2012 15:25:35 +0100
 
 kdeplasma-addons (4:4.9.1-0ubuntu2) quantal; urgency=low
 

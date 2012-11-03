@@ -1,0 +1,13 @@
+Index: kdeplasma-addons-4.9.2/applets/news/plasma-applet-news.desktop
+===================================================================
+--- kdeplasma-addons-4.9.2.orig/applets/news/plasma-applet-news.desktop	2012-09-28 01:39:43.000000000 +0100
++++ kdeplasma-addons-4.9.2/applets/news/plasma-applet-news.desktop	2012-10-11 17:27:02.488278904 +0100
+@@ -116,7 +116,7 @@
+ X-KDE-Library=plasma_applet_news
+ X-KDE-PluginInfo-Author=Petri Damstén
+ X-KDE-PluginInfo-Email=damu@iki.fi
+-X-KDE-PluginInfo-Name=news
++X-KDE-PluginInfo-Name=org.kde.news-qml
+ X-KDE-PluginInfo-Version=1.0
+ X-KDE-PluginInfo-Website=http://plasma.kde.org/
+ X-KDE-PluginInfo-Category=Online Services
