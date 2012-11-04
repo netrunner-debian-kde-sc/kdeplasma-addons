@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.9.3-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release (LP: #1074747)
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 04 Nov 2012 02:34:16 +0100
+
 kdeplasma-addons (4:4.9.2-0ubuntu2) quantal; urgency=low
 
   * Add kubuntu_01_news_applet_name.diff revert name of News plasmoid,
