@@ -3,6 +3,7 @@ usr/lib/kde4/plasma_wallpaper_marble.so
 usr/lib/kde4/plasma_wallpaper_pattern.so
 usr/lib/kde4/plasma_wallpaper_potd.so
 usr/lib/kde4/plasma_wallpaper_virus.so
+usr/lib/kde4/plasma_wallpaper_qml.so
 usr/lib/kde4/plasma_wallpaper_weather.so
 usr/share/kde4/apps/plasma_wallpaper_pattern/patterns/bees.desktop
 usr/share/kde4/apps/plasma_wallpaper_pattern/patterns/bees.png
@@ -43,3 +44,16 @@ usr/share/kde4/services/plasma-wallpaper-pattern.desktop
 usr/share/kde4/services/plasma-wallpaper-potd.desktop
 usr/share/kde4/services/plasma-wallpaper-virus.desktop
 usr/share/kde4/services/plasma-wallpaper-weather.desktop
+usr/share/kde4/services/plasma-wallpaper-qml.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/metadata.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/contents/ui/animals.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/contents/ui/Animal.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/metadata.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/wallpaper.svgz
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/main.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/metadata.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/RightBackgroundElement.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BackgroundElement.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/wallpaper.svgz
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/main.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BottomBackgroundElement.qml

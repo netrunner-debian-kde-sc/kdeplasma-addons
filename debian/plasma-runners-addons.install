@@ -2,11 +2,13 @@ usr/lib/kde4/kcm_krunner_audioplayercontrol.so
 usr/lib/kde4/kcm_krunner_charrunner.so
 usr/lib/kde4/kcm_krunner_spellcheck.so
 usr/lib/kde4/kcm_plasma_runner_events.so
+usr/lib/kde4/kcm_krunner_dictionary.so
 usr/lib/kde4/krunner_audioplayercontrol.so
 usr/lib/kde4/krunner_browserhistory.so
 usr/lib/kde4/krunner_charrunner.so
 usr/lib/kde4/krunner_contacts.so
 usr/lib/kde4/krunner_converter.so
+usr/lib/kde4/krunner_dictionary.so
 usr/lib/kde4/krunner_katesessions.so
 usr/lib/kde4/krunner_konquerorsessions.so
 usr/lib/kde4/krunner_konsolesessions.so
@@ -43,3 +45,5 @@ usr/share/kde4/services/plasma-runner-techbase.desktop
 usr/share/kde4/services/plasma-runner-wikipedia.desktop
 usr/share/kde4/services/plasma-runner-wikitravel.desktop
 usr/share/kde4/services/plasma-runner-youtube.desktop
+usr/share/kde4/services/plasma-runner-dictionary.desktop
+usr/share/kde4/services/plasma-runner-dictionary_config.desktop
