@@ -1,8 +1,8 @@
-kdeplasma-addons (4:4.9.90-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.9.90-0ubuntu1) raring-proposed; urgency=low
 
   * New upstream beta release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 03 Dec 2012 11:24:41 +0000
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Dec 2012 17:50:20 +0000
 
 kdeplasma-addons (4:4.9.80-0ubuntu1) raring; urgency=low
 
