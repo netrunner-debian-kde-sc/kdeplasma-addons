@@ -1,6 +1,10 @@
 kdeplasma-addons (4:4.9.95-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Jonathan Riddell ]
   * New upstream RC release
+
+  [ Rohan Garg ]
+  * Add nepomuk-core-dev to build-depends
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Dec 2012 23:27:00 +0000
 
