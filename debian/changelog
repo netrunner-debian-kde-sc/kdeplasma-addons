@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.9.95-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.9.95-0ubuntu1) raring; urgency=low
 
   [ Jonathan Riddell ]
   * New upstream RC release
@@ -102,7 +102,7 @@ kdeplasma-addons (4:4.8.80-0ubuntu1) quantal; urgency=low
 
  -- Felix Geyer <debfx@ubuntu.com>  Wed, 06 Jun 2012 11:03:36 +0200
 
-kdeplasma-addons (4:4.8.4-0r1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.8.4-0r1) raring; urgency=low
 
   * New upstream release.
 
@@ -470,7 +470,7 @@ kdeplasma-addons (4:4.6.2-0ubuntu1) natty; urgency=low
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 04 Apr 2011 15:23:42 +0000
 
-kdeplasma-addons (4:4.6.1-0ubuntu2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.6.1-0ubuntu2) raring; urgency=low
 
   * Update kubuntu_02_microblog_default_configuration.diff
 
