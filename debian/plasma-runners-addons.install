@@ -13,8 +13,15 @@ usr/lib/kde4/krunner_konsolesessions.so
 usr/lib/kde4/krunner_kopete.so
 usr/lib/kde4/krunner_mediawiki.so
 usr/lib/kde4/krunner_spellcheckrunner.so
+usr/lib/kde4/krunner_youtube.so
 usr/lib/kde4/plasma_runner_datetime.so
 usr/lib/kde4/plasma_runner_events.so
+usr/share/icons/hicolor/16x16/actions/youtube.png
+usr/share/icons/hicolor/22x22/actions/youtube.png
+usr/share/icons/hicolor/32x32/actions/youtube.png
+usr/share/icons/hicolor/48x48/actions/youtube.png
+usr/share/icons/hicolor/64x64/actions/youtube.png
+usr/share/icons/hicolor/scalable/actions/youtube.svgz
 usr/share/kde4/services/CharRunner_config.desktop
 usr/share/kde4/services/CharacterRunner.desktop
 usr/share/kde4/services/browserhistory.desktop
@@ -34,3 +41,4 @@ usr/share/kde4/services/plasma-runner-spellchecker_config.desktop
 usr/share/kde4/services/plasma-runner-techbase.desktop
 usr/share/kde4/services/plasma-runner-wikipedia.desktop
 usr/share/kde4/services/plasma-runner-wikitravel.desktop
+usr/share/kde4/services/plasma-runner-youtube.desktop

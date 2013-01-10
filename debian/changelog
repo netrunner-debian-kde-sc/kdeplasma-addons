@@ -10,6 +10,7 @@ kdeplasma-addons (4:4.9.5-0r0) UNRELEASED; urgency=low
     + Bump kde-workspace-dev >= 4:4.9.
     + Add libqjson-dev.
     + Add libqoauth-dev.
+  * Update installed files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 10 Jan 2013 15:01:08 +0100
 
