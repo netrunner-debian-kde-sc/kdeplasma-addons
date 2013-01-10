@@ -2,6 +2,15 @@ kdeplasma-addons (4:4.9.5-0r0) UNRELEASED; urgency=low
 
   * New upstram release.
 
+  [ Daniele E. Domenichelli ]
+  * Update build dependencies:
+    + Bump kde-sc-dev-latest to >= 4:4.9.5.
+    + Bump kdelibs5-dev to >= 4:4.9.
+    + Bump kdepimlibs5-dev >= 4:4.9.
+    + Bump kde-workspace-dev >= 4:4.9.
+    + Add libqjson-dev.
+    + Add libqoauth-dev.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 10 Jan 2013 15:01:08 +0100
 
 kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
