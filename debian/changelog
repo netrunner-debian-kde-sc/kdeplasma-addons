@@ -12,6 +12,10 @@ kdeplasma-addons (4:4.9.5-0r1) UNRELEASED; urgency=low
     + Add libqoauth-dev.
   * Update installed files.
 
+  [ José Manuel Santamaría Lema ]
+  * Add Breaks+Replaces against kamoso (<< 2.0.2+) because of an accidental
+    filename conflict.
+
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 10 Jan 2013 15:01:08 +0100
 
 kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
