@@ -15,7 +15,7 @@ Build-Depends:
  libkexiv2-dev (>= 4:4.9.98), libmarble-dev (>= 4:4.9.98),
  libqt4-opengl-dev, libboost1.49-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2),
+ libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev,
  libqwt-dev, libglib2.0-dev, shared-mime-info, libqoauth-dev, libqjson-dev,
  nepomuk-core-dev
 Standards-Version: 3.9.3
