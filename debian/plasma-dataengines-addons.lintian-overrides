@@ -1,1 +1,4 @@
 plasma-dataengines-addons: package-name-doesnt-match-sonames libplasmacomicprovidercore1 libplasmapotdprovidercore1 libplasmaweather4 librtm4
+plasma-dataengines-addons: no-symbols-control-file usr/lib/librtm.so.4.10.*
+plasma-dataengines-addons: no-symbols-control-file usr/lib/libplasmaweather.so.4.10.*
+plasma-dataengines-addons: no-symbols-control-file usr/lib/libplasmacomicprovidercore.so.1.0.0

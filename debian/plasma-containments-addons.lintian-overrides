@@ -1,1 +1,2 @@
 plasma-containments-addons: package-name-doesnt-match-sonames libplasma-groupingcontainment4
+plasma-containments-addons: no-symbols-control-file usr/lib/libplasma_groupingcontainment.so.4.10.*

@@ -1,1 +1,3 @@
 plasma-widget-lancelot: package-name-doesnt-match-sonames liblancelot-datamodels1 liblancelot2
+plasma-widget-lancelot: no-symbols-control-file usr/lib/liblancelot-datamodels.so.1.7.0
+plasma-widget-lancelot: no-symbols-control-file usr/lib/liblancelot.so.1.9.0

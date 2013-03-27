@@ -1,0 +1,3 @@
+plasma-widgets-addons: hardening-no-fortify-functions usr/lib/kde4/plasma_applet_icontasks.so
+plasma-widgets-addons: hardening-no-fortify-functions usr/lib/kde4/plasma_applet_life.so
+plasma-widgets-addons: hardening-no-fortify-functions usr/lib/kde4/plasma_applet_qalculate.so
