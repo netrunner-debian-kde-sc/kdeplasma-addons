@@ -17,6 +17,7 @@ kdeplasma-addons (4:4.10.1-0r0) UNRELEASED; urgency=low
   * Add Build-Depend on nepomuk-core-dev.
   * Add Breaks+Replaces against kamoso (<< 2.0.2+) because of an accidental
     filename conflict.
+  * Update installed files.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 10 Jan 2013 15:01:08 +0100
 
