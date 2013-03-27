@@ -1,18 +1,19 @@
-kdeplasma-addons (4:4.9.5-0r3) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.10.1-0r0) UNRELEASED; urgency=low
 
   * New upstram release.
 
   [ Daniele E. Domenichelli ]
   * Update build dependencies:
-    + Bump kde-sc-dev-latest to >= 4:4.9.5.
-    + Bump kdelibs5-dev to >= 4:4.9.
-    + Bump kdepimlibs5-dev >= 4:4.9.
-    + Bump kde-workspace-dev >= 4:4.9.
     + Add libqjson-dev.
     + Add libqoauth-dev.
   * Update installed files.
 
   [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest to >= 4:4.10.1.
+  * Bump build dependencies on other KDE SC dependencies to 4:4.10:
+    - kdelibs5-dev
+    - kdepimlibs5-dev
+    - kde-workspace-dev
   * Add Breaks+Replaces against kamoso (<< 2.0.2+) because of an accidental
     filename conflict.
 
