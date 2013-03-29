@@ -1,6 +1,7 @@
 kdeplasma-addons (4:4.10.1-0r0) UNRELEASED; urgency=low
 
   * New upstram release.
+     - fix kill runner conflicts with command line (Closes: #580003) 
 
   [ Daniele E. Domenichelli ]
   * Update build dependencies:
