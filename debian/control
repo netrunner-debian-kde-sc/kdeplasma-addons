@@ -11,8 +11,8 @@ Uploaders: Sune Vuorela <sune@debian.org>,
  Eshat Cakar <info@eshat.de>
 Build-Depends: 
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdelibs5-dev (>= 4:4.10.1), kdepimlibs5-dev (>= 4:4.10.1), kde-workspace-dev (>= 4:4.10.1),
- libkexiv2-dev (>= 4:4.10.1), libmarble-dev (>= 4:4.10.1),
+ kdelibs5-dev (>= 4:4.10.2), kdepimlibs5-dev (>= 4:4.10.2), kde-workspace-dev (>= 4:4.10.2),
+ libkexiv2-dev (>= 4:4.10.2), libmarble-dev (>= 4:4.10.2),
  libqt4-opengl-dev, libboost1.49-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev,
