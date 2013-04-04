@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.10.1-0r0) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.10.2-1) experimental; urgency=low
 
   * New upstram release.
      - fix kill runner conflicts with command line (Closes: #580003) 
@@ -22,7 +22,11 @@ kdeplasma-addons (4:4.10.1-0r0) UNRELEASED; urgency=low
   * Add lintian overrides for no-symbols-control-file and
     hardening-no-fortify-functions.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Thu, 10 Jan 2013 15:01:08 +0100
+  [ Sune Vuorela ]
+  * Update uploaders
+  * Bump kexiv and marble requirements
+
+ -- Sune Vuorela <sune@debian.org>  Thu, 04 Apr 2013 07:55:11 +0000
 
 kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
 
