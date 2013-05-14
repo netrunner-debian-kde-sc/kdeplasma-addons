@@ -1,3 +1,57 @@
+kdeplasma-addons (4:4.10.3-0ubuntu1) saucy; urgency=low
+
+  * Merged with Debian, remaining changes:
+   - Build plasma-widget-kdeobservatory
+   - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+     kde-wallpapers
+   - plasma-widgets-addons suggests plasma-widget-lancelot instead of       recommends (we don't want that since CD size is limited) 
+   - Do not build against libscim-dev - we use IBus
+   - Add build-dep on libqwt-dev, libglib2.0-dev, shared-mime-info
+   - Kept kubuntu_01_news_applet_name.diff
+  * New upstream release
+
+ -- Michał Zając <quintasan@kubuntu.org>  Wed, 08 May 2013 22:49:59 +0200
+
+kdeplasma-addons (4:4.10.2-2) experimental; urgency=low
+
+  [ Diane Trout ]
+  * Set libibus-dev required version to 1.4.2.
+
+  [ Sune Vuorela ]
+  * Try to make build on the buildds.
+
+ -- Sune Vuorela <sune@debian.org>  Fri, 12 Apr 2013 19:21:14 +0000
+
+kdeplasma-addons (4:4.10.2-1) experimental; urgency=low
+
+  * New upstram release.
+     - fix kill runner conflicts with command line (Closes: #580003) 
+
+  [ Daniele E. Domenichelli ]
+  * Update build dependencies:
+    + Add libqjson-dev.
+    + Add libqoauth-dev.
+  * Update installed files.
+
+  [ José Manuel Santamaría Lema ]
+  * Bump kde-sc-dev-latest to >= 4:4.10.1.
+  * Bump build dependencies on other KDE SC dependencies to 4:4.10:
+    - kdelibs5-dev
+    - kdepimlibs5-dev
+    - kde-workspace-dev
+  * Add Build-Depend on nepomuk-core-dev.
+  * Add Breaks+Replaces against kamoso (<< 2.0.2+) because of an accidental
+    filename conflict.
+  * Update installed files.
+  * Add lintian overrides for no-symbols-control-file and
+    hardening-no-fortify-functions.
+
+  [ Sune Vuorela ]
+  * Update uploaders
+  * Bump kexiv and marble requirements
+
+ -- Sune Vuorela <sune@debian.org>  Thu, 04 Apr 2013 07:55:11 +0000
+
 kdeplasma-addons (4:4.10.2-0ubuntu1) raring; urgency=low
 
   * New upstream bugfix release
@@ -131,6 +185,17 @@ kdeplasma-addons (4:4.8.80-0ubuntu1) quantal; urgency=low
     - Update install files.
 
  -- Felix Geyer <debfx@ubuntu.com>  Wed, 06 Jun 2012 11:03:36 +0200
+
+kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Team upload.
+
+  [ Eshat Cakar ]
+  * Add watch file.
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
+
+ -- Modestas Vainius <modax@debian.org>  Sat, 09 Jun 2012 15:51:18 +0300
 
 kdeplasma-addons (4:4.8.4-0r1) raring; urgency=low
 

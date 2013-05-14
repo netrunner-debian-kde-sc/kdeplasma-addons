@@ -1,3 +1,5 @@
+usr/lib/kde4/kcm_krunner_dictionary.so
+usr/lib/kde4/krunner_dictionary.so
 usr/lib/kde4/plasma-applet_systemloadviewer.so
 usr/lib/kde4/plasma_applet_bball.so
 usr/lib/kde4/plasma_applet_binaryclock.so
@@ -41,6 +43,7 @@ usr/lib/kde4/plasma_applet_unitconverter.so
 usr/lib/kde4/plasma_applet_weather.so
 usr/lib/kde4/plasma_applet_weatherstation.so
 usr/lib/kde4/plasma_applet_webslice.so
+usr/lib/kde4/plasma_wallpaper_qml.so
 usr/share/icons/hicolor/128x128/apps/bball.png
 usr/share/icons/hicolor/128x128/apps/eyes.png
 usr/share/icons/hicolor/128x128/apps/lifegame.png
@@ -92,8 +95,8 @@ usr/share/kde4/apps/desktoptheme/default/rssnow/background.svgz
 usr/share/kde4/apps/desktoptheme/default/rssnow/rssnow.svgz
 usr/share/kde4/apps/desktoptheme/default/stylesheets/news.css
 usr/share/kde4/apps/desktoptheme/default/weather/wind-arrows.svgz
-usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_digits.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd2.svgz
+usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_digits.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/lcd_panel.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/weather_icons.svgz
 usr/share/kde4/apps/desktoptheme/default/weatherstation/wind_arrows.svgz
@@ -105,6 +108,9 @@ usr/share/kde4/apps/desktoptheme/default/widgets/previewer-16.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/previewer-22.svgz
 usr/share/kde4/apps/desktoptheme/default/widgets/timer.svgz
 usr/share/kde4/apps/kdeplasma-addons/mediabuttonsrc
+usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
+usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
+usr/share/kde4/apps/plasma-applet-opendesktop/user.css
 usr/share/kde4/apps/plasma/packages/org.kde.comic/contents/ui/ButtonBar.qml
 usr/share/kde4/apps/plasma/packages/org.kde.comic/contents/ui/ComicBottomInfo.qml
 usr/share/kde4/apps/plasma/packages/org.kde.comic/contents/ui/ComicCentralView.qml
@@ -137,7 +143,6 @@ usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/config/main.xml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/images/nocover.svgz
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/AlbumArt.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/CompactLayout.qml
-usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/config.ui
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/Controls.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/FullLayout.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/Label.qml
@@ -147,11 +152,21 @@ usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/Mpris2.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/PlayPauseButton.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/PositionSlider.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/VLayout.qml
+usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/config.ui
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/nowplaying.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/metadata.desktop
-usr/share/kde4/apps/plasma-applet-frame/picture-frame-default.jpg
-usr/share/kde4/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
-usr/share/kde4/apps/plasma-applet-opendesktop/user.css
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/contents/ui/Animal.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/contents/ui/animals.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.animals/metadata.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BackgroundElement.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/BottomBackgroundElement.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/RightBackgroundElement.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/main.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/contents/ui/wallpaper.svgz
+usr/share/kde4/apps/plasma/wallpapers/org.kde.haenau/metadata.desktop
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/main.qml
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/contents/ui/wallpaper.svgz
+usr/share/kde4/apps/plasma/wallpapers/org.kde.hunyango/metadata.desktop
 usr/share/kde4/apps/plasma_pastebin/plasma_pastebin.notifyrc
 usr/share/kde4/apps/plasmaboard/basic.xml
 usr/share/kde4/apps/plasmaboard/extended.xml
@@ -159,6 +174,7 @@ usr/share/kde4/apps/plasmaboard/full.xml
 usr/share/kde4/apps/plasmaboard/mid.xml
 usr/share/kde4/apps/plasmaboard/tablet.xml
 usr/share/kde4/apps/rssnow/feeds
+usr/share/kde4/config.kcfg/kimpanelconfig.kcfg
 usr/share/kde4/config/comic.knsrc
 usr/share/kde4/config/pastebin.knsrc
 usr/share/kde4/services/ServiceMenus/preview.desktop
@@ -208,4 +224,7 @@ usr/share/kde4/services/plasma-fileWatcher-default.desktop
 usr/share/kde4/services/plasma-frame-default.desktop
 usr/share/kde4/services/plasma-kolourpicker-default.desktop
 usr/share/kde4/services/plasma-notes-default.desktop
+usr/share/kde4/services/plasma-runner-dictionary.desktop
+usr/share/kde4/services/plasma-runner-dictionary_config.desktop
+usr/share/kde4/services/plasma-wallpaper-qml.desktop
 usr/share/kde4/services/plasma_applet_plasmaboard.desktop

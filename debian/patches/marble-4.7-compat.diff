@@ -1,0 +1,31 @@
+Author: Pino Toscano <pino@debian.org>
+Description: compatibility with Marble < 0.13
+Forwarded: not-needed
+Last-Update: 2012-02-15
+
+--- a/wallpapers/marble/marble.cpp
++++ b/wallpapers/marble/marble.cpp
+@@ -80,8 +80,13 @@ void MarbleWallpaper::init(const KConfig
+ 
+         // These settings apply to Marble's "satellite" view mostly, e.g. make it beautiful
+         m_map->setShowClouds(true);
++#if MARBLE_VERSION >= 0x000d00
+         m_map->setShowCityLights(false);
+         m_map->setShowSunShading(true);
++#else
++        m_map->model()->sunLocator()->setCitylights(false);
++        m_map->model()->sunLocator()->setShow(true);
++#endif
+ 
+         // Disable all render plugins (scale bar, compass, etc.) except the "stars" plugin
+         foreach (RenderPlugin *item, m_map->renderPlugins()) {
+@@ -137,6 +142,9 @@ QWidget *MarbleWallpaper::createConfigur
+     m_ui.showPlacemarks->setChecked(m_showPlacemarks);
+ 
+     MapThemeManager themeManager;
++#if MARBLE_VERSION < 0x000d00
++    themeManager.updateMapThemeModel();
++#endif
+     // FIXME: Going manually through the model is ugly as hell, but plugging the
+     //        model into the view didn't work for me
+     for (int i = 0; i < themeManager.mapThemeModel()->rowCount(); i++) {
