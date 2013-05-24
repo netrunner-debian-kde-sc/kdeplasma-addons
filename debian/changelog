@@ -1,10 +1,24 @@
+kdeplasma-addons (4:4.10.3-0ubuntu2) saucy; urgency=low
+
+  * plasma-widgets-addons breaks/replaces
+    plasma-runners-addons << 4:4.10.3-0ubuntu2~,
+    plasma-widget-kimpanel << 4:4.10.3-0ubuntu2~,
+    plasma-wallpapers-addons << 4:4.10.3-0ubuntu2~
+  * plasma-dataengines-addons breaks/replaces
+    plasma-widget-kdeobservatory << 4:4.10.3-0ubuntu2~
+  * Remove files from plasma-widget-kdeobservatory.install that conflict with
+    plasma-dataengines-addons
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 25 May 2013 00:21:09 +0200
+
 kdeplasma-addons (4:4.10.3-0ubuntu1) saucy; urgency=low
 
   * Merged with Debian, remaining changes:
    - Build plasma-widget-kdeobservatory
    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
      kde-wallpapers
-   - plasma-widgets-addons suggests plasma-widget-lancelot instead of       recommends (we don't want that since CD size is limited) 
+   - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+     recommends (we don't want that since CD size is limited) 
    - Do not build against libscim-dev - we use IBus
    - Add build-dep on libqwt-dev, libglib2.0-dev, shared-mime-info
    - Kept kubuntu_01_news_applet_name.diff
