@@ -4,6 +4,14 @@ kdeplasma-addons (4:4.10.4-0ubuntu1) UNRELEASED; urgency=low
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 01 Jun 2013 13:40:49 +0100
 
+kdeplasma-addons (4:4.10.3-0ubuntu3) saucy; urgency=low
+
+  * Add kubuntu_02_random_password_generator.diff from upstream
+    fixes paste widget password generator uses insecure randomness
+    LP: #1179380
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 04 Jun 2013 11:51:38 +0100
+
 kdeplasma-addons (4:4.10.3-0ubuntu2) saucy; urgency=low
 
   * plasma-widgets-addons breaks/replaces
