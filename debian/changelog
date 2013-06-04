@@ -1,6 +1,10 @@
 kdeplasma-addons (4:4.10.4-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Rohan Garg ]
   * New upstream bugfix release
+
+  [ Jonathan Riddell ]
+  * Update plasma-widgets-addons.install
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 01 Jun 2013 13:40:49 +0100
 
