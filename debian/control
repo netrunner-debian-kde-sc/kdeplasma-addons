@@ -17,7 +17,7 @@ Build-Depends:
  shared-desktop-ontologies, libattica-dev, libscim-dev, libxtst-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2), libqjson-dev,
  libqoauth-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
 Vcs-Git: git://git.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
