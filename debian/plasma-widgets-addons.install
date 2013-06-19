@@ -140,7 +140,7 @@ usr/share/kde4/apps/plasma/plasmoids/konsoleprofiles/contents/ui/konsoleprofiles
 usr/share/kde4/apps/plasma/plasmoids/konsoleprofiles/metadata.desktop
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/code/service.js
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/config/main.xml
-usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/images/nocover.svgz
+usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/theme/nowplaying/nocover.svgz
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/AlbumArt.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/CompactLayout.qml
 usr/share/kde4/apps/plasma/plasmoids/nowplaying/contents/ui/Controls.qml
