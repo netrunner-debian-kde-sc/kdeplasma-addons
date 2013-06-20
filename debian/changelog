@@ -1,9 +1,14 @@
 kdeplasma-addons (4:4.10.80-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Rohan Garg ]
   * New upstream release
     - Update install files
     - Switch to libqwt5-qt4-dev in Build-Depends, kdeobservatory needs it
     - Drop kubuntu_02_random_password_generator.diff, applied upstream
+
+  [ Philip Muškovac ]
+  * Bump Breaks/Replaces for the 4.10.3 debian merge to << 4:4.10.80 to catch
+    upgrades.
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 13 Jun 2013 09:09:45 +0100
 
