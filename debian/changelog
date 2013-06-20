@@ -10,7 +10,10 @@ kdeplasma-addons (4:4.10.80-0ubuntu1) UNRELEASED; urgency=low
   * Bump Breaks/Replaces for the 4.10.3 debian merge to << 4:4.10.80 to catch
     upgrades.
 
- -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 13 Jun 2013 09:09:45 +0100
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 00:04:37 +0100
 
 kdeplasma-addons (4:4.10.4-0ubuntu1) saucy-proposed; urgency=low
 
