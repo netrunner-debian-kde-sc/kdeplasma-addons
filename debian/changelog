@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.10.90-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.10.90-0ubuntu1) saucy; urgency=low
 
   [ Michał Zając ]
   * New upstream bet release
@@ -6,7 +6,7 @@ kdeplasma-addons (4:4.10.90-0ubuntu1) UNRELEASED; urgency=low
   [ Philip Muškovac ]
   * Add translator runner to plasma-runners-addons.install
 
- -- Michał Zając <quintasan@kubuntu.org>  Thu, 27 Jun 2013 02:44:12 +0200
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 28 Jun 2013 18:11:16 +0100
 
 kdeplasma-addons (4:4.10.80-0ubuntu1) saucy; urgency=low
 
