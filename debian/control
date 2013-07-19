@@ -131,8 +131,8 @@ Package: plasma-runners-addons
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Breaks: kamoso (<< 2.0.2+)
-Replaces: kamoso (<< 2.0.2+)
+Breaks: kamoso (<< 2.0.2-2)
+Replaces: kamoso (<< 2.0.2-2)
 Description: additional runners for Plasma and Krunner
  This package contains additional Plasma runners that are used in krunner
  (the "run command" dialog of Plasma) to reveal special search results.
