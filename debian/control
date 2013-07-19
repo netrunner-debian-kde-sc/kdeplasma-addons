@@ -70,7 +70,7 @@ Description: additional widgets for Plasma
   * Incoming Message
   * Knowledge Base
   * Konqueror Profiles
-  * Konsole Profile
+  * Konsole Profiles
   * LCD Weather Station
   * Leave a Note
   * Life
@@ -146,6 +146,7 @@ Description: additional runners for Plasma and Krunner
   * Kate Sessions
   * KDE TechBase
   * KDE Userbase Documentation
+  * Kate Sessions
   * Konqueror Sessions
   * Konsole Sessions
   * Kopete Contacts
@@ -155,6 +156,7 @@ Description: additional runners for Plasma and Krunner
   * Web Browser History
   * Wikipedia
   * Wikitravel
+  * YouTube
  .
  This package is part of the KDE Plasma addons module.
 

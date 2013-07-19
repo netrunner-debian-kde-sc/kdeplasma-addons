@@ -4,6 +4,8 @@ kdeplasma-addons (4:4.10.5-2) UNRELEASED; urgency=low
   * Drop patch marble-4.7-compat.diff, obsolete now.
   * Fix the conflicting version of kamoso in plasma-runners-addons, since
     2.0.2-2 does not provide common files anymore.
+  * Slightly touches to the descriptions of plasma-runners-addons and
+    plasma-widgets-addons.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Jul 2013 15:34:16 +0200
 
