@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.10.5-2) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.10.5-2) unstable; urgency=low
 
   [ Pino Toscano ]
   * Drop patch marble-4.7-compat.diff, obsolete now.
@@ -7,7 +7,7 @@ kdeplasma-addons (4:4.10.5-2) UNRELEASED; urgency=low
   * Slightly touches to the descriptions of plasma-runners-addons and
     plasma-widgets-addons.
 
- -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 13 Jul 2013 15:34:16 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 19 Jul 2013 21:10:31 +0200
 
 kdeplasma-addons (4:4.10.5-1) unstable; urgency=low
 
