@@ -1,8 +1,8 @@
-kdeplasma-addons (4:4.10.95-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.10.95-0ubuntu1) saucy; urgency=low
 
   * New upstream RC release
 
- -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 15 Jul 2013 10:35:07 +0100
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Jul 2013 12:32:16 +0000
 
 kdeplasma-addons (4:4.10.90-0ubuntu1) saucy; urgency=low
 
