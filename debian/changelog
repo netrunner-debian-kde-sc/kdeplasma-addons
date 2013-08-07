@@ -1,3 +1,10 @@
+kdeplasma-addons (4:4.10.97-0ubuntu3) UNRELEASED; urgency=low
+
+  * plasma-widget-kimpanel breaks/replaces 
+    plasma-dataengines-addons << 4:4.10.97 
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 07 Aug 2013 10:31:36 +0200
+
 kdeplasma-addons (4:4.10.97-0ubuntu2) saucy; urgency=low
 
   * No-change rebuild for the ibus transition.

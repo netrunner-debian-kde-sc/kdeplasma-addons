@@ -203,8 +203,8 @@ Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: plasma-widgets-addons (<< 4:4.8.3)
-Breaks: plasma-widgets-addons (<< 4:4.8.3)
+Replaces: plasma-widgets-addons (<< 4:4.8.3), plasma-dataengines-addons (<< 4:4.10.97)
+Breaks: plasma-widgets-addons (<< 4:4.8.3), plasma-dataengines-addons (<< 4:4.10.97)
 Description: KIMPanel widget for Plasma
  This package provides the KDE Input Method Panel widget for Plasma.
  .
