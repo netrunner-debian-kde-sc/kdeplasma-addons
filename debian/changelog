@@ -9,8 +9,9 @@ kdeplasma-addons (4:4.11.0-0ubuntu1) UNRELEASED; urgency=low
 
   [ Jonathan Riddell ]
   * Remove breaks on kamoso, files are renamed
+  * New upstream release
 
- -- Howard Chan <smartboyhw@gmail.com>  Thu, 08 Aug 2013 11:52:14 +0800
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Aug 2013 00:12:18 +0100
 
 kdeplasma-addons (4:4.10.97-0ubuntu2) saucy; urgency=low
 
