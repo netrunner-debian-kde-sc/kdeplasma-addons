@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.11.0-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.11.0-0ubuntu1) saucy; urgency=low
 
   [ Philip Muškovac ]
   * plasma-widget-kimpanel breaks/replaces 
