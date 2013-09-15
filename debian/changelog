@@ -1,3 +1,12 @@
+kdeplasma-addons (4:4.11.1-0ubuntu2) saucy; urgency=low
+
+  * Cherry-pick commits 7c3011e0a6459c00cf9d06d74da3a32f87f1a2f6 and
+    b56d1552e9a8f8efe8fb8fd641126e78627c61a9 from upstream
+    to fix the bug where "Show a launcher when not running"
+    does not pin a launcher
+
+ -- Howard Chan <smartboyhw@gmail.com>  Sun, 15 Sep 2013 21:23:18 +0800
+
 kdeplasma-addons (4:4.11.1-0ubuntu1) saucy; urgency=low
 
   * New upstream bugfix release.

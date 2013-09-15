@@ -1,0 +1,41 @@
+Description: Fix it for non-running items too.
+ This allows the menu implementation to complete toggling the
+ launcher before the instance is destroyed. It's extremely un-
+ fortunate that the library currently requires this careful
+ handling; see e944d7ae in kde-workspace for a note on what
+ needs to be cleaned up there.
+Author: Eike Hein <hein@kde.org>
+Origin: upstream, https://projects.kde.org/projects/kde/kdeplasma-addons/repository/revisions/b56d1552e9a8f8efe8fb8fd641126e78627c61a9
+Bug: https://bugs.kde.org/show_bug.cgi?id=324661
+Applied-Upstream: 4.11.2
+Reviewed-by: Howard Chan <smartboyhw@gmail.com>
+Last-Update: 2013-09-15
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+diff --git a/applets/icontasks/applauncheritem.cpp b/applets/icontasks/applauncheritem.cpp
+index b5f646c..f721b5a 100644
+--- a/applets/icontasks/applauncheritem.cpp
++++ b/applets/icontasks/applauncheritem.cpp
+@@ -100,17 +100,18 @@ void AppLauncherItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *e)
+         actionList.append(configAction);
+     }
+ 
+-    TaskManager::BasicMenu menu(0, m_launcher, &m_applet->groupManager(), actionList, getAppMenu());
+-    menu.adjustSize();
++    TaskManager::BasicMenu *menu = new TaskManager::BasicMenu(0, m_launcher, &m_applet->groupManager(), actionList, getAppMenu());
++    menu->adjustSize();
+ 
+     if (m_applet->formFactor() != Plasma::Vertical) {
+-        menu.setMinimumWidth(size().width());
++        menu->setMinimumWidth(size().width());
+     }
+ 
+     Q_ASSERT(m_applet->containment());
+     Q_ASSERT(m_applet->containment()->corona());
+     stopWindowHoverEffect();
+-    menu.exec(m_applet->containment()->corona()->popupPosition(this, menu.size()));
++    menu->exec(m_applet->containment()->corona()->popupPosition(this, menu->size()));
++    menu->deleteLater();
+ }
+ 
+ 
