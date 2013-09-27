@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.11.2-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 27 Sep 2013 15:02:02 +0100
+
 kdeplasma-addons (4:4.11.1-0ubuntu2) saucy; urgency=low
 
   * Cherry-pick commits 7c3011e0a6459c00cf9d06d74da3a32f87f1a2f6 and
