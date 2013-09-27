@@ -1,8 +1,8 @@
-Index: kdeplasma-addons-4.9.2/applets/news/plasma-applet-news.desktop
+Index: kdeplasma-addons-4.11.2/applets/news/plasma-applet-news.desktop
 ===================================================================
---- kdeplasma-addons-4.9.2.orig/applets/news/plasma-applet-news.desktop	2012-09-28 01:39:43.000000000 +0100
-+++ kdeplasma-addons-4.9.2/applets/news/plasma-applet-news.desktop	2012-10-11 17:27:02.488278904 +0100
-@@ -116,7 +116,7 @@
+--- kdeplasma-addons-4.11.2.orig/applets/news/plasma-applet-news.desktop	2013-09-27 17:22:45.752875933 +0100
++++ kdeplasma-addons-4.11.2/applets/news/plasma-applet-news.desktop	2013-09-27 17:22:45.744875933 +0100
+@@ -118,7 +118,7 @@
  X-KDE-Library=plasma_applet_news
  X-KDE-PluginInfo-Author=Petri Damstén
  X-KDE-PluginInfo-Email=damu@iki.fi

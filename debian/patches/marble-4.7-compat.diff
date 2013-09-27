@@ -3,9 +3,11 @@ Description: compatibility with Marble < 0.13
 Forwarded: not-needed
 Last-Update: 2012-02-15
 
---- a/wallpapers/marble/marble.cpp
-+++ b/wallpapers/marble/marble.cpp
-@@ -80,8 +80,13 @@ void MarbleWallpaper::init(const KConfig
+Index: kdeplasma-addons-4.11.2/wallpapers/marble/marble.cpp
+===================================================================
+--- kdeplasma-addons-4.11.2.orig/wallpapers/marble/marble.cpp	2013-09-27 17:22:49.544875897 +0100
++++ kdeplasma-addons-4.11.2/wallpapers/marble/marble.cpp	2013-09-27 17:22:49.536875897 +0100
+@@ -80,8 +80,13 @@
  
          // These settings apply to Marble's "satellite" view mostly, e.g. make it beautiful
          m_map->setShowClouds(true);
@@ -19,7 +21,7 @@ Last-Update: 2012-02-15
  
          // Disable all render plugins (scale bar, compass, etc.) except the "stars" plugin
          foreach (RenderPlugin *item, m_map->renderPlugins()) {
-@@ -137,6 +142,9 @@ QWidget *MarbleWallpaper::createConfigur
+@@ -137,6 +142,9 @@
      m_ui.showPlacemarks->setChecked(m_showPlacemarks);
  
      MapThemeManager themeManager;
