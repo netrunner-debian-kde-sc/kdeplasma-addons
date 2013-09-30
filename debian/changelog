@@ -1,8 +1,8 @@
-kdeplasma-addons (4:4.11.2-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.11.2-0ubuntu1) saucy; urgency=low
 
   * New upstream bugfix release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 27 Sep 2013 17:22:20 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Sep 2013 14:21:24 +0100
 
 kdeplasma-addons (4:4.11.1-0ubuntu2) saucy; urgency=low
 
