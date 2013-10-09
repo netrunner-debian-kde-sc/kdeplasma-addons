@@ -1,10 +1,10 @@
-kdeplasma-addons (4:4.11.2-1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.11.2-1) experimental; urgency=low
 
   * New upstream release.
   * Update install files.
   * Update build-dependencies.
 
- -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:39:03 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:42:24 +0200
 
 kdeplasma-addons (4:4.10.5-2) unstable; urgency=low
 
