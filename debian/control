@@ -8,15 +8,16 @@ Uploaders: Sune Vuorela <sune@debian.org>,
            George Kiagiadakis <kiagiadakis.george@gmail.com>,
            Eshat Cakar <info@eshat.de>,
            Maximiliano Curia <maxy@debian.org>
-Build-Depends:
-# kde-sc-dev-latest (>= 4:4.10.2),
+Build-Depends: kde-sc-dev-latest (>= 4:4.10.2),
  cmake, debhelper (>= 9), pkg-kde-tools (>= 0.12),
- kdepimlibs5-dev (>= 4:4.10.2), kde-workspace-dev (>= 4:4.10.2),
+ kdepimlibs5-dev (>= 4:4.10.2), kde-workspace-dev (>= 4:4.11),
  nepomuk-core-dev (>= 4:4.10.2),
- libkexiv2-dev (>= 4:4.9), libmarble-dev (>= 4:4.9),
- libqt4-opengl-dev, libboost-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
- shared-desktop-ontologies, libattica-dev, libscim-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2), libqjson-dev,
+ libkexiv2-dev (>= 4:4.9), libmarble-dev (>= 4:4.11),
+ libqt4-opengl-dev, libboost-dev, libqimageblitz-dev, libeigen2-dev,
+ libxrender-dev, shared-desktop-ontologies, libattica-dev, libscim-dev,
+ libxtst-dev, libqalculate-dev,
+ libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2),
+ libqjson-dev,
  libqoauth-dev
 Standards-Version: 3.9.4
 Homepage: http://plasma.kde.org/
@@ -166,7 +167,7 @@ Section: kde
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: additional wallpaper plugins for Plasma
- This package contains additional Plasma wallpaper plugins that are used in 
+ This package contains additional Plasma wallpaper plugins that are used in
  the Plasma desktop to give marble, mandelbrot and other such wallpapers.
  .
  This package contains the following wallpaper plugins:
