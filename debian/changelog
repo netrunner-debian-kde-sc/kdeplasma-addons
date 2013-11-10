@@ -1,10 +1,10 @@
-kdeplasma-addons (4:4.11.3-1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.11.3-1) unstable; urgency=low
 
   * New upstream release.
   * Update build dependencies.
   * Switch to libeigen3-dev, thanks to Anton Gladky. (Closes: #728725)
 
- -- Maximiliano Curia <maxy@debian.org>  Wed, 06 Nov 2013 16:09:59 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 10 Nov 2013 11:08:20 +0100
 
 kdeplasma-addons (4:4.11.2-1) experimental; urgency=low
 
