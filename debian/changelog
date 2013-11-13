@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.11.2-0ubuntu2) trusty; urgency=low
+
+  * Bump to boost 1.54.
+
+ -- Dmitrijs Ledkovs <xnox@ubuntu.com>  Wed, 30 Oct 2013 12:30:04 +0000
+
 kdeplasma-addons (4:4.11.2-0ubuntu1) saucy; urgency=low
 
   * New upstream bugfix release
