@@ -11,7 +11,7 @@ Uploaders: Sune Vuorela <sune@debian.org>,
 Build-Depends:
 # kde-sc-dev-latest (>= 4:4.10.2),
  cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdepimlibs5-dev (>= 4:4.11.80), kde-workspace-dev (>= 4:4.11.80),
+ kdepimlibs5-dev (>= 4:4.11.80), kde-workspace-dev (>= 4:4.11),
  nepomuk-core-dev (>= 4:4.11.80),
  libkexiv2-dev (>= 4:4.11.80), libmarble-dev (>= 4:4.11.80),
  libqt4-opengl-dev, libboost1.54-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
