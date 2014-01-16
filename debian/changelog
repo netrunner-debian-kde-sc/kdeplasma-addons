@@ -1,8 +1,8 @@
-kdeplasma-addons (4:4.12.1-0ubuntu1) UNRELEASED; urgency=low
+kdeplasma-addons (4:4.12.1-0ubuntu1) trusty; urgency=low
 
   * New upstream bugfix release
 
- -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 13 Jan 2014 05:46:50 +0000
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 16 Jan 2014 08:11:17 +0000
 
 kdeplasma-addons (4:4.12.0-0ubuntu1) trusty; urgency=low
 
