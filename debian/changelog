@@ -2,6 +2,7 @@ kdeplasma-addons (4:4.11.5-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Add autopkgtests.
+  * Bump Standards-Version to 3.9.5, no changes needed.
 
  -- Maximiliano Curia <maxy@debian.org>  Tue, 04 Feb 2014 16:26:23 +0100
 

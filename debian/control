@@ -33,7 +33,7 @@ Build-Depends: cmake,
                nepomuk-core-dev (>= 4:4.11),
                pkg-kde-tools (>= 0.12),
                shared-desktop-ontologies
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 XS-Testsuite: autopkgtest
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/kdeplasma-addons.git
