@@ -34,6 +34,7 @@ Build-Depends: cmake,
                pkg-kde-tools (>= 0.12),
                shared-desktop-ontologies
 Standards-Version: 3.9.4
+XS-Testsuite: autopkgtest
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/kdeplasma-addons.git
 Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
