@@ -10,7 +10,7 @@ Uploaders: Sune Vuorela <sune@debian.org>,
            Maximiliano Curia <maxy@debian.org>
 Build-Depends: cmake,
                debhelper (>= 9),
-               kde-sc-dev-latest (>= 4:4.11),
+               kde-sc-dev-latest (>= 4:4.12),
                kde-workspace-dev (>= 4:4.11),
                kdepimlibs5-dev (>= 4:4.11),
                libattica-dev (>= 0.1.1),
