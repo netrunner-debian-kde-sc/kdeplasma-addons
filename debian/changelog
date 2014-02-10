@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.12.2-0ubuntu2) trusty; urgency=medium
+
+  * No libeigen2-dev on ppc64el
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Feb 2014 15:23:32 +0000
+
 kdeplasma-addons (4:4.12.2-0ubuntu1) trusty; urgency=medium
 
   * New upstream bugfix release
