@@ -1,9 +1,9 @@
-kdeplasma-addons (4:4.12.3-1) UNRELEASED; urgency=medium
+kdeplasma-addons (4:4.12.3-1~) UNRELEASED; urgency=medium
 
   * Update marble build-dependency version.
   * New upstream release.
 
- -- Maximiliano Curia <maxy@debian.org>  Fri, 28 Feb 2014 23:23:54 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 28 Feb 2014 23:27:57 +0100
 
 kdeplasma-addons (4:4.12.2-1) experimental; urgency=medium
 
