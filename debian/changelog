@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.12.3-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 28 Feb 2014 20:41:22 +0100
+
 kdeplasma-addons (4:4.12.2-0ubuntu2) trusty; urgency=medium
 
   * No libeigen2-dev on ppc64el
