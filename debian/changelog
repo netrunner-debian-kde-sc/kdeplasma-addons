@@ -1,6 +1,10 @@
 kdeplasma-addons (4:4.12.90-0ubuntu1) trusty; urgency=medium
 
+  [ Jonathan Riddell ]
   * New upstream beta release
+
+  [ Scarlett Clark ]
+  * Fix ppc64el install to remove eigen2 required file. 
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:51:03 +0000
 
