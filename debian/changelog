@@ -4,13 +4,22 @@ kdeplasma-addons (4:4.12.95-0ubuntu1) UNRELEASED; urgency=medium
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 20 Mar 2014 20:08:48 +0100
 
+kdeplasma-addons (4:4.12.90-0ubuntu3) trusty; urgency=low
+
+  * Remove plasma-wallpaper-mandelbrot even harder on ppc64el in the faint
+    hope of fixing the build
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 20 Mar 2014 22:50:28 -0400
+
+kdeplasma-addons (4:4.12.90-0ubuntu2) trusty; urgency=medium
+
+  * Add plasma-wallpapers-addons.install.ppc64el
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 20 Mar 2014 23:52:26 +0000
+
 kdeplasma-addons (4:4.12.90-0ubuntu1) trusty; urgency=medium
 
-  [ Jonathan Riddell ]
   * New upstream beta release
-
-  [ Scarlett Clark ]
-  * Fix ppc64el install to remove eigen2 required file. 
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:51:03 +0000
 
