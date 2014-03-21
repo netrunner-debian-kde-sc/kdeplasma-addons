@@ -14,7 +14,7 @@ Build-Depends:
  kdepimlibs5-dev (>= 4:4.12.95), kde-workspace-dev (>= 4:4.11),
  nepomuk-core-dev (>= 4:4.12.95),
  libkexiv2-dev (>= 4:4.12.95), libmarble-dev (>= 4:4.12.95),
- libqt4-opengl-dev, libboost1.54-dev, libqimageblitz-dev, libeigen2-dev [!ppc64el], libxrender-dev,
+ libqt4-opengl-dev, libboost1.54-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
  shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
  libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2),
  libqwt5-qt4-dev, libglib2.0-dev, shared-mime-info, libqjson-dev, libqoauth-dev,
