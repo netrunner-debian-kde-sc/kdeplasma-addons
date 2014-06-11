@@ -1,3 +1,20 @@
+kdeplasma-addons (4:4.13.1-1ubuntu1) UNRELEASED; urgency=medium
+
+  * Merge with debian, remaining changes:
+    - Build dep on libboost1.55-dev
+    - Add build dep on libqwt5-qt4-dev to build plasma-widget-kdeobservatory
+    - Keep kubuntu_01_news_applet_name.diff
+    - Remove useless debian/patches/marble-4.7-compat.diff patch
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 11 Jun 2014 18:28:46 +0200
+
+kdeplasma-addons (4:4.13.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 05 Jun 2014 12:26:25 +0200
+
 kdeplasma-addons (4:4.13.0-0ubuntu1) trusty; urgency=medium
 
   * New upstream KDE Software Compilation release
@@ -41,11 +58,31 @@ kdeplasma-addons (4:4.12.90-0ubuntu1) trusty; urgency=medium
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:51:03 +0000
 
+kdeplasma-addons (4:4.12.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Apr 2014 12:24:40 +0200
+
+kdeplasma-addons (4:4.12.3-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update marble build-dependency version.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 04 Mar 2014 00:06:45 +0100
+
 kdeplasma-addons (4:4.12.3-0ubuntu1) trusty; urgency=medium
 
   * New upstream bugfix release
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Mar 2014 20:43:05 +0100
+
+kdeplasma-addons (4:4.12.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump kde-sc-dev-latest build dependency.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 10 Feb 2014 11:32:04 +0100
 
 kdeplasma-addons (4:4.12.2-0ubuntu2) trusty; urgency=medium
 
@@ -88,6 +125,30 @@ kdeplasma-addons (4:4.11.80-0ubuntu1) trusty; urgency=low
   * New upstream beta release
 
  -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 23 Nov 2013 17:37:22 +0100
+
+kdeplasma-addons (4:4.11.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add autopkgtests.
+  * Bump Standards-Version to 3.9.5, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 04 Feb 2014 17:12:57 +0100
+
+kdeplasma-addons (4:4.11.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build dependencies.
+  * Switch to libeigen3-dev, thanks to Anton Gladky. (Closes: #728725)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 10 Nov 2013 11:08:20 +0100
+
+kdeplasma-addons (4:4.11.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update install files.
+  * Update build-dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:42:24 +0200
 
 kdeplasma-addons (4:4.11.2-0ubuntu2) trusty; urgency=low
 
@@ -175,6 +236,34 @@ kdeplasma-addons (4:4.10.80-0ubuntu1) saucy; urgency=low
   * New upstream release
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 01:12:49 +0100
+
+kdeplasma-addons (4:4.10.5-2) unstable; urgency=low
+
+  [ Pino Toscano ]
+  * Drop patch marble-4.7-compat.diff, obsolete now.
+  * Fix the conflicting version of kamoso in plasma-runners-addons, since
+    2.0.2-2 does not provide common files anymore.
+  * Slightly touches to the descriptions of plasma-runners-addons and
+    plasma-widgets-addons.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 19 Jul 2013 21:10:31 +0200
+
+kdeplasma-addons (4:4.10.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 12 Jul 2013 17:52:08 +0200
+
+kdeplasma-addons (4:4.10.4-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump debhelper build-dep and compat to 9.
+  * Bump Standards-Version to 3.9.4.
+  * Update vcs fields.
+  * Add myself to uploaders.
+  * Update plasma-widgets-addons install file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 14 Jun 2013 22:20:11 +0200
 
 kdeplasma-addons (4:4.10.4-0ubuntu1) saucy-proposed; urgency=low
 

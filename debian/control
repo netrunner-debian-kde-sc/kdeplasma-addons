@@ -1,38 +1,56 @@
 Source: kdeplasma-addons
 Section: utils
 Priority: optional
-Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
-XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Sune Vuorela <sune@debian.org>,
- Fathi Boudra <fabo@debian.org>,
- Modestas Vainius <modax@debian.org>,
- George Kiagiadakis <kiagiadakis.george@gmail.com>,
- Eshat Cakar <info@eshat.de>
-Build-Depends:
-# kde-sc-dev-latest (>= 4:4.10.2),
- cmake, debhelper (>= 7.3.16), pkg-kde-tools (>= 0.12),
- kdepimlibs5-dev (>= 4:4.13.0), kde-workspace-dev (>= 4:4.11),
- nepomuk-core-dev (>= 4:4.13.0),
- libkexiv2-dev (>= 4:4.13.0), libmarble-dev (>= 4:4.13.0),
- libqt4-opengl-dev, libboost1.54-dev, libqimageblitz-dev, libeigen2-dev, libxrender-dev,
- shared-desktop-ontologies, libattica-dev, libxtst-dev, libqalculate-dev,
- libqca2-dev, libqtwebkit-dev, libdbusmenu-qt-dev, libibus-1.0-dev (>= 1.4.2),
- libqwt5-qt4-dev, libglib2.0-dev, shared-mime-info, libqjson-dev, libqoauth-dev,
-Standards-Version: 3.9.3
+           Fathi Boudra <fabo@debian.org>,
+           Modestas Vainius <modax@debian.org>,
+           George Kiagiadakis <kiagiadakis.george@gmail.com>,
+           Eshat Cakar <info@eshat.de>,
+           Maximiliano Curia <maxy@debian.org>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               kde-sc-dev-latest (>= 4:4.12),
+               kde-workspace-dev (>= 4:4.11),
+               kdepimlibs5-dev (>= 4:4.11),
+               libattica-dev (>= 0.1.1),
+               libboost1.55-dev,
+               libdbusmenu-qt-dev,
+               libeigen3-dev,
+               libibus-1.0-dev (>= 1.4.2),
+               libkexiv2-dev (>= 4:4.11),
+               libmarble-dev (>= 4:4.13),
+               libqalculate-dev,
+               libqca2-dev (>= 2.0.0),
+               libqimageblitz-dev,
+               libqjson-dev,
+               libqoauth-dev,
+               libqt4-opengl-dev,
+               libqtwebkit-dev,
+               libqwt5-qt4-dev,
+               libscim-dev,
+               libxrender-dev,
+               libxtst-dev,
+               nepomuk-core-dev (>= 4:4.11),
+               pkg-kde-tools (>= 0.12),
+               shared-desktop-ontologies
+Standards-Version: 3.9.5
+XS-Testsuite: autopkgtest
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
 Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
-X-Debian-Vcs-Browser: http://git.debian.org/?p=pkg-kde/kde-sc/kdeplasma-addons.git
-X-Debian-Vcs-Git: git://git.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
+X-Vcs-Debian-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/kdeplasma-addons.git
+X-Vcs-Debian-Git: git://anonscm.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
 
 Package: kdeplasma-addons
 Architecture: all
 Section: kde
-Depends: ${misc:Depends}, plasma-widgets-addons (>= ${source:Version}),
- plasma-runners-addons (>= ${source:Version}),
- plasma-widget-lancelot (>= ${source:Version}),
- plasma-wallpapers-addons (>= ${source:Version}),
- plasma-containments-addons (>= ${source:Version})
+Depends: plasma-containments-addons (>= ${source:Version}),
+         plasma-runners-addons (>= ${source:Version}),
+         plasma-wallpapers-addons (>= ${source:Version}),
+         plasma-widget-lancelot (>= ${source:Version}),
+         plasma-widgets-addons (>= ${source:Version}),
+         ${misc:Depends}
 Description: addons for Plasma
  The KDE Plasma addons module is a collection of additional Plasma
  data engines, widgets and krunner plugins. It is part of
@@ -44,15 +62,12 @@ Description: addons for Plasma
 Package: plasma-widgets-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace,
- plasma-dataengines-addons (= ${binary:Version}),
-Breaks: plasma-runners-addons (<< 4:4.10.80),
- plasma-widget-kimpanel (<< 4:4.10.80),
- plasma-wallpapers-addons (<< 4:4.10.80)
-Replaces: plasma-runners-addons (<< 4:4.10.80),
- plasma-widget-kimpanel (<< 4:4.10.80),
- plasma-wallpapers-addons (<< 4:4.10.80)
-Suggests: plasma-widget-kimpanel, plasma-widget-lancelot
+Depends: plasma-dataengines-addons (= ${binary:Version}),
+         plasma-dataengines-workspace,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: plasma-widget-lancelot
+Suggests: plasma-widget-kimpanel
 Description: additional widgets for Plasma
  This package contains additional Plasma widgets shipped in the Plasma
  addons module. Install it if you want a variety of widgets on your Plasma
@@ -77,7 +92,7 @@ Description: additional widgets for Plasma
   * Incoming Message
   * Knowledge Base
   * Konqueror Profiles
-  * Konsole Profile
+  * Konsole Profiles
   * LCD Weather Station
   * Leave a Note
   * Life
@@ -112,7 +127,7 @@ Description: additional widgets for Plasma
 Package: plasma-containments-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: additional containment plugins for Plasma
  This package contains additional Plasma containment plugins. These plugins
  allow the user to layout Plasma widgets in groups.
@@ -126,9 +141,7 @@ Description: additional containment plugins for Plasma
 Package: plasma-dataengines-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Breaks: plasma-widget-kdeobservatory (<< 4:4.10.80)
-Replaces: plasma-widget-kdeobservatory (<< 4:4.10.80)
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: additional data engines for Plasma
  This package contains additional Plasma data engines shipped in Plasma
  addons module. These engines are needed by some Plasma widget shipped with
@@ -139,7 +152,9 @@ Description: additional data engines for Plasma
 Package: plasma-runners-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: kamoso (<< 2.0.2-2)
+Replaces: kamoso (<< 2.0.2-2)
 Description: additional runners for Plasma and Krunner
  This package contains additional Plasma runners that are used in krunner
  (the "run command" dialog of Plasma) to reveal special search results.
@@ -153,6 +168,7 @@ Description: additional runners for Plasma and Krunner
   * Kate Sessions
   * KDE TechBase
   * KDE Userbase Documentation
+  * Kate Sessions
   * Konqueror Sessions
   * Konsole Sessions
   * Kopete Contacts
@@ -162,16 +178,17 @@ Description: additional runners for Plasma and Krunner
   * Web Browser History
   * Wikipedia
   * Wikitravel
+  * YouTube
  .
  This package is part of the KDE Plasma addons module.
 
 Package: plasma-wallpapers-addons
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}, plasma-dataengines-workspace, plasma-dataengines-addons (= ${binary:Version}), kde-wallpapers
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Replaces: plasma-dataengines-addons (<= 4:4.3.0-1)
 Description: additional wallpaper plugins for Plasma
- This package contains additional Plasma wallpaper plugins that are used in 
+ This package contains additional Plasma wallpaper plugins that are used in
  the Plasma desktop to give marble, mandelbrot and other such wallpapers.
  .
  This package contains the following wallpaper plugins:
@@ -187,7 +204,7 @@ Description: additional wallpaper plugins for Plasma
 Package: plasma-widget-lancelot
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Replaces: plasma-applet-lancelot
 Conflicts: plasma-applet-lancelot
 Description: lancelot widget for Plasma
@@ -200,9 +217,9 @@ Description: lancelot widget for Plasma
 Package: plasma-widget-kimpanel
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: plasma-widgets-addons (<< 4:4.8.3), plasma-dataengines-addons (<< 4:4.10.97)
-Breaks: plasma-widgets-addons (<< 4:4.8.3), plasma-dataengines-addons (<< 4:4.10.97)
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Replaces: plasma-widgets-addons (<< 4:4.8.3)
+Breaks: plasma-widgets-addons (<< 4:4.8.3)
 Description: KIMPanel widget for Plasma
  This package provides the KDE Input Method Panel widget for Plasma.
  .
@@ -211,7 +228,7 @@ Description: KIMPanel widget for Plasma
 Package: plasma-widget-kdeobservatory
 Architecture: any
 Section: kde
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Replaces: plasma-dataengines-addons (<< 4:4.8.0)
 Breaks: plasma-dataengines-addons (<< 4:4.8.0)
 Description: KDE development tracking widget for Plasma
@@ -225,9 +242,14 @@ Package: kdeplasma-addons-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${misc:Depends}, plasma-widgets-addons (= ${binary:Version}), plasma-dataengines-addons (= ${binary:Version}),
- plasma-runners-addons (= ${binary:Version}), plasma-widget-lancelot (= ${binary:Version}),
- plasma-wallpapers-addons (= ${binary:Version}), plasma-widget-kimpanel (= ${binary:Version}), kde-workspace-dbg
+Depends: kde-workspace-dbg,
+         plasma-dataengines-addons (= ${binary:Version}),
+         plasma-runners-addons (= ${binary:Version}),
+         plasma-wallpapers-addons (= ${binary:Version}),
+         plasma-widget-kimpanel (= ${binary:Version}),
+         plasma-widget-lancelot (= ${binary:Version}),
+         plasma-widgets-addons (= ${binary:Version}),
+         ${misc:Depends}
 Description: debugging symbols for kdeplasma-addons
  This package contains the debugging symbols associated with kdeplasma-addons.
  They will automatically be used by gdb for debugging kdeplasma-addons related

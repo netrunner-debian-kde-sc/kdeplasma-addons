@@ -1,0 +1,208 @@
+Description: eigen2 to eigen3 migration
+Author: Anton Gladky <gladk@debian.org>
+        Benoit Jacob <jacob.benoit.1@gmail.com>
+Bug-Debian: http://bugs.debian.org/728725
+Last-Update: 2013-11-04
+
+--- /dev/null
++++ b/cmake/FindEigen3.cmake
+@@ -0,0 +1,81 @@
++# - Try to find Eigen3 lib
++#
++# This module supports requiring a minimum version, e.g. you can do
++#   find_package(Eigen3 3.1.2)
++# to require version 3.1.2 or newer of Eigen3.
++#
++# Once done this will define
++#
++#  EIGEN3_FOUND - system has eigen lib with correct version
++#  EIGEN3_INCLUDE_DIR - the eigen include directory
++#  EIGEN3_VERSION - eigen version
++
++# Copyright (c) 2006, 2007 Montel Laurent, <montel@kde.org>
++# Copyright (c) 2008, 2009 Gael Guennebaud, <g.gael@free.fr>
++# Copyright (c) 2009 Benoit Jacob <jacob.benoit.1@gmail.com>
++# Redistribution and use is allowed according to the terms of the 2-clause BSD license.
++
++if(NOT Eigen3_FIND_VERSION)
++  if(NOT Eigen3_FIND_VERSION_MAJOR)
++    set(Eigen3_FIND_VERSION_MAJOR 2)
++  endif(NOT Eigen3_FIND_VERSION_MAJOR)
++  if(NOT Eigen3_FIND_VERSION_MINOR)
++    set(Eigen3_FIND_VERSION_MINOR 91)
++  endif(NOT Eigen3_FIND_VERSION_MINOR)
++  if(NOT Eigen3_FIND_VERSION_PATCH)
++    set(Eigen3_FIND_VERSION_PATCH 0)
++  endif(NOT Eigen3_FIND_VERSION_PATCH)
++
++  set(Eigen3_FIND_VERSION "${Eigen3_FIND_VERSION_MAJOR}.${Eigen3_FIND_VERSION_MINOR}.${Eigen3_FIND_VERSION_PATCH}")
++endif(NOT Eigen3_FIND_VERSION)
++
++macro(_eigen3_check_version)
++  file(READ "${EIGEN3_INCLUDE_DIR}/Eigen/src/Core/util/Macros.h" _eigen3_version_header)
++
++  string(REGEX MATCH "define[ \t]+EIGEN_WORLD_VERSION[ \t]+([0-9]+)" _eigen3_world_version_match "${_eigen3_version_header}")
++  set(EIGEN3_WORLD_VERSION "${CMAKE_MATCH_1}")
++  string(REGEX MATCH "define[ \t]+EIGEN_MAJOR_VERSION[ \t]+([0-9]+)" _eigen3_major_version_match "${_eigen3_version_header}")
++  set(EIGEN3_MAJOR_VERSION "${CMAKE_MATCH_1}")
++  string(REGEX MATCH "define[ \t]+EIGEN_MINOR_VERSION[ \t]+([0-9]+)" _eigen3_minor_version_match "${_eigen3_version_header}")
++  set(EIGEN3_MINOR_VERSION "${CMAKE_MATCH_1}")
++
++  set(EIGEN3_VERSION ${EIGEN3_WORLD_VERSION}.${EIGEN3_MAJOR_VERSION}.${EIGEN3_MINOR_VERSION})
++  if(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
++    set(EIGEN3_VERSION_OK FALSE)
++  else(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
++    set(EIGEN3_VERSION_OK TRUE)
++  endif(${EIGEN3_VERSION} VERSION_LESS ${Eigen3_FIND_VERSION})
++
++  if(NOT EIGEN3_VERSION_OK)
++
++    message(STATUS "Eigen3 version ${EIGEN3_VERSION} found in ${EIGEN3_INCLUDE_DIR}, "
++                   "but at least version ${Eigen3_FIND_VERSION} is required")
++  endif(NOT EIGEN3_VERSION_OK)
++endmacro(_eigen3_check_version)
++
++if (EIGEN3_INCLUDE_DIR)
++
++  # in cache already
++  _eigen3_check_version()
++  set(EIGEN3_FOUND ${EIGEN3_VERSION_OK})
++
++else (EIGEN3_INCLUDE_DIR)
++
++  find_path(EIGEN3_INCLUDE_DIR NAMES signature_of_eigen3_matrix_library
++      PATHS
++      ${CMAKE_INSTALL_PREFIX}/include
++      ${KDE4_INCLUDE_DIR}
++      PATH_SUFFIXES eigen3 eigen
++    )
++
++  if(EIGEN3_INCLUDE_DIR)
++    _eigen3_check_version()
++  endif(EIGEN3_INCLUDE_DIR)
++
++  include(FindPackageHandleStandardArgs)
++  find_package_handle_standard_args(Eigen3 DEFAULT_MSG EIGEN3_INCLUDE_DIR EIGEN3_VERSION_OK)
++
++  mark_as_advanced(EIGEN3_INCLUDE_DIR)
++
++endif(EIGEN3_INCLUDE_DIR)
++
+--- a/wallpapers/mandelbrot/CMakeLists.txt
++++ b/wallpapers/mandelbrot/CMakeLists.txt
+@@ -1,12 +1,13 @@
+-find_package(Eigen2 2.0.3)
+-macro_log_feature(EIGEN2_FOUND "Eigen2" "Eigen2 enables the Mandelbrot wallpaper plugin." "http://eigen.tuxfamily.org" FALSE "2.0.3")
++find_package(Eigen3 2.0.3)
++macro_log_feature(EIGEN3_FOUND "Eigen3" "Eigen3 enables the Mandelbrot wallpaper plugin." "http://eigen.tuxfamily.org" FALSE "2.0.3")
+ 
+-if(EIGEN2_FOUND)
++if(EIGEN3_FOUND)
+ 
++add_definitions(-DEIGEN2_SUPPORT)
+ 
+ project(plasma-wallpaper-mandelbrot)
+ 
+-include_directories(${EIGEN2_INCLUDE_DIR})
++include_directories(${EIGEN3_INCLUDE_DIR})
+ 
+ set(mandelbrot_SRCS
+     mandelbrot.cpp
+@@ -87,4 +88,4 @@
+ install(TARGETS plasma_wallpaper_mandelbrot DESTINATION ${PLUGIN_INSTALL_DIR})
+ install(FILES plasma-wallpaper-mandelbrot.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+ 
+-endif(EIGEN2_FOUND)
++endif(EIGEN3_FOUND)
+--- a/wallpapers/mandelbrot/render_impl.cpp
++++ b/wallpapers/mandelbrot/render_impl.cpp
+@@ -43,17 +43,12 @@
+   // Examples:
+   //  * no vectorization: then packet_size == 1 always
+   //  * SSE or AltiVec: then packet_size is 4 if Real==float and is 2 if Real==double
+-  enum { packet_size = Eigen::ei_packet_traits<Real>::size };
++  enum { packet_size = Eigen::internal::packet_traits<Real>::size };
+ 
+   // with Eigen, if we use vectors of the right size, operations on them will be compiled
+   // as operations on SIMD packets
+-  typedef Eigen::Matrix<Real, packet_size, 1> Packet;
+-  typedef Eigen::Matrix<int, packet_size, 1> Packeti;
+-
+-  // normally we wouldn't need to do that, but since some compilers can miss optimizations,
+-  // in the most critical code, let's play directly with SIMD registers. It's completely equivalent
+-  // to Eigen vectors of the right size, just less subtle for the compiler to get right.
+-  typedef typename Eigen::ei_packet_traits<Real>::type LowlevelPacket;
++  typedef Eigen::Array<Real, packet_size, 1> Packet;
++  typedef Eigen::Array<int, packet_size, 1> Packeti;
+ 
+   // how many iterations we do before testing for divergence. See comment above for struct iter_before_test.
+   // must be a multiple of 4 as we'll peel the inner loop by 4
+@@ -154,35 +149,17 @@
+     /* perform iter_before_test iterations */
+     for(int i = 0; i < iter_before_test/4; i++) // we peel the inner loop by 4
+     {
+-      LowlevelPacket lpzr, lpzi;
+       for(int repeat = 0; repeat < 4; repeat++)
+       {
+-        lpzr = Eigen::ei_pload(pzr.data());
+-        lpzi = Eigen::ei_pload(pzi.data());
+-        Eigen::ei_pstore(pzr.data(),
+-                          Eigen::ei_padd(
+-                            Eigen::ei_psub(
+-                              Eigen::ei_pmul(lpzr,lpzr),
+-                              Eigen::ei_pmul(lpzi,lpzi)
+-                            ),
+-                            Eigen::ei_pload(pcr.data())
+-                          )
+-                        );
+-        Eigen::ei_pstore(pzi.data(),
+-                          Eigen::ei_padd(
+-                            Eigen::ei_pmul(
+-                              Eigen::ei_padd(lpzr,lpzr),
+-                              lpzi
+-                            ),
+-                            Eigen::ei_pload(pci.data())
+-                          )
+-                        );
++        Packet pzrt = pzr*pzr - pzi*pzi + pcr;
++        pzi = 2*pzr*pzi + pci;
++        pzr = pzrt;
+       }
+     }
+ 
+     /* test for divergence */
+-    pzabs2 = pzr.cwise().square();
+-    pzabs2 += pzi.cwise().square();
++    pzabs2 = pzr.array()*pzr.array();
++    pzabs2 += pzi.array()*pzi.array();
+     for(int i = 0; i < packet_size; i++) {
+       if(!(pixel_diverge[i])) {
+         if(pzabs2[i] > square_bailout_radius) {
+@@ -213,13 +190,13 @@
+   do
+   {
+     pzr_buf = pzr;
+-    pzr = pzr.cwise().square();
+-    pzr -= pzi.cwise().square();
++    pzr = pzr.array()*pzr.array();
++    pzr -= pzi.array()*pzi.array();
+     pzr += pcr;
+-    pzi = (2*pzr_buf).cwise()*pzi;
++    pzi = (2*pzr_buf).array()*pzi;
+     pzi += pci;
+-    pzabs2 = pzr.cwise().square();
+-    pzabs2 += pzi.cwise().square();
++    pzabs2 = pzr.array()*pzr.array();
++    pzabs2 += pzi.array()*pzi.array();
+     for(int i = 0; i < packet_size; i++) {
+       if(!(pixel_diverge[i])) {
+         if(pzabs2[i] > square_bailout_radius) {
+@@ -298,7 +275,7 @@
+ 
+ #if defined(HAVE_PATH_WITH_SSE2_EXPLICTLY_ENABLED) || !defined(THIS_PATH_WITH_SSE2_EXPLICTLY_ENABLED)
+ 
+-  enum { packet_size = Eigen::ei_packet_traits<Real>::size };
++  enum { packet_size = Eigen::internal::packet_traits<Real>::size };
+   Color3 dummy_buffer[packet_size];
+   
+   mandelbrot_render_tile_impl<Real> renderer(mandelbrot, tile);
