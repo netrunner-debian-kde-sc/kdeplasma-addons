@@ -1,4 +1,4 @@
-kdeplasma-addons (4:4.13.1-1ubuntu1) UNRELEASED; urgency=medium
+kdeplasma-addons (4:4.13.1-1ubuntu1) utopic; urgency=medium
 
   * Merge with debian, remaining changes:
     - Build dep on libboost1.55-dev
@@ -6,7 +6,7 @@ kdeplasma-addons (4:4.13.1-1ubuntu1) UNRELEASED; urgency=medium
     - Keep kubuntu_01_news_applet_name.diff
     - Remove useless debian/patches/marble-4.7-compat.diff patch
 
- -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 11 Jun 2014 18:28:46 +0200
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 11 Jun 2014 18:30:26 +0200
 
 kdeplasma-addons (4:4.13.1-1) unstable; urgency=medium
 
