@@ -1,3 +1,9 @@
+kdeplasma-addons (4:4.13.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Jul 2014 16:48:15 +0200
+
 kdeplasma-addons (4:4.13.1-1) unstable; urgency=medium
 
   * New upstream release.
