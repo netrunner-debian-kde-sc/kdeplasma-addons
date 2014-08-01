@@ -1,7 +1,8 @@
 Source: kdeplasma-addons
 Section: utils
 Priority: optional
-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Maintainer: Debian/Ubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+X-Ubuntu-Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
 Uploaders: Sune Vuorela <sune@debian.org>,
            Fathi Boudra <fabo@debian.org>,
            Modestas Vainius <modax@debian.org>,
@@ -38,6 +39,8 @@ XS-Testsuite: autopkgtest
 Homepage: http://plasma.kde.org/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-sc/kdeplasma-addons.git
 Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-sc/kdeplasma-addons.git
+X-Ubuntu-Vcs-Browser: http://bazaar.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
+X-Ubuntu-Vcs-Bzr: https://code.launchpad.net/~kubuntu-packagers/kubuntu-packaging/kdeplasma-addons
 
 Package: kdeplasma-addons
 Architecture: all
@@ -219,6 +222,19 @@ Replaces: plasma-widgets-addons (<< 4:4.8.3)
 Breaks: plasma-widgets-addons (<< 4:4.8.3)
 Description: KIMPanel widget for Plasma
  This package provides the KDE Input Method Panel widget for Plasma.
+ .
+ This package is part of the KDE Plasma addons module.
+
+Package: plasma-widget-kdeobservatory
+Architecture: any
+Section: kde
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Replaces: plasma-dataengines-addons (<< 4:4.8.0)
+Breaks: plasma-dataengines-addons (<< 4:4.8.0)
+Description: KDE development tracking widget for Plasma
+ The KDE Observatory Plasma widget is a way to track various metrics of the
+ KDE project as a whole, including commit counts, Krazy2 report numbers for
+ various KDE modules, and other statistics.
  .
  This package is part of the KDE Plasma addons module.
 

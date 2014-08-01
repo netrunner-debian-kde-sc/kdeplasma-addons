@@ -4,12 +4,71 @@ kdeplasma-addons (4:4.13.3-1) UNRELEASED; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Jul 2014 13:07:57 +0200
 
+kdeplasma-addons (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:53:50 +0100
+
+kdeplasma-addons (4:4.13.1-1ubuntu1) utopic; urgency=medium
+
+  * Merge with debian, remaining changes:
+    - Build dep on libboost1.55-dev
+    - Add build dep on libqwt5-qt4-dev to build plasma-widget-kdeobservatory
+    - Keep kubuntu_01_news_applet_name.diff
+    - Remove useless debian/patches/marble-4.7-compat.diff patch
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 11 Jun 2014 18:30:26 +0200
+
 kdeplasma-addons (4:4.13.1-1) unstable; urgency=medium
 
   * New upstream release.
   * Update build dependencies.
 
  -- Maximiliano Curia <maxy@debian.org>  Thu, 05 Jun 2014 12:26:25 +0200
+
+kdeplasma-addons (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Apr 2014 21:56:53 +0100
+
+kdeplasma-addons (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:21:22 +0200
+
+kdeplasma-addons (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 12:10:17 +0100
+
+kdeplasma-addons (4:4.12.90-0ubuntu4) trusty; urgency=medium
+
+  * Revert ppc64el-specific hacks to avoid eigen2, now that it's built.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Thu, 20 Mar 2014 23:25:16 -0600
+
+kdeplasma-addons (4:4.12.90-0ubuntu3) trusty; urgency=low
+
+  * Remove plasma-wallpaper-mandelbrot even harder on ppc64el in the faint
+    hope of fixing the build
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 20 Mar 2014 22:50:28 -0400
+
+kdeplasma-addons (4:4.12.90-0ubuntu2) trusty; urgency=medium
+
+  * Add plasma-wallpapers-addons.install.ppc64el
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 20 Mar 2014 23:52:26 +0000
+
+kdeplasma-addons (4:4.12.90-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:51:03 +0000
 
 kdeplasma-addons (4:4.12.4-1) unstable; urgency=medium
 
@@ -24,12 +83,60 @@ kdeplasma-addons (4:4.12.3-1) experimental; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Tue, 04 Mar 2014 00:06:45 +0100
 
+kdeplasma-addons (4:4.12.3-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Mar 2014 20:43:05 +0100
+
 kdeplasma-addons (4:4.12.2-1) experimental; urgency=medium
 
   * New upstream release.
   * Bump kde-sc-dev-latest build dependency.
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 10 Feb 2014 11:32:04 +0100
+
+kdeplasma-addons (4:4.12.2-0ubuntu2) trusty; urgency=medium
+
+  * No libeigen2-dev on ppc64el
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Feb 2014 15:23:32 +0000
+
+kdeplasma-addons (4:4.12.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Feb 2014 23:53:07 +0000
+
+kdeplasma-addons (4:4.12.1-0ubuntu1) trusty; urgency=low
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 16 Jan 2014 08:11:17 +0000
+
+kdeplasma-addons (4:4.12.0-0ubuntu1) trusty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Dec 2013 16:51:41 +0000
+
+kdeplasma-addons (4:4.11.97-0ubuntu1) trusty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 29 Nov 2013 12:49:52 +0000
+
+kdeplasma-addons (4:4.11.95-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 25 Nov 2013 17:58:35 +0100
+
+kdeplasma-addons (4:4.11.80-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 23 Nov 2013 17:37:22 +0100
 
 kdeplasma-addons (4:4.11.5-1) unstable; urgency=medium
 
@@ -54,6 +161,93 @@ kdeplasma-addons (4:4.11.2-1) experimental; urgency=low
   * Update build-dependencies.
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:42:24 +0200
+
+kdeplasma-addons (4:4.11.2-0ubuntu2) trusty; urgency=low
+
+  * Bump to boost 1.54.
+
+ -- Dmitrijs Ledkovs <xnox@ubuntu.com>  Wed, 30 Oct 2013 12:30:04 +0000
+
+kdeplasma-addons (4:4.11.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Sep 2013 14:21:24 +0100
+
+kdeplasma-addons (4:4.11.1-0ubuntu2) saucy; urgency=low
+
+  * Cherry-pick commits 7c3011e0a6459c00cf9d06d74da3a32f87f1a2f6 and
+    b56d1552e9a8f8efe8fb8fd641126e78627c61a9 from upstream
+    to fix the bug where "Show a launcher when not running"
+    does not pin a launcher
+
+ -- Howard Chan <smartboyhw@gmail.com>  Sun, 15 Sep 2013 21:23:18 +0800
+
+kdeplasma-addons (4:4.11.1-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Howard Chan <smartboyhw@gmail.com>  Fri, 06 Sep 2013 22:20:29 +0100
+
+kdeplasma-addons (4:4.11.0-0ubuntu1) saucy; urgency=low
+
+  [ Philip Muškovac ]
+  * plasma-widget-kimpanel breaks/replaces
+    plasma-dataengines-addons << 4:4.10.97
+
+  [ Howard Chan ]
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * Remove breaks on kamoso, files are renamed
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Aug 2013 00:12:18 +0100
+
+kdeplasma-addons (4:4.10.97-0ubuntu2) saucy; urgency=low
+
+  * No-change rebuild for the ibus transition.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Mon, 29 Jul 2013 16:39:16 +0100
+
+kdeplasma-addons (4:4.10.97-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC 2 release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Jul 2013 19:30:29 +0100
+
+kdeplasma-addons (4:4.10.95-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Jul 2013 12:32:16 +0000
+
+kdeplasma-addons (4:4.10.90-0ubuntu1) saucy; urgency=low
+
+  [ Michał Zając ]
+  * New upstream bet release
+
+  [ Philip Muškovac ]
+  * Add translator runner to plasma-runners-addons.install
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 28 Jun 2013 18:11:16 +0100
+
+kdeplasma-addons (4:4.10.80-0ubuntu1) saucy; urgency=low
+
+  [ Rohan Garg ]
+  * New upstream release
+    - Update install files
+    - Switch to libqwt5-qt4-dev in Build-Depends, kdeobservatory needs it
+    - Drop kubuntu_02_random_password_generator.diff, applied upstream
+
+  [ Philip Muškovac ]
+  * Bump Breaks/Replaces for the 4.10.3 debian merge to << 4:4.10.80 to catch
+    upgrades.
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 01:12:49 +0100
 
 kdeplasma-addons (4:4.10.5-2) unstable; urgency=low
 
@@ -83,6 +277,52 @@ kdeplasma-addons (4:4.10.4-1) experimental; urgency=low
 
  -- Maximiliano Curia <maxy@debian.org>  Fri, 14 Jun 2013 22:20:11 +0200
 
+kdeplasma-addons (4:4.10.4-0ubuntu1) saucy-proposed; urgency=low
+
+  [ Rohan Garg ]
+  * New upstream bugfix release
+
+  [ Jonathan Riddell ]
+  * Update plasma-widgets-addons.install
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 07 Jun 2013 00:29:05 +0100
+
+kdeplasma-addons (4:4.10.3-0ubuntu3) saucy; urgency=low
+
+  * Add kubuntu_02_random_password_generator.diff from upstream
+    fixes paste widget password generator uses insecure randomness
+    LP: #1179380
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 04 Jun 2013 11:51:38 +0100
+
+kdeplasma-addons (4:4.10.3-0ubuntu2) saucy; urgency=low
+
+  * plasma-widgets-addons breaks/replaces
+    plasma-runners-addons << 4:4.10.3-0ubuntu2~,
+    plasma-widget-kimpanel << 4:4.10.3-0ubuntu2~,
+    plasma-wallpapers-addons << 4:4.10.3-0ubuntu2~
+  * plasma-dataengines-addons breaks/replaces
+    plasma-widget-kdeobservatory << 4:4.10.3-0ubuntu2~
+  * Remove files from plasma-widget-kdeobservatory.install that conflict with
+    plasma-dataengines-addons
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 25 May 2013 00:21:09 +0200
+
+kdeplasma-addons (4:4.10.3-0ubuntu1) saucy; urgency=low
+
+  * Merged with Debian, remaining changes:
+   - Build plasma-widget-kdeobservatory
+   - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+     kde-wallpapers
+   - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+     recommends (we don't want that since CD size is limited)
+   - Do not build against libscim-dev - we use IBus
+   - Add build-dep on libqwt-dev, libglib2.0-dev, shared-mime-info
+   - Kept kubuntu_01_news_applet_name.diff
+  * New upstream release
+
+ -- Michał Zając <quintasan@kubuntu.org>  Wed, 08 May 2013 22:49:59 +0200
+
 kdeplasma-addons (4:4.10.2-2) experimental; urgency=low
 
   [ Diane Trout ]
@@ -96,7 +336,7 @@ kdeplasma-addons (4:4.10.2-2) experimental; urgency=low
 kdeplasma-addons (4:4.10.2-1) experimental; urgency=low
 
   * New upstram release.
-     - fix kill runner conflicts with command line (Closes: #580003) 
+     - fix kill runner conflicts with command line (Closes: #580003)
 
   [ Daniele E. Domenichelli ]
   * Update build dependencies:
@@ -123,6 +363,140 @@ kdeplasma-addons (4:4.10.2-1) experimental; urgency=low
 
  -- Sune Vuorela <sune@debian.org>  Thu, 04 Apr 2013 07:55:11 +0000
 
+kdeplasma-addons (4:4.10.2-0ubuntu1) raring; urgency=low
+
+  * New upstream bugfix release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 31 Mar 2013 14:45:59 +0200
+
+kdeplasma-addons (4:4.10.1-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream bugfix release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 05 Mar 2013 15:42:40 +0000
+
+kdeplasma-addons (4:4.10.0-0ubuntu1) raring; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 06 Feb 2013 11:50:35 +0000
+
+kdeplasma-addons (4:4.9.98-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream release candidate
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 18 Jan 2013 15:31:30 +0000
+
+kdeplasma-addons (4:4.9.97-0ubuntu1) raring; urgency=low
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Thu, 03 Jan 2013 22:32:42 +0100
+
+kdeplasma-addons (4:4.9.95-0ubuntu1) raring; urgency=low
+
+  [ Jonathan Riddell ]
+  * New upstream RC release
+
+  [ Rohan Garg ]
+  * Add nepomuk-core-dev to build-depends
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Dec 2012 23:27:00 +0000
+
+kdeplasma-addons (4:4.9.90-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Dec 2012 17:50:20 +0000
+
+kdeplasma-addons (4:4.9.80-0ubuntu1) raring; urgency=low
+
+  [ Jonathan Riddell ]
+  * New upstream beta release
+
+  [ Scott Kitterman ]
+  * Update .install files
+
+ -- Scott Kitterman <scott@kitterman.com>  Fri, 23 Nov 2012 12:47:07 -0500
+
+kdeplasma-addons (4:4.9.3-0ubuntu1) raring; urgency=low
+
+  * New upstream release (LP: #1074747)
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 06 Nov 2012 22:34:25 +0100
+
+kdeplasma-addons (4:4.9.2-0ubuntu2) quantal; urgency=low
+
+  * Add kubuntu_01_news_applet_name.diff revert name of News plasmoid,
+    prevents broken widget on Kubuntu Active workspace LP: #1046437
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 11 Oct 2012 17:28:24 +0100
+
+kdeplasma-addons (4:4.9.2-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 02 Oct 2012 15:25:35 +0100
+
+kdeplasma-addons (4:4.9.1-0ubuntu2) quantal; urgency=low
+
+  * Rebuild for libattica soname change.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 15 Sep 2012 11:41:02 +0200
+
+kdeplasma-addons (4:4.9.1-0ubuntu1) quantal; urgency=low
+
+  [ Harald Sitter ]
+  * New upstream release
+
+  [ Philip Muškovac ]
+  * Change sonames from 4.9.0 to 4.9.*
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Mon, 10 Sep 2012 18:26:44 +0530
+
+kdeplasma-addons (4:4.9.0-0ubuntu2) quantal; urgency=low
+
+  * Build-dep on kdelibs 4.9.0a, adjust .install files to new library
+    version no
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Aug 2012 11:57:50 +0100
+
+kdeplasma-addons (4:4.9.0-0ubuntu1) quantal; urgency=low
+
+  * Use direct build-depends versions rather than kde-sc-dev-latest
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Jul 2012 17:55:23 +0100
+
+kdeplasma-addons (4:4.8.90-0ubuntu1) quantal; urgency=low
+
+  [ Felix Geyer ]
+  * New upstream beta release.
+
+  [ Jonathan Riddell ]
+  * Move youtube.png icons into oxygen to stop overlap with kamoso http://bugs.kde.org/296280
+
+ -- Felix Geyer <debfx@ubuntu.com>  Mon, 11 Jun 2012 23:17:43 +0200
+
+kdeplasma-addons (4:4.8.80-0ubuntu1) quantal; urgency=low
+
+  * Merge with Debian git repository, remaining changes:
+    - Build plasma-widget-kdeobservatory
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kde-wallpapers
+    - Don't install kimpanel in plasma-widget-addons.install
+    - Build against libboost1.49-dev
+    - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - Do not build-dep on libscim-dev
+    - Add build-dep on libqwt-dev, libglib2.0-dev, shared-mime-info
+  * New upstream beta release.
+    - Drop kubuntu_support_new_fdo_desktop_actions.diff, merged upstream.
+    - Build-depend on libqoauth-dev and libqjson-dev.
+    - Update install files.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Wed, 06 Jun 2012 11:03:36 +0200
+
 kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
 
   * New upstream release.
@@ -133,6 +507,16 @@ kdeplasma-addons (4:4.8.4-1) unstable; urgency=low
   * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
 
  -- Modestas Vainius <modax@debian.org>  Sat, 09 Jun 2012 15:51:18 +0300
+
+kdeplasma-addons (4:4.8.4-0r1) raring; urgency=low
+
+  * New upstream release.
+
+  [ Eshat Cakar ]
+  * Add watch file.
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
+
+ -- Eshat Cakar <info@eshat.de>  Wed, 06 Jun 2012 00:08:10 +0200
 
 kdeplasma-addons (4:4.8.3-1) experimental; urgency=low
 
@@ -167,6 +551,95 @@ kdeplasma-addons (4:4.8.3-1) experimental; urgency=low
 
  -- Modestas Vainius <modax@debian.org>  Sun, 27 May 2012 02:38:37 +0300
 
+kdeplasma-addons (4:4.8.3-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+  * Switch boost build-dep to 1.49
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Mon, 14 May 2012 20:58:05 +0200
+
+kdeplasma-addons (4:4.8.2-0ubuntu3) precise-proposed; urgency=low
+
+  * Rebuild for .pot generation
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 12 Apr 2012 16:32:03 +0100
+
+kdeplasma-addons (4:4.8.2-0ubuntu2) precise; urgency=low
+
+  * Support the FD.o desktop file actions in the icon tasks applet.
+    The X-Ayatana specification has been deprecated.
+    - Add kubuntu_support_new_fdo_desktop_actions.diff
+
+ -- Felix Geyer <debfx@ubuntu.com>  Tue, 10 Apr 2012 10:58:17 +0200
+
+kdeplasma-addons (4:4.8.2-0ubuntu1) precise; urgency=low
+
+  * New upstream release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 31 Mar 2012 22:32:52 +0200
+
+kdeplasma-addons (4:4.8.1-0ubuntu1) precise; urgency=low
+
+  * New upstream release
+  * plasma-widgets-addons breaks/replaces plasma-widget-icon-tasks
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 03 Mar 2012 23:00:13 +0100
+
+kdeplasma-addons (4:4.8.0-0ubuntu2) precise; urgency=low
+
+  * plasma-widget-kimpanel conflicts/replaces
+    plasma-widget-kimpanel-backend-ibus since the latter doesn't exist
+    anymore.
+  * Add ${misc:Depends} to all packages where it was missing.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Fri, 27 Jan 2012 14:36:13 +0100
+
+kdeplasma-addons (4:4.8.0-0ubuntu1) precise; urgency=low
+
+  * New upstream release
+  * really remove kdeobservatory files from other packages
+  * plasma-widgets-addons replaces/breaks plasma-engine-kdeobservatory
+  * plasma-engine-kdeobservatory replaces/breaks old plasma-widgets-addons
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Jan 2012 12:47:23 +0000
+
+kdeplasma-addons (4:4.7.97-0ubuntu1) precise; urgency=low
+
+  * New upstream release candidate
+  * Remove kubuntu_fix_qreal_float.diff now upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 05 Jan 2012 12:18:21 +0000
+
+kdeplasma-addons (4:4.7.95-0ubuntu1) precise; urgency=low
+
+  [ Philip Muškovac ]
+  * New upstream release candidate
+    - update plasma-widgets-addons.install
+
+  [ Scott Kitterman ]
+  * Fix Vcs-* headers to match current Kubuntu branches
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 24 Dec 2011 22:35:24 +0100
+
+kdeplasma-addons (4:4.7.90-0ubuntu2) precise; urgency=low
+
+  * Fix lintian warning description-contains-duplicated-word.
+  * Drop all kubuntu patches that were commented out.
+  * Fix FTBFS on arm* due to qreal/double mismatch.
+    - Add kubuntu_fix_qreal_float.diff.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Fri, 23 Dec 2011 17:57:06 +0100
+
+kdeplasma-addons (4:4.7.90-0ubuntu1) precise; urgency=low
+
+  * new upstream beta release
+  * Remove kubuntu_04_kimpanel_disable_scim.diff now scim applet has gone
+  * Remove ibus bits from debian/rules
+  * Remove kimpanel packages
+  * Add build-dep on libdbusmenu-qt-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Dec 2011 14:17:52 +0000
+
 kdeplasma-addons (4:4.7.4-2) unstable; urgency=low
 
   * Team upload. Upload to unstable.
@@ -182,6 +655,45 @@ kdeplasma-addons (4:4.7.4-1) experimental; urgency=low
   * Bump kde-sc-dev-latest build dependency to 4:4.7.4.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Dec 2011 01:40:15 +0100
+
+kdeplasma-addons (4:4.7.3-0ubuntu3) precise; urgency=low
+
+  * Add build-dep on shared-mime-info, also needed
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 25 Nov 2011 02:56:46 +0000
+
+kdeplasma-addons (4:4.7.3-0ubuntu2) precise; urgency=low
+
+  * Add back build-dep on libglib2.0-dev, needed by libqalculate
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 25 Nov 2011 02:43:54 +0000
+
+kdeplasma-addons (4:4.7.3-0ubuntu1) precise; urgency=low
+
+  * New upstream release
+  * Merge from debian. Remaining changes:
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kde-wallpapers
+    - Add plasma-widget-kimpanel-backend-ibus.{install, postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons.install
+    - Build against libboost1.46-dev
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widgets-addons (<< 4:4.4.60)
+    - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-widgets-addons Breaks/Replaces plasma-widget-system-status
+    - Do not build-dep on libscim-dev
+    - Add build-dep on libqwt-dev
+    - kubuntu_04_kimpanel_disable_scim.diff to build kimpanel without scim
+  * Drop build-depends on shared-mime-info, libglib2.0-dev, unused
+  * kdeplasma-addons-dbg dependency kdebase-workspace-dbg -> kde-workspace-dbg
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 23 Nov 2011 23:46:45 +0000
 
 kdeplasma-addons (4:4.7.2-1) experimental; urgency=low
 
@@ -217,6 +729,85 @@ kdeplasma-addons (4:4.6.5-1) unstable; urgency=low
   * Bump kde-sc-dev-latest build dependency to 4:4.6.5.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 18 Jul 2011 21:53:59 +0300
+
+=======
+kdeplasma-addons (4:4.7.2-0ubuntu1) oneiric-proposed; urgency=low
+
+  * New upstream release (LP: #872506)
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 15 Oct 2011 10:20:33 +0200
+
+kdeplasma-addons (4:4.7.1-0ubuntu2) oneiric; urgency=low
+
+  * No-change rebuild so translations aren't stripped from .desktop
+    files anymore.
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Fri, 16 Sep 2011 00:48:16 +0200
+
+kdeplasma-addons (4:4.7.1-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release
+  * droped qwt6_build.patch
+  * droped kubuntu_Fix-assignment-operator-and-add-copy-constructor.diff
+
+ -- Jonathan Kolberg <bulldog98@kubuntu-de.org>  Fri, 09 Sep 2011 00:22:29 -0400
+
+kdeplasma-addons (4:4.7.0-0ubuntu3) oneiric; urgency=low
+
+  * Switch to build-dep on libqwt-dev to support transition to qwt6
+  * Add debian/patches/qwt6_build.patch backported from upstream trunk to
+    fix FTBFS with newer qwt
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 25 Aug 2011 12:23:57 -0400
+
+kdeplasma-addons (4:4.7.0-0ubuntu2) oneiric; urgency=low
+
+  * Cherry-pick upstream commit 67b5c56e564f5052238bab38342a85e5f4af570b
+    as kubuntu_Fix-assignment-operator-and-add-copy-constructor.diff
+    to fix crash when using the desktop grid layout.
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sat, 30 Jul 2011 20:01:32 +0200
+
+kdeplasma-addons (4:4.7.0-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release
+   - Bump on kde-sc-dev-latest
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 29 Jul 2011 10:52:25 +0200
+
+kdeplasma-addons (4:4.6.90-0ubuntu1) oneiric; urgency=low
+
+  * New upstream development release
+    - Change dependencies to match new packages names
+    - Update install files
+
+ -- Romain Perier <romain.perier@gmail.com>  Tue, 12 Jul 2011 18:23:07 +0200
+
+kdeplasma-addons (4:4.6.3-1ubuntu1) oneiric; urgency=low
+
+  [ Philip Muškovac ]
+  * Merge from debian. Remaining changes:
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - Add plasma-widget-kimpanel-backend-ibus.{install, postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.46-dev
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widgets-addons (<< 4:4.4.60)
+    - plasma-widgets-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-widgets-addons Breaks/Replaces plasma-widget-system-status
+    - Build-depend on shared-mime-info and libglib2.0-dev
+  * Update Vcs- links as the branch is now owned by kubuntu-packagers
+
+  [ Felix Geyer ]
+  * Add python to plasma-widget-kimpanel-backend-ibus dependencies.
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 07 Jun 2011 00:52:20 +0200
 
 kdeplasma-addons (4:4.6.3-1) unstable; urgency=low
 
@@ -266,6 +857,244 @@ kdeplasma-addons (4:4.6.2-1) experimental; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 27 Apr 2011 12:23:44 +0300
 
+kdeplasma-addons (4:4.6.2-0ubuntu3) natty; urgency=low
+
+  * Add kubuntu_05_comic_prefetch.diff, recommended on kde-packagers.
+
+ -- Romain Perier <romain.perier@gmail.com>  Sun, 10 Apr 2011 10:40:45 +0200
+
+kdeplasma-addons (4:4.6.2-0ubuntu2) natty; urgency=low
+
+  * Disable kubuntu_02_microblog_default_configuration.diff, it doesn't
+    work reliably and causes a crash on live CD startup (or when kwallet
+    doesn't exist)
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 08 Apr 2011 18:17:47 +0100
+
+kdeplasma-addons (4:4.6.2-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 04 Apr 2011 15:23:42 +0000
+
+kdeplasma-addons (4:4.6.1-0ubuntu2) raring; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 29 Mar 2011 12:29:18 +0100
+
+kdeplasma-addons (4:4.6.1-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+  * Added icons to plasma-widgets-addons.install
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Mon, 28 Feb 2011 16:58:04 +0100
+
+kdeplasma-addons (4:4.6.0-0ubuntu2) natty; urgency=low
+
+  * Do not build-depend on libscim-dev
+  * Fix descriptions for plasma-widget-kimpanel, plasma-widget-kimpanel-backend-ibus
+  * Remove dependency on scim backend in plasma-widget-kimpanel
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 27 Jan 2011 09:09:17 +0000
+
+kdeplasma-addons (4:4.6.0-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+  * Merged debian/control
+  * Refreshed *.install and not-installed files
+  * Removed theme files from plasma-widget-lancelot.install as they are no
+    longer there
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 21 Jan 2011 22:18:07 +0100
+
+kdeplasma-addons (4:4.5.95-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Jan 2011 17:31:34 +0000
+
+kdeplasma-addons (4:4.5.90-0ubuntu1) natty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 22 Dec 2010 18:48:57 +0000
+
+kdeplasma-addons (4:4.5.85-0ubuntu1) natty; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 07 Dec 2010 13:14:27 +0000
+
+kdeplasma-addons (4:4.5.80-0ubuntu1) natty; urgency=low
+
+  * New upstream beta release
+  * Disable kubuntu_02_microblog_default_configuration.diff does not apply
+  * New package plasma-containments-addons
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Nov 2010 13:35:18 +0000
+
+kdeplasma-addons (4:4.5.3-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 05 Nov 2010 15:07:54 +0000
+
+kdeplasma-addons (4:4.5.2-0ubuntu1) natty; urgency=low
+
+  [ Alessandro Ghersi ]
+  * Merge with Debian git remaining changes:
+    - Keep our patch
+    - Add debian/xinput folder
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-scim package commented
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-ibus.{postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.42-dev
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - plasma-widget-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widget-addons (<< 4:4.4.60)
+    - Build against kdelibs5-dev 4.5.2-0ubuntu1 for libkutils4 transition
+    - Add libxml2-dev to build-dependencies
+
+  [ Jonathan Riddell ]
+  * New upstream release
+   - kubuntu_01_fix_plasma_crash_when_editing_activity.diff
+   - kubuntu_05_fix_exif_rotation.diff
+   - kubuntu_06_fix_weatherlocation.diff
+   - kubuntu_07_lancelot_fixes.diff
+   - kubuntu_08_fix_comic_widget.diff
+   - kubuntu_09_personservice_ptr.diff
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sun, 17 Oct 2010 07:29:38 +0200
+
+kdeplasma-addons (4:4.5.1-0ubuntu4) maverick; urgency=low
+
+  * Drop obsolete (pre-lucid) conflicts/replaces
+  * Convert conflicts/replaces to breaks/replaces per current policy
+  * Add plasma-widgets-addons breaks/replaces plasma-widget-system-status
+    since it is now incorporated in that package
+
+ -- Scott Kitterman <scott@kitterman.com>  Fri, 24 Sep 2010 13:42:12 -0400
+
+kdeplasma-addons (4:4.5.1-0ubuntu3) maverick; urgency=low
+
+  * Cherry pick additional patches from kdesvn 4.5 branch:
+    - debian/patches/kubuntu_06_fix_weatherlocation.diff to properly parse the
+      result of the geolocation engine
+    - debian/patches/kubuntu_07_lancelot_fixes.diff to correctly detect
+      kdepimlibs integration for lancelot data models
+    - debian/patches/kubuntu_08_fix_comic_widget.diff to fix registration of
+      new comics and simplify (and remove bugs from) combobox implementation
+    - debian/patches/kubuntu_09_personservice_ptr.diff to check the value of
+      the shared ptr before using it and also not create services for
+      providers that don't exist
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 23 Sep 2010 00:25:57 -0400
+
+kdeplasma-addons (4:4.5.1-0ubuntu2) maverick; urgency=low
+
+  * Add kubuntu_01_fix_plasma_crash_when_editing_activity.diff
+    (http://bugs.kde.org/show_bug.cgi?id=250935)
+  * Add kubuntu_05_fix_exif_rotation.diff
+    enable exif rotation again in frame widget
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 15 Sep 2010 04:28:56 +0200
+
+kdeplasma-addons (4:4.5.1-0ubuntu1) maverick; urgency=low
+
+  [ Felix Geyer ]
+  * New upstream release.
+
+  [ Benjamin Kay ]
+  * Fix typo in debian/xinput/ibus-kde
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Tue, 31 Aug 2010 10:45:27 +0200
+
+kdeplasma-addons (4:4.5.0b-0ubuntu1) maverick; urgency=low
+
+  * New tar from upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 04 Aug 2010 23:20:06 +0100
+
+kdeplasma-addons (4:4.5.0-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+    - Bump on build-depends
+
+ -- Michał Zając <michal.zajac@gmail.com>  Fri, 30 Jul 2010 14:05:14 +0200
+
+kdeplasma-addons (4:4.4.92-0ubuntu2) maverick; urgency=low
+
+  * Build against kde4libs 4.4.92-0ubuntu3 for webkit transition
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 21 Jul 2010 09:45:31 +0100
+
+kdeplasma-addons (4:4.4.92-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+    - Bump kde-sc-dev-latest to 4.4.92
+    - Fix not-installed file
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Thu, 08 Jul 2010 10:19:25 +0200
+
+kdeplasma-addons (4:4.4.90-0ubuntu1) maverick; urgency=low
+
+  * New upstream release
+    - Bump kde-sc-dev-latest to 4.4.90
+    - Adapt kubuntu_02_microblog_default_configuration.diff
+  * Add build-depends on libqca2-dev
+
+ -- Andreas Wenning <awen@awen.dk>  Sat, 26 Jun 2010 00:38:27 +0200
+
+kdeplasma-addons (4:4.4.85-0ubuntu3) maverick; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff from Michał
+    Zając
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 18 Jun 2010 13:14:03 +0100
+
+kdeplasma-addons (4:4.4.85-0ubuntu2) maverick; urgency=low
+
+  * Rebuild for libplasmaclock4a -> libplasmaclock4b transition
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sun, 13 Jun 2010 03:17:54 +0200
+
+kdeplasma-addons (4:4.4.85-0ubuntu1) maverick; urgency=low
+
+  * New upstream beta release
+    - Bump kde-sc-dev-latest to 4.4.85
+    - Update install files
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Tue, 08 Jun 2010 22:32:44 +0200
+
+kdeplasma-addons (4:4.4.80-0ubuntu2) maverick; urgency=low
+
+  * plasma-widget-lancelot replaces liblancelot0
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 01 Jun 2010 17:54:52 +0000
+
+kdeplasma-addons (4:4.4.80-0ubuntu1) maverick; urgency=low
+
+  * New upstream beta release:
+    - Bump kde-sc-dev-latest build-dep version to 4.4.80
+    - Refresh kubuntu_04_kimpanel_disable_scim.diff
+    - Update various .install files
+    - Drop liblancelot0a and liblancelot-dev packages; Upstream has broken ABI
+      without an .so version bump, and after discussion with Debian it was
+      decided it was not worth it to ship an unstable library.
+    - Add liblancelot files to plasma-widget-lancelot, adding appropriate
+      Replaces: entries
+  * Switch to source format 3.0 (quilt):
+    - Bump debhelper build-depend version to 7.3.16 or greater
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 25 May 2010 09:50:14 -0400
+
 kdeplasma-addons (4:4.4.5-1) unstable; urgency=low
 
   [ Modestas Vainius ]
@@ -301,6 +1130,45 @@ kdeplasma-addons (4:4.4.4-1) unstable; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Tue, 01 Jun 2010 01:15:18 +0300
 
+kdeplasma-addons (4:4.4.3-1ubuntu4) maverick; urgency=low
+
+  * Add missing build-deps on shared-mime-info and libglib2.0-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 18:09:32 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu3) maverick; urgency=low
+
+  * Build-dep on libkexiv2-dev, rather than libkexiv2-8-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 15:50:04 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu2) maverick; urgency=low
+
+  * Rebuild upload for package name changes in kdebase-workspace
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 24 May 2010 12:55:46 -0400
+
+kdeplasma-addons (4:4.4.3-1ubuntu1) maverick; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - Add debian/xinput folder
+    - Keep our patch
+    - Build plasma-widget-kdeobservatory, plasma-widget-kimpanel,
+      plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-scim package commented
+    - Keep rules to install plasma-widget-kimpanel-backend-ibus
+    - Keep plasma-widget-kimpanel-backend-ibus.{postinst, prerm}
+    - Don't install kimpanel in plasma-widget-addons
+    - Build against libboost1.42-dev
+    - plasma-wallpapers-addons depends on plasma-dataengines-workspace,
+      kdewallpapers, kdebase-workspace-wallpapers
+    - plasma-widget-addons suggests plasma-widget-lancelot instead of
+      recommends
+    - plasma-dataengines-addons replaces kdeplasma-addons (<< 4:4.4.60) and
+      plasma-widget-addons (<< 4:4.4.60)
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Fri, 21 May 2010 02:49:00 +0200
+
 kdeplasma-addons (4:4.4.3-1) unstable; urgency=low
 
   * New upstream release:
@@ -311,6 +1179,13 @@ kdeplasma-addons (4:4.4.3-1) unstable; urgency=low
   * Release KDE SC 4.4.3 to unstable.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 01 May 2010 23:37:56 +0300
+
+kdeplasma-addons (4:4.4.3-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build depends
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 04 May 2010 13:52:34 +0100
 
 kdeplasma-addons (4:4.4.2-1) experimental; urgency=low
 
@@ -343,6 +1218,159 @@ kdeplasma-addons (4:4.4.2-1) experimental; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 09 Apr 2010 18:40:08 +0300
 
+kdeplasma-addons (4:4.4.2-0ubuntu2) lucid-proposed; urgency=low
+
+  * Add kubuntu_01_fix_picture_of_the_day.diff from branch (LP: #566127)
+    https://bugs.kde.org/show_bug.cgi?id=226230
+    - New string removed from slideshow.cpp compared to upstream patch, the new string is not
+      needed to fix this bug
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Wed, 14 Apr 2010 20:49:47 +0200
+
+kdeplasma-addons (4:4.4.2-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-depend versions
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 27 Mar 2010 21:32:51 +0100
+
+kdeplasma-addons (4:4.4.1-0ubuntu1) lucid; urgency=low
+
+  * New upstream bugfix release:
+    - Bump build-depend versions
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 28 Feb 2010 13:03:48 -0500
+
+kdeplasma-addons (4:4.4.0-0ubuntu2) lucid; urgency=low
+
+  * Add kubuntu_04_kimpanel_disable_scim.diff and remove scim-dev
+    build-dep, scim unmaintained upstream
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 15 Feb 2010 09:09:18 +0000
+
+kdeplasma-addons (4:4.4.0-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+
+ -- Ryan Kavanagh <ryanakca@kubuntu.org>  Thu, 04 Feb 2010 17:03:03 -0500
+
+kdeplasma-addons (4:4.3.98-0ubuntu1) lucid; urgency=low
+
+  [ Christian Mangold ]
+  * New upstream release candidate
+
+  [ Alessandro Ghersi ]
+  * Bump Qt to 4.6.1
+    - Bump build dep versions
+
+ -- Christian Mangold <neversfelde@ubuntu.com>  Mon, 01 Feb 2010 20:50:22 +0100
+
+kdeplasma-addons (4:4.3.95-0ubuntu1) lucid; urgency=low
+
+  [ Alessandro Ghersi ]
+  * New upstream release
+    - Bump build-deps
+
+  [ Zhengpeng Hou ]
+  * Split plasma-widget-kimpanel into 3 packages, 1 for frontend, 2
+    for backend.
+  * Add ibus backend support.
+  * Provide conffile for im-switch, to let language-selector set it as default
+    for Kubuntu users.
+
+  [ Jonathan Riddell ]
+  * Make plasma-widget-lancelot suggests not a recommends of plasma-widget-addons, not
+    needed on CD
+
+ -- Zhengpeng Hou <zhengpeng-hou@ubuntu.com>  Wed, 20 Jan 2010 16:57:36 +0800
+
+kdeplasma-addons (4:4.3.90-0ubuntu2) lucid; urgency=low
+
+  * Build Kimpanel Plasma widget:
+    - Add build-depend on scim-dev
+    - Add plasma-widget-kimpanel to debian/control
+    - Add plasma-widget-kimpanel.install
+  * Build the KDE Observatory Plasma widget:
+    - Add build-depend on libqwt5-qt4-dev
+    - Add plasma-widget-kdeobservatory to debian/control
+    - Add plasma-widget-kdeobservatory.install
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sun, 10 Jan 2010 11:11:31 -0500
+
+kdeplasma-addons (4:4.3.90-0ubuntu1) lucid; urgency=low
+
+  * New upstream release candidate:
+    - Bump build-depend versions
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Wed, 06 Jan 2010 23:12:15 -0500
+
+kdeplasma-addons (4:4.3.85-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+    - Bump build-deps
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 19 Dec 2009 22:35:02 +0100
+
+kdeplasma-addons (4:4.3.80-0ubuntu6) lucid; urgency=low
+
+  * Make plasma-widgets-addons conflict/replace on plasma-widget-spellcheck
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 12 Dec 2009 03:59:19 +0100
+
+kdeplasma-addons (4:4.3.80-0ubuntu5) lucid; urgency=low
+
+  * Remove 99_fix_ftbfs_on_marble_wallpaper.diff, fixes fail to build
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 09 Dec 2009 14:57:57 +0000
+
+kdeplasma-addons (4:4.3.80-0ubuntu4) lucid; urgency=low
+
+  * Fix libkexiv2 build-dep to libkexiv2-8
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 08 Dec 2009 15:31:07 -0500
+
+kdeplasma-addons (4:4.3.80-0ubuntu3) lucid; urgency=low
+
+  * Make plasma-widget-addons conflict/replace on plasma-widget-plasmaboard,
+    which moved here in KDE 4.4
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 08 Dec 2009 15:31:07 -0500
+
+kdeplasma-addons (4:4.3.80-0ubuntu2) lucid; urgency=low
+
+  [ Michał Zając ]
+  * Added shared-desktop-ontologies as a Build-Depend
+
+  [ Scott Kitterman ]
+  * Revert mistaken liblancelot1 transition and return to liblancelot0
+
+ -- Scott Kitterman <scott@kitterman.com>  Sun, 06 Dec 2009 21:42:35 -0500
+
+kdeplasma-addons (4:4.3.80-0ubuntu1) lucid; urgency=low
+
+  [ Michał Zając ]
+  * New upstream beta
+  * Changes in install files.
+  * Dropped netbook patch, already implemented upstream
+  * Commented out social from the start patch, needs rewriting, it causes FTBFS
+  * Added 99_fix_ftbfs_on_marble_wallpaper.diff
+  * Dropped plasma-dataengines-dev since no files are produced
+
+  [ Scott Kitterman ]
+  * Bump KDE build depends to 4.3.80 or later
+  * Switch to boost 1.40
+  * Clean up commented out entry in debian/plasma-widget-lancelot.install
+  * Remove left over generated files from debian dir
+  * liblancelot0 to liblancelot1 transition
+    - Change library package name in debian/control
+    - Update liblancelot-dev depends
+    - Rename install file
+    - Update kdeplasma-addons-dbg depends
+    - Update debian/rules
+
+ -- Scott Kitterman <scott@kitterman.com>  Sat, 05 Dec 2009 23:30:01 -0500
+
 kdeplasma-addons (4:4.3.4-1) unstable; urgency=low
 
   * New upstream release.
@@ -358,12 +1386,89 @@ kdeplasma-addons (4:4.3.4-1) unstable; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 09 Dec 2009 00:24:11 +0200
 
+kdeplasma-addons (4:4.3.3-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+  * Remove patches fixed by upstream:
+    - kubuntu_05_rememberthemilk_auth_fix.diff
+    - kubuntu_06_microblog_twitter_id_fix.diff
+  * Merge with Debian testing remaining changes:
+    - Add KUBUNTU-DEBIAN-DIFFERENCES
+    - debian/control:
+      - Build against libboost1.38-dev
+      - Keep our conflicts/replaces
+      - Keep plasma-dataengines-addons-dev package
+      - plasma-wallpapers-addons depends on kdewallpapers and
+        kdebase-workspace-wallpapers
+      - add blank line in plasma-wallpapers-addons description
+    - debian/plasma-dataengines-addons.install:
+      - Don't install usr/lib/libplasmapotdprovidercore.so
+      - Don't add duplicate line
+        usr/share/kde4/services/plasma-dataengine-potd.desktop
+    - debian/patches:
+      - Add kubuntu_02_microblog_default_configuration.diff
+      - Add kubuntu_03_opendestop_setup.diff
+      - kubuntu_04_netbook_runners.diff
+      - Don't add 01_fix_armel_build.diff
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Mon, 16 Nov 2009 03:40:10 +0100
+
 kdeplasma-addons (4:4.3.2-1) unstable; urgency=low
 
   * New upstream release.
   * Remove 01_fix_armel_build patch, merged upstream.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sat, 10 Oct 2009 19:43:05 +0200
+
+kdeplasma-addons (4:4.3.2-0ubuntu6) lucid; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff fix
+    patched if conditions to properly retrieve friend tweets.
+    Closes LP: #414572
+
+ -- David Wegener <dpwegener@gmail.com>  Tue, 27 Oct 2009 20:56:53 -0500
+
+kdeplasma-addons (4:4.3.2-0ubuntu5) karmic; urgency=low
+
+  * Update kubuntu_06_microblog_twitter_id_fix.diff with fix from
+    http://websvn.kde.org/?revision=1036051&view=revision
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 Oct 2009 23:02:49 +0100
+
+kdeplasma-addons (4:4.3.2-0ubuntu4) karmic; urgency=low
+
+  * Add kubuntu_06_microblog_twitter_id_fix.diff from 4.3 branch, is the
+    upstream breakage part of https://bugs.kde.org/200475
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2009 14:45:09 +0100
+
+kdeplasma-addons (4:4.3.2-0ubuntu3) karmic; urgency=low
+
+  * Update kubuntu_02_microblog_default_configuration.diff, fix
+    setting of when applet needs configuration and fix downloading of
+    authenticated accounts timelines.  Closes LP: #414572 (also
+    https://bugs.kde.org/200475)
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 12 Oct 2009 14:05:24 +0100
+
+kdeplasma-addons (4:4.3.2-0ubuntu2) karmic; urgency=low
+
+  * Adding kubuntu_05_rememberthemilk_auth_fix.diff to fix the authorization
+    issue due to previous version incorrectly utilizing the RTM API.
+
+ -- Richard A. Johnson <nixternal@ubuntu.com>  Sat, 10 Oct 2009 20:42:38 -0500
+
+kdeplasma-addons (4:4.3.2-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build deps
+    - Remove build dependency on libxcomposite-dev and libxdamage-dev
+      as they are no longer needed for building lancelot compositing
+      support
+    - Remove kubuntu_01_fix_armel_build.diff, fixed by upstream
+    - Update plasma-widget-addons.install
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 03 Oct 2009 18:52:18 +0200
 
 kdeplasma-addons (4:4.3.1-2) unstable; urgency=low
 
@@ -387,6 +1492,35 @@ kdeplasma-addons (4:4.3.1-1) unstable; urgency=low
   * Bump KDE build dependencies to 4.3.1.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 29 Aug 2009 17:48:16 +0300
+
+kdeplasma-addons (4:4.3.1-0ubuntu3) karmic; urgency=low
+
+  * Add wallpapers/mandelbrot/mandelbrot.cpp armel fixes to
+    kubuntu_01_fix_armel_build.diff
+
+ -- Scott Kitterman <scott@kitterman.com>  Mon, 07 Sep 2009 12:29:57 -0400
+
+kdeplasma-addons (4:4.3.1-0ubuntu2) karmic; urgency=low
+
+  * Add another fix to kubuntu_01_fix_armel_build.diff
+
+ -- Scott Kitterman <scott@kitterman.com>  Wed, 02 Sep 2009 23:47:42 -0400
+
+kdeplasma-addons (4:4.3.1-0ubuntu1) karmic; urgency=low
+
+  [ Christian Mangold ]
+  * New upstream release
+  * Bump version of KDE build-deps to 4.3.1
+
+  [Alessandro Ghersi]
+  * Add libxcomposite-dev, libxrender-dev and libxdamage-dev to build-deps
+    to build compositing support for Lancelot. (LP: #408235)
+    (Thanks to Khashayar Naderehvandi)
+
+  [ Harald Sitter ]
+  * Fix armel build using kubuntu_01_fix_armel_build.diff
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Sun, 30 Aug 2009 20:11:55 +0200
 
 kdeplasma-addons (4:4.3.0-2) unstable; urgency=low
 
@@ -417,6 +1551,50 @@ kdeplasma-addons (4:4.3.0-1) unstable; urgency=low
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 04 Aug 2009 09:20:58 +0200
 
+kdeplasma-addons (4:4.3.0-0ubuntu4) karmic; urgency=low
+
+  * Add kubuntu_04_netbook_runners.diff from
+    plasma-netbook runners-patches/kdeplasma-addons_runners.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Aug 2009 15:05:53 +0100
+
+kdeplasma-addons (4:4.3.0-0ubuntu3) karmic; urgency=low
+
+  * Disable kubuntu_03_opendestop_setup.diff, it causes it to crash
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 06 Aug 2009 17:16:28 +0100
+
+kdeplasma-addons (4:4.3.0-0ubuntu2) karmic; urgency=low
+
+  * Remove kubuntu_03_microblog_allow_updating_status.diff, fixed upstream
+  * Add kubuntu_03_opendestop_setup.diff, make applet smaller and force minimum
+    size to stop is shrinking on startup
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 05 Aug 2009 14:38:06 +0100
+
+kdeplasma-addons (4:4.3.0-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build-depends
+    - Add kubuntu_03_microblog_allow_updating_status.diff, to allow updating
+      of status via microblog plasmoid
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Thu, 30 Jul 2009 14:00:30 +0200
+
+kdeplasma-addons (4:4.2.98-0ubuntu2) karmic; urgency=low
+
+  * Rebuild with new pkg-kde-tools to build translation templates
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 29 Jul 2009 18:12:02 +0100
+
+kdeplasma-addons (4:4.2.98-0ubuntu1) karmic; urgency=low
+
+  * New upstream release.
+  * Bump on Build-Deps
+  * Fixes in plasma-widgets-addons.install
+
+ -- Michał Zając <michal.zajac@gmail.com>  Thu, 23 Jul 2009 01:59:29 +0200
+
 kdeplasma-addons (4:4.2.96-1) experimental; urgency=low
 
   * New upstream release candidate.
@@ -432,6 +1610,67 @@ kdeplasma-addons (4:4.2.96-1) experimental; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 13 Jul 2009 12:39:34 +0300
 
+kdeplasma-addons (4:4.2.96-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build-depend versions
+    - Update plasma-widget-lancelot.installed
+    - Update kubuntu_02_microblog_default_configuration.diff
+    - Remove kubuntu_01_qt_phonon.diff no longer need
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Fri, 10 Jul 2009 13:55:16 +0200
+
+kdeplasma-addons (4:4.2.95-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+    - Bump build-depend versions
+    - Update plasma-widget-addons.install
+
+ -- Alessandro Ghersi <alessandro-ghersi@kubuntu.org>  Sat, 27 Jun 2009 19:11:06 +0200
+
+kdeplasma-addons (4:4.2.90-0ubuntu3) karmic; urgency=low
+
+  * bzr add patch before upload
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 19 Jun 2009 20:19:30 +0100
+
+kdeplasma-addons (4:4.2.90-0ubuntu2) karmic; urgency=low
+
+  * Add kubuntu_02_microblog_default_configuration.diff, make
+    microblog applet show kubuntu feed by default
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 19 Jun 2009 18:24:04 +0100
+
+kdeplasma-addons (4:4.2.90-0ubuntu1) karmic; urgency=low
+
+  * New upstream release:
+    - Bump build-depend versions
+    - Update various .install files
+  * Build-depend on libeigen2-dev to build the mandlebrot wallpaper
+  * Build-depend on libmarble-dev to build the marble wallpaper
+  * widgets -> wallpapers in plasma-widget-wallpapers short description
+    (LP: #377707)
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 05 Jun 2009 11:57:58 -0400
+
+kdeplasma-addons (4:4.2.85-0ubuntu2) karmic; urgency=low
+
+  * Add a build-dep on libqimageblitz-dev to prevent FTBFS
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sat, 16 May 2009 21:37:38 -0400
+
+kdeplasma-addons (4:4.2.85-0ubuntu1) karmic; urgency=low
+
+  * New upstream beta release:
+    - Bump build-depends
+    - Add new plasma-wallpapers-addons package
+    - Add new plasma-dataengines-addons-dev package
+    - Remove 01_lancelot_qt4.5_support.diff, merged upstream
+    - Add kubuntu_01_qt_phonon.diff, for real
+    - Add conflicts of plasma-widget-weather to plasma-widgets-addons
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Sat, 16 May 2009 16:18:34 -0400
+
 kdeplasma-addons (4:4.2.4-1) unstable; urgency=low
 
   * New upstream release.
@@ -442,11 +1681,31 @@ kdeplasma-addons (4:4.2.4-1) unstable; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 14 Mar 2009 13:52:37 +0100
 
+kdeplasma-addons (4:4.2.2-1ubuntu2) karmic; urgency=low
+
+  * Add kubuntu_01_qt_phonon.diff to make it compile with Qt's Phonon
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 11 May 2009 22:37:02 +0000
+
+kdeplasma-addons (4:4.2.2-1ubuntu1) karmic; urgency=low
+
+  * Merge from Debian unstable, remaining changes:
+    - Keep Ubuntu-specific boost changes in debian/control
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 08 May 2009 12:02:47 -0400
+
 kdeplasma-addons (4:4.2.2-1) unstable; urgency=low
 
   * New upstream release.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 01 Apr 2009 15:41:34 +0200
+
+kdeplasma-addons (4:4.2.2-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release
+  * Bump KDE version in debian/control to 4.2.2
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Sun, 29 Mar 2009 18:03:53 -0400
 
 kdeplasma-addons (4:4.2.1-2) experimental; urgency=low
 
@@ -471,6 +1730,20 @@ kdeplasma-addons (4:4.2.1-1) experimental; urgency=low
   * Bump KDE build depends to 4.2.1.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 27 Feb 2009 23:49:30 +0200
+
+kdeplasma-addons (4:4.2.1-0ubuntu2) jaunty; urgency=low
+
+  * Reupload since all built failed due to missing deps appart
+    from i386.
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Thu, 05 Mar 2009 17:50:09 +0100
+
+kdeplasma-addons (4:4.2.1-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release:
+    - Bump various build-depend versions for update
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 27 Feb 2009 17:25:34 -0500
 
 kdeplasma-addons (4:4.2.0-1) experimental; urgency=low
 
@@ -520,6 +1793,95 @@ kdeplasma-addons (4:4.2.0-1) experimental; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 24 Jan 2009 03:39:52 +0200
 
+kdeplasma-addons (4:4.2.0-0ubuntu3) jaunty; urgency=low
+
+  [ Michal Zajac ]
+  * Add kubuntu_01_lancelot_qt45.diff to fix Lancelot glitches with Qt 4.5.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 23 Feb 2009 10:50:09 +0000
+
+kdeplasma-addons (4:4.2.0-0ubuntu2) jaunty; urgency=low
+
+  * Rebuild for boost transition (LP: #297152)
+  * Changed build-dep in debian/control libboost-dev -> libboost1.35-dev
+
+ -- Richard Birnie <Arbyuk@googlemail.com>  Sun, 01 Feb 2009 16:30:32 +0000
+
+kdeplasma-addons (4:4.2.0-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release
+    - remove kubuntu_01_qreal_portability_fixes.diff, resolved upstream
+    - bump version build-deps in debian/control
+    - add build-dep on quilt
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Sat, 24 Jan 2009 20:32:42 -0500
+
+kdeplasma-addons (4:4.1.96-0ubuntu2) jaunty; urgency=low
+
+  * Rebuild against new libplasma-dev
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Thu, 15 Jan 2009 02:04:38 -0500
+
+kdeplasma-addons (4:4.1.96-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release:
+    - Drop kubuntu_01_qreal_portability_fixes.diff, applied upstream
+    - Bump build-depend versions of various kde libs to (>= 4:4.1.96)
+    - Remove plasma themes from packaging, they live in kdeartwork now,
+      themes for kdeplasma-addons plasmoids stay
+    - Update various debian/.install files for new marble plasmoid
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 09 Jan 2009 12:47:32 -0500
+
+kdeplasma-addons (4:4.1.85-0ubuntu3) jaunty; urgency=low
+
+  [ Harald Sitter ]
+  * Change Vcs-Browser to Launchpad and replace Vcs-Svn with Vcs-Bzr
+
+  [ Michael Casadevall ]
+  * debian/patches/kubuntu_01_qreal_portability_fixes.diff
+    - Upcasts qreal in templated functions to fix ARM FTBFSes
+
+ -- Michael Casadevall <sonicmctails@gmail.com>  Thu, 01 Jan 2009 00:30:12 -0500
+
+kdeplasma-addons (4:4.1.85-0ubuntu2) jaunty; urgency=low
+
+  * Drop no longer needed transitional packages
+    - kdeplasmoids
+    - kdeplasmoids-data
+    - kdeplasmoids-dbg
+  * Add kdeplasma-addons replaces kdeplasmoids and not just conflicts
+
+ -- Scott Kitterman <scott@kitterman.com>  Wed, 17 Dec 2008 13:38:10 -0500
+
+kdeplasma-addons (4:4.1.85-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release
+    - Bump build-deps versions
+    - Add libxcomposite-dev to build-deps for updated lancelot requirements
+    - Add kdepimlibs5-dev to build-deps
+    - Updated debian/*.install files
+
+ -- Steve Stalcup <vorian@ubuntu.com>  Tue, 16 Dec 2008 22:48:27 -0500
+
+kdeplasma-addons (4:4.1.80-0ubuntu1) jaunty; urgency=low
+
+  * New upstream beta release:
+    - Bump build-depends versions
+    - Add conflicts on plasmoid-lancelot and plasmoid-previewer to
+      kdeplasma-addons,
+    - Add python build-dep due to Lancelot's puck tool
+    - Add the execution puck's clean.sh script to debian/rule's make clean
+      target
+    - Add kdebase-workspace-data as a build-dep since Lancelot needs
+      /usr/share/dbus-1/interfaces/org.freedesktop.ScreenSaver.xml
+    - Update various debian/*.install files
+    - Remove kdeplasma-addons-libs4 and -dev packaging, libplasmaapletdialog
+      has moved to kdebase-workspace
+    - Change build-depend on libkexiv2-dev => libkexiv2-7-dev
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Wed, 26 Nov 2008 20:14:49 -0500
+
 kdeplasma-addons (4:4.1.4-1) experimental; urgency=low
 
   * New upstream release.
@@ -542,12 +1904,33 @@ kdeplasma-addons (4:4.1.3-1) experimental; urgency=low
 
  -- Sune Vuorela <debian@pusling.com>  Sat, 01 Nov 2008 16:43:04 +0100
 
+kdeplasma-addons (4:4.1.2-1ubuntu2) jaunty; urgency=low
+
+  * No change rebuild for new dh_sameversiondeps
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Nov 2008 16:34:21 +0000
+
+kdeplasma-addons (4:4.1.2-1ubuntu1) jaunty; urgency=low
+
+  * Merge with Debian, remaining changes:
+    - Use our custom kde4.mk rather than built-in cdbs
+    - Keep our replaces/conflicts on old extragear-plasma/kdeplasma-addons packages
+  * Add changes to KUBUNTU-DEBIAN-DIFFERENCES
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 07 Nov 2008 12:19:46 -0500
+
 kdeplasma-addons (4:4.1.2-1) experimental; urgency=low
 
   * New upstream release.
   * Update patch 97_fix_target_link_libraries.diff.
 
  -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Tue, 30 Sep 2008 20:59:22 +0200
+
+kdeplasma-addons (4:4.1.2-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Fri, 26 Sep 2008 09:26:38 -0400
 
 kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
 
@@ -559,6 +1942,18 @@ kdeplasma-addons (4:4.1.1-1) experimental; urgency=low
     debian specific pimlibs changes
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Fri, 29 Aug 2008 08:46:37 +0200
+
+kdeplasma-addons (4:4.1.1-0ubuntu2) intrepid; urgency=low
+
+  * Rebuild against kdelibs 4:4.1.1+really4.1.1
+
+ -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Mon, 01 Sep 2008 21:33:35 -0400
+
+kdeplasma-addons (4:4.1.1-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release.
+
+ -- Jonathan Thomas (The man) <echidnaman@gmail.com>  Fri, 29 Aug 2008 08:11:18 -0400
 
 kdeplasma-addons (4:4.1.0-1) experimental; urgency=low
 
@@ -573,6 +1968,24 @@ kdeplasma-addons (4:4.1.0-1) experimental; urgency=low
   * Update installed files and build depend version.
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 28 Jul 2008 03:12:14 +0200
+
+kdeplasma-addons (4:4.1.0-0ubuntu3) intrepid; urgency=low
+
+  * Fix typo in kdeplasma-addons-libs4' Conflicts: list.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 08 Aug 2008 16:24:09 +0200
+
+kdeplasma-addons (4:4.1.0-0ubuntu2) intrepid; urgency=low
+
+  * switch to kde4.mk from cdbs
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 01 Aug 2008 15:29:42 +0000
+
+kdeplasma-addons (4:4.1.0-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Thomas <echidnaman@gmail.com>  Thu, 24 Jul 2008 08:09:52 -0400
 
 kdeplasma-addons (4:4.0.98-1) experimental; urgency=low
 
@@ -589,6 +2002,15 @@ kdeplasma-addons (4:4.0.98-1) experimental; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 21 Jul 2008 00:01:13 +0200
 
+kdeplasma-addons (4:4.0.98-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release candidate
+  * Bump Standards-Version to 3.8.0
+  * Renamed source and binary packages to kdeplasma-addons
+    + Add replaces/conflicts for old packages
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Sat, 12 Jul 2008 15:09:05 +0200
+
 kdeplasmoids (4:4.0.84-1) experimental; urgency=low
 
   * New upstream snapshot.
@@ -598,6 +2020,12 @@ kdeplasmoids (4:4.0.84-1) experimental; urgency=low
   * Fix typo in kdeplasmoids description.
 
  -- Sune Vuorela <debian@pusling.com>  Sun, 29 Jun 2008 12:04:46 +0200
+
+kdeplasmoids (4:4.0.83-0ubuntu1) intrepid; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 23 Jun 2008 15:07:27 +0000
 
 kdeplasmoids (4:4.0.82+svn820966-1) experimental; urgency=low
 
