@@ -730,7 +730,6 @@ kdeplasma-addons (4:4.6.5-1) unstable; urgency=low
 
  -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Mon, 18 Jul 2011 21:53:59 +0300
 
-=======
 kdeplasma-addons (4:4.7.2-0ubuntu1) oneiric-proposed; urgency=low
 
   * New upstream release (LP: #872506)
