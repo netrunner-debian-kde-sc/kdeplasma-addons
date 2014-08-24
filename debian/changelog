@@ -1,6 +1,7 @@
 kdeplasma-addons (4:4.14.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Update build dependencies.
 
  -- Maximiliano Curia <maxy@debian.org>  Mon, 18 Aug 2014 18:21:46 +0200
 
