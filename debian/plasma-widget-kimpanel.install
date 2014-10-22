@@ -2,6 +2,7 @@ usr/lib/kde4/libexec/kimpanel-ibus-panel
 usr/lib/kde4/libexec/kimpanel-scim-panel
 usr/lib/kde4/plasma_applet_kimpanel.so
 usr/lib/kde4/plasma_engine_kimpanel.so
+usr/share/ibus/component/kimpanel.xml
 usr/share/kde4/apps/plasma/services/kimpanel.operations
 usr/share/kde4/services/plasma-applet-kimpanel.desktop
 usr/share/kde4/services/plasma-dataengine-kimpanel.desktop
